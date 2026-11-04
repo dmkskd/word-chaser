@@ -2,6 +2,8 @@
 
 An HTML word investigation game for a young detective. Move a magnifying glass across Europe, inspect dated books and letters, and follow evidence through languages and time.
 
+**Continuing development? Read [the current status and handover](STATUS.md) first.** It records gameplay decisions, publishing setup and open work. See [the ideas notebook](IDEAS.md) for possibilities still under discussion.
+
 ## Open and develop
 
 Open **`index.html`** directly in Chrome. The built game includes its library and content, so no server or account is required. Optional fonts and some device speech voices may need a connection.
@@ -16,7 +18,7 @@ For an HTTP preview, run `npm start` and open http://localhost:8000. `npm test` 
 
 ## Content is data
 
-All six current cases are JSON. The interpreter contains no word-name conditions, word-specific click handlers, or hand-written exceptions for branches.
+All 15 current cases are JSON. The interpreter contains no word-name conditions, word-specific click handlers, or hand-written exceptions for branches.
 
 | File | Purpose |
 | --- | --- |
@@ -54,7 +56,7 @@ A case can have multiple branches, converging paths, and comparison leaves. Ever
 
 Camera movement never advances progress. Clicking empty map space smoothly zooms. Arrow keys move the glass, Enter inspects an object, +/− zoom, P speaks the object under the glass, and H gives a brief hint. Hints are explicitly requested and disappear after four seconds.
 
-Progress is saved locally when browser storage is available. Each case can be restarted. Missing or invalid storage does not stop the game.
+Only the current case is saved locally when browser storage is available. Reload resumes it; selecting another word starts that word fresh and replaces the saved attempt. Each case can be restarted. Missing or invalid storage does not stop the game.
 
 ## Historical accuracy
 
@@ -76,6 +78,6 @@ The previous atlas is preserved at `prototype/atlas-v1/index.html`. The original
 
 Questions, answer choices, correct answers, feedback, short reveal pages and progress milestones are authored in the case JSON. Point rules are in `catalog.rules`: 3 points for an unaided correct theory, 1 after extra clues or an earlier mistake, and a 1-point deduction for a mistaken theory when points are available. A clue cannot award points twice. The current potential reward is visible before choosing.
 
-The notebook shows points, tested theories, a progress bar and dated milestones. Scores, guesses, help and discovered comparisons survive backtracking and reload. The gameplay update starts a new local progress format (`word-chaser-graph-v2`).
+The notebook shows points, tested theories, a progress bar and compact evidence rows with result badges. Scores, guesses, help and discovered comparisons for the current case survive backtracking and reload. The local progress format is `word-chaser-current-v1`; previous cases are discarded when switching words.
 
 Touch interaction is covered by simulated pointer-event tests; actual iPad rendering/audio still needs device review.

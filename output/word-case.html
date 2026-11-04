@@ -1,0 +1,63 @@
+<div id="word-case" class="viz-dotted-background">
+  <article class="case" aria-label="Word Investigator case preview">
+    <header><span><i data-lucide="search" aria-hidden="true"></i> WORD INVESTIGATOR</span><span>Case 001</span></header>
+    <div class="intro"><span class="stamp">THE MUSICAL MYSTERY</span><h2>Who gave piano its name?</h2><div class="word">PIANO</div><span>A familiar instrument. A hidden story.</span></div>
+    <div class="clues" aria-label="Evidence to inspect">
+      <button type="button" class="clue cursor-interaction" data-clue="0"><i data-lucide="search" aria-hidden="true"></i><span>Inspect the name</span></button>
+      <button type="button" class="clue cursor-interaction" data-clue="1"><i data-lucide="music" aria-hidden="true"></i><span>Inspect the sound</span></button>
+      <button type="button" class="clue cursor-interaction" data-clue="2"><i data-lucide="file-search" aria-hidden="true"></i><span>Open the old note</span></button>
+    </div>
+    <div class="evidence" aria-live="polite">Tap a clue with your detective’s magnifying glass.</div>
+    <section class="theory"><h3>Which language should we investigate?</h3><div class="choices"><button type="button" class="cursor-interaction" data-answer="Italian">Italian</button><button type="button" class="cursor-interaction" data-answer="Old Norse">Old Norse</button><button type="button" class="cursor-interaction" data-answer="Latin">Latin</button></div></section>
+    <div class="result" aria-live="polite" hidden></div>
+    <section class="connection" hidden><span class="stamp">A NEW CONNECTION</span><h3>Piano → pianissimo</h3><p>In music, piano means soft. Pianissimo means very soft.</p><p class="next">Next mystery: how do we make a word mean “very”?</p></section>
+  </article>
+</div>
+<style>
+#word-case{padding:20px 0;color-scheme:light dark;font:16px/1.5 ui-rounded,system-ui,sans-serif;color:light-dark(#25323a,#f3ede2)}
+#word-case *{box-sizing:border-box}
+#word-case .case{max-width:660px;margin:auto;padding:24px;border-radius:20px;background:light-dark(#fff9eb,#252b32);border:1px solid light-dark(#d9caa8,#59616b);box-shadow:0 10px 28px #00000012}
+#word-case header{display:flex;justify-content:space-between;gap:16px;font-size:12px;letter-spacing:.06em;flex-wrap:wrap;padding-right:65px}
+#word-case header>span:first-child{display:flex;align-items:center;gap:8px;font-weight:700}
+#word-case .intro{text-align:center;margin:28px 0 24px}
+#word-case .stamp{font-size:11px;letter-spacing:.12em;color:light-dark(#79572e,#edc98d);font-weight:700}
+#word-case h2{font-size:24px;margin:8px 0}
+#word-case .word{font-size:48px;letter-spacing:.13em;font-weight:800;color:light-dark(#226259,#8bd3c2);margin:12px 0}
+#word-case .clues{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+#word-case button{font:inherit;min-height:48px;color:inherit;border:1px solid light-dark(#cabb9c,#69727c);border-radius:12px;background:light-dark(#fffef9,#343d46);padding:12px}
+#word-case button:hover{background:light-dark(#eee7d5,#414e59)}
+#word-case button:focus-visible{outline:3px solid light-dark(#226259,#8bd3c2);outline-offset:3px}
+#word-case .clue{display:flex;align-items:center;flex-direction:column;gap:8px;font-size:14px}
+#word-case .clue[aria-pressed=true]{border-color:light-dark(#226259,#8bd3c2);background:light-dark(#e4f0e9,#29453f)}
+#word-case .evidence{margin:16px 0 24px;padding:16px;background:light-dark(#eee5ce,#373c42);border-radius:10px;min-height:80px}
+#word-case h3{font-size:17px;margin:0 0 12px}
+#word-case .choices{display:flex;flex-wrap:wrap;gap:10px}
+#word-case .choices button{flex:1}
+#word-case .result{margin-top:18px;font-weight:650}
+#word-case .connection{margin-top:20px;padding-top:18px;border-top:1px dashed light-dark(#b5a581,#77828b)}
+#word-case .connection h3{margin-top:8px}
+#word-case p{margin:8px 0}
+#word-case .next{font-size:14px}
+@media(max-width:420px){#word-case .case{padding:18px}#word-case .clues{grid-template-columns:1fr}#word-case .clue{flex-direction:row;text-align:left}#word-case header{padding-right:60px}#word-case h2{font-size:21px}}
+</style>
+<script>
+(()=>{
+const root=document.getElementById('word-case');
+const clues=['The name used to be longer: PIANOFORTE. Which bit disappeared?','This instrument can play softly AND loudly. Could its name describe that?','An Italian note: piano = soft; forte = loud. What does pianoforte tell us?'];
+let saved=window.openai?.widgetState?.modelContent;
+let state={clue:Number.isInteger(saved?.clue)&&saved.clue>=0&&saved.clue<3?saved.clue:null,answer:['Italian','Old Norse','Latin'].includes(saved?.answer)?saved.answer:null};
+function render(){
+root.querySelectorAll('[data-clue]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.clue)===state.clue)));
+root.querySelector('.evidence').textContent=state.clue===null?'Tap a clue with your detective’s magnifying glass.':clues[state.clue];
+const solved=state.answer==='Italian';
+const result=root.querySelector('.result');result.hidden=!state.answer;
+result.textContent=solved?'Case solved! English piano is short for Italian pianoforte: “soft and loud”.':state.answer?'A theory! Check the old note. Which language matches its words?':'';
+root.querySelector('.connection').hidden=!solved;
+}
+function save(){window.openai?.setWidgetState?.({modelContent:{case:'piano',...state},privateContent:null})?.catch(()=>{});}
+root.querySelectorAll('[data-clue]').forEach(b=>b.addEventListener('click',()=>{state.clue=Number(b.dataset.clue);render();save();}));
+root.querySelectorAll('[data-answer]').forEach(b=>b.addEventListener('click',()=>{state.answer=b.dataset.answer;render();save();}));
+window.addEventListener('openai:set_globals',event=>{const incoming=event.detail?.globals?.widgetState?.modelContent;if(incoming?.case==='piano'){state={clue:Number.isInteger(incoming.clue)&&incoming.clue>=0&&incoming.clue<3?incoming.clue:null,answer:['Italian','Old Norse','Latin'].includes(incoming.answer)?incoming.answer:null};render();}});
+render();
+})();
+</script>

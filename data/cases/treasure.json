@@ -1,0 +1,633 @@
+{
+  "schemaVersion": 1,
+  "id": "treasure",
+  "title": "treasure",
+  "icon": "✧",
+  "summary": "Something precious. Its name has a history hidden in plain sight.",
+  "question": "Who gave English the word treasure?",
+  "startNodeId": "treasure-0",
+  "goalNodeIds": [
+    "treasure-2",
+    "treasure-3"
+  ],
+  "completion": "English treasure ← Middle English tresour ← Old French tresor ← Latin thesaurus. The spelling changed in England as well as travelling between languages. Italian tesoro is a related branch; the deeper history reaches Greek.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "etymology",
+      "title": "Word history",
+      "url": "https://www.etymonline.com/word/treasure"
+    },
+    {
+      "id": "german",
+      "title": "German Schatz",
+      "url": "https://www.duden.de/rechtschreibung/Schatz"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "treasure-0",
+      "form": "treasure",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Something precious.",
+      "pronunciation": {
+        "text": "treasure",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "The starting word",
+        "text": "Something precious. Its name has a history hidden in plain sight.",
+        "notice": "Compare the word forms, their meanings and their dates. What connection does the evidence support?",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Your case begins in England."
+          },
+          {
+            "title": "What the history tells us",
+            "text": "Something precious. Its name has a history hidden in plain sight."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-1",
+      "form": "tresour",
+      "languageId": "middle-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        -12,
+        -70
+      ],
+      "period": "A spelling recorded from the 1100s",
+      "meaning": "An older English word for treasure.",
+      "pronunciation": {
+        "text": "tresour",
+        "languageId": "middle-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An English manuscript",
+        "text": "Still in England! In Middle English, this word could be written tresour. A word can change its spelling in the same place, before we follow its borrowing history across the Channel.",
+        "notice": "The word is still in England. Which letters changed? Now compare the three leads on the map.",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "The word changed its spelling while staying in England."
+          },
+          {
+            "title": "What the history tells us",
+            "text": "Still in England! In Middle English, this word could be written tresour. A word can change its spelling in the same place, before we follow its borrowing history across the Channel."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-2",
+      "form": "tresor",
+      "languageId": "old-french",
+      "eraId": "medieval",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Borrowed into English in the 1100s",
+      "meaning": "Treasure, in Old French.",
+      "pronunciation": {
+        "text": "tresor",
+        "languageId": "old-french"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A French word book",
+        "text": "Tresor! The sounds are close, and the history agrees: English borrowed treasure from Old French. This is an earlier stop.",
+        "notice": "Tresor has a similar form and meaning. The historical evidence supports borrowing from Old French.",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "The French word looks and sounds close to tresour."
+          },
+          {
+            "title": "What the history tells us",
+            "text": "Tresor! The sounds are close, and the history agrees: English borrowed treasure from Old French. This is an earlier stop."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-3",
+      "form": "thesaurus",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "rome",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "An earlier ancestor",
+      "meaning": "A store of precious things.",
+      "pronunciation": {
+        "text": "thesaurus",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "tablet",
+        "title": "A Latin word tablet",
+        "text": "Thesaurus meant a store of precious things. It is an ancestor of Old French tresor—and of Italian tesoro. The two branches meet here.",
+        "notice": "Does thesaurus look familiar? In English, a thesaurus is a book of related words—a treasure store of words. The deeper history of this family reaches Greek.",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Latin thesaurus is behind French tresor and Italian tesoro."
+          },
+          {
+            "title": "What the history tells us",
+            "text": "Thesaurus meant a store of precious things. It is an ancestor of Old French tresor—and of Italian tesoro. The two branches meet here."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-italian",
+      "form": "tesoro",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        0,
+        -34
+      ],
+      "period": "Modern Italian comparison",
+      "meaning": "Treasure, in Italian.",
+      "pronunciation": {
+        "text": "tesoro",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "letter",
+        "title": "An Italian letter",
+        "text": "Tesoro is related to treasure. Both word histories lead back to Latin thesaurus. Italian is a different branch; English borrowed its word through French.",
+        "notice": "A related word can lead to the same root. It does not prove that English borrowed directly from Italian.",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Tesoro and tresor have the same Latin ancestor."
+          },
+          {
+            "title": "What the history tells us",
+            "text": "Tesoro is related to treasure. Both word histories lead back to Latin thesaurus. Italian is a different branch; English borrowed its word through French."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-german",
+      "form": "Schatz",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Modern German comparison",
+      "meaning": "Treasure, in German.",
+      "pronunciation": {
+        "text": "Schatz",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A German vocabulary card",
+        "text": "Schatz means treasure. Its recorded German history includes older scaz and scha(t)z. It follows a different history from English treasure.",
+        "notice": "A shared meaning gives us a lead to compare. This evidence does not establish a borrowing link to English treasure.",
+        "sourceIds": [
+          "german"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Same meaning. How similar is its sound to tresour?"
+          },
+          {
+            "title": "What the history tells us",
+            "text": "Schatz means treasure. Its recorded German history includes older scaz and scha(t)z. It follows a different history from English treasure."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "treasure-edge-0",
+      "source": "treasure-0",
+      "target": "treasure-1",
+      "type": "spelling",
+      "evidence": {
+        "title": "Follow the word history",
+        "text": "Still in England! In Middle English, this word could be written tresour. A word can change its spelling in the same place, before we follow its borrowing history across the Channel.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace treasure back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Still in England! In Middle English, this word could be written tresour. A word can change its spelling in the same place, before we follow its borrowing history across the Channel."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-edge-1",
+      "source": "treasure-1",
+      "target": "treasure-2",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Follow the word history",
+        "text": "Tresor! The sounds are close, and the history agrees: English borrowed treasure from Old French. This is an earlier stop.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this French word help explain English tresour?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Tresor! The sounds are close, and the history agrees: English borrowed treasure from Old French. This is an earlier stop."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-edge-2",
+      "source": "treasure-2",
+      "target": "treasure-3",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Follow the word history",
+        "text": "Thesaurus meant a store of precious things. It is an ancestor of Old French tresor—and of Italian tesoro. The two branches meet here.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace treasure back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Thesaurus meant a store of precious things. It is an ancestor of Old French tresor—and of Italian tesoro. The two branches meet here."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-italian-lead",
+      "source": "treasure-1",
+      "target": "treasure-italian",
+      "type": "related",
+      "evidence": {
+        "title": "An Italian relative",
+        "text": "Keep this related branch and inspect its Latin source.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could tesoro help us find a shared older word?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Tesoro is related to treasure. Both word histories lead back to Latin thesaurus. Italian is a different branch; English borrowed its word through French."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-italian-root",
+      "source": "treasure-italian",
+      "target": "treasure-3",
+      "type": "inheritance",
+      "evidence": {
+        "title": "The branches meet",
+        "text": "Italian tesoro and Old French tresor share the Latin ancestor thesaurus. Intermediate forms are omitted in this short trail.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace treasure back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Thesaurus meant a store of precious things. It is an ancestor of Old French tresor—and of Italian tesoro. The two branches meet here."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-german-lead",
+      "source": "treasure-1",
+      "target": "treasure-german",
+      "type": "comparison",
+      "evidence": {
+        "title": "Same meaning, different history",
+        "text": "Schatz is a useful comparison. It does not explain how the English word treasure arrived.",
+        "sourceIds": [
+          "german"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could German Schatz be the source of English tresour?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. Schatz means treasure. Its recorded German history includes older scaz and scha(t)z. It follows a different history from English treasure."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Schatz means treasure. Its recorded German history includes older scaz and scha(t)z. It follows a different history from English treasure."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-0-lead-treasure-german",
+      "source": "treasure-0",
+      "target": "treasure-german",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "Schatz means treasure. Its recorded German history includes older scaz and scha(t)z. It follows a different history from English treasure.",
+        "sourceIds": [
+          "german"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could German Schatz be the source of English tresour?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. Schatz means treasure. Its recorded German history includes older scaz and scha(t)z. It follows a different history from English treasure."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Schatz means treasure. Its recorded German history includes older scaz and scha(t)z. It follows a different history from English treasure."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-0-lead-treasure-italian",
+      "source": "treasure-0",
+      "target": "treasure-italian",
+      "type": "related",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "Tesoro is related to treasure. Both word histories lead back to Latin thesaurus. Italian is a different branch; English borrowed its word through French.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could tesoro help us find a shared older word?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Tesoro is related to treasure. Both word histories lead back to Latin thesaurus. Italian is a different branch; English borrowed its word through French."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-2-lead-treasure-german",
+      "source": "treasure-2",
+      "target": "treasure-german",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "Schatz means treasure. Its recorded German history includes older scaz and scha(t)z. It follows a different history from English treasure.",
+        "sourceIds": [
+          "german"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could German Schatz be the source of English tresour?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. Schatz means treasure. Its recorded German history includes older scaz and scha(t)z. It follows a different history from English treasure."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Schatz means treasure. Its recorded German history includes older scaz and scha(t)z. It follows a different history from English treasure."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-2-lead-treasure-italian",
+      "source": "treasure-2",
+      "target": "treasure-italian",
+      "type": "related",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "Tesoro is related to treasure. Both word histories lead back to Latin thesaurus. Italian is a different branch; English borrowed its word through French.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could tesoro help us find a shared older word?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Tesoro is related to treasure. Both word histories lead back to Latin thesaurus. Italian is a different branch; English borrowed its word through French."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-italian-lead-treasure-german",
+      "source": "treasure-italian",
+      "target": "treasure-german",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "Schatz means treasure. Its recorded German history includes older scaz and scha(t)z. It follows a different history from English treasure.",
+        "sourceIds": [
+          "german"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could German Schatz be the source of English tresour?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. Schatz means treasure. Its recorded German history includes older scaz and scha(t)z. It follows a different history from English treasure."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Schatz means treasure. Its recorded German history includes older scaz and scha(t)z. It follows a different history from English treasure."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-italian-lead-treasure-2",
+      "source": "treasure-italian",
+      "target": "treasure-2",
+      "type": "related",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "Tresor! The sounds are close, and the history agrees: English borrowed treasure from Old French. This is an earlier stop.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this French word help explain English tresour?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Tresor! The sounds are close, and the history agrees: English borrowed treasure from Old French. This is an earlier stop."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "$schema": "../case.schema.json",
+  "milestones": [
+    {
+      "nodeId": "treasure-0",
+      "label": "Today"
+    },
+    {
+      "nodeId": "treasure-1",
+      "label": "Middle English clue"
+    },
+    {
+      "nodeId": "treasure-2",
+      "label": "Old French clue"
+    },
+    {
+      "nodeId": "treasure-3",
+      "label": "Latin clue"
+    }
+  ]
+}

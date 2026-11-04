@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "id": "window",
+  "title": "window",
+  "icon": "▥",
+  "summary": "An everyday opening with a surprisingly poetic name.",
+  "question": "Where did this word come from?",
+  "startNodeId": "window-0",
+  "goalNodeIds": [
+    "window-1"
+  ],
+  "completion": "English window ← a Norse word related to Old Norse vindauga, “wind-eye”. The exact first spoken form borrowed into English was not recorded.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "etymology",
+      "title": "American Heritage · window",
+      "url": "https://www.ahdictionary.com/word/search.html?q=window"
+    },
+    {
+      "id": "italian",
+      "title": "Treccani · finestra",
+      "url": "https://www.treccani.it/vocabolario/finestra/"
+    },
+    {
+      "id": "french",
+      "title": "Académie française · fenêtre",
+      "url": "https://www.dictionnaire-academie.fr/article/A9F0457"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "window-0",
+      "form": "window",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "An opening that lets in light.",
+      "pronunciation": {
+        "text": "window",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "The starting word",
+        "text": "An everyday opening with a surprisingly poetic name.",
+        "notice": "Compare the word forms, their meanings and their dates. What connection does the evidence support?",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Could its name hide a picture?"
+          },
+          {
+            "title": "What the history tells us",
+            "text": "An everyday opening with a surprisingly poetic name."
+          }
+        ]
+      }
+    },
+    {
+      "id": "window-1",
+      "form": "vindauga",
+      "languageId": "old-norse",
+      "eraId": "medieval",
+      "placeId": "norse",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "A northern ancestor",
+      "meaning": "Wind + eye, in Old Norse.",
+      "pronunciation": {
+        "text": "vindauga",
+        "languageId": "old-norse"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An Old Norse clue",
+        "text": "Vindr means wind. Auga means eye. This Old Norse word paints a picture: a “wind-eye”. English window belongs to this northern story.",
+        "notice": "Imagine an opening that lets wind into a house. Why might someone call it a wind-eye? The exact spoken form first borrowed into English was not recorded.",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Vindauga sounds rather like window. Is that a useful clue?"
+          },
+          {
+            "title": "What the history tells us",
+            "text": "Vindr means wind. Auga means eye. This Old Norse word paints a picture: a “wind-eye”. English window belongs to this northern story."
+          }
+        ]
+      }
+    },
+    {
+      "id": "window-french",
+      "form": "fenêtre",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "A modern comparison",
+      "meaning": "A window, in French.",
+      "pronunciation": {
+        "text": "fenêtre",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "French word card",
+        "text": "French fenêtre is another name for the same thing. The English word window has Norse ancestry.",
+        "notice": "Compare the meaning, sound, and historical evidence.",
+        "sourceIds": [
+          "etymology",
+          "french"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Say fenêtre and window. Do their sounds suggest a match?"
+          },
+          {
+            "title": "What the history tells us",
+            "text": "French fenêtre is another name for the same thing. The English word window has Norse ancestry."
+          }
+        ]
+      }
+    },
+    {
+      "id": "window-italian",
+      "form": "finestra",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "A modern comparison",
+      "meaning": "A window, in Italian.",
+      "pronunciation": {
+        "text": "finestra",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "Italian word card",
+        "text": "Italian finestra comes from Latin fenestra. That is a different history from the English word window.",
+        "notice": "Compare the meaning, sound, and historical evidence.",
+        "sourceIds": [
+          "italian"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "This word looks closer to fenêtre than to window."
+          },
+          {
+            "title": "What the history tells us",
+            "text": "Italian finestra comes from Latin fenestra. That is a different history from the English word window."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "window-edge-0",
+      "source": "window-0",
+      "target": "window-1",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Follow the word history",
+        "text": "Vindr means wind. Auga means eye. This Old Norse word paints a picture: a “wind-eye”. English window belongs to this northern story.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace window back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Vindr means wind. Auga means eye. This Old Norse word paints a picture: a “wind-eye”. English window belongs to this northern story."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "window-0-lead-window-french",
+      "source": "window-0",
+      "target": "window-french",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "French fenêtre is another name for the same thing. The English word window has Norse ancestry.",
+        "sourceIds": [
+          "etymology",
+          "french"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this word explain where English window came from?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. French fenêtre is another name for the same thing. The English word window has Norse ancestry."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "French fenêtre is another name for the same thing. The English word window has Norse ancestry."
+          }
+        ]
+      }
+    },
+    {
+      "id": "window-0-lead-window-italian",
+      "source": "window-0",
+      "target": "window-italian",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "Italian finestra comes from Latin fenestra. That is a different history from the English word window.",
+        "sourceIds": [
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this word explain where English window came from?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. Italian finestra comes from Latin fenestra. That is a different history from the English word window."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Italian finestra comes from Latin fenestra. That is a different history from the English word window."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "$schema": "../case.schema.json",
+  "milestones": [
+    {
+      "nodeId": "window-0",
+      "label": "Today"
+    },
+    {
+      "nodeId": "window-1",
+      "label": "Old Norse clue"
+    }
+  ]
+}

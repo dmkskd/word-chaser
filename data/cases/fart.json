@@ -1,0 +1,335 @@
+{
+  "schemaVersion": 1,
+  "id": "fart",
+  "title": "fart",
+  "icon": "💨",
+  "summary": "To let gas out of your bottom. A very old word for a very silly sound.",
+  "question": "Where did this word come from?",
+  "startNodeId": "fart-0",
+  "goalNodeIds": [
+    "fart-1"
+  ],
+  "completion": "fart ← Old English feortan. You followed the action word back within England. Old Norse freta is a related word on another branch. Pip would like everyone to know that the suspicious noise was definitely a dragon.",
+  "partner": "Pip suspects a dragon. Or the detective.",
+  "sources": [
+    {
+      "id": "etymology",
+      "title": "Word history",
+      "url": "https://www.etymonline.com/word/fart"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "fart-0",
+      "form": "fart",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today · the action word",
+      "meaning": "To let gas out of your bottom.",
+      "pronunciation": {
+        "text": "fart",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "The starting word",
+        "text": "To let gas out of your bottom. A very old word for a very silly sound.",
+        "notice": "Compare the word forms, their meanings and their dates. What connection does the evidence support?",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Pip blames a dragon. We need older evidence."
+          },
+          {
+            "title": "What the history tells us",
+            "text": "To let gas out of your bottom. A very old word for a very silly sound."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fart-1",
+      "form": "feortan",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        -12,
+        -70
+      ],
+      "period": "An older word for the same action",
+      "meaning": "To fart, in Old English.",
+      "pronunciation": {
+        "text": "feortan",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "The case of the suspicious noise",
+        "text": "An older English word list gives feortan: to fart. People had this word centuries ago! The spelling changed locally. It also has relatives in other Germanic languages.",
+        "notice": "Compare fart and feortan. Which letters stay familiar? If we find a similar word elsewhere, what evidence would help us decide whether it is a borrowed word or a relative?",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare feortan with fart. Spot the f, r and t."
+          },
+          {
+            "title": "What the history tells us",
+            "text": "An older English word list gives feortan: to fart. People had this word centuries ago! The spelling changed locally. It also has relatives in other Germanic languages."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fart-relative",
+      "form": "freta",
+      "languageId": "old-norse",
+      "eraId": "medieval",
+      "placeId": "norse",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Historical relative",
+      "meaning": "To fart, in Old Norse.",
+      "pronunciation": {
+        "text": "freta",
+        "languageId": "old-norse"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A related word card",
+        "text": "Old Norse freta is related to English fart. This is another branch of the word family, not an asserted source of the English word.",
+        "notice": "Related words can share a source without one being borrowed directly from the other.",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Freta is a cousin of the English word."
+          },
+          {
+            "title": "What the history tells us",
+            "text": "Old Norse freta is related to English fart. This is another branch of the word family, not an asserted source of the English word."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fart-french",
+      "form": "péter",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "A modern comparison",
+      "meaning": "To fart, in French.",
+      "pronunciation": {
+        "text": "péter",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "French word card",
+        "text": "French péter is not the source of the English word fart. This case follows the English word back to Old English feortan.",
+        "notice": "Compare the meaning, sound, and historical evidence.",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Same action. Could it explain the English word?"
+          },
+          {
+            "title": "What the history tells us",
+            "text": "French péter is not the source of the English word fart. This case follows the English word back to Old English feortan."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "fart-edge-0",
+      "source": "fart-0",
+      "target": "fart-1",
+      "type": "spelling",
+      "evidence": {
+        "title": "Follow the word history",
+        "text": "An older English word list gives feortan: to fart. People had this word centuries ago! The spelling changed locally. It also has relatives in other Germanic languages.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace fart back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "An older English word list gives feortan: to fart. People had this word centuries ago! The spelling changed locally. It also has relatives in other Germanic languages."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fart-related",
+      "source": "fart-1",
+      "target": "fart-relative",
+      "type": "related",
+      "evidence": {
+        "title": "A family connection",
+        "text": "Old Norse freta is related to English fart. This is another branch of the word family, not an asserted source of the English word.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace fart back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Old Norse freta is related to English fart. This is another branch of the word family, not an asserted source of the English word."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fart-0-lead-fart-french",
+      "source": "fart-0",
+      "target": "fart-french",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "French péter is not the source of the English word fart. This case follows the English word back to Old English feortan.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this word explain where English fart came from?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. French péter is not the source of the English word fart. This case follows the English word back to Old English feortan."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "French péter is not the source of the English word fart. This case follows the English word back to Old English feortan."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fart-0-lead-fart-relative",
+      "source": "fart-0",
+      "target": "fart-relative",
+      "type": "related",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "Old Norse freta is related to English fart. This is another branch of the word family, not an asserted source of the English word.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace fart back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Old Norse freta is related to English fart. This is another branch of the word family, not an asserted source of the English word."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fart-1-lead-fart-french",
+      "source": "fart-1",
+      "target": "fart-french",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "French péter is not the source of the English word fart. This case follows the English word back to Old English feortan.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this word explain where English fart came from?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. French péter is not the source of the English word fart. This case follows the English word back to Old English feortan."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "French péter is not the source of the English word fart. This case follows the English word back to Old English feortan."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "$schema": "../case.schema.json",
+  "milestones": [
+    {
+      "nodeId": "fart-0",
+      "label": "Today"
+    },
+    {
+      "nodeId": "fart-1",
+      "label": "Old English clue"
+    }
+  ]
+}

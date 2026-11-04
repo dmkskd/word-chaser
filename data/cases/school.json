@@ -1,0 +1,760 @@
+{
+  "schemaVersion": 1,
+  "id": "school",
+  "title": "school",
+  "icon": "📚",
+  "summary": "A familiar place whose word once had a surprising connection to free time.",
+  "question": "Where did this word come from?",
+  "startNodeId": "school-0",
+  "goalNodeIds": [
+    "school-2",
+    "school-3"
+  ],
+  "completion": "school ← Old English scol ← Latin schola ← Greek skholē. You traced a word through English, Latin and Greek—and discovered a change in meaning as well as spelling. This is the learning word; a school of fish has a different history.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "etymology",
+      "title": "Word history",
+      "url": "https://www.etymonline.com/word/school"
+    },
+    {
+      "id": "german",
+      "title": "German Schule",
+      "url": "https://www.duden.de/rechtschreibung/Schule"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "school-0",
+      "form": "school",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A place for learning.",
+      "pronunciation": {
+        "text": "school",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "The starting word",
+        "text": "A familiar place whose word once had a surprising connection to free time.",
+        "notice": "Compare the word forms, their meanings and their dates. What connection does the evidence support?",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "How far back can we follow its name?"
+          },
+          {
+            "title": "What the history tells us",
+            "text": "A familiar place whose word once had a surprising connection to free time."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-1",
+      "form": "scol",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        -12,
+        -70
+      ],
+      "period": "Before 900",
+      "meaning": "An older English learning word.",
+      "pronunciation": {
+        "text": "scol",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An older English learning word",
+        "text": "An older English word list gives scol for a place of learning. It is an earlier form in the story of school. Its source sends us to Latin.",
+        "notice": "Compare scol with school. Which letters can you recognise? A spelling comparison alone does not tell us exactly how everyone pronounced it.",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare scol with school. Which letters stayed?"
+          },
+          {
+            "title": "What the history tells us",
+            "text": "An older English word list gives scol for a place of learning. It is an earlier form in the story of school. Its source sends us to Latin."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-2",
+      "form": "schola",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "rome",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "A place of learning",
+      "meaning": "A place of learning, in Latin.",
+      "pronunciation": {
+        "text": "schola",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "tablet",
+        "title": "A Latin learning place",
+        "text": "Latin schola meant a place of instruction or a learned discussion. English scol came from Latin. But Latin had borrowed this word too.",
+        "notice": "Compare schola, scol and school. What remains recognisable as the word moves through languages?",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Latin schola was borrowed from Greek."
+          },
+          {
+            "title": "What the history tells us",
+            "text": "Latin schola meant a place of instruction or a learned discussion. English scol came from Latin. But Latin had borrowed this word too."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-3",
+      "form": "skholē · σχολή",
+      "languageId": "ancient-greek",
+      "eraId": "greek",
+      "placeId": "greece",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Leisure, discussion and learning",
+      "meaning": "Leisure, discussion and learning.",
+      "pronunciation": {
+        "text": "σχολή",
+        "languageId": "ancient-greek"
+      },
+      "evidence": {
+        "kind": "scroll",
+        "title": "From leisure to learning",
+        "text": "Greek skholē could mean leisure, learned discussion, and a place for lectures. That Greek word gave Latin schola its name. The meanings changed as people used the word in new ways.",
+        "notice": "How can a word for free time become connected with school? Notice that meaning can change along with spelling.",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "The meaning changed as the word travelled."
+          },
+          {
+            "title": "What the history tells us",
+            "text": "Greek skholē could mean leisure, learned discussion, and a place for lectures. That Greek word gave Latin schola its name. The meanings changed as people used the word in new ways."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-relative",
+      "form": "Schule",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Modern comparison",
+      "meaning": "School, in German.",
+      "pronunciation": {
+        "text": "Schule",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A related word card",
+        "text": "German Schule reaches Latin schola through older German forms. English and German share a Latin source.",
+        "notice": "Related words can share a source without one being borrowed directly from the other.",
+        "sourceIds": [
+          "german"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Schule and school share an earlier Latin source."
+          },
+          {
+            "title": "What the history tells us",
+            "text": "German Schule reaches Latin schola through older German forms. English and German share a Latin source."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-french",
+      "form": "école",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "A modern comparison",
+      "meaning": "School, in French.",
+      "pronunciation": {
+        "text": "école",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "French word card",
+        "text": "French école is related to English school through Latin schola.",
+        "notice": "Compare the meaning, sound, and historical evidence.",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "École belongs to the same Latin word family."
+          },
+          {
+            "title": "What the history tells us",
+            "text": "French école is related to English school through Latin schola."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-fish",
+      "form": "school of fish",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        -80,
+        20
+      ],
+      "period": "A modern comparison",
+      "meaning": "A group of fish.",
+      "pronunciation": {
+        "text": "school of fish",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "English word card",
+        "text": "A school of fish has a different word history from a school for learning.",
+        "notice": "Compare the meaning, sound, and historical evidence.",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Same written word. Is it the same meaning?"
+          },
+          {
+            "title": "What the history tells us",
+            "text": "A school of fish has a different word history from a school for learning."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "school-edge-0",
+      "source": "school-0",
+      "target": "school-1",
+      "type": "spelling",
+      "evidence": {
+        "title": "Follow the word history",
+        "text": "An older English word list gives scol for a place of learning. It is an earlier form in the story of school. Its source sends us to Latin.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace school back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "An older English word list gives scol for a place of learning. It is an earlier form in the story of school. Its source sends us to Latin."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-edge-1",
+      "source": "school-1",
+      "target": "school-2",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Follow the word history",
+        "text": "Latin schola meant a place of instruction or a learned discussion. English scol came from Latin. But Latin had borrowed this word too.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace school back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Latin schola meant a place of instruction or a learned discussion. English scol came from Latin. But Latin had borrowed this word too."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-edge-2",
+      "source": "school-2",
+      "target": "school-3",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Follow the word history",
+        "text": "Greek skholē could mean leisure, learned discussion, and a place for lectures. That Greek word gave Latin schola its name. The meanings changed as people used the word in new ways.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace school back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Greek skholē could mean leisure, learned discussion, and a place for lectures. That Greek word gave Latin schola its name. The meanings changed as people used the word in new ways."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-related",
+      "source": "school-1",
+      "target": "school-relative",
+      "type": "related",
+      "evidence": {
+        "title": "A family connection",
+        "text": "German Schule reaches Latin schola through older German forms. English and German share a Latin source.",
+        "sourceIds": [
+          "german"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace school back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "German Schule reaches Latin schola through older German forms. English and German share a Latin source."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-related-root",
+      "source": "school-relative",
+      "target": "school-2",
+      "type": "inheritance",
+      "evidence": {
+        "title": "A shared Latin source",
+        "text": "The German branch reaches Latin schola through older German forms, which are omitted here.",
+        "sourceIds": [
+          "german"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace school back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Latin schola meant a place of instruction or a learned discussion. English scol came from Latin. But Latin had borrowed this word too."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-french-root",
+      "source": "school-french",
+      "target": "school-2",
+      "type": "related",
+      "evidence": {
+        "title": "A shared source",
+        "text": "French école is related to English school through Latin schola.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace school back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Latin schola meant a place of instruction or a learned discussion. English scol came from Latin. But Latin had borrowed this word too."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-0-lead-school-relative",
+      "source": "school-0",
+      "target": "school-relative",
+      "type": "related",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "German Schule reaches Latin schola through older German forms. English and German share a Latin source.",
+        "sourceIds": [
+          "german"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace school back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "German Schule reaches Latin schola through older German forms. English and German share a Latin source."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-0-lead-school-french",
+      "source": "school-0",
+      "target": "school-french",
+      "type": "related",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "French école is related to English school through Latin schola.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace school back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "French école is related to English school through Latin schola."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-1-lead-school-french",
+      "source": "school-1",
+      "target": "school-french",
+      "type": "related",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "French école is related to English school through Latin schola.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace school back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "French école is related to English school through Latin schola."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-2-lead-school-relative",
+      "source": "school-2",
+      "target": "school-relative",
+      "type": "related",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "German Schule reaches Latin schola through older German forms. English and German share a Latin source.",
+        "sourceIds": [
+          "german"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace school back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "German Schule reaches Latin schola through older German forms. English and German share a Latin source."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-2-lead-school-french",
+      "source": "school-2",
+      "target": "school-french",
+      "type": "related",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "French école is related to English school through Latin schola.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace school back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "French école is related to English school through Latin schola."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-relative-lead-school-french",
+      "source": "school-relative",
+      "target": "school-french",
+      "type": "related",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "French école is related to English school through Latin schola.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace school back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "French école is related to English school through Latin schola."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-relative-lead-school-fish",
+      "source": "school-relative",
+      "target": "school-fish",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "A school of fish has a different word history from a school for learning.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this word explain where English school came from?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. A school of fish has a different word history from a school for learning."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "A school of fish has a different word history from a school for learning."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-french-lead-school-relative",
+      "source": "school-french",
+      "target": "school-relative",
+      "type": "related",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "German Schule reaches Latin schola through older German forms. English and German share a Latin source.",
+        "sourceIds": [
+          "german"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace school back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "German Schule reaches Latin schola through older German forms. English and German share a Latin source."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-french-lead-school-fish",
+      "source": "school-french",
+      "target": "school-fish",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "A school of fish has a different word history from a school for learning.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this word explain where English school came from?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. A school of fish has a different word history from a school for learning."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "A school of fish has a different word history from a school for learning."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "$schema": "../case.schema.json",
+  "milestones": [
+    {
+      "nodeId": "school-0",
+      "label": "Today"
+    },
+    {
+      "nodeId": "school-1",
+      "label": "Old English clue"
+    },
+    {
+      "nodeId": "school-2",
+      "label": "Latin clue"
+    },
+    {
+      "nodeId": "school-3",
+      "label": "Ancient Greek clue"
+    }
+  ]
+}

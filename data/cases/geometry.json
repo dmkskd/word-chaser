@@ -1,0 +1,462 @@
+{
+  "schemaVersion": 1,
+  "id": "geometry",
+  "title": "geometry",
+  "icon": "📐",
+  "summary": "Triangles, circles and a name hiding an earthy secret.",
+  "question": "What is the geo in geometry?",
+  "startNodeId": "geometry-now",
+  "goalNodeIds": [
+    "geometry-french",
+    "geometry-latin",
+    "geometry-greek"
+  ],
+  "completion": "Geometry travelled through French and Latin from Greek. Its name connects earth or land with measuring. Geography shares the geo part, but means describing the earth.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Word history · geometry",
+      "url": "https://www.ahdictionary.com/word/search.html?q=geometry"
+    },
+    {
+      "id": "italian",
+      "title": "Treccani · geometria",
+      "url": "https://www.treccani.it/vocabolario/geometria/"
+    },
+    {
+      "id": "comparison",
+      "title": "American Heritage · gem",
+      "url": "https://www.ahdictionary.com/word/search.html?q=gem"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "geometry-now",
+      "form": "geometry",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Exploring shapes, sizes and angles.",
+      "pronunciation": {
+        "text": "geometry",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A school notebook",
+        "text": "Triangles, circles and a name hiding an earthy secret.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "What does the beginning geo make you think of?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Triangles, circles and a name hiding an earthy secret."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geometry-french",
+      "form": "geometrie",
+      "languageId": "old-french",
+      "eraId": "medieval",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Medieval French",
+      "meaning": "A subject name in a French book.",
+      "pronunciation": {
+        "text": "geometrie",
+        "languageId": "old-french"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A French schoolbook",
+        "text": "English geometry came through French. Compare the French ending -ie with the English ending -y.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try saying the French and English words slowly."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "English geometry came through French. Compare the French ending -ie with the English ending -y."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geometry-latin",
+      "form": "geometria",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "rome",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "An older Latin form",
+      "meaning": "A subject name in a Latin book.",
+      "pronunciation": {
+        "text": "geometria",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "tablet",
+        "title": "A Latin book",
+        "text": "Latin geometria supplied the French name. Latin had borrowed this word from Greek.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare the middle of the Latin and French words."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Latin geometria supplied the French name. Latin had borrowed this word from Greek."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geometry-greek",
+      "form": "geōmetria",
+      "languageId": "ancient-greek",
+      "eraId": "greek",
+      "placeId": "greece",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Ancient Greek",
+      "meaning": "A Greek word to investigate.",
+      "pronunciation": {
+        "text": "γεωμετρία",
+        "languageId": "ancient-greek"
+      },
+      "evidence": {
+        "kind": "scroll",
+        "title": "A Greek book",
+        "text": "Gē means earth or land; -metria means measuring. Picture measuring a field before building a fence.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Break the word after geo. Could each part carry meaning?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Gē means earth or land; -metria means measuring. Picture measuring a field before building a fence."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geometry-italian",
+      "form": "geometria",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A subject name in an Italian schoolbook.",
+      "pronunciation": {
+        "text": "geometria",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "letter",
+        "title": "An Italian schoolbook",
+        "text": "Italian geometria also leads back through Latin to Greek. Italian and English are cousins here; English did not borrow this modern Italian word directly.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "italian"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "A shared ending can help us spot a word family."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Italian geometria also leads back through Latin to Greek. Italian and English are cousins here; English did not borrow this modern Italian word directly."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geometry-gem",
+      "form": "gem",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        -12,
+        -70
+      ],
+      "period": "Today",
+      "meaning": "A jewel or precious stone.",
+      "pronunciation": {
+        "text": "gem",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A similar-sounding word",
+        "text": "Gem and geometry begin with similar sounds, but geometry is not named after jewels. The word gem follows Latin gemma.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "comparison"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare the meanings as well as the first few sounds."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Gem and geometry begin with similar sounds, but geometry is not named after jewels. The word gem follows Latin gemma."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "geometry-now-to-geometry-french",
+      "source": "geometry-now",
+      "target": "geometry-french",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. The English word came through French.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this French word help explain English geometry?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The English word came through French."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. The English word came through French."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geometry-now-to-geometry-italian",
+      "source": "geometry-now",
+      "target": "geometry-italian",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Both word histories lead through Latin to Greek.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could the Italian and English names share an older source?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Both word histories lead through Latin to Greek."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. Both word histories lead through Latin to Greek."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geometry-now-to-geometry-gem",
+      "source": "geometry-now",
+      "target": "geometry-gem",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Gem has its own word history. Geometry’s Greek name connects land with measuring.",
+        "sourceIds": [
+          "history",
+          "comparison"
+        ]
+      },
+      "challenge": {
+        "prompt": "Was geometry named after jewels?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. No. Gem has its own word history. Geometry’s Greek name connects land with measuring."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Gem has its own word history. Geometry’s Greek name connects land with measuring."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geometry-french-to-geometry-latin",
+      "source": "geometry-french",
+      "target": "geometry-latin",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. The French subject name follows the Latin word.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this Latin word be behind the French one?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The French subject name follows the Latin word."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. The French subject name follows the Latin word."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geometry-latin-to-geometry-greek",
+      "source": "geometry-latin",
+      "target": "geometry-greek",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Gē means earth or land; -metria means measuring. Picture measuring a field before building a fence.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Latin have borrowed this subject name from Greek?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Gē means earth or land; -metria means measuring. Picture measuring a field before building a fence."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Gē means earth or land; -metria means measuring. Picture measuring a field before building a fence."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geometry-italian-to-geometry-latin",
+      "source": "geometry-italian",
+      "target": "geometry-latin",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Italian keeps another branch of the Latin word family.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this be the older source of the Italian word?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Italian keeps another branch of the Latin word family."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. Italian keeps another branch of the Latin word family."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "geometry-now",
+      "label": "Today"
+    },
+    {
+      "nodeId": "geometry-french",
+      "label": "French clue"
+    },
+    {
+      "nodeId": "geometry-latin",
+      "label": "Latin clue"
+    },
+    {
+      "nodeId": "geometry-greek",
+      "label": "Greek word parts"
+    }
+  ],
+  "$schema": "../case.schema.json"
+}

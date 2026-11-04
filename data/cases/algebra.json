@@ -1,0 +1,402 @@
+{
+  "schemaVersion": 1,
+  "id": "algebra",
+  "title": "algebra",
+  "icon": "🔢",
+  "summary": "A hidden-number puzzle: □ + 2 = 5. What number belongs in the box?",
+  "question": "Where did the name algebra begin?",
+  "startNodeId": "algebra-now",
+  "goalNodeIds": [
+    "algebra-latin",
+    "algebra-arabic"
+  ],
+  "completion": "Algebra leads through medieval Latin to Arabic al-jabr and a book written in Baghdad. Words and ideas travel with books and translations.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · algebra",
+      "url": "https://www.etymonline.com/word/algebra"
+    },
+    {
+      "id": "baghdad",
+      "title": "University of St Andrews · Al-Khwarizmi",
+      "url": "https://mathshistory.st-andrews.ac.uk/Biographies/Al-Khwarizmi/"
+    },
+    {
+      "id": "italian",
+      "title": "Treccani · algebra",
+      "url": "https://www.treccani.it/vocabolario/algebra/"
+    },
+    {
+      "id": "translation",
+      "title": "Robert of Chester’s Latin translation · historical edition",
+      "url": "https://www.wilbourhall.org/pdfs/mbp/robertofchesters00khuw.pdf"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "algebra-now",
+      "form": "algebra",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Finding a hidden number: □ + 2 = 5.",
+      "pronunciation": {
+        "text": "algebra",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A maths notebook",
+        "text": "Think of algebra as a number detective game. In □ + 2 = 5, the hidden number is 3. A letter such as x can take the box’s place.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try the puzzle: what number plus 2 makes 5?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "The number is 3. In algebra, a box or letter can stand for a number we are trying to find."
+          }
+        ]
+      }
+    },
+    {
+      "id": "algebra-latin",
+      "form": "algebra",
+      "languageId": "medieval-latin",
+      "eraId": "medieval",
+      "placeId": "latin-spain",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Latin translations · 1100s",
+      "meaning": "An Arabic maths book, translated into Latin in Spain.",
+      "pronunciation": {
+        "text": "algebra",
+        "languageId": "medieval-latin"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An Arabic book translated into Latin",
+        "text": "Why Spain? Scholars there translated Arabic books into Latin so more readers could study them. Latin was used for learning across many countries. This pin marks translation work in Spain, not where Latin began.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "translation"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "A language can be used far from its birthplace. Could this book have been translated here?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Scholars in medieval Spain translated Arabic maths into Latin. Follow the book back to its Arabic source. Spain is a translation stop; Latin began in ancient Italy."
+          }
+        ]
+      },
+      "mapCaption": "Translated in Spain · 1100s",
+      "mapTitle": "A Latin translation"
+    },
+    {
+      "id": "algebra-arabic",
+      "form": "al-jabr · الجبر",
+      "languageId": "arabic",
+      "eraId": "medieval",
+      "placeId": "baghdad",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Al-Khwarizmi’s book · around 820",
+      "meaning": "Restoring or putting parts back together.",
+      "pronunciation": {
+        "text": "الجبر",
+        "languageId": "arabic"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An Arabic maths book",
+        "text": "Al-Khwarizmi wrote a maths book in Baghdad. It taught people how to find unknown numbers, helping them solve everyday problems such as sharing an inheritance or measuring land. Al-jabr was part of its title. That Arabic expression gave algebra its name through medieval Latin.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "baghdad"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Listen for al-jabr inside algebra."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Al-Khwarizmi wrote a maths book in Baghdad. Al-jabr was part of its title. That Arabic expression gave algebra its name through medieval Latin."
+          }
+        ]
+      }
+    },
+    {
+      "id": "algebra-italian",
+      "form": "algebra",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Algebra, in Italian.",
+      "pronunciation": {
+        "text": "algebra",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "An Italian maths notebook",
+        "text": "Italian algebra also comes through medieval Latin from Arabic. The familiar spelling does not mean the word began in Italy.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "italian"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Does an identical spelling tell us where a word was first used?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Italian algebra also comes through medieval Latin from Arabic. The familiar spelling does not mean the word began in Italy."
+          }
+        ]
+      }
+    },
+    {
+      "id": "algebra-add",
+      "form": "addition",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        -90,
+        -65
+      ],
+      "period": "Today",
+      "meaning": "Putting numbers together.",
+      "pronunciation": {
+        "text": "addition",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "Another maths clue",
+        "text": "Addition is something you do in maths. It does not supply the name algebra; that name follows an Arabic trail.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Two words can belong in the same lesson without having the same origin."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Addition is something you do in maths. It does not supply the name algebra; that name follows an Arabic trail."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "algebra-now-to-algebra-latin",
+      "source": "algebra-now",
+      "target": "algebra-latin",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. English algebra follows a medieval Latin name borrowed from Arabic.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could medieval Latin help explain the English name algebra?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. English algebra follows a medieval Latin name borrowed from Arabic."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. English algebra follows a medieval Latin name borrowed from Arabic."
+          }
+        ]
+      },
+      "timeLabel": "Today → 1100s"
+    },
+    {
+      "id": "algebra-now-to-algebra-italian",
+      "source": "algebra-now",
+      "target": "algebra-italian",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Both names lead through medieval Latin to Arabic.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Italian algebra share an older source with the English word?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Both names lead through medieval Latin to Arabic."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. Both names lead through medieval Latin to Arabic."
+          }
+        ]
+      }
+    },
+    {
+      "id": "algebra-now-to-algebra-add",
+      "source": "algebra-now",
+      "target": "algebra-add",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. The words share a classroom, but algebra has an Arabic name.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did algebra get its name from the English word addition?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. No. The words share a classroom, but algebra has an Arabic name."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. The words share a classroom, but algebra has an Arabic name."
+          }
+        ]
+      }
+    },
+    {
+      "id": "algebra-latin-to-algebra-arabic",
+      "source": "algebra-latin",
+      "target": "algebra-arabic",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Al-jabr in an Arabic book title became the name algebra.",
+        "sourceIds": [
+          "history",
+          "baghdad"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this Arabic book explain the Latin maths name?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Al-jabr in an Arabic book title became the name algebra."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. Al-jabr in an Arabic book title became the name algebra."
+          }
+        ]
+      },
+      "timeLabel": "1100s → around 820"
+    },
+    {
+      "id": "algebra-italian-to-algebra-latin",
+      "source": "algebra-italian",
+      "target": "algebra-latin",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. The Italian and English trails meet at medieval Latin.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Italian algebra come through medieval Latin too?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The Italian and English trails meet at medieval Latin."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. The Italian and English trails meet at medieval Latin."
+          }
+        ]
+      },
+      "timeLabel": "Today → 1100s"
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "algebra-now",
+      "label": "Today"
+    },
+    {
+      "nodeId": "algebra-latin",
+      "label": "A Latin translation"
+    },
+    {
+      "nodeId": "algebra-arabic",
+      "label": "An Arabic book"
+    }
+  ],
+  "$schema": "../case.schema.json"
+}

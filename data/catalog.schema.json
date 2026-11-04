@@ -1,0 +1,235 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "title",
+    "languages",
+    "eras",
+    "places",
+    "relations",
+    "artifacts",
+    "cases",
+    "rules"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^cases/[a-z][a-z0-9-]*\\.json$"
+      }
+    },
+    "languages": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "voiceTag",
+          "voiceLabel",
+          "approximate"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "voiceTag": {
+            "type": "string",
+            "minLength": 2
+          },
+          "voiceLabel": {
+            "type": "string",
+            "minLength": 1
+          },
+          "approximate": {
+            "type": "boolean"
+          },
+          "fallback": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "lang",
+              "label"
+            ],
+            "properties": {
+              "lang": {
+                "type": "string",
+                "minLength": 2
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "eras": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "label",
+          "icon",
+          "startYear",
+          "endYear"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "startYear": {
+            "type": "integer"
+          },
+          "endYear": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "places": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "x",
+          "y"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "x": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 900
+          },
+          "y": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 650
+          }
+        }
+      }
+    },
+    "relations": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "category",
+          "line",
+          "outcome"
+        ],
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "category": {
+            "enum": [
+              "ancestry",
+              "related",
+              "comparison"
+            ]
+          },
+          "line": {
+            "enum": [
+              "solid",
+              "dashed",
+              "dotted"
+            ]
+          },
+          "outcome": {
+            "enum": [
+              "connected",
+              "excluded"
+            ]
+          }
+        }
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "icon",
+          "label"
+        ],
+        "properties": {
+          "icon": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "correctPoints",
+        "assistedPoints",
+        "wrongPenalty"
+      ],
+      "properties": {
+        "correctPoints": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "assistedPoints": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "wrongPenalty": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    }
+  }
+}

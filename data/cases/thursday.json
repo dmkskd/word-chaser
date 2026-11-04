@@ -1,0 +1,421 @@
+{
+  "schemaVersion": 1,
+  "id": "thursday",
+  "title": "Thursday",
+  "icon": "⚡",
+  "summary": "A thunderous mystery hiding in your calendar.",
+  "question": "Whose name is hiding in Thursday?",
+  "startNodeId": "thursday-now",
+  "goalNodeIds": [
+    "thursday-old",
+    "thursday-latin"
+  ],
+  "completion": "Thursday keeps a thunder-god name. Norse helped shape it; a Roman calendar idea sits further back in its story.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "history",
+      "title": "American Heritage · Thursday",
+      "url": "https://www.ahdictionary.com/word/search.html?q=Thursday"
+    },
+    {
+      "id": "german",
+      "title": "Duden · Donnerstag",
+      "url": "https://www.duden.de/rechtschreibung/Donnerstag"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "thursday-now",
+      "form": "Thursday",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "The day after Wednesday.",
+      "pronunciation": {
+        "text": "Thursday",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A calendar label",
+        "text": "A weekday name can hide an old story.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Can you hear a name inside Thursday?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "A weekday name can hide an old story."
+          }
+        ]
+      }
+    },
+    {
+      "id": "thursday-old",
+      "form": "þunres dæg",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        -18,
+        -78
+      ],
+      "period": "Before 1100",
+      "meaning": "Thunor’s day, in Old English.",
+      "pronunciation": {
+        "text": "þunres dæg",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An English calendar clue",
+        "text": "Thunor was a thunder god. This older English name developed into Thursday, with influence from a Norse name too.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "The letter þ sounds like th. Dæg means day."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Thunor was a thunder god. This older English name developed into Thursday, with influence from a Norse name too."
+          }
+        ]
+      }
+    },
+    {
+      "id": "thursday-norse",
+      "form": "þórsdagr",
+      "languageId": "old-norse",
+      "eraId": "medieval",
+      "placeId": "norse",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Medieval Norse",
+      "meaning": "Thor’s day, in Old Norse.",
+      "pronunciation": {
+        "text": "þórsdagr",
+        "languageId": "old-norse"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A northern calendar clue",
+        "text": "The Norse name helped shape the English one. Thor and Thunor belong to the same thunder-god tradition.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Þórr is Thor. Compare the first part with Thurs."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "The Norse name helped shape the English one. Thor and Thunor belong to the same thunder-god tradition."
+          }
+        ]
+      }
+    },
+    {
+      "id": "thursday-german",
+      "form": "Donnerstag",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Thursday, in German.",
+      "pronunciation": {
+        "text": "Donnerstag",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A German calendar clue",
+        "text": "Donnerstag also preserves a thunder-god day. It is a related naming tradition, rather than the source of the English word.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "german"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Donner means thunder. Could different sounds hide a shared idea?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Donnerstag also preserves a thunder-god day. It is a related naming tradition, rather than the source of the English word."
+          }
+        ]
+      }
+    },
+    {
+      "id": "thursday-latin",
+      "form": "Iovis dies",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "rome",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Roman naming tradition",
+      "meaning": "Jupiter’s day, in Latin.",
+      "pronunciation": {
+        "text": "Iovis dies",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "tablet",
+        "title": "A Roman calendar clue",
+        "text": "The Germanic name translated a Roman idea: a day for Jupiter became a day for a local thunder god. The idea travelled, rather than the Latin sounds.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Jupiter and Thunor were both linked with thunder."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "The Germanic name translated a Roman idea: a day for Jupiter became a day for a local thunder god. The idea travelled, rather than the Latin sounds."
+          }
+        ]
+      }
+    },
+    {
+      "id": "thursday-thirsty",
+      "form": "thirsty",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        -90,
+        20
+      ],
+      "period": "Today",
+      "meaning": "Wanting a drink.",
+      "pronunciation": {
+        "text": "thirsty",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A similar-sounding word",
+        "text": "Thirsty sounds a little like Thursday, but Thursday’s history points to a thunder god, not a drink.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "A matching sound is not enough. Does the meaning fit?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Thirsty sounds a little like Thursday, but Thursday’s history points to a thunder god, not a drink."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "thursday-now-to-thursday-old",
+      "source": "thursday-now",
+      "target": "thursday-old",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes: this is the thunder-god name behind Thursday.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this be an older English name for Thursday?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes: this is the thunder-god name behind Thursday."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes: this is the thunder-god name behind Thursday."
+          }
+        ]
+      }
+    },
+    {
+      "id": "thursday-now-to-thursday-german",
+      "source": "thursday-now",
+      "target": "thursday-german",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. The names share an old naming tradition. English did not borrow Thursday from modern German.",
+        "sourceIds": [
+          "history",
+          "german"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this German name share Thursday’s thunder-god story?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The names share an old naming tradition. English did not borrow Thursday from modern German."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. The names share an old naming tradition. English did not borrow Thursday from modern German."
+          }
+        ]
+      }
+    },
+    {
+      "id": "thursday-now-to-thursday-thirsty",
+      "source": "thursday-now",
+      "target": "thursday-thirsty",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Thursday belongs to the thunder-god story, not thirsty.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did Thursday get its name from wanting a drink?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. Thursday belongs to the thunder-god story, not thirsty."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Thursday belongs to the thunder-god story, not thirsty."
+          }
+        ]
+      }
+    },
+    {
+      "id": "thursday-old-to-thursday-norse",
+      "source": "thursday-old",
+      "target": "thursday-norse",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Norse influence helped shape the English form.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did this Norse name help shape the English name?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Norse influence helped shape the English form."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. Norse influence helped shape the English form."
+          }
+        ]
+      }
+    },
+    {
+      "id": "thursday-old-to-thursday-latin",
+      "source": "thursday-old",
+      "target": "thursday-latin",
+      "type": "translation",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes: Jupiter’s day was translated using a local thunder god. This is a travelling idea, not a borrowed Latin word.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could a Roman naming idea be behind this English name?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes: Jupiter’s day was translated using a local thunder god. This is a travelling idea, not a borrowed Latin word."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes: Jupiter’s day was translated using a local thunder god. This is a travelling idea, not a borrowed Latin word."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "thursday-now",
+      "label": "Today"
+    },
+    {
+      "nodeId": "thursday-old",
+      "label": "Older English clue"
+    },
+    {
+      "nodeId": "thursday-latin",
+      "label": "Roman naming idea"
+    }
+  ],
+  "$schema": "../case.schema.json"
+}

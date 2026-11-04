@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 1,
+  "title": "Word Chaser",
+  "languages": {
+    "english": {
+      "name": "English",
+      "voiceTag": "en-GB",
+      "voiceLabel": "English",
+      "approximate": false
+    },
+    "middle-english": {
+      "name": "Middle English",
+      "voiceTag": "en-GB",
+      "voiceLabel": "English",
+      "approximate": true
+    },
+    "old-english": {
+      "name": "Old English",
+      "voiceTag": "en-GB",
+      "voiceLabel": "English",
+      "approximate": true
+    },
+    "old-french": {
+      "name": "Old French",
+      "voiceTag": "fr-FR",
+      "voiceLabel": "French",
+      "approximate": true
+    },
+    "latin": {
+      "name": "Latin",
+      "voiceTag": "la",
+      "voiceLabel": "Latin",
+      "approximate": true,
+      "fallback": {
+        "lang": "it-IT",
+        "label": "Italian-voice approximation for Latin"
+      }
+    },
+    "italian": {
+      "name": "Italian",
+      "voiceTag": "it-IT",
+      "voiceLabel": "Italian",
+      "approximate": false
+    },
+    "old-norse": {
+      "name": "Old Norse",
+      "voiceTag": "nb-NO",
+      "voiceLabel": "Norwegian",
+      "approximate": true
+    },
+    "scientific-latin-new-latin": {
+      "name": "Scientific Latin (New Latin)",
+      "voiceTag": "la",
+      "voiceLabel": "Latin",
+      "approximate": true,
+      "fallback": {
+        "lang": "it-IT",
+        "label": "Italian-voice approximation for Latin"
+      }
+    },
+    "ancient-greek": {
+      "name": "Ancient Greek",
+      "voiceTag": "el-GR",
+      "voiceLabel": "Greek",
+      "approximate": true
+    },
+    "ancient-greek-word-parts": {
+      "name": "Ancient Greek word parts",
+      "voiceTag": "el-GR",
+      "voiceLabel": "Greek",
+      "approximate": true
+    },
+    "german": {
+      "name": "German",
+      "voiceTag": "de-DE",
+      "voiceLabel": "German",
+      "approximate": false
+    },
+    "spanish": {
+      "name": "Spanish",
+      "voiceTag": "es-ES",
+      "voiceLabel": "Spanish",
+      "approximate": false
+    },
+    "french": {
+      "name": "French",
+      "voiceTag": "fr-FR",
+      "voiceLabel": "French",
+      "approximate": false
+    },
+    "czech": {
+      "name": "Czech",
+      "voiceTag": "cs-CZ",
+      "voiceLabel": "Czech",
+      "approximate": false
+    },
+    "arabic": {
+      "name": "Arabic",
+      "voiceTag": "ar",
+      "voiceLabel": "Arabic",
+      "approximate": true
+    },
+    "medieval-latin": {
+      "name": "Medieval Latin",
+      "voiceTag": "la",
+      "voiceLabel": "Latin",
+      "approximate": true,
+      "fallback": {
+        "lang": "it-IT",
+        "label": "Italian-voice approximation for Latin"
+      }
+    }
+  },
+  "eras": {
+    "today": {
+      "name": "Today",
+      "label": "Your starting point",
+      "icon": "🏙️",
+      "startYear": 2026,
+      "endYear": 2026
+    },
+    "earlymodern": {
+      "name": "The 1700s",
+      "label": "Approx. 1700–1800 CE",
+      "icon": "🎻",
+      "startYear": 1700,
+      "endYear": 1800
+    },
+    "medieval": {
+      "name": "Medieval times",
+      "label": "Approx. 500–1500 CE",
+      "icon": "🏰",
+      "startYear": 500,
+      "endYear": 1500
+    },
+    "roman": {
+      "name": "Roman times",
+      "label": "Approx. 1–500 CE",
+      "icon": "🏛️",
+      "startYear": 1,
+      "endYear": 500
+    },
+    "nineteenth": {
+      "name": "The 1800s",
+      "label": "Approx. 1800–1900 CE",
+      "icon": "🦴",
+      "startYear": 1800,
+      "endYear": 1900
+    },
+    "greek": {
+      "name": "Ancient Greece",
+      "label": "Approx. 800–100 BCE",
+      "icon": "🏺",
+      "startYear": -800,
+      "endYear": -100
+    },
+    "twentieth": {
+      "name": "The 1900s",
+      "label": "Approx. 1900–2000 CE",
+      "icon": "🎭",
+      "startYear": 1900,
+      "endYear": 2000
+    },
+    "renaissance": {
+      "name": "The 1500s–1600s",
+      "label": "Approx. 1500–1700 CE",
+      "icon": "📚",
+      "startYear": 1500,
+      "endYear": 1700
+    }
+  },
+  "places": {
+    "england": {
+      "name": "England",
+      "x": 334,
+      "y": 316
+    },
+    "france": {
+      "name": "France",
+      "x": 362,
+      "y": 363
+    },
+    "rome": {
+      "name": "Italian peninsula",
+      "x": 479,
+      "y": 478
+    },
+    "florence": {
+      "name": "Italy",
+      "x": 464,
+      "y": 448
+    },
+    "norse": {
+      "name": "Scandinavia",
+      "x": 438,
+      "y": 141
+    },
+    "greece": {
+      "name": "Greece",
+      "x": 608,
+      "y": 536
+    },
+    "germany": {
+      "name": "German-speaking region",
+      "x": 450,
+      "y": 325
+    },
+    "spain": {
+      "name": "Spain",
+      "x": 292,
+      "y": 501
+    },
+    "prague": {
+      "name": "Prague · Czech lands (now Czechia)",
+      "x": 520,
+      "y": 338
+    },
+    "baghdad": {
+      "name": "Baghdad · now Iraq",
+      "x": 849,
+      "y": 610
+    },
+    "latin-spain": {
+      "name": "Spain · Latin translation tradition",
+      "x": 300,
+      "y": 492
+    }
+  },
+  "relations": {
+    "spelling": {
+      "label": "Earlier English form",
+      "category": "ancestry",
+      "line": "solid",
+      "outcome": "connected"
+    },
+    "borrowing": {
+      "label": "Borrowed from",
+      "category": "ancestry",
+      "line": "solid",
+      "outcome": "connected"
+    },
+    "inheritance": {
+      "label": "Developed from",
+      "category": "ancestry",
+      "line": "solid",
+      "outcome": "connected"
+    },
+    "formation": {
+      "label": "Built from",
+      "category": "ancestry",
+      "line": "solid",
+      "outcome": "connected"
+    },
+    "related": {
+      "label": "Related branch",
+      "category": "related",
+      "line": "dashed",
+      "outcome": "connected"
+    },
+    "comparison": {
+      "label": "Same meaning · different history",
+      "category": "comparison",
+      "line": "dotted",
+      "outcome": "excluded"
+    },
+    "translation": {
+      "label": "Naming idea translated from",
+      "category": "ancestry",
+      "line": "dashed",
+      "outcome": "connected"
+    },
+    "export": {
+      "label": "Borrowed outwards from English",
+      "category": "related",
+      "line": "dashed",
+      "outcome": "connected"
+    },
+    "shortening": {
+      "label": "Shortened from",
+      "category": "ancestry",
+      "line": "solid",
+      "outcome": "connected"
+    }
+  },
+  "artifacts": {
+    "label": {
+      "icon": "🏷️",
+      "label": "Word label"
+    },
+    "manuscript": {
+      "icon": "📜",
+      "label": "Manuscript"
+    },
+    "tablet": {
+      "icon": "🏛️",
+      "label": "Word tablet"
+    },
+    "scroll": {
+      "icon": "🏺",
+      "label": "Scroll"
+    },
+    "report": {
+      "icon": "🦴",
+      "label": "Scientific report"
+    },
+    "letter": {
+      "icon": "✉️",
+      "label": "Letter"
+    },
+    "card": {
+      "icon": "📖",
+      "label": "Vocabulary card"
+    },
+    "script": {
+      "icon": "🎭",
+      "label": "Theatre script"
+    }
+  },
+  "cases": [
+    "cases/treasure.json",
+    "cases/piano.json",
+    "cases/window.json",
+    "cases/fart.json",
+    "cases/dinosaur.json",
+    "cases/school.json",
+    "cases/thursday.json",
+    "cases/january.json",
+    "cases/robot.json",
+    "cases/algebra.json",
+    "cases/geometry.json",
+    "cases/geography.json",
+    "cases/art.json",
+    "cases/maths.json"
+  ],
+  "$schema": "catalog.schema.json",
+  "rules": {
+    "correctPoints": 3,
+    "assistedPoints": 1,
+    "wrongPenalty": 1
+  }
+}

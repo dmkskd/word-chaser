@@ -1,0 +1,540 @@
+{
+  "schemaVersion": 1,
+  "id": "dinosaur",
+  "title": "dinosaur",
+  "icon": "🦕",
+  "summary": "An ancient animal with a surprisingly modern name. Investigate a scientific report, then decode its Greek ingredients.",
+  "question": "Where did this word come from?",
+  "startNodeId": "dinosaur-0",
+  "goalNodeIds": [
+    "dinosaur-1",
+    "dinosaur-2"
+  ],
+  "completion": "dinosaur ← Dinosauria, a scientific Latin name published in England in 1842 ← Greek deinos + sauros. The animals are ancient; this scientific name is modern. New names can be built from very old word parts.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "etymology",
+      "title": "Natural History Museum · naming dinosaurs",
+      "url": "https://www.nhm.ac.uk/discover/how-dinosaurs-got-their-name.html"
+    },
+    {
+      "id": "specimen-0",
+      "title": "Natural History Museum · Triceratops",
+      "url": "https://www.nhm.ac.uk/discover/dino-directory/triceratops.html"
+    },
+    {
+      "id": "specimen-1",
+      "title": "Natural History Museum · Stegosaurus",
+      "url": "https://www.nhm.ac.uk/discover/dino-directory/stegosaurus.html"
+    },
+    {
+      "id": "specimen-2",
+      "title": "Natural History Museum · Diplodocus",
+      "url": "https://www.nhm.ac.uk/discover/dino-directory/diplodocus.html"
+    },
+    {
+      "id": "specimen-3",
+      "title": "Natural History Museum · T. rex",
+      "url": "https://www.nhm.ac.uk/discover/dino-directory/tyrannosaurus.html"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "dinosaur-0",
+      "form": "dinosaur",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "An animal known from fossils.",
+      "pronunciation": {
+        "text": "dinosaur",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "The starting word",
+        "text": "An ancient animal with a surprisingly modern name. Investigate a scientific report, then decode its Greek ingredients.",
+        "notice": "Compare the word forms, their meanings and their dates. What connection does the evidence support?",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "The animals are ancient. What about their name?"
+          },
+          {
+            "title": "What the history tells us",
+            "text": "An ancient animal with a surprisingly modern name. Investigate a scientific report, then decode its Greek ingredients."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinosaur-1",
+      "form": "Dinosauria",
+      "languageId": "scientific-latin-new-latin",
+      "eraId": "nineteenth",
+      "placeId": "england",
+      "offset": [
+        -12,
+        -70
+      ],
+      "period": "Owen’s report · 1842",
+      "meaning": "A scientific name published in 1842.",
+      "pronunciation": {
+        "text": "Dinosauria",
+        "languageId": "scientific-latin-new-latin"
+      },
+      "evidence": {
+        "kind": "report",
+        "title": "A report from 1842",
+        "text": "A scientific report published in 1842 contains Richard Owen’s new group name: Dinosauria. This is modern scientific Latin made from Greek roots. The English word dinosaur comes from this name.",
+        "notice": "How can a young word describe a very ancient animal? Separate the age of the animal from the age of its name.",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Owen built Dinosauria using ancient Greek word parts."
+          },
+          {
+            "title": "What the history tells us",
+            "text": "A scientific report published in 1842 contains Richard Owen’s new group name: Dinosauria. This is modern scientific Latin made from Greek roots. The English word dinosaur comes from this name."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinosaur-2",
+      "form": "deinos + sauros",
+      "languageId": "ancient-greek-word-parts",
+      "eraId": "greek",
+      "placeId": "greece",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Ancient roots reused in a modern name",
+      "meaning": "Fearfully great + lizard.",
+      "pronunciation": {
+        "text": "δεινός. σαῦρος.",
+        "languageId": "ancient-greek-word-parts"
+      },
+      "evidence": {
+        "kind": "scroll",
+        "title": "Build a name with Greek",
+        "text": "Deinos means terrible or fearfully great; sauros means lizard. Owen combined these ancient Greek ingredients in his modern scientific name. Ancient Greeks did not use Dinosauria for these animals.",
+        "notice": "Try another name puzzle below. Can you spot sauros inside Stegosaurus and Tyrannosaurus?",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "These ancient Greek ingredients were reused in a modern name."
+          },
+          {
+            "title": "What the history tells us",
+            "text": "Deinos means terrible or fearfully great; sauros means lizard. Owen combined these ancient Greek ingredients in his modern scientific name. Ancient Greeks did not use Dinosauria for these animals."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinosaur-french",
+      "form": "dinosaure",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "A modern comparison",
+      "meaning": "A dinosaur, in French.",
+      "pronunciation": {
+        "text": "dinosaure",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "French word card",
+        "text": "Dinosaure belongs to the modern dinosaur name family. Follow the scientific name Dinosauria before tracing its Greek ingredients.",
+        "notice": "Compare the meaning, sound, and historical evidence.",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "The same scientific word family appears in French."
+          },
+          {
+            "title": "What the history tells us",
+            "text": "Dinosaure belongs to the modern dinosaur name family. Follow the scientific name Dinosauria before tracing its Greek ingredients."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinosaur-lizard",
+      "form": "lizard",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        -80,
+        20
+      ],
+      "period": "A modern comparison",
+      "meaning": "A lizard.",
+      "pronunciation": {
+        "text": "lizard",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "English word card",
+        "text": "The English word lizard is not the word from which Owen built Dinosauria. He used Greek sauros for the lizard part.",
+        "notice": "Compare the meaning, sound, and historical evidence.",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "It is a reptile. Does that make it the source of dinosaur?"
+          },
+          {
+            "title": "What the history tells us",
+            "text": "The English word lizard is not the word from which Owen built Dinosauria. He used Greek sauros for the lizard part."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "dinosaur-edge-0",
+      "source": "dinosaur-0",
+      "target": "dinosaur-1",
+      "type": "formation",
+      "evidence": {
+        "title": "Follow the word history",
+        "text": "A scientific report published in 1842 contains Richard Owen’s new group name: Dinosauria. This is modern scientific Latin made from Greek roots. The English word dinosaur comes from this name.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace dinosaur back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "A scientific report published in 1842 contains Richard Owen’s new group name: Dinosauria. This is modern scientific Latin made from Greek roots. The English word dinosaur comes from this name."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinosaur-edge-1",
+      "source": "dinosaur-1",
+      "target": "dinosaur-2",
+      "type": "formation",
+      "evidence": {
+        "title": "Follow the word history",
+        "text": "Deinos means terrible or fearfully great; sauros means lizard. Owen combined these ancient Greek ingredients in his modern scientific name. Ancient Greeks did not use Dinosauria for these animals.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace dinosaur back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Deinos means terrible or fearfully great; sauros means lizard. Owen combined these ancient Greek ingredients in his modern scientific name. Ancient Greeks did not use Dinosauria for these animals."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinosaur-french-root",
+      "source": "dinosaur-french",
+      "target": "dinosaur-1",
+      "type": "related",
+      "evidence": {
+        "title": "A shared source",
+        "text": "Dinosaure belongs to the modern dinosaur name family. Follow the scientific name Dinosauria before tracing its Greek ingredients.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace dinosaur back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "A scientific report published in 1842 contains Richard Owen’s new group name: Dinosauria. This is modern scientific Latin made from Greek roots. The English word dinosaur comes from this name."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinosaur-0-lead-dinosaur-french",
+      "source": "dinosaur-0",
+      "target": "dinosaur-french",
+      "type": "related",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "Dinosaure belongs to the modern dinosaur name family. Follow the scientific name Dinosauria before tracing its Greek ingredients.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace dinosaur back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Dinosaure belongs to the modern dinosaur name family. Follow the scientific name Dinosauria before tracing its Greek ingredients."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinosaur-0-lead-dinosaur-lizard",
+      "source": "dinosaur-0",
+      "target": "dinosaur-lizard",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "The English word lizard is not the word from which Owen built Dinosauria. He used Greek sauros for the lizard part.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this word explain where English dinosaur came from?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. The English word lizard is not the word from which Owen built Dinosauria. He used Greek sauros for the lizard part."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "The English word lizard is not the word from which Owen built Dinosauria. He used Greek sauros for the lizard part."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinosaur-1-lead-dinosaur-french",
+      "source": "dinosaur-1",
+      "target": "dinosaur-french",
+      "type": "related",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "Dinosaure belongs to the modern dinosaur name family. Follow the scientific name Dinosauria before tracing its Greek ingredients.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace dinosaur back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Dinosaure belongs to the modern dinosaur name family. Follow the scientific name Dinosauria before tracing its Greek ingredients."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinosaur-1-lead-dinosaur-lizard",
+      "source": "dinosaur-1",
+      "target": "dinosaur-lizard",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "The English word lizard is not the word from which Owen built Dinosauria. He used Greek sauros for the lizard part.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this word explain where English dinosaur came from?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. The English word lizard is not the word from which Owen built Dinosauria. He used Greek sauros for the lizard part."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "The English word lizard is not the word from which Owen built Dinosauria. He used Greek sauros for the lizard part."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinosaur-french-lead-dinosaur-lizard",
+      "source": "dinosaur-french",
+      "target": "dinosaur-lizard",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "The English word lizard is not the word from which Owen built Dinosauria. He used Greek sauros for the lizard part.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this word explain where English dinosaur came from?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. The English word lizard is not the word from which Owen built Dinosauria. He used Greek sauros for the lizard part."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "The English word lizard is not the word from which Owen built Dinosauria. He used Greek sauros for the lizard part."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [
+    {
+      "title": "Triceratops",
+      "parts": "tri + cerat + ops",
+      "meaning": "three + horn + face",
+      "text": "Three-horned face: two large horns above the eyes and a smaller horn on the nose. Its scientific name uses Greek word parts.",
+      "pronunciation": {
+        "text": "Triceratops",
+        "languageId": "english"
+      },
+      "sourceIds": [
+        "specimen-0"
+      ]
+    },
+    {
+      "title": "Stegosaurus",
+      "parts": "stego + saurus",
+      "meaning": "roof + lizard",
+      "text": "Roof lizard: the name refers to its plates, which were originally thought to lie flat like a covering. Spot the lizard ingredient again!",
+      "pronunciation": {
+        "text": "Stegosaurus",
+        "languageId": "english"
+      },
+      "sourceIds": [
+        "specimen-1"
+      ]
+    },
+    {
+      "title": "Diplodocus",
+      "parts": "diplo + docus",
+      "meaning": "double + beam",
+      "text": "Double beam: the name refers to the shape of bones underneath its tail, rather than its long neck. The name uses Greek ingredients.",
+      "pronunciation": {
+        "text": "Diplodocus",
+        "languageId": "english"
+      },
+      "sourceIds": [
+        "specimen-2"
+      ]
+    },
+    {
+      "title": "T. rex",
+      "parts": "tyranno + saurus + rex",
+      "meaning": "tyrant + lizard + king",
+      "text": "T. stands for Tyrannosaurus. Its name mixes Greek ingredients for tyrant and lizard with Latin rex, meaning king.",
+      "pronunciation": {
+        "text": "Tyrannosaurus rex",
+        "languageId": "english"
+      },
+      "sourceIds": [
+        "specimen-3"
+      ]
+    }
+  ],
+  "$schema": "../case.schema.json",
+  "milestones": [
+    {
+      "nodeId": "dinosaur-0",
+      "label": "Today"
+    },
+    {
+      "nodeId": "dinosaur-1",
+      "label": "Scientific Latin (New Latin) clue"
+    },
+    {
+      "nodeId": "dinosaur-2",
+      "label": "Ancient Greek word parts clue"
+    }
+  ]
+}

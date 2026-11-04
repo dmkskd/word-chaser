@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Word Chaser · The Little Bureau of Big Mysteries</title>
+<meta name="description" content="A playful word detective game. Inspect clues, follow words through history, and solve their secret stories.">
+<link rel="stylesheet" href="styles.css"><script src="game.js" defer></script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="./index.html" aria-label="Word Chaser home"><span class="brand-icon" aria-hidden="true">⌕</span><span>WORD<br>CHASER<span class="brand-sub">THE LITTLE BUREAU OF BIG MYSTERIES</span></span></a><div class="top-actions"><span class="edition">FIELD OFFICE · VOL. 01</span><button id="notebook-open" class="quiet">My discoveries <span id="count">0 / 4</span></button></div></header>
+<main>
+<section class="welcome"><div><p class="eyebrow">EVERY WORD HAS A SECRET.</p><h1>Let’s follow the clues<span>.</span></h1><p>Some words crossed seas. Some changed disguises.<br>Detective, can you uncover their stories?</p></div><div class="detective-badge" aria-label="Junior word detective"><span>OFFICIAL MEMBER</span><b aria-hidden="true">⌕</b><strong>WORD DETECTIVE</strong><span>CURIOSITY REQUIRED</span></div></section>
+<div class="workspace">
+<aside class="files"><div class="section-label"><span>YOUR CASE FILES</span><span>04</span></div><nav id="case-list" aria-label="Choose a word mystery"></nav><div class="desk-note"><span class="note-star" aria-hidden="true">✳</span><p>A good detective doesn’t know every answer.<br><strong>They ask good questions.</strong></p></div><button id="sources-open" class="text-button">Grown-up notes & sources ↗</button></aside>
+<section class="case-area" aria-label="Active investigation">
+<div class="case-top"><span id="case-number">CASE NO. 001</span><span id="case-type" class="pill">A travelling word</span></div>
+<div class="case-heading"><h2 id="case-title"></h2><p id="case-premise"></p></div>
+<div class="evidence-board"><span class="pin pin-one" aria-hidden="true"></span><span class="pin pin-two" aria-hidden="true"></span><div class="word-sheet"><span class="sheet-label">WORD UNDER INVESTIGATION</span><div id="word-art" class="word-art" aria-hidden="true"></div><div class="word-row"><h3 id="case-word"></h3><button id="speak" class="sound" aria-label="Hear this word">◖))</button></div><p id="definition"></p><span class="paper-stamp">ORIGIN UNKNOWN</span></div><div class="board-right"><div class="clue-heading"><span>THE EVIDENCE</span><span id="clue-count">0 / 3 found</span></div><div id="clues" class="clues"></div><p class="board-tip">⌕ Tap each clue to take a closer look.</p></div></div>
+<div class="partner"><div class="partner-face" aria-hidden="true">🦉</div><p><strong>Pip, your detective partner</strong><span id="partner-line">“I’ve got a theory. It might be nonsense. Let’s check the clues.”</span></p></div>
+<section id="theory" class="theory"><div class="step-label">YOUR THEORY</div><h3 id="question"></h3><p id="theory-help">Collect the three clues, then make your case.</p><div id="answers" class="answers"></div><p id="feedback" class="feedback" role="status"></p><div id="proof" hidden><h3>Which clue backs up your theory?</h3><div id="proof-answers" class="proof-answers"></div></div></section>
+<section id="solved" class="solved" hidden aria-label="Case solved"><div class="solved-heading"><span class="solved-check" aria-hidden="true">✓</span><div><p class="eyebrow">EXCELLENT DETECTIVE WORK</p><h3>Case solved!</h3></div><span class="solved-stamp">FILED ✓</span></div><p id="explanation"></p><div id="journey" class="journey" aria-label="The word’s journey"></div><p id="journey-note" class="journey-note"></p><div class="new-link"><span aria-hidden="true">↗</span><div><span class="step-label">WORDS ARE CONNECTED</span><h4 id="related-title"></h4><p id="related-text"></p></div></div><button id="next-case" class="primary">Open the next case <span aria-hidden="true">→</span></button></section>
+</section></div>
+<footer><span>FOLLOW A WORD. FIND A WORLD.</span><span>A little curiosity goes a long way.</span></footer>
+</main>
+<dialog id="clue-dialog"><form method="dialog"><button class="close" aria-label="Close clue">×</button></form><p class="eyebrow" id="clue-dialog-number"></p><div class="clue-large-icon" aria-hidden="true">⌕</div><h2 id="clue-dialog-title"></h2><p id="clue-dialog-text"></p><button id="collect-clue" class="primary">Add to my evidence <span aria-hidden="true">＋</span></button></dialog>
+<dialog id="notebook-dialog"><form method="dialog"><button class="close" aria-label="Close notebook">×</button></form><p class="eyebrow">THE DETECTIVE’S NOTEBOOK</p><h2>My discoveries</h2><div id="discoveries"></div></dialog>
+<dialog id="sources-dialog"><form method="dialog"><button class="close" aria-label="Close notes">×</button></form><p class="eyebrow">FOR CURIOUS GROWN-UPS</p><h2>Stories with evidence.</h2><p>The journeys show selected stages, not every historical spelling. Language names matter: Latin is not modern Italian, and Old Norse is not a single modern country.</p><div id="source-list"></div><p>Speech uses your browser’s available English voice. Progress stays in this browser when storage is available. No account or internet connection is needed to play.</p><p>More possibilities live in <a href="IDEAS.md">IDEAS.md</a>.</p><button id="reset" class="quiet">Start a fresh notebook</button><div id="reset-confirm" hidden><p>Clear all four cases and your discoveries on this browser?</p><button id="reset-yes" class="primary">Yes, start again</button><button id="reset-no" class="quiet">Keep my discoveries</button></div></dialog>
+</body>
+</html>

@@ -1,0 +1,473 @@
+{
+  "schemaVersion": 1,
+  "id": "january",
+  "title": "January",
+  "icon": "📅",
+  "summary": "A new year, an old name, and a trail across the Channel.",
+  "question": "How did January get its name?",
+  "startNodeId": "january-now",
+  "goalNodeIds": [
+    "january-middle",
+    "january-french-old",
+    "january-latin"
+  ],
+  "completion": "January’s older English forms came through French from Latin Ianuarius. Italian gennaio is another branch of that family.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "history",
+      "title": "American Heritage · January",
+      "url": "https://www.ahdictionary.com/word/search.html?q=January"
+    },
+    {
+      "id": "spelling",
+      "title": "Etymonline · January",
+      "url": "https://www.etymonline.com/word/January"
+    },
+    {
+      "id": "italian",
+      "title": "Treccani · gennaio",
+      "url": "https://www.treccani.it/vocabolario/gennaio/"
+    },
+    {
+      "id": "june",
+      "title": "Académie française · juin",
+      "url": "https://www.dictionnaire-academie.fr/article/A9J0358"
+    },
+    {
+      "id": "janus",
+      "title": "Etymonline · Janus",
+      "url": "https://www.etymonline.com/word/Janus"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "january-now",
+      "form": "January",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "The first month of the year.",
+      "pronunciation": {
+        "text": "January",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A calendar label",
+        "text": "The year opens with January. Its name has travelled through several languages.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Which other month names sound similar?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "The year opens with January. Its name has travelled through several languages."
+          }
+        ]
+      }
+    },
+    {
+      "id": "january-middle",
+      "form": "Jenever",
+      "languageId": "middle-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        -18,
+        -78
+      ],
+      "period": "Medieval English",
+      "meaning": "A month name. Does its spelling look familiar?",
+      "pronunciation": {
+        "text": "Jenever",
+        "languageId": "middle-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word on an old calendar",
+        "text": "Jenever is an older English form. Later English spelling moved closer to its Latin ancestor.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "spelling"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try saying Jenever and January slowly. Which sounds seem alike?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Jenever is an older English form. Later English spelling moved closer to its Latin ancestor."
+          }
+        ]
+      }
+    },
+    {
+      "id": "january-french-old",
+      "form": "Jenever",
+      "languageId": "old-french",
+      "eraId": "medieval",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Old North French",
+      "meaning": "January, in an older French form.",
+      "pronunciation": {
+        "text": "Jenever",
+        "languageId": "old-french"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A French calendar clue",
+        "text": "The older English month name came through Old North French. The matching Jenever forms are evidence of that borrowing.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Same spelling, different language: check the history."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "The older English month name came through Old North French. The matching Jenever forms are evidence of that borrowing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "january-latin",
+      "form": "Ianuarius",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "rome",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Roman month name",
+      "meaning": "Janus’s month. Janus was the Roman god of doors and beginnings.",
+      "pronunciation": {
+        "text": "Ianuarius",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "tablet",
+        "title": "A Roman calendar clue",
+        "text": "Ianuarius named the month for Janus, the Roman god of doors, gateways and beginnings. He was pictured with two faces looking in opposite directions. Imagine January as a doorway into a new year. This Latin name lies behind the English and French forms.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "janus"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "I and J were not always written as separate letters."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Janus was the Roman god of doors and beginnings, pictured with two faces. Imagine one looking back at the old year and one ahead to the new: January is our doorway into a new year."
+          }
+        ]
+      }
+    },
+    {
+      "id": "january-italian",
+      "form": "gennaio",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        -18,
+        -15
+      ],
+      "period": "Today",
+      "meaning": "January, in Italian.",
+      "pronunciation": {
+        "text": "gennaio",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "letter",
+        "title": "An Italian calendar clue",
+        "text": "Italian gennaio shares the Latin month-name ancestor. It is a cousin, not the word English borrowed directly.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "italian"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try saying gennaio and January aloud."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Italian gennaio shares the Latin month-name ancestor. It is a cousin, not the word English borrowed directly."
+          }
+        ]
+      }
+    },
+    {
+      "id": "january-june",
+      "form": "juin",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        -70,
+        42
+      ],
+      "period": "Today",
+      "meaning": "June, in French.",
+      "pronunciation": {
+        "text": "juin",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "Another calendar clue",
+        "text": "Juin names June, not January. The opening sound can tempt us onto the wrong trail.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "june"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Check which month this word names."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Juin names June, not January. The opening sound can tempt us onto the wrong trail."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "january-now-to-january-middle",
+      "source": "january-now",
+      "target": "january-middle",
+      "type": "spelling",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes: Jenever is an older English form of the month name.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Jenever be connected to our word January?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes: Jenever is an older English form of the month name."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes: Jenever is an older English form of the month name."
+          }
+        ]
+      }
+    },
+    {
+      "id": "january-now-to-january-italian",
+      "source": "january-now",
+      "target": "january-italian",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Italian and English share a Latin ancestor here.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could gennaio and January have an older month name in common?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Italian and English share a Latin ancestor here."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. Italian and English share a Latin ancestor here."
+          }
+        ]
+      }
+    },
+    {
+      "id": "january-now-to-january-june",
+      "source": "january-now",
+      "target": "january-june",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No: this clue names June, a different month.",
+        "sourceIds": [
+          "june"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this French word for June explain the name January?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. No: this clue names June, a different month."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No: this clue names June, a different month."
+          }
+        ]
+      }
+    },
+    {
+      "id": "january-middle-to-january-french-old",
+      "source": "january-middle",
+      "target": "january-french-old",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. The earlier English form came through Old North French.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could English have borrowed this older French month name?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The earlier English form came through Old North French."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. The earlier English form came through Old North French."
+          }
+        ]
+      }
+    },
+    {
+      "id": "january-french-old-to-january-latin",
+      "source": "january-french-old",
+      "target": "january-latin",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. The French name developed from the Latin name for Janus’s month.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this Latin month name be the older ancestor?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The French name developed from the Latin name for Janus’s month."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. The French name developed from the Latin name for Janus’s month."
+          }
+        ]
+      }
+    },
+    {
+      "id": "january-italian-to-january-latin",
+      "source": "january-italian",
+      "target": "january-latin",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Gennaio and January meet at a Latin month name.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this be the Latin ancestor of gennaio?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Gennaio and January meet at a Latin month name."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. Gennaio and January meet at a Latin month name."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "january-now",
+      "label": "Today"
+    },
+    {
+      "nodeId": "january-middle",
+      "label": "Older English clue"
+    },
+    {
+      "nodeId": "january-french-old",
+      "label": "French clue"
+    },
+    {
+      "nodeId": "january-latin",
+      "label": "Latin month name"
+    }
+  ],
+  "$schema": "../case.schema.json"
+}

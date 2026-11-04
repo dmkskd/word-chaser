@@ -1,0 +1,355 @@
+{
+  "schemaVersion": 1,
+  "id": "robot",
+  "title": "robot",
+  "icon": "🤖",
+  "summary": "A word that escaped from a theatre and travelled the world.",
+  "question": "Where was the word robot invented?",
+  "startNodeId": "robot-now",
+  "goalNodeIds": [
+    "robot-czech",
+    "robot-work"
+  ],
+  "completion": "English borrowed robot from Czech. The 1920 play R.U.R. used a name suggested by Josef Čapek, from robota. German later borrowed its machine word from English.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Czech Embassy · 100 years of robot",
+      "url": "https://mzv.gov.cz/kualalumpur/en/news_and_events/archive/x100_year_ago_robot_was_born.html"
+    },
+    {
+      "id": "german",
+      "title": "Duden · Roboter",
+      "url": "https://www.duden.de/rechtschreibung/Roboter"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "robot-now",
+      "form": "robot",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A machine that can carry out tasks.",
+      "pronunciation": {
+        "text": "robot",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A robot label",
+        "text": "This word travelled out of a play and into everyday speech.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Could a word for a machine begin in a theatre?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "This word travelled out of a play and into everyday speech."
+          }
+        ]
+      }
+    },
+    {
+      "id": "robot-czech",
+      "form": "robot",
+      "languageId": "czech",
+      "eraId": "twentieth",
+      "placeId": "prague",
+      "offset": [
+        -30,
+        7
+      ],
+      "period": "R.U.R. · published 1920",
+      "meaning": "Robot: a new name for a made-up worker.",
+      "pronunciation": {
+        "text": "robot",
+        "languageId": "czech"
+      },
+      "evidence": {
+        "kind": "script",
+        "title": "A theatre script",
+        "text": "Karel Čapek used robot in R.U.R. Josef, his brother, suggested the name. The play helped send the word into other languages.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "This is the new name used in a play in 1920. An older Czech word helped make it."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Karel Čapek used robot in R.U.R. Josef, his brother, suggested the name. The play helped send the word into other languages."
+          }
+        ]
+      },
+      "mapLabelSide": "left",
+      "mapCaption": "New name · 1920"
+    },
+    {
+      "id": "robot-work",
+      "form": "robota",
+      "languageId": "czech",
+      "eraId": "twentieth",
+      "placeId": "prague",
+      "offset": [
+        20,
+        12
+      ],
+      "period": "Older Czech word used to form the 1920 name",
+      "meaning": "Robota: the older Czech word for forced work.",
+      "pronunciation": {
+        "text": "robota",
+        "languageId": "czech"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A Czech word clue",
+        "text": "Still in the Czech lands! Robota meant forced work. Josef Čapek used this older word to suggest robot, the new name in his brother’s play.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Take away the final a. What remains?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Still in the Czech lands! Robota meant forced work. Josef Čapek used this older word to suggest robot, the new name in his brother’s play."
+          }
+        ]
+      },
+      "mapCaption": "Older word · forced work"
+    },
+    {
+      "id": "robot-german",
+      "form": "Roboter",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        -18,
+        -50
+      ],
+      "period": "Today",
+      "meaning": "Robot, in German.",
+      "pronunciation": {
+        "text": "Roboter",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A German word clue",
+        "text": "German Roboter took its machine meaning from English robot. This trail shows our English word travelling outwards.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "german"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Dates and borrowing direction matter: which language lent the word?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "German Roboter took its machine meaning from English robot. This trail shows our English word travelling outwards."
+          }
+        ]
+      }
+    },
+    {
+      "id": "robot-latin",
+      "form": "labor",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "rome",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "An older Latin word",
+      "meaning": "Work, in Latin.",
+      "pronunciation": {
+        "text": "labor",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "tablet",
+        "title": "A Latin word clue",
+        "text": "Karel considered a different name based on labour, but robot was the Czech name he used. Similar meanings do not make labor the source of robot.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "An idea the writer rejected is not the word he finally chose."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Karel considered a different name based on labour, but robot was the Czech name he used. Similar meanings do not make labor the source of robot."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "robot-now-to-robot-czech",
+      "source": "robot-now",
+      "target": "robot-czech",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Robot spread internationally from Čapek’s Czech play.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this Czech play explain where English robot came from?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Robot spread internationally from Čapek’s Czech play."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. Robot spread internationally from Čapek’s Czech play."
+          }
+        ]
+      }
+    },
+    {
+      "id": "robot-now-to-robot-german",
+      "source": "robot-now",
+      "target": "robot-german",
+      "type": "export",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Here the trail travels outwards from English into German.",
+        "sourceIds": [
+          "german"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the English word help give German its machine word Roboter?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Here the trail travels outwards from English into German."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. Here the trail travels outwards from English into German."
+          }
+        ]
+      }
+    },
+    {
+      "id": "robot-now-to-robot-latin",
+      "source": "robot-now",
+      "target": "robot-latin",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. A Latin-based name was considered, but robot was formed from Czech robota.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the word robot come from this Latin word?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. No. A Latin-based name was considered, but robot was formed from Czech robota."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. A Latin-based name was considered, but robot was formed from Czech robota."
+          }
+        ]
+      }
+    },
+    {
+      "id": "robot-czech-to-robot-work",
+      "source": "robot-czech",
+      "target": "robot-work",
+      "type": "formation",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Robota supplied the name for the fictional workers.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the new name robot grow from the older Czech word robota?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Robota supplied the name for the fictional workers."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. Robota supplied the name for the fictional workers."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "robot-now",
+      "label": "Today"
+    },
+    {
+      "nodeId": "robot-czech",
+      "label": "A play in Prague"
+    },
+    {
+      "nodeId": "robot-work",
+      "label": "The Czech word behind it"
+    }
+  ],
+  "$schema": "../case.schema.json"
+}

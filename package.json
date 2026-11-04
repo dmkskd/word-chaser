@@ -1,0 +1,22 @@
+{
+  "name": "word-chaser",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate.mjs",
+    "test": "node --test test/*.test.js",
+    "start": "python3 -m http.server 8000",
+    "pretest": "npm run build"
+  },
+  "dependencies": {
+    "cytoscape": "^3.34.4"
+  },
+  "devDependencies": {
+    "linkedom": "^0.18.15",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^2.1.1",
+    "esbuild": "^0.28.2"
+  }
+}

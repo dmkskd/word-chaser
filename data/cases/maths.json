@@ -1,0 +1,471 @@
+{
+  "schemaVersion": 1,
+  "id": "maths",
+  "title": "maths",
+  "icon": "🧮",
+  "summary": "A little word, a long word, and a secret about learning.",
+  "question": "What is maths short for?",
+  "startNodeId": "maths-now",
+  "goalNodeIds": [
+    "maths-full",
+    "maths-latin",
+    "maths-greek"
+  ],
+  "completion": "Maths is short for mathematics. Its older word family came through French and Latin from Greek, where it connects with learning. The trail shown skips the earlier English form mathematic.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · mathematics",
+      "url": "https://www.etymonline.com/word/mathematics"
+    },
+    {
+      "id": "short",
+      "title": "Etymonline · maths",
+      "url": "https://www.etymonline.com/word/maths"
+    },
+    {
+      "id": "italian",
+      "title": "Treccani · matematica",
+      "url": "https://www.treccani.it/vocabolario/matematica/"
+    },
+    {
+      "id": "comparison",
+      "title": "American Heritage · mat",
+      "url": "https://www.ahdictionary.com/word/search.html?q=mat"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "maths-now",
+      "form": "maths",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Counting, shapes, patterns and number puzzles.",
+      "pronunciation": {
+        "text": "maths",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A maths notebook",
+        "text": "Maths is a small word with a much longer word inside its history.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "short"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Could maths be a shortened word?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Maths is a small word with a much longer word inside its history."
+          }
+        ]
+      }
+    },
+    {
+      "id": "maths-full",
+      "form": "mathematics",
+      "languageId": "english",
+      "eraId": "renaissance",
+      "placeId": "england",
+      "offset": [
+        -12,
+        -70
+      ],
+      "period": "English form used from the late 1500s",
+      "meaning": "A longer school-subject name.",
+      "pronunciation": {
+        "text": "mathematics",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An English schoolbook",
+        "text": "Maths is a shortening of mathematics. The longer word grew from earlier English mathematic plus the ending -ics.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "short"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Look for maths hiding at the beginning and end of mathematics."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Maths is a shortening of mathematics. The longer word grew from earlier English mathematic plus the ending -ics."
+          }
+        ]
+      },
+      "mapCaption": "Longer word · late 1500s",
+      "mapLabelSide": "left"
+    },
+    {
+      "id": "maths-latin",
+      "form": "mathematica",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "rome",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "An older Latin source",
+      "meaning": "A subject name in a Latin book.",
+      "pronunciation": {
+        "text": "mathematica",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "tablet",
+        "title": "A Latin book",
+        "text": "The older vocabulary behind mathematics came through French and directly from Latin mathematica. This trail skips the earlier English form mathematic.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare mathematica with mathematics."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "The older vocabulary behind mathematics came through French and directly from Latin mathematica. This trail skips the earlier English form mathematic."
+          }
+        ]
+      }
+    },
+    {
+      "id": "maths-greek",
+      "form": "mathēmatikē",
+      "languageId": "ancient-greek",
+      "eraId": "greek",
+      "placeId": "greece",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Ancient Greek",
+      "meaning": "A Greek word to investigate.",
+      "pronunciation": {
+        "text": "μαθηματική",
+        "languageId": "ancient-greek"
+      },
+      "evidence": {
+        "kind": "scroll",
+        "title": "A Greek learning book",
+        "text": "The Greek expression mathēmatikē tekhnē referred to mathematical study. Its word family includes mathēma: something learned. Our maths name has learning hidden inside it.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Could the name of a school subject have begun with learning?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "The Greek expression mathēmatikē tekhnē referred to mathematical study. Its word family includes mathēma: something learned. Our maths name has learning hidden inside it."
+          }
+        ]
+      }
+    },
+    {
+      "id": "maths-italian",
+      "form": "matematica",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A subject name in an Italian schoolbook.",
+      "pronunciation": {
+        "text": "matematica",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "letter",
+        "title": "An Italian schoolbook",
+        "text": "Italian matematica shares the Latin and Greek family. It is a cousin, not the word English shortened to maths.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "italian"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try comparing matematica and mathematics."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Italian matematica shares the Latin and Greek family. It is a cousin, not the word English shortened to maths."
+          }
+        ]
+      }
+    },
+    {
+      "id": "maths-mats",
+      "form": "mats",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        -35,
+        -28
+      ],
+      "period": "Today",
+      "meaning": "Things you might wipe your shoes on.",
+      "pronunciation": {
+        "text": "mats",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A similar-sounding word",
+        "text": "Mats sounds close to maths, but maths is short for mathematics. Floor mats do not supply the school subject’s name.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "comparison"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "One tiny sound can separate two different word stories."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Mats sounds close to maths, but maths is short for mathematics. Floor mats do not supply the school subject’s name."
+          }
+        ]
+      },
+      "mapLabelSide": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "maths-now-to-maths-full",
+      "source": "maths-now",
+      "target": "maths-full",
+      "type": "shortening",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Maths is a short way of saying mathematics.",
+        "sourceIds": [
+          "short"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could maths be short for mathematics?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Maths is a short way of saying mathematics."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. Maths is a short way of saying mathematics."
+          }
+        ]
+      }
+    },
+    {
+      "id": "maths-now-to-maths-italian",
+      "source": "maths-now",
+      "target": "maths-italian",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. The names share a Latin and Greek family.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Italian matematica share an older family with maths?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The names share a Latin and Greek family."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. The names share a Latin and Greek family."
+          }
+        ]
+      }
+    },
+    {
+      "id": "maths-now-to-maths-mats",
+      "source": "maths-now",
+      "target": "maths-mats",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. A similar sound tempted us, but maths is short for mathematics.",
+        "sourceIds": [
+          "short",
+          "comparison"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the word maths come from floor mats?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. No. A similar sound tempted us, but maths is short for mathematics."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. A similar sound tempted us, but maths is short for mathematics."
+          }
+        ]
+      }
+    },
+    {
+      "id": "maths-full-to-maths-latin",
+      "source": "maths-full",
+      "target": "maths-latin",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Earlier English mathematic came through French and directly from Latin; mathematics was formed later.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this Latin word be part of mathematics’ older history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Earlier English mathematic came through French and directly from Latin; mathematics was formed later."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. Earlier English mathematic came through French and directly from Latin; mathematics was formed later."
+          }
+        ]
+      }
+    },
+    {
+      "id": "maths-latin-to-maths-greek",
+      "source": "maths-latin",
+      "target": "maths-greek",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. This Greek family connects mathematical study with learning.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this Greek word explain the Latin subject name?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. This Greek family connects mathematical study with learning."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. This Greek family connects mathematical study with learning."
+          }
+        ]
+      }
+    },
+    {
+      "id": "maths-italian-to-maths-latin",
+      "source": "maths-italian",
+      "target": "maths-latin",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. The Italian word leads through Latin to Greek.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Italian matematica come from this Latin family?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The Italian word leads through Latin to Greek."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. The Italian word leads through Latin to Greek."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "maths-now",
+      "label": "Today"
+    },
+    {
+      "nodeId": "maths-full",
+      "label": "The longer English word"
+    },
+    {
+      "nodeId": "maths-latin",
+      "label": "Latin clue"
+    },
+    {
+      "nodeId": "maths-greek",
+      "label": "A Greek learning clue"
+    }
+  ],
+  "$schema": "../case.schema.json"
+}

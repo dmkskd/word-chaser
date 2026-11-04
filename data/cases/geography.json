@@ -1,0 +1,462 @@
+{
+  "schemaVersion": 1,
+  "id": "geography",
+  "title": "geography",
+  "icon": "🌍",
+  "summary": "Mountains, rivers and places: what is hidden inside their subject name?",
+  "question": "What do geography and geometry have in common?",
+  "startNodeId": "geography-now",
+  "goalNodeIds": [
+    "geography-french",
+    "geography-latin",
+    "geography-greek"
+  ],
+  "completion": "Geography travelled through French and Latin from Greek. Its name means describing the earth. Geometry shares geo, but is about measuring rather than describing.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Word history · geography",
+      "url": "https://www.etymonline.com/word/geography"
+    },
+    {
+      "id": "italian",
+      "title": "Treccani · geografia",
+      "url": "https://www.treccani.it/vocabolario/geografia/"
+    },
+    {
+      "id": "comparison",
+      "title": "Duden · Landkarte",
+      "url": "https://www.duden.de/rechtschreibung/Landkarte"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "geography-now",
+      "form": "geography",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Exploring places, landscapes and the world.",
+      "pronunciation": {
+        "text": "geography",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A school notebook",
+        "text": "Mountains, rivers and places: what is hidden inside their subject name?",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "What does the beginning geo make you think of?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Mountains, rivers and places: what is hidden inside their subject name?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "geography-french",
+      "form": "geographie",
+      "languageId": "old-french",
+      "eraId": "medieval",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "French · 1400s",
+      "meaning": "A subject name in a French book.",
+      "pronunciation": {
+        "text": "geographie",
+        "languageId": "old-french"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A French schoolbook",
+        "text": "English geography came through French. Compare the French ending -ie with the English ending -y.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try saying the French and English words slowly."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "English geography came through French. Compare the French ending -ie with the English ending -y."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geography-latin",
+      "form": "geographia",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "rome",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "An older Latin form",
+      "meaning": "A subject name in a Latin book.",
+      "pronunciation": {
+        "text": "geographia",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "tablet",
+        "title": "A Latin book",
+        "text": "Latin geographia supplied the French name. Latin had borrowed this word from Greek.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare the middle of the Latin and French words."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Latin geographia supplied the French name. Latin had borrowed this word from Greek."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geography-greek",
+      "form": "geōgraphia",
+      "languageId": "ancient-greek",
+      "eraId": "greek",
+      "placeId": "greece",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Ancient Greek",
+      "meaning": "A Greek word to investigate.",
+      "pronunciation": {
+        "text": "γεωγραφία",
+        "languageId": "ancient-greek"
+      },
+      "evidence": {
+        "kind": "scroll",
+        "title": "A Greek book",
+        "text": "Gē means earth; -graphia means describing or writing. Picture describing a river, a mountain and the places around them.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Break the word after geo. Could each part carry meaning?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Gē means earth; -graphia means describing or writing. Picture describing a river, a mountain and the places around them."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geography-italian",
+      "form": "geografia",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A subject name in an Italian schoolbook.",
+      "pronunciation": {
+        "text": "geografia",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "letter",
+        "title": "An Italian schoolbook",
+        "text": "Italian geografia also leads back through Latin to Greek. Italian and English are cousins here; English did not borrow this modern Italian word directly.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "italian"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "A shared ending can help us spot a word family."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Italian geografia also leads back through Latin to Greek. Italian and English are cousins here; English did not borrow this modern Italian word directly."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geography-map",
+      "form": "Landkarte",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A map, in German.",
+      "pronunciation": {
+        "text": "Landkarte",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A German map label",
+        "text": "A Landkarte can help you study geography, but this German word did not supply the English subject name.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "comparison"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "A useful object and a subject name need not have the same word history."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "A Landkarte can help you study geography, but this German word did not supply the English subject name."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "geography-now-to-geography-french",
+      "source": "geography-now",
+      "target": "geography-french",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. The English word came through French.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this French word help explain English geography?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The English word came through French."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. The English word came through French."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geography-now-to-geography-italian",
+      "source": "geography-now",
+      "target": "geography-italian",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Both word histories lead through Latin to Greek.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could the Italian and English names share an older source?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Both word histories lead through Latin to Greek."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. Both word histories lead through Latin to Greek."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geography-now-to-geography-map",
+      "source": "geography-now",
+      "target": "geography-map",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. A map helps us study geography, but the subject name follows a Greek trail.",
+        "sourceIds": [
+          "history",
+          "comparison"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English geography get its name from German Landkarte?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. No. A map helps us study geography, but the subject name follows a Greek trail."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. A map helps us study geography, but the subject name follows a Greek trail."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geography-french-to-geography-latin",
+      "source": "geography-french",
+      "target": "geography-latin",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. The French subject name follows the Latin word.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this Latin word be behind the French one?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The French subject name follows the Latin word."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. The French subject name follows the Latin word."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geography-latin-to-geography-greek",
+      "source": "geography-latin",
+      "target": "geography-greek",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Gē means earth; -graphia means describing or writing. Picture describing a river, a mountain and the places around them.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Latin have borrowed this subject name from Greek?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Gē means earth; -graphia means describing or writing. Picture describing a river, a mountain and the places around them."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Gē means earth; -graphia means describing or writing. Picture describing a river, a mountain and the places around them."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geography-italian-to-geography-latin",
+      "source": "geography-italian",
+      "target": "geography-latin",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Italian keeps another branch of the Latin word family.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this be the older source of the Italian word?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Italian keeps another branch of the Latin word family."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. Italian keeps another branch of the Latin word family."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "geography-now",
+      "label": "Today"
+    },
+    {
+      "nodeId": "geography-french",
+      "label": "French clue"
+    },
+    {
+      "nodeId": "geography-latin",
+      "label": "Latin clue"
+    },
+    {
+      "nodeId": "geography-greek",
+      "label": "Greek word parts"
+    }
+  ],
+  "$schema": "../case.schema.json"
+}

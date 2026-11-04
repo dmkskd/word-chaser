@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "id": "piano",
+  "title": "piano",
+  "icon": "♫",
+  "summary": "A musical instrument. Could its name be hiding a missing piece?",
+  "question": "Where did this word come from?",
+  "startNodeId": "piano-0",
+  "goalNodeIds": [
+    "piano-1"
+  ],
+  "completion": "English piano ← Italian pianoforte. A word crossed languages and became shorter. This is the instrument-name trail; piano has a deeper history too.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "etymology",
+      "title": "American Heritage · piano",
+      "url": "https://www.ahdictionary.com/word/search.html?q=piano"
+    },
+    {
+      "id": "long-name",
+      "title": "American Heritage · pianoforte",
+      "url": "https://ahdictionary.com/word/search.html?q=pianoforte"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "piano-0",
+      "form": "piano",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A keyboard instrument.",
+      "pronunciation": {
+        "text": "piano",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "The starting word",
+        "text": "A musical instrument. Could its name be hiding a missing piece?",
+        "notice": "Compare the word forms, their meanings and their dates. What connection does the evidence support?",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Could its name be hiding a missing half?"
+          },
+          {
+            "title": "What the history tells us",
+            "text": "A musical instrument. Could its name be hiding a missing piece?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "piano-1",
+      "form": "pianoforte",
+      "languageId": "italian",
+      "eraId": "earlymodern",
+      "placeId": "florence",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "The longer instrument name",
+      "meaning": "Soft + loud, in Italian.",
+      "pronunciation": {
+        "text": "pianoforte",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "Soft and loud in Italy",
+        "text": "Piano + forte: soft + loud, in Italian. English piano is a shortened form of pianoforte. The instrument’s name gives away its special trick.",
+        "notice": "Which half survives in the usual English instrument name? Try whispering “piano” and saying “forte” loudly.",
+        "sourceIds": [
+          "etymology"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Piano is a shorter version of pianoforte."
+          },
+          {
+            "title": "What the history tells us",
+            "text": "Piano + forte: soft + loud, in Italian. English piano is a shortened form of pianoforte. The instrument’s name gives away its special trick."
+          }
+        ]
+      }
+    },
+    {
+      "id": "piano-german",
+      "form": "Klavier",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "A modern comparison",
+      "meaning": "A keyboard instrument, in German.",
+      "pronunciation": {
+        "text": "Klavier",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "German word card",
+        "text": "Klavier is a German name for a keyboard instrument. This case traces piano to Italian pianoforte.",
+        "notice": "Compare the meaning, sound, and historical evidence.",
+        "sourceIds": [
+          "long-name"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Same instrument. Does the name explain piano?"
+          },
+          {
+            "title": "What the history tells us",
+            "text": "Klavier is a German name for a keyboard instrument. This case traces piano to Italian pianoforte."
+          }
+        ]
+      }
+    },
+    {
+      "id": "piano-french",
+      "form": "piano",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "A modern comparison",
+      "meaning": "The instrument name, in French.",
+      "pronunciation": {
+        "text": "piano",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "French word card",
+        "text": "French piano also belongs to the Italian instrument-name family. The longer Italian name is pianoforte.",
+        "notice": "Compare the meaning, sound, and historical evidence.",
+        "sourceIds": [
+          "long-name"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "The same name appears in another language. Where does it lead?"
+          },
+          {
+            "title": "What the history tells us",
+            "text": "French piano also belongs to the Italian instrument-name family. The longer Italian name is pianoforte."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "piano-edge-0",
+      "source": "piano-0",
+      "target": "piano-1",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Follow the word history",
+        "text": "Piano + forte: soft + loud, in Italian. English piano is a shortened form of pianoforte. The instrument’s name gives away its special trick.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace piano back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Piano + forte: soft + loud, in Italian. English piano is a shortened form of pianoforte. The instrument’s name gives away its special trick."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "piano-french-root",
+      "source": "piano-french",
+      "target": "piano-1",
+      "type": "related",
+      "evidence": {
+        "title": "A shared source",
+        "text": "French piano also belongs to the Italian instrument-name family. The longer Italian name is pianoforte.",
+        "sourceIds": [
+          "long-name"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace piano back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Piano + forte: soft + loud, in Italian. English piano is a shortened form of pianoforte. The instrument’s name gives away its special trick."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "piano-0-lead-piano-german",
+      "source": "piano-0",
+      "target": "piano-german",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "Klavier is a German name for a keyboard instrument. This case traces piano to Italian pianoforte.",
+        "sourceIds": [
+          "long-name"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this word explain where English piano came from?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. Klavier is a German name for a keyboard instrument. This case traces piano to Italian pianoforte."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Klavier is a German name for a keyboard instrument. This case traces piano to Italian pianoforte."
+          }
+        ]
+      }
+    },
+    {
+      "id": "piano-0-lead-piano-french",
+      "source": "piano-0",
+      "target": "piano-french",
+      "type": "related",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "French piano also belongs to the Italian instrument-name family. The longer Italian name is pianoforte.",
+        "sourceIds": [
+          "long-name"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this clue help us trace piano back through its word history?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "French piano also belongs to the Italian instrument-name family. The longer Italian name is pianoforte."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "piano-french-lead-piano-german",
+      "source": "piano-french",
+      "target": "piano-german",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "Klavier is a German name for a keyboard instrument. This case traces piano to Italian pianoforte.",
+        "sourceIds": [
+          "long-name"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this word explain where English piano came from?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. Klavier is a German name for a keyboard instrument. This case traces piano to Italian pianoforte."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Klavier is a German name for a keyboard instrument. This case traces piano to Italian pianoforte."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "$schema": "../case.schema.json",
+  "milestones": [
+    {
+      "nodeId": "piano-0",
+      "label": "Today"
+    },
+    {
+      "nodeId": "piano-1",
+      "label": "Italian clue"
+    }
+  ]
+}

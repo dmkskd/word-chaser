@@ -1,0 +1,385 @@
+{
+  "schemaVersion": 1,
+  "id": "art",
+  "title": "art",
+  "icon": "🎨",
+  "summary": "A word for making things—with a surprising lookalike.",
+  "question": "Was art always just about pictures?",
+  "startNodeId": "art-now",
+  "goalNodeIds": [
+    "art-french",
+    "art-latin"
+  ],
+  "completion": "Art came through French from Latin ars, meaning skill or craft. Italian arte is a cousin. The art in thou art is a different word.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "history",
+      "title": "American Heritage · art",
+      "url": "https://www.ahdictionary.com/word/search.html?q=art"
+    },
+    {
+      "id": "italian",
+      "title": "Treccani · arte",
+      "url": "https://www.treccani.it/vocabolario/arte/"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "art-now",
+      "form": "art",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Making pictures, sculptures and other creative things.",
+      "pronunciation": {
+        "text": "art",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "An art notebook",
+        "text": "Art can mean creative work, but its older meaning was wider.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Could art once have meant more than drawing and painting?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Art can mean creative work, but its older meaning was wider."
+          }
+        ]
+      }
+    },
+    {
+      "id": "art-french",
+      "form": "art",
+      "languageId": "old-french",
+      "eraId": "medieval",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Medieval French",
+      "meaning": "A word for skill or craft.",
+      "pronunciation": {
+        "text": "art",
+        "languageId": "old-french"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A French craft book",
+        "text": "English borrowed art through French. The older word could describe skill in many kinds of work.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "A word can cross a border without changing its spelling."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "English borrowed art through French. The older word could describe skill in many kinds of work."
+          }
+        ]
+      }
+    },
+    {
+      "id": "art-latin",
+      "form": "ars · artis",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "rome",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Roman times",
+      "meaning": "Skill or craft, in Latin.",
+      "pronunciation": {
+        "text": "ars, artis",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "tablet",
+        "title": "A Roman craft book",
+        "text": "Latin ars meant skill or craft. Artis is another form of the same word: it helps explain the art- letters kept in French and English.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare artis and art. Which letters stayed?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Latin ars meant skill or craft. Artis is another form of the same word: it helps explain the art- letters kept in French and English."
+          }
+        ]
+      }
+    },
+    {
+      "id": "art-italian",
+      "form": "arte",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        -22,
+        -9
+      ],
+      "period": "Today",
+      "meaning": "Art, in Italian.",
+      "pronunciation": {
+        "text": "arte",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "letter",
+        "title": "An Italian art notebook",
+        "text": "Italian arte comes from the same Latin word family. It is a cousin of English art, whose borrowing route goes through French.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Could the extra e hide a familiar word?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Italian arte comes from the same Latin word family. It is a cousin of English art, whose borrowing route goes through French."
+          }
+        ]
+      }
+    },
+    {
+      "id": "art-verb",
+      "form": "eart",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        -12,
+        -70
+      ],
+      "period": "Old English",
+      "meaning": "You are, in Old English.",
+      "pronunciation": {
+        "text": "eart",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A different English clue",
+        "text": "The art in thou art means you are. It comes from Old English eart. It is a different word from art meaning skill or creative work.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Same sound, different job: is this a doing word or a name for creative work?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "The art in thou art means you are. It comes from Old English eart. It is a different word from art meaning skill or creative work."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "art-now-to-art-french",
+      "source": "art-now",
+      "target": "art-french",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. English borrowed its word for skill and creative work through French.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this French word be behind English art?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. English borrowed its word for skill and creative work through French."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. English borrowed its word for skill and creative work through French."
+          }
+        ]
+      }
+    },
+    {
+      "id": "art-now-to-art-italian",
+      "source": "art-now",
+      "target": "art-italian",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. They meet in a Latin word family.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Italian arte and English art share an older word?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. They meet in a Latin word family."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. They meet in a Latin word family."
+          }
+        ]
+      }
+    },
+    {
+      "id": "art-now-to-art-verb",
+      "source": "art-now",
+      "target": "art-verb",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Thou art and the art in an art lesson are different words.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did art meaning creative work come from this word for you are?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. No. Thou art and the art in an art lesson are different words."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Thou art and the art in an art lesson are different words."
+          }
+        ]
+      }
+    },
+    {
+      "id": "art-french-to-art-latin",
+      "source": "art-french",
+      "target": "art-latin",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Latin ars, with forms such as artis, lies behind French and English art.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this Latin word for skill explain the French one?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Latin ars, with forms such as artis, lies behind French and English art."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. Latin ars, with forms such as artis, lies behind French and English art."
+          }
+        ]
+      }
+    },
+    {
+      "id": "art-italian-to-art-latin",
+      "source": "art-italian",
+      "target": "art-latin",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Arte belongs to the same Latin family.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could the Italian word come from this Latin word too?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Arte belongs to the same Latin family."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. Arte belongs to the same Latin family."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "art-now",
+      "label": "Today"
+    },
+    {
+      "nodeId": "art-french",
+      "label": "French clue"
+    },
+    {
+      "nodeId": "art-latin",
+      "label": "A Latin word for skill"
+    }
+  ],
+  "$schema": "../case.schema.json"
+}

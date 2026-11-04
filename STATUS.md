@@ -1,10 +1,10 @@
 # Junior Word Chaser — handover
 
-Updated 4 November 2026, after renaming the game Junior Word Chaser and adding particle fireworks with sound.
+Updated 4 November 2026, after adding detailed UK map zoom and the first place-name cases.
 
 ## Start here next time
 
-The HTML game is working and has 21 JSON investigations. The user is refining
+The HTML game is working and has 23 JSON investigations. The user is refining
 the gameplay with screenshots, especially difficulty, clues, touch interaction
 and compact layout. Preserve those decisions; this is still an evolving
 prototype. Read `data/AUTHORING.md` before adding content.
@@ -16,13 +16,26 @@ travel between languages—not simply follow the only available correct pin.
 
 ## Gameplay decisions to preserve
 
-- The compact top toolbar puts search, the word chooser and a two-button mode
-  selector on one row when space allows. The word count sits directly below
-  the chooser; the redundant “Your word mystery” label is removed. Mode buttons
-  have hover/focus descriptions and 44px touch targets. Search and the native
-  word dropdown share a 48px height and matching borders/type with the mode
-  group, including explicit Safari select styling. The selected word has a
-  short hover/focus description from its JSON summary.
+- The compact toolbar uses a search input and a custom **Browse all** button,
+  replacing the native long word select. Typing two letters opens tappable
+  suggestions as a compact flat list directly below the search input, without
+  the library heading, category descriptions or count. Browse all alone uses
+  the larger grouped panel. Panels suppress horizontal overflow. Prefer name prefixes, then name
+  substrings; fall back to collection/summary/language matches (e.g. Greek).
+  One letter or clearing search closes suggestions; Enter picks the first match.
+- Browse all clears the query and shows all 23 cases grouped by
+  `catalog.collections`: weekdays (Monday–Sunday), town/city names, months,
+  numbers/learning/inventions, and everyday discoveries. Each case must appear
+  exactly once; schema/reference validation checks collections. Categories
+  and membership are JSON data, not JavaScript word-name checks.
+- The compact browser has a bounded scrolling panel, 44px word buttons, a
+  current-word highlight, Close, Escape, outside-tap dismissal and keyboard
+  navigation. Opening, searching or dismissing it preserves the active attempt.
+  Choosing a case starts it fresh, closes the panel and clears search. The total
+  word count stays beside Browse all; filtered counts are inside suggestions.
+  `src/case-picker.js` owns this UI. Actual phone/Safari layout remains unverified.
+- The mode buttons retain hover/focus descriptions and 44px targets. Search,
+  Browse all and the mode group share a 48px height and matching styling.
 - URL `?mode=chaser` (also `word-chaser`) or `?mode=investigator` overrides the
   saved level. A differing URL mode starts a fresh attempt; unknown values are
   ignored. Mode buttons update that URL parameter when browser history permits.
@@ -87,8 +100,9 @@ travel between languages—not simply follow the only available correct pin.
 
 ## Current visual and audio decisions
 
-- Phone evidence cards use the viewport rather than the short map as their
-  height limit, including narrow landscape screens. Yes/No decisions sit in a
+- Phone evidence cards are content-sized bottom sheets capped at 75% of the
+  viewport, including narrow landscape screens; do not stretch them between
+  top and bottom edges. Yes/No decisions sit in a
   separate non-scrolling footer; clue/story content scrolls above them. New
   cards reset their scroll positions. DOM behavior is covered; actual phone
   viewport/keyboard rendering still needs device review.
@@ -140,7 +154,7 @@ travel between languages—not simply follow the only available correct pin.
 
 Playable cases: treasure, piano, window, fart, dinosaur, school, all seven
 days (Monday through Sunday), January, robot, algebra, geometry, geography,
-art, maths and house. The seven days are grouped together in weekday order.
+art, maths, house, Grimsby and Manchester. The seven days are grouped together in weekday order.
 
 Examples of intentional teaching distinctions:
 
@@ -192,7 +206,7 @@ npm run validate
 npm test
 ```
 
-`npm test` builds first. Last full run: **50 tests passed**. DOM tests do not verify actual
+`npm test` builds first. Last full run: **61 tests passed**. DOM tests do not verify actual
 pixels, native voice quality or real iPad behavior. Open `index.html` directly,
 or use `npm start` at `http://localhost:8000`.
 
@@ -218,12 +232,35 @@ case. The older multi-case storage key is removed on startup.
 
 ## Useful next work, not promises already implemented
 
-Place-name investigations are proposed in `PLACE-NAME-DESIGN.md`, not yet
-implemented. The user wants local UK towns connected to wider European language
-history (Grimsby and Manchester), requiring deeper geographic detail. Reuse the
-case graph and existing difficulties; add scoped name parts and accurate map
-anchors rather than a separate UK difficulty. The design records the current
-engine's limitation when testing several incoming links to one shared root.
+Place-name investigations Grimsby and Manchester are now implemented. See
+`PLACE-NAME-DESIGN.md` for the design and remaining shared-root limitation.
+Both are ordinary JSON cases at both existing difficulties, each with two false
+trails. Grimsby follows Grimesbi (1086) and the Norse settlement element;
+Manchester follows Mameceaster (923), ceaster and Latin castra. They explicitly
+investigate endings rather than claim to explain the entire name.
+
+- Optional `node.segments` reproduces the exact form; `edge.sourceSegmentId`
+  scopes a theory to one part. The header and theory context underline that
+  part. Validation rejects malformed parts/references.
+- New catalog places use `[longitude, latitude]` coordinates, projected through
+  `src/geography.js` into the original Europe map. Existing anchors are retained.
+- `node.displayOffset` is in screen pixels with a leader back to the true
+  anchor. Local historical forms remain associated with the same town.
+- The map bundles public-domain Natural Earth 1:10m UK/Ireland outlines and
+  reveals representative regional/city labels as zoom increases. Regenerate
+  with `scripts/build-uk-map.py` using the upstream GeoJSON; play needs no map
+  service or network. Nearby city labels are not administrative boundaries.
+- Zoom reaches a 35-unit view width (about 26×). Markers and hit radii keep
+  screen sizes. Buttons/pinch zoom; two fingers pan; Shift-drag or Shift-arrow
+  keys pan on desktop. One-finger dragging still searches with the glass.
+- `case.camera` opens a local view, with Town view and Whole Europe controls.
+  Earned distant connections can expand the camera; undiscovered targets do
+  not trigger framing or leader lines in Investigator. Camera changes preserve
+  progress, and no word-name conditions were added.
+- All 61 automated tests pass, including both new cases, shared-location
+  geometry, segment validation, local/Europe navigation and two-finger pan.
+  Browser access was unavailable; headless Chrome also could not launch in the
+  sandbox. Actual close-map, label collision and phone/iPad visuals are unverified.
 
 1. Test the published site and actual iPad touch/audio, including tiny speaker
    targets, card overflow and zoom near Baghdad at the map edge.

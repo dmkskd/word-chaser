@@ -34,6 +34,11 @@ export function createValidator(catalogSchema, caseSchema) {
         if (!Object.hasOwn(catalog.languages, node.pronunciation.languageId)) errors.push(`${prefix}${node.id}: unknown pronunciation language`);
         if (!Object.hasOwn(catalog.artifacts, node.evidence.kind)) errors.push(`${prefix}${node.id}: unknown artifact ${node.evidence.kind}`);
         refs(node.evidence.sourceIds, node.id);
+        if (node.segments) {
+          if (node.segments.map(part => part.text).join('') !== node.form) errors.push(`${prefix}${node.id}: segments must reproduce the word form`);
+          const ids = node.segments.filter(part => part.id).map(part => part.id);
+          if (new Set(ids).size !== ids.length) errors.push(`${prefix}${node.id}: duplicate segment ID`);
+        }
       }
       for (const edge of wordCase.edges) {
         if (graph.getElementById(edge.id).nonempty()) { errors.push(`${prefix}duplicate edge ${edge.id}`); continue; }
@@ -42,6 +47,7 @@ export function createValidator(catalogSchema, caseSchema) {
         graph.add({group: 'edges', data: {id: edge.id, source: edge.source, target: edge.target}});
         if (!Object.hasOwn(catalog.relations, edge.type)) errors.push(`${prefix}${edge.id}: unknown relation ${edge.type}`);
         refs(edge.evidence.sourceIds, edge.id);
+        if (edge.sourceSegmentId && !wordCase.nodes.find(node => node.id === edge.source)?.segments?.some(part => part.id === edge.sourceSegmentId)) errors.push(`${prefix}${edge.id}: unknown source segment`);
         if (edge.challenge.choices.filter(choice => choice.correct).length !== 1) errors.push(`${prefix}${edge.id}: challenge must have one correct answer`);
         if (new Set(edge.challenge.choices.map(choice => choice.id)).size !== edge.challenge.choices.length) errors.push(`${prefix}${edge.id}: duplicate choice IDs`);
       }
@@ -57,6 +63,17 @@ export function createValidator(catalogSchema, caseSchema) {
       for (const goal of wordCase.goalNodeIds) if (!reachable.has(goal)) errors.push(`${prefix}${goal}: unreachable goal`);
       graph.destroy();
     }
+    const collectionIds = new Set(), groupedCases = new Set();
+    for (const collection of catalog.collections) {
+      if (collectionIds.has(collection.id)) errors.push(`catalog duplicate collection ${collection.id}`);
+      collectionIds.add(collection.id);
+      for (const id of collection.caseIds) {
+        if (!caseIds.has(id)) errors.push(`catalog collection ${collection.id}: unknown case ${id}`);
+        if (groupedCases.has(id)) errors.push(`catalog duplicate grouped case ${id}`);
+        groupedCases.add(id);
+      }
+    }
+    for (const id of caseIds) if (!groupedCases.has(id)) errors.push(`catalog ungrouped case ${id}`);
     for (const [id, era] of Object.entries(catalog.eras)) if (era.startYear > era.endYear) errors.push(`catalog era ${id}: reversed date range`);
     return errors;
   };

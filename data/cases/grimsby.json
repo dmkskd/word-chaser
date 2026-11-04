@@ -1,0 +1,416 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "grimsby",
+  "title": "Grimsby",
+  "icon": "🪧",
+  "summary": "A town name with a hidden history. Investigate its ending.",
+  "question": "What does the ending of Grimsby tell us?",
+  "startNodeId": "grimsby-now",
+  "goalNodeIds": [
+    "grimsby-old",
+    "grimsby-norse"
+  ],
+  "completion": "Ending explained! Grimsby’s -by is a Norse settlement word. The rest contains the personal name Grímr. The town stayed in England; its name carries a Scandinavian language connection.",
+  "partner": "Town names can keep clues from languages spoken long ago.",
+  "sources": [
+    {
+      "id": "names",
+      "title": "Dated Lincolnshire place names · Grimesbi (1086)",
+      "url": "https://www.s-gabriel.org/names/gunnvor/LincolnshirePlacenames/Lincolnshire2.htm"
+    },
+    {
+      "id": "grim",
+      "title": "Lincolnshire Folk Tales Project · name elements and later legend",
+      "url": "https://lincolnshirefolktalesproject.com/2024/02/20/havelok-grim/"
+    },
+    {
+      "id": "by",
+      "title": "American Heritage · by",
+      "url": "https://www.ahdictionary.com/word/search.html?q=by"
+    },
+    {
+      "id": "bye",
+      "title": "American Heritage · bye",
+      "url": "https://www.ahdictionary.com/word/search.html?q=bye"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "grimsby-now",
+      "form": "Grimsby",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "grimsby",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A town on England’s east coast.",
+      "pronunciation": {
+        "text": "Grimsby",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "sign",
+        "title": "A town sign",
+        "text": "Grimsby combines the Norse personal name Grímr with an element meaning a settlement. The fisherman Grim belongs to a later legend; the name does not prove that story.",
+        "notice": "A matching sound is a clue. Check the meaning and the older evidence too.",
+        "sourceIds": [
+          "names",
+          "grim"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Look at the ending of the town’s name."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Grimsby combines the Norse personal name Grímr with an element meaning a settlement. The fisherman Grim belongs to a later legend; the name does not prove that story."
+          }
+        ]
+      },
+      "segments": [
+        {
+          "text": "Grims"
+        },
+        {
+          "text": "by",
+          "id": "ending"
+        }
+      ],
+      "mapCaption": "Today"
+    },
+    {
+      "id": "grimsby-old",
+      "form": "Grimesbi",
+      "languageId": "middle-english",
+      "eraId": "medieval",
+      "placeId": "grimsby",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Recorded in 1086",
+      "meaning": "A name in an old record.",
+      "pronunciation": {
+        "text": "Grimesbi",
+        "languageId": "middle-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An old place-name record",
+        "text": "Grimesbi is recorded in 1086. Its ending is the Scandinavian settlement element; Gríms is a form of the personal name Grímr. An old spelling is evidence, not the date the town began.",
+        "notice": "A matching sound is a clue. Check the meaning and the older evidence too.",
+        "sourceIds": [
+          "names"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare Grimesbi with Grimsby. Which sounds stayed?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Grimesbi is recorded in 1086. Its ending is the Scandinavian settlement element; Gríms is a form of the personal name Grímr. An old spelling is evidence, not the date the town began."
+          }
+        ]
+      },
+      "displayOffset": [
+        -70,
+        -65
+      ],
+      "segments": [
+        {
+          "text": "Grimes"
+        },
+        {
+          "text": "bi",
+          "id": "ending"
+        }
+      ],
+      "mapCaption": "Recorded in 1086"
+    },
+    {
+      "id": "grimsby-norse",
+      "form": "bý",
+      "languageId": "old-norse",
+      "eraId": "medieval",
+      "placeId": "norse-region",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Medieval Norse",
+      "meaning": "A farmstead or village.",
+      "pronunciation": {
+        "text": "bý",
+        "languageId": "old-norse"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A northern vocabulary clue",
+        "text": "The Norse place-name element bý means a farmstead or village. It explains the ending of Grimsby. The map shows a language region, not a journey by a known founder.",
+        "notice": "A matching sound is a clue. Check the meaning and the older evidence too.",
+        "sourceIds": [
+          "names",
+          "grim"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Does a word for a village fit a place name?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "The Norse place-name element bý means a farmstead or village. It explains the ending of Grimsby. The map shows a language region, not a journey by a known founder."
+          }
+        ]
+      },
+      "mapCaption": "Medieval Norse"
+    },
+    {
+      "id": "grimsby-by",
+      "form": "by",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Near or beside, as in “by the door”.",
+      "pronunciation": {
+        "text": "by",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "An English sentence",
+        "text": "English by comes through Old English bī. It is not the Norse settlement element in Grimsby, even though the letters match.",
+        "notice": "A matching sound is a clue. Check the meaning and the older evidence too.",
+        "sourceIds": [
+          "by",
+          "names"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Does “beside” explain the settlement ending?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "English by comes through Old English bī. It is not the Norse settlement element in Grimsby, even though the letters match."
+          }
+        ]
+      },
+      "displayOffset": [
+        -65,
+        35
+      ],
+      "mapCaption": "Today"
+    },
+    {
+      "id": "grimsby-bye",
+      "form": "bye",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Something you say when leaving.",
+      "pronunciation": {
+        "text": "bye",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "letter",
+        "title": "A farewell note",
+        "text": "Bye is short for goodbye. The ending of Grimsby has an older Scandinavian settlement history; it is not a farewell.",
+        "notice": "A matching sound is a clue. Check the meaning and the older evidence too.",
+        "sourceIds": [
+          "bye",
+          "names"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "A similar sound can have a different meaning and history."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Bye is short for goodbye. The ending of Grimsby has an older Scandinavian settlement history; it is not a farewell."
+          }
+        ]
+      },
+      "displayOffset": [
+        65,
+        35
+      ],
+      "mapCaption": "Today"
+    }
+  ],
+  "edges": [
+    {
+      "id": "grimsby-old-link",
+      "source": "grimsby-now",
+      "target": "grimsby-old",
+      "type": "spelling",
+      "evidence": {
+        "title": "A name-history connection",
+        "text": "Yes. Grimesbi is recorded in 1086; compare its ending with Grimsby.",
+        "sourceIds": [
+          "names"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this old recorded name be an earlier spelling of Grimsby?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Grimesbi is recorded in 1086; compare its ending with Grimsby."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Grimesbi is recorded in 1086; compare its ending with Grimsby."
+          }
+        ]
+      },
+      "timeLabel": "Today → 1086"
+    },
+    {
+      "id": "grimsby-by-link",
+      "source": "grimsby-now",
+      "target": "grimsby-by",
+      "type": "comparison",
+      "evidence": {
+        "title": "A name-history connection",
+        "text": "No. Matching letters are not enough. Grimsby’s ending means a settlement; English by follows Old English bī.",
+        "sourceIds": [
+          "by",
+          "names"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does the “by” in “by the door” explain Grimsby’s ending?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Matching letters are not enough. Grimsby’s ending means a settlement; English by follows Old English bī."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Matching letters are not enough. Grimsby’s ending means a settlement; English by follows Old English bī."
+          }
+        ]
+      },
+      "sourceSegmentId": "ending"
+    },
+    {
+      "id": "grimsby-bye-link",
+      "source": "grimsby-now",
+      "target": "grimsby-bye",
+      "type": "comparison",
+      "evidence": {
+        "title": "A name-history connection",
+        "text": "No. Bye is shortened from goodbye. Grimsby’s settlement ending has a different history.",
+        "sourceIds": [
+          "bye",
+          "names"
+        ]
+      },
+      "challenge": {
+        "prompt": "Was Grimsby’s ending made from the farewell “bye”?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Bye is shortened from goodbye. Grimsby’s settlement ending has a different history."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Bye is shortened from goodbye. Grimsby’s settlement ending has a different history."
+          }
+        ]
+      },
+      "sourceSegmentId": "ending"
+    },
+    {
+      "id": "grimsby-norse-link",
+      "source": "grimsby-old",
+      "target": "grimsby-norse",
+      "type": "formation",
+      "evidence": {
+        "title": "A name-history connection",
+        "text": "Yes. The ending comes from the Scandinavian settlement element. The first part is a personal name.",
+        "sourceIds": [
+          "names",
+          "grim"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this Norse village word explain the ending of Grimesbi?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The ending comes from the Scandinavian settlement element. The first part is a personal name."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. The ending comes from the Scandinavian settlement element. The first part is a personal name."
+          }
+        ]
+      },
+      "sourceSegmentId": "ending",
+      "timeLabel": "1086 record → older Norse element"
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "grimsby-now",
+      "label": "Town name"
+    },
+    {
+      "nodeId": "grimsby-old",
+      "label": "Old record"
+    },
+    {
+      "nodeId": "grimsby-norse",
+      "label": "Ending explained"
+    }
+  ],
+  "camera": {
+    "center": [
+      -1.5,
+      53.4
+    ],
+    "width": 170
+  }
+}

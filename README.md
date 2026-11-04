@@ -18,7 +18,7 @@ For an HTTP preview, run `npm start` and open http://localhost:8000. `npm test` 
 
 ## Content is data
 
-All 21 current cases are JSON. The interpreter contains no word-name conditions, word-specific click handlers, or hand-written exceptions for branches.
+All 23 current cases are JSON. The interpreter contains no word-name conditions, word-specific click handlers, or hand-written exceptions for branches.
 
 | File | Purpose |
 | --- | --- |
@@ -31,7 +31,7 @@ All 21 current cases are JSON. The interpreter contains no word-name conditions,
 | `src/speech.js` | Consistent language voices, loading and explicitly configured approximations |
 | `src/main.js` | Shared interface interpreting the case and catalog data |
 
-**Add a word by adding JSON and registering its file in the manifest. No JavaScript change is required.** See [the content guide](data/AUTHORING.md) and [the complete treasure example](data/cases/treasure.json).
+**Add a word by adding JSON, registering its file and assigning a catalog collection. No JavaScript change is required.** See [the content guide](data/AUTHORING.md) and [the complete treasure example](data/cases/treasure.json).
 
 The source of truth is JSON. `npm run build` validates it and bundles the data with the interpreter into `assets/app.js` using esbuild. Bundling keeps direct-file/offline opening usable; edit the JSON source, not the generated bundle.
 
@@ -49,6 +49,8 @@ A case can have multiple branches, converging paths, and comparison leaves. Ever
 
 ## Play
 
+Type two letters in **Find a word…** to see matching words immediately, then tap a result. **Browse all** shows the complete collection grouped into weekdays, town/city names, months, learning/inventions and everyday discoveries. Opening or searching the browser keeps your current progress; choosing a word starts its case fresh.
+
 Choose **Word Chaser** for guided play or **Investigator** to search for hidden words with the glass, with a location riddle after one minute and a full case restart after any wrong answer. Changing modes starts a fresh attempt. Investigator keeps the starting word visible, reveals other words as you hover or drag the glass over them, and unlocks notebook stories after completion.
 
 Share a level directly with `?mode=chaser` (or `?mode=word-chaser`) or `?mode=investigator`. A valid URL mode overrides the saved mode; switching modes resets the attempt.
@@ -61,6 +63,8 @@ Share a level directly with `?mode=chaser` (or `?mode=word-chaser`) or `?mode=in
 The catalog includes all seven days of the week, grouped Monday to Sunday. Their trails distinguish older English words from translated Roman naming ideas. Solving a case places a stamp on the map and celebrates with rising rockets, glowing spark trails and optional synthesized firework sounds. The “Firework sounds” checkbox mutes them; reduced-motion support keeps the solved stamp without animation.
 
 Quiet original detective music starts after your first tap. Use **♪ Music** in the header to mute it. It lowers while a word is spoken and pauses when the page is hidden. The score is in `data/detective-music.json` and plays without audio downloads.
+
+Grimsby and Manchester are place-name cases: investigate the highlighted ending, then follow its history across Europe. They open on a close UK map with detailed coastline and town labels. **Town view** returns locally; **Whole Europe** opens the wider map. Pins keep a readable size as you zoom. Two fingers pan; Shift-drag or Shift + arrows also pan.
 
 Camera movement never advances progress. Clicking empty map space smoothly zooms. Arrow keys move the glass, Enter inspects an object, +/− zoom, P speaks the object under the glass, and H gives a brief hint. Hints are explicitly requested and disappear after four seconds.
 

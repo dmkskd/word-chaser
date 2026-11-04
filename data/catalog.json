@@ -235,6 +235,46 @@
       "x": 300,
       "y": 492,
       "searchHint": "Look southwest of France, in the country whose capital is Madrid!"
+    },
+    "grimsby": {
+      "name": "Grimsby · Lincolnshire",
+      "coordinates": [
+        -0.0752,
+        53.5675
+      ],
+      "searchHint": "Search England’s east coast, just south of the Humber estuary."
+    },
+    "manchester": {
+      "name": "Manchester · north-west England",
+      "coordinates": [
+        -2.2453,
+        53.4808
+      ],
+      "searchHint": "Find the city in north-west England famous for two football teams in red and blue."
+    },
+    "london": {
+      "name": "London · English comparison words",
+      "coordinates": [
+        -0.1276,
+        51.5072
+      ],
+      "searchHint": "Where does Big Ben chime? These are English vocabulary examples, not claims of a London birthplace."
+    },
+    "norse-region": {
+      "name": "Scandinavia · Old Norse vocabulary",
+      "coordinates": [
+        10,
+        58.5
+      ],
+      "searchHint": "Look north, across the North Sea, around Scandinavia."
+    },
+    "latin-region": {
+      "name": "Roman world · Latin vocabulary",
+      "coordinates": [
+        12.5,
+        41.9
+      ],
+      "searchHint": "Look towards the Italian peninsula, where Rome stands. This marker represents Latin vocabulary."
     }
   },
   "relations": {
@@ -325,6 +365,10 @@
     "script": {
       "icon": "🎭",
       "label": "Theatre script"
+    },
+    "sign": {
+      "icon": "🪧",
+      "label": "Place-name sign"
     }
   },
   "cases": [
@@ -348,7 +392,9 @@
     "cases/geography.json",
     "cases/art.json",
     "cases/maths.json",
-    "cases/house.json"
+    "cases/house.json",
+    "cases/grimsby.json",
+    "cases/manchester.json"
   ],
   "$schema": "catalog.schema.json",
   "rules": {
@@ -360,7 +406,7 @@
     "chaser": {
       "label": "Word Chaser",
       "description": "Explore with clues. Mistakes can be tried again.",
-      "instructions": "Move or drag the glass over an object to reveal its word. Tap the object to test your theory. Ask for a little clue if you need one. Correct theories earn points; mistaken guesses reduce the reward. Keyboard: arrows move, Enter inspects, +/− zoom, P speaks, H gives a hint.",
+      "instructions": "Move or drag the glass over an object to reveal its word. Tap the object to test your theory. Ask for a little clue if you need one. Correct theories earn points; mistaken guesses reduce the reward. Keyboard: arrows move, Enter inspects, +/− zoom, P speaks, H gives a hint. Zoom with +/− or pinch. Use two fingers to pan, or Shift + arrow keys. Whole Europe shows the wider map.",
       "showMarkerDetails": true,
       "showPeeks": true,
       "allowHints": true,
@@ -372,7 +418,7 @@
     "investigator": {
       "label": "Investigator",
       "description": "Find hidden words. A location hint after a minute. One wrong answer restarts the case.",
-      "instructions": "Start with the visible word. Move or drag the glass around the map to uncover other words, then tap to test your theory. Decide Yes or No using what you know. After a minute of searching, a location riddle gives you a nudge. One wrong answer restarts this case. Keyboard: arrows move, Enter opens a word, +/− zoom.",
+      "instructions": "Start with the visible word. Move or drag the glass around the map to uncover other words, then tap to test your theory. Decide Yes or No using what you know. After a minute of searching, a location riddle gives you a nudge. One wrong answer restarts this case. Keyboard: arrows move, Enter opens a word, +/− zoom. Zoom with +/− or pinch. Use two fingers to pan, or Shift + arrow keys. Whole Europe shows the wider map.",
       "showMarkerDetails": false,
       "showPeeks": true,
       "allowHints": false,
@@ -381,5 +427,65 @@
       "showPeekDetails": false,
       "searchHintSeconds": 60
     }
-  }
+  },
+  "collections": [
+    {
+      "id": "weekdays",
+      "title": "Days of the week",
+      "description": "Follow the stories behind Monday to Sunday.",
+      "caseIds": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ]
+    },
+    {
+      "id": "places",
+      "title": "Town & city names",
+      "description": "Uncover the history hidden in a place’s name.",
+      "caseIds": [
+        "grimsby",
+        "manchester"
+      ]
+    },
+    {
+      "id": "calendar",
+      "title": "Months",
+      "description": "Explore the names on a calendar.",
+      "caseIds": [
+        "january"
+      ]
+    },
+    {
+      "id": "learning",
+      "title": "Numbers, learning & inventions",
+      "description": "Words from the classroom and beyond.",
+      "caseIds": [
+        "school",
+        "maths",
+        "algebra",
+        "geometry",
+        "geography",
+        "robot"
+      ]
+    },
+    {
+      "id": "everyday",
+      "title": "Everyday discoveries",
+      "description": "Familiar words with surprising stories.",
+      "caseIds": [
+        "house",
+        "window",
+        "treasure",
+        "piano",
+        "art",
+        "dinosaur",
+        "fart"
+      ]
+    }
+  ]
 }

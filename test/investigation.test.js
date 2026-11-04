@@ -103,7 +103,7 @@ test('content validation rejects missing evidence sources, dangling links and un
 
 test('a 500-case catalog validates as data without instantiating 500 active sessions', () => {
   const many = Array.from({length: 500}, (_, i) => ({...structuredClone(treasure), id: `case-${i}`}));
-  assert.deepEqual(validate(catalog, many), []);
+  assert.deepEqual(validate({...catalog, collections: [{id: 'many', title: 'Many words', description: 'Scale test', caseIds: many.map(c => c.id)}]}, many), []);
 });
 
 test('theories have rewards, consequences, and no repeat-point farming', () => {
@@ -211,4 +211,45 @@ test('the whole week is available, with English forms and translated Roman namin
     assert(engine.complete, wordCase.id);
     engine.destroy();
   }
+});
+
+test('place-name cases investigate scoped endings using the existing graph and scoring', () => {
+  for (const id of ['grimsby','manchester']) {
+    const wordCase = cases.find(c => c.id === id), engine = new Investigation(catalog,wordCase);
+    const start = engine.node();
+    assert.equal(start.segments.map(s => s.text).join(''),start.form);
+    assert(wordCase.edges.some(e => e.sourceSegmentId));
+    assert(wordCase.edges.some(e => e.type === 'formation'));
+    const falseTrail = engine.outgoing().find(e => catalog.relations[e.type].outcome === 'excluded');
+    go(engine,falseTrail.target);
+    assert.equal(engine.nodeStatus(falseTrail.target),'excluded');
+    assert.equal(engine.currentId,wordCase.startNodeId);
+    while (!engine.complete) {
+      const lead = engine.leads().find(e => catalog.relations[e.type].outcome === 'connected');
+      assert(lead,`Missing next lead for ${id}`); go(engine,lead.target);
+    }
+    assert.equal(engine.points,3 * engine.tested.size);
+    const restored = new Investigation(catalog,wordCase,engine.snapshot());
+    assert(restored.complete); assert.equal(restored.points,engine.points);
+    engine.destroy(); restored.destroy();
+  }
+});
+
+test('segment validation rejects mismatched forms, duplicate IDs and dangling relationship scope', () => {
+  const original = cases.find(c => c.id === 'grimsby');
+  const mismatch = structuredClone(original); mismatch.nodes[0].segments[0].text='Wrong';
+  assert(validate(catalog,[mismatch]).some(e => e.includes('segments must reproduce')));
+  const duplicate = structuredClone(original); duplicate.nodes[0].segments[0].id='ending';
+  assert(validate(catalog,[duplicate]).some(e => e.includes('duplicate segment')));
+  const dangling = structuredClone(original); dangling.edges[0].sourceSegmentId='missing';
+  assert(validate(catalog,[dangling]).some(e => e.includes('unknown source segment')));
+});
+
+test('collections reject missing, duplicate and ungrouped cases', () => {
+  const unknown=structuredClone(catalog);unknown.collections[0].caseIds[0]='missing';
+  assert(validate(unknown,cases).some(e=>e.includes('unknown case missing')));
+  const duplicate=structuredClone(catalog);duplicate.collections[1].caseIds.push(duplicate.collections[0].caseIds[0]);
+  assert(validate(duplicate,cases).some(e=>e.includes('duplicate grouped case')));
+  const absent=structuredClone(catalog);absent.collections[0].caseIds.pop();
+  assert(validate(absent,cases).some(e=>e.includes('ungrouped case sunday')));
 });

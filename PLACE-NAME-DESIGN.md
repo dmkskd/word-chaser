@@ -1,6 +1,13 @@
 # Place-name investigations — proposed engine integration
 
-Design proposal, 4 November 2026. Not implemented or playable yet.
+Design and implementation notes, 4 November 2026.
+
+The first slice is now implemented: Grimsby and Manchester are playable at both
+existing difficulties, with scoped segments, geographic anchors, screen-space
+evidence offsets and leader lines, detailed UK/Ireland coastline, local labels,
+deeper zoom and panning. Cases open at a local scale; earned international
+connections can expand the camera. The broader shared-root/edge-completion
+proposal below remains future work. Real-device visual review is outstanding.
 
 ## Keep one investigation engine
 
@@ -45,14 +52,13 @@ Investigating other components can be a later, larger case with multiple goals.
 
 ## Separate geography from display layout
 
-Today `placeId` resolves to a 900×650 map anchor and `offset` moves the marker.
+Legacy `placeId` resolves to a 900×650 map anchor and `offset` moves the marker.
 That works for broad country clues but cannot reliably locate neighbouring
 towns or separate several historical forms at the same town.
 
-Introduce geographic coordinates for new place anchors and one shared map
-projection, retaining legacy anchors while existing content is migrated.
-Centralize position calculation: `main.js` and `map-view.js` currently each
-calculate place plus offset independently.
+New place anchors use `coordinates: [longitude, latitude]` and the shared
+`src/geography.js` projection, retaining legacy anchors. `main.js` and
+`map-view.js` now share the evidence-position calculation.
 
 Keep the town's geographic anchor fixed. Use screen-space label placement and,
 where necessary, a local stack of evidence cards with leaders to that anchor.
@@ -60,11 +66,11 @@ Do not move a historical form into another county to avoid a collision.
 Distinguish an exact evidence site from a broad language region; a regional
 anchor is representative and must not pretend to be the word's birthplace.
 
-Extend `MapView` with deeper zoom, pan and bounds fitting, detailed coastline,
-and regional/city labels that appear at useful zoom levels. Current zoom stops
-at a view width of 225 (4×); merely increasing that cap will enlarge the coarse
-basemap and the pins rather than provide the required detail. Size pins and
-hit targets in screen pixels so nearby towns stay usable on iPad.
+`MapView` now allows a view width of 35 (about 26×), two-finger pan/pinch,
+Shift-drag or Shift-arrow panning, and regional/city labels at close zoom.
+`data/uk-map.json` bundles simplified Natural Earth 1:10m UK/Ireland outlines.
+Markers and hit targets scale in screen pixels. Exact device layout still
+needs review; merely increasing the old zoom cap of 225 was insufficient.
 
 Optional case camera data supplies the opening area, such as northern England.
 Once a connection is earned, a camera action can frame the current place and

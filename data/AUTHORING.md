@@ -1,6 +1,6 @@
 # Author a Junior Word Chaser investigation
 
-A new word is a **JSON case file** plus a path in `catalog.json`. No per-word JavaScript, callback, or renderer extension is needed.
+A new word is a **JSON case file** plus a path and collection membership in `catalog.json`. No per-word JavaScript, callback, or renderer extension is needed.
 
 Use `cases/fart.json` for a small example or `cases/treasure.json` for a graph with three leads and a converging root.
 
@@ -168,3 +168,50 @@ Investigator's automatic location nudges use `catalog.places[*].searchHint`.
 Write a short, child-friendly geographical riddle without revealing the word
 or whether a theory is correct. Mode `searchHintSeconds` sets the search delay
 in seconds (currently 60 for Investigator, 0 to disable in Word Chaser).
+
+
+## Place-name cases and close geography
+
+Grimsby and Manchester are working examples. Use the same case graph, scoring,
+Yes/No decisions and difficulty modes as any other word.
+
+A node may have `segments`, for example
+`[{"text":"Man"},{"text":"chester","id":"ending"}]`. Their text must
+concatenate exactly to `form`; IDs must be unique within the node. Set
+`sourceSegmentId: "ending"` on an edge to investigate that part of its source.
+The question context highlights it. A `formation` link explains a component;
+completion text must not claim the whole name is explained if other parts remain.
+
+New catalog places may use `coordinates: [longitude, latitude]` instead of
+legacy `x`/`y`. Shared projection is in `src/geography.js`. Use accurate town
+centres. Set `offset: [0, 0]` for new geographic cases; optional `displayOffset`
+separates cards in screen pixels and draws leaders back to their real anchor.
+Several historical forms at one town should share its place, not be placed in
+other counties. Label vocabulary examples and broad language-region anchors
+honestly; they are not exact word birthplaces.
+
+Optional `camera: {"center": [-1.5, 53.4], "width": 170}` opens a local view.
+The centre is longitude/latitude and width is in the shared projected map units
+(35–900). Town view returns there; Whole Europe resets the camera only. The map
+may expand after a distant connection is earned, never to reveal a hidden
+Investigator target. UK/Ireland detailed outlines and close-zoom labels are
+bundled in `uk-map.json`; there are no runtime map downloads.
+
+A `related` connection is not automatically a shared ending. The first cases
+avoid requiring multiple independent answers to one shared target: the engine
+currently chooses one incoming challenge per target. See `../PLACE-NAME-DESIGN.md`
+before authoring a case that requires testing several towns against one root.
+
+
+## Grouped word browser
+
+`catalog.collections` is an ordered array of `{id, title, description, caseIds}`.
+Add every registered case to exactly one collection. Order within `caseIds`
+controls browsing order (keep weekdays Monday–Sunday). Validation rejects missing,
+unknown or multiply grouped case IDs and duplicate collection IDs. No rendering
+code needs to know a category or word by name.
+
+Search opens suggestions at two characters. It prefers title prefixes, then
+substrings, and uses collection titles, summaries and languages when no title
+matches. Browse all exposes the complete grouped library. Merely searching or
+browsing never resets the investigation; selecting a word does.

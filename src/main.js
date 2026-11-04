@@ -6,6 +6,9 @@ import {createFireworks, FIREWORK_DURATION, FIREWORK_SHELLS} from './fireworks.j
 import {createFireworkSound} from './firework-sound.js';
 import {createDetectiveMusic} from './detective-music.js';
 import musicScore from '../data/detective-music.json';
+import {evidencePoint} from './geography.js';
+import {renderWordParts} from './word-parts.js';
+import {createCasePicker} from './case-picker.js';
 
 const {catalog, cases} = content;
 const $ = id => document.getElementById(id);
@@ -38,7 +41,7 @@ function showPeek(id) {
 }
 function textElement(tag, text, className = '') { const element = document.createElement(tag); element.textContent = text; if (className) element.className = className; return element; }
 function button(label, action, className = '') { const element = textElement('button', label, className); element.type = 'button'; element.addEventListener('click', action); return element; }
-function point(node) { const place = catalog.places[node.placeId]; return [place.x + node.offset[0], place.y + node.offset[1]]; }
+function point(node) { return evidencePoint(node, catalog, map.markerScale()); }
 function audioData(nodeOrPuzzle) {
   const pronunciation = nodeOrPuzzle.pronunciation, language = catalog.languages[pronunciation.languageId];
   return {word: nodeOrPuzzle.form || nodeOrPuzzle.title, text: pronunciation.text, lang: language.voiceTag, language: language.voiceLabel, historical: language.approximate, fallback: language.fallback};
@@ -93,12 +96,11 @@ function selectCase(id, restore = false) {
   const snapshot = restore && saved.caseId === id ? saved.snapshot : undefined;
   engine?.destroy();
   engine = new Investigation(catalog, wordCase, snapshot); selectedEra = engine.node().eraId;
-  $('case-select').value = id;
-  map.reset(); map.setLens(...point(engine.node())); render(); persist(); startSearchTimer();
+  casePicker.setCurrent(id);
+  map.startCase(wordCase); map.setLens(...point(engine.node())); render(); map.frameDiscovered(engine, catalog); persist(); startSearchTimer();
 }
 function render() {
   const c = engine.case, mode = currentMode();
-  $('word-tooltip').textContent = `${c.title} — ${c.summary}`;
   for (const choice of $('mode-options').querySelectorAll('[data-mode-id]')) choice.setAttribute('aria-pressed', String(choice.dataset.modeId === modeId));
   $('map-instructions').textContent = mode.instructions;
   $('help').hidden = !mode.allowHints; $('help').disabled = !mode.allowHints;
@@ -109,7 +111,9 @@ function render() {
   $('map-era').textContent = mode.showMarkerDetails ? `${catalog.eras[selectedEra].icon} ${catalog.eras[selectedEra].name.toUpperCase()}` : mode.label.toUpperCase();
   $('case-progress').textContent = `${engine.visited.size} objects connected · ${engine.remainingGoals.length ? 'case open' : 'case solved'}`;
   $('back-clue').disabled = !engine.history.length;
+  $('zoom-local').hidden = !c.camera;
   speech.bind($('hear-start'), audioData(engine.node(c.startNodeId)));
+  renderWordParts($('word-title'), engine.node(c.startNodeId), c.edges.find(edge => edge.source === c.startNodeId && edge.sourceSegmentId)?.sourceSegmentId);
   $('hear-start').textContent = '🔊';
   map.render(engine, catalog, selectedEra, mode);
   renderNotebook(); renderEras(); renderPuzzles(); renderProgress();
@@ -208,6 +212,8 @@ function renderEvidence() {
   }
   $('theory-question').hidden = solved;
   $('challenge-prompt').textContent = edge?.challenge.prompt || '';
+  $('part-context').hidden = !edge?.sourceSegmentId;
+  if (edge?.sourceSegmentId) renderWordParts($('part-context-word'), engine.node(edge.source), edge.sourceSegmentId);
   const assisted = count > 0 || (edge && (engine.attempts.get(edge.id) || 0) > 0);
   $('clue-value').textContent = `YOUR THEORY · ⭐ ${assisted ? catalog.rules.assistedPoints : catalog.rules.correctPoints} ${assisted ? 'with help' : 'on your own'}`;
   $('challenge-answers').replaceChildren(...(!solved ? edge.challenge.choices.map(choice => button(choice.label, () => answerTheory(choice.id), 'theory-answer')) : []));
@@ -261,7 +267,9 @@ function followEvidence() {
   if (!evidenceId) return;
   const id = evidenceId, sameStop = id === engine.currentId;
   if (!sameStop) engine.follow(id);
-  closeEvidence(); hideCue(); selectedEra = engine.node().eraId; persist(); map.reset(); map.setLens(...point(engine.node())); render();
+  closeEvidence(); hideCue(); selectedEra = engine.node().eraId; persist();
+  if (engine.case.camera) map.frameDiscovered(engine, catalog); else map.reset();
+  map.setLens(...point(engine.node())); render();
   startSearchTimer();
   if (!sameStop && engine.complete) cue('Case solved! You connected the evidence.');
   $('map').focus({preventScroll: true});
@@ -283,16 +291,7 @@ function showHint(explicit = true) {
   else if (engine.complete) cue('You solved this case. You can revisit the evidence or choose another word.');
   else cue('This comparison has no earlier clue here. Use Previous clue to explore another lead.');
 }
-function renderCatalog() {
-  const query = $('case-search').value.trim().toLocaleLowerCase();
-  const matches = cases.filter(c => [c.title, c.summary, ...c.nodes.map(node => catalog.languages[node.languageId].name)].join(' ').toLocaleLowerCase().includes(query));
-  $('case-select').replaceChildren(...matches.map(c => { const option = textElement('option', `${c.icon} ${c.title}`); option.value = c.id; return option; }));
-  if (matches.some(c => c.id === engine?.case.id)) $('case-select').value = engine.case.id;
-  $('case-select').disabled = !matches.length;
-  $('catalog-count').textContent = `${matches.length} word ${matches.length === 1 ? 'mystery' : 'mysteries'}`;
-}
-$('case-search').addEventListener('input', renderCatalog);
-$('case-select').addEventListener('change', event => selectCase(event.target.value));
+const casePicker = createCasePicker({catalog, cases, document, onSelect: id => selectCase(id)});
 $('mode-options').replaceChildren(...Object.entries(catalog.modes).map(([id, mode]) => {
   const choice = button('', () => {
     if (id === modeId) return;
@@ -311,8 +310,11 @@ $('mode-options').replaceChildren(...Object.entries(catalog.modes).map(([id, mod
 $('reveal-clue').addEventListener('click', () => { if (!evidenceId || !currentMode().allowHints) return; engine.reveal(evidenceId); persist(); renderEvidence(); });
 $('close-evidence').addEventListener('click', closeEvidence);
 $('map').addEventListener('keydown', event => { if (event.key === 'Escape') closeEvidence(); });
-$('back-clue').addEventListener('click', () => { closeEvidence(); hideCue(); engine.back(); selectedEra = engine.node().eraId; persist(); map.reset(); map.setLens(...point(engine.node())); render(); });
+$('back-clue').addEventListener('click', () => { closeEvidence(); hideCue(); engine.back(); selectedEra = engine.node().eraId; persist(); if (engine.case.camera) map.frameDiscovered(engine, catalog); else map.reset(); map.setLens(...point(engine.node())); render(); });
 $('zoom-reset').addEventListener('click', () => map.reset());
+$('zoom-in').addEventListener('click', () => map.zoom(.7, map.lens, true));
+$('zoom-out').addEventListener('click', () => map.zoom(1 / .7, map.lens, true));
+$('zoom-local').addEventListener('click', () => { map.startCase(engine.case); map.setLens(...point(engine.node(engine.case.startNodeId))); render(); });
 $('help').addEventListener('click', () => showHint(true));
 $('restart').addEventListener('click', () => selectCase(engine.case.id));
 $('sources-open').addEventListener('click', () => {
@@ -360,7 +362,7 @@ $('story-open').addEventListener('click', event => {
 });
 window.addEventListener('pageshow', () => { if (searchTimer === null) startSearchTimer(); });
 window.addEventListener('pagehide', () => { stopSearchTimer(); speech.stop(); clearFireworks(); music.stop(); });
-renderCatalog(); selectCase(cases.some(c => c.id === saved.caseId) ? saved.caseId : cases[0].id, !requestedMode || requestedMode === saved.modeId);
+selectCase(cases.some(c => c.id === saved.caseId) ? saved.caseId : cases[0].id, !requestedMode || requestedMode === saved.modeId);
 let storySeen = false;
 try { storySeen = localStorage.getItem(storyKey) === 'seen'; } catch { /* Show the opening if storage is unavailable. */ }
 if (!storySeen) $('story-dialog').showModal();

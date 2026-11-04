@@ -17,8 +17,6 @@ async function page(storage = new Map(), showOpening = false, reducedMotion = tr
     if (args[0] === 'canvas') element.getContext = () => ({setTransform() {}, clearRect() {}, beginPath() {}, moveTo() {}, lineTo() {}, stroke() {}, fillRect() {}, createRadialGradient() { return {addColorStop() {}}; }});
     return element;
   };
-  // Linkedom's select lacks the native setter; emulate the platform contract.
-  for (const id of ['case-select']) Object.defineProperty(document.getElementById(id), 'value', {get() { return this._value || this.querySelector('option')?.value || ''; }, set(value) { this._value = value; }});
   for (const dialog of document.querySelectorAll('dialog')) { dialog.showModal = () => dialog.setAttribute('open', ''); dialog.close = () => dialog.removeAttribute('open'); }
   let timerId = 0; const timers = new Map(), timerDelays = new Map();
   const context = vm.createContext({window, document, console, URL, URLSearchParams, setTimeout: (fn, delay) => { timers.set(++timerId, fn); timerDelays.set(timerId, delay); return timerId; }, clearTimeout: id => timers.delete(id), localStorage: {getItem: key => storage.get(key) || null, setItem: (key, value) => storage.set(key, value), removeItem: key => storage.delete(key)}});
@@ -36,9 +34,17 @@ async function page(storage = new Map(), showOpening = false, reducedMotion = tr
   return {document, click, timers, context, searchTicks, event: type => new window.Event(type, {bubbles: true})};
 }
 
+function chooseWord(document, id) {
+  const browser = document.getElementById('case-browser');
+  if (!browser.hidden) document.getElementById('close-browser').click();
+  document.getElementById('browse-cases').click();
+  const word = document.querySelector(`[data-case-id="${id}"]`);
+  assert(word, `Missing word ${id}`); word.click();
+}
+
 test('built page runs the treasure investigation via evidence objects and graph leads', async () => {
   const {document, click} = await page();
-  assert.equal(document.getElementById('case-select').querySelectorAll('option').length, 21);
+  assert.equal(document.querySelectorAll('[data-case-id]').length, 23);
   assert.equal(document.getElementById('map-cue').hidden, true);
   assert(document.querySelector('[data-node-id="treasure-1"]'));
   click('[data-node-id="treasure-1"]');
@@ -74,9 +80,10 @@ test('hints are explicit and temporary, and the catalog is searchable', async ()
   for (const fn of [...timers.values()]) fn();
   assert(document.getElementById('map-cue').hidden);
   const search = document.getElementById('case-search'); search.value = 'Greek'; search.dispatchEvent(event('input'));
-  assert.equal(document.getElementById('case-select').querySelectorAll('option').length, 5);
+  assert.equal(document.querySelectorAll('[data-case-id]').length, 5);
   search.value = 'does-not-exist'; search.dispatchEvent(event('input'));
-  assert.equal(document.getElementById('case-select').disabled, true);
+  assert.equal(document.querySelectorAll('[data-case-id]').length, 0);
+  assert(document.getElementById('case-search-status').textContent.includes('No mysteries'));
 });
 
 test('one answer records a clue and rewards progress; wrong theories can be revised', async () => {
@@ -123,7 +130,7 @@ test('clue reveals are short authored pages and switching cases does not leave a
   assert(document.getElementById('full-evidence').hidden);
   click('#challenge-answers button');
   assert(document.getElementById('detective-points').textContent.includes('1'));
-  const select = document.getElementById('case-select'); select.value = 'window'; select.dispatchEvent(event('change'));
+  chooseWord(document, 'window');
   assert.equal(document.getElementById('word-title').textContent, 'window');
   assert(document.querySelector('[data-node-id="window-french"]'));
   assert(document.querySelector('[data-node-id="window-italian"]'));
@@ -161,7 +168,7 @@ test('clue pictures keep their decision badges, and Greek remains visible after 
   assert.equal(clue.querySelector('.artifact-icon').textContent, '📖');
   assert.equal(clue.querySelector('.decision-mark').textContent, '✕');
   assert(clue.textContent.includes('Not our trail'));
-  const select = document.getElementById('case-select');select.value='dinosaur';select.dispatchEvent(event('change'));
+  chooseWord(document, 'dinosaur');
   click('[data-node-id="dinosaur-1"]');click('#challenge-answers button');
   click('[data-node-id="dinosaur-french"]');click('#challenge-answers button');
   assert(document.querySelector('[data-node-id="dinosaur-2"]'));
@@ -170,8 +177,7 @@ test('clue pictures keep their decision badges, and Greek remains visible after 
 
 test('the Arabic source at the map edge is reachable with the magnifying glass', async () => {
   const {document, click, event} = await page();
-  const select = document.getElementById('case-select');
-  select.value = 'algebra'; select.dispatchEvent(event('change'));
+  chooseWord(document, 'algebra');
   click('[data-node-id="algebra-latin"]'); click('#challenge-answers button');
   const svg = document.getElementById('map');
   svg.getBoundingClientRect = () => ({left: 0, top: 0, width: 900, height: 650});
@@ -190,14 +196,12 @@ test('only the active word survives reload; switching words discards the previou
   ui = await page(storage);
   assert.equal(ui.document.querySelectorAll('.notebook-entry').length, 2, 'Reload keeps the current case.');
   assert(ui.document.getElementById('detective-points').textContent.includes('3'));
-  let select = ui.document.getElementById('case-select');
-  select.value = 'maths'; select.dispatchEvent(ui.event('change'));
+  chooseWord(ui.document, 'maths');
   assert.equal(ui.document.querySelectorAll('.notebook-entry').length, 1);
   assert.equal(JSON.parse(storage.get('word-chaser-current-v1')).caseId, 'maths');
   ui = await page(storage);
   assert.equal(ui.document.getElementById('word-title').textContent, 'maths');
-  select = ui.document.getElementById('case-select');
-  select.value = 'treasure'; select.dispatchEvent(ui.event('change'));
+  chooseWord(ui.document, 'treasure');
   assert.equal(ui.document.querySelectorAll('.notebook-entry').length, 1, 'Returning to a different word starts fresh.');
   assert(ui.document.getElementById('detective-points').textContent.includes('0'));
   assert(!storage.has('word-chaser-graph-v2'));
@@ -205,8 +209,7 @@ test('only the active word survives reload; switching words discards the previou
 
 test('confirmed algebra trails show both the spatial route and the jump in time', async () => {
   const {document, click, event} = await page();
-  const select = document.getElementById('case-select');
-  select.value = 'algebra'; select.dispatchEvent(event('change'));
+  chooseWord(document, 'algebra');
   assert.equal(document.querySelectorAll('.trail-time').length, 0, 'Unsolved routes remain hidden.');
   click('[data-node-id="algebra-latin"]'); click('#challenge-answers button');
   assert(document.querySelector('#trails').textContent.includes('Today → 1100s'));
@@ -234,8 +237,7 @@ test('the opening mission appears once and can be replayed without resetting a c
 test('solving a case celebrates briefly; reload and case switching do not replay fireworks', async () => {
   const storage = new Map();
   const ui = await page(storage, false, false);
-  const select = ui.document.getElementById('case-select');
-  select.value = 'house'; select.dispatchEvent(ui.event('change'));
+  chooseWord(ui.document, 'house');
   ui.click('[data-node-id="house-italian"]'); ui.click('#challenge-answers button:nth-child(2)');
   assert(ui.document.getElementById('map-fireworks').hidden, 'A single rejected lead is not case completion.');
   ui.click('[data-node-id="house-old"]'); ui.click('#challenge-answers button');
@@ -250,15 +252,14 @@ test('solving a case celebrates briefly; reload and case switching do not replay
   ui.click('#restart');
   ui.click('[data-node-id="house-old"]'); ui.click('#challenge-answers button');
   assert(!ui.document.getElementById('map-fireworks').hidden);
-  select.value = 'monday'; select.dispatchEvent(ui.event('change'));
+  chooseWord(ui.document, 'monday');
   assert(ui.document.getElementById('map-fireworks').hidden);
   assert.equal(ui.document.querySelectorAll('#map-fireworks canvas').length, 0);
 });
 
 test('reduced motion keeps the solved stamp without fireworks', async () => {
   const {document, click, event} = await page();
-  const select = document.getElementById('case-select');
-  select.value = 'house'; select.dispatchEvent(event('change'));
+  chooseWord(document, 'house');
   click('[data-node-id="house-old"]'); click('#challenge-answers button');
   assert(!document.getElementById('map-solved-stamp').hidden);
   assert(document.getElementById('map-fireworks').hidden);
@@ -345,7 +346,7 @@ test('Investigator saves current progress but one wrong answer restarts the whol
  test('Investigator still completes a case and unlocks the earned story', async () => {
   const ui = await page();
   ui.click('[data-mode-id="investigator"]');
-  const words = ui.document.getElementById('case-select'); words.value = 'house'; words.dispatchEvent(ui.event('change'));
+  chooseWord(ui.document, 'house');
   assert.equal(ui.document.querySelector('[data-mode-id="investigator"]').getAttribute('aria-pressed'), 'true');
   inspectHidden(ui, 322, 246); ui.click('#challenge-answers button');
   assert(!ui.document.getElementById('map-solved-stamp').hidden);
@@ -397,7 +398,7 @@ test('search nudges pause for the story and stop on completion', async () => {
   assert(ui.document.getElementById('search-location-hint').hidden);
   ui.click('#story-start'); ui.searchTicks(1);
   assert.equal(ui.document.getElementById('search-timer').textContent, 'Hint in 0:59');
-  const words = ui.document.getElementById('case-select'); words.value = 'house'; words.dispatchEvent(ui.event('change'));
+  chooseWord(ui.document, 'house');
   assert.equal(ui.document.getElementById('search-timer').textContent, 'Hint in 1:00');
   inspectHidden(ui, 322, 246); ui.click('#challenge-answers button');
   assert(ui.document.getElementById('search-timer').hidden);
@@ -423,7 +424,7 @@ test('returning to a cached Investigator page resumes the search timer', async (
 
 test('the compact toolbar keeps the word count by the chooser and explains mode choices', async () => {
   const ui = await page();
-  assert(ui.document.querySelector('.word-choice #case-select'));
+  assert(ui.document.querySelector('.word-choice #browse-cases'));
   assert(ui.document.querySelector('.word-choice #catalog-count'));
   assert.equal(ui.document.querySelector('label[for="case-select"]'), null);
   const choices = ui.document.querySelectorAll('#mode-options .mode-choice');
@@ -449,8 +450,8 @@ test('URL mode selection overrides saved mode safely and accepts the Word Chaser
   assert.equal(ui.document.querySelector('[data-mode-id="chaser"]').getAttribute('aria-pressed'), 'true');
   ui = await page(storage, false, true, '?mode=unknown');
   assert.equal(ui.document.querySelector('[data-mode-id="chaser"]').getAttribute('aria-pressed'), 'true');
-  const words = ui.document.getElementById('case-select'); words.value = 'house'; words.dispatchEvent(ui.event('change'));
-  assert(ui.document.getElementById('word-tooltip').textContent.startsWith('house — '));
+  chooseWord(ui.document, 'house');
+  assert(ui.document.getElementById('browse-cases').title.startsWith('house — '));
 });
 
 
@@ -473,4 +474,128 @@ test('evidence decisions stay outside the scrolling content and new cards reset 
   assert.equal(panel.scrollTop, 0);
   click('#challenge-answers button:nth-child(2)');
   assert(panel.hidden, 'A correct No still records the clue in one tap.');
+});
+
+test('town cases open locally, zoom deeper with readable markers and return to Europe without losing progress', async () => {
+  const {document,click,event} = await page();
+  chooseWord(document, 'manchester');
+  const svg=document.getElementById('map');
+  const view=()=>svg.getAttribute('viewBox').split(' ').map(Number);
+  assert.equal(view()[2],170);
+  assert.equal(document.querySelector('#word-title .active-segment').textContent,'chester');
+  assert(!document.getElementById('zoom-local').hidden);
+  const old=document.querySelector('[data-node-id="manchester-old"]');
+  assert(old.getAttribute('transform').includes('scale('));
+  assert(document.querySelector('.location-leader'),'Offset evidence is attached to its geographic anchor.');
+  for(let i=0;i<8;i++) click('#zoom-in');
+  assert.equal(view()[2],35,'Town zoom goes beyond the old 225-unit limit.');
+  const move=event('keydown');move.key='ArrowRight';move.shiftKey=true;
+  const before=view()[0];svg.dispatchEvent(move);assert(view()[0]>before,'Shift + arrows pan the close map.');
+  click('#zoom-local');assert.equal(view()[2],170);
+  click('[data-node-id="manchester-chest"]');
+  assert.equal(document.querySelector('#part-context .active-segment').textContent,'chester');
+  click('#challenge-answers button:nth-child(2)');
+  assert.equal(document.querySelectorAll('.notebook-entry').length,2);
+  click('#zoom-reset');assert.equal(view()[2],900);
+  assert.equal(document.querySelectorAll('.notebook-entry').length,2);
+  click('#zoom-local');click('[data-node-id="manchester-old"]');click('#challenge-answers button');
+  click('[data-node-id="manchester-element"]');
+  assert.equal(document.querySelector('#part-context .active-segment').textContent,'ceaster');
+  click('#challenge-answers button');
+  click('[data-node-id="manchester-latin"]');click('#challenge-answers button');
+  assert(!document.getElementById('complete').hidden);
+  assert(view()[2]>170,'Only the earned international connection expands the camera.');
+});
+
+test('Investigator town views keep hidden clues and leaders out of the map until discovered', async () => {
+  const {document,click,event}=await page();click('[data-mode-id="investigator"]');
+  chooseWord(document, 'grimsby');
+  assert.equal(document.querySelectorAll('[data-node-id]').length,1);
+  assert.equal(document.querySelectorAll('.location-leader').length,0);
+  const svg=document.getElementById('map');const before=svg.getAttribute('viewBox');
+  click('#zoom-reset');click('#zoom-local');assert.equal(svg.getAttribute('viewBox'),before);
+  assert.equal(document.querySelectorAll('[data-node-id]').length,1);
+  assert(document.getElementById('search-timer').textContent.includes('1:00'));
+});
+
+test('two-finger panning moves the close map without answering or revealing a hidden location', async () => {
+  const {document,click,event}=await page();
+  chooseWord(document, 'grimsby');
+  const svg=document.getElementById('map');svg.getBoundingClientRect=()=>({left:0,top:0,width:900,height:650});
+  const view=()=>svg.getAttribute('viewBox').split(' ').map(Number), before=view();
+  const touch=(type,id,x,y)=>{const e=event(type);Object.assign(e,{pointerType:'touch',pointerId:id,clientX:x,clientY:y});svg.dispatchEvent(e);};
+  touch('pointerdown',1,400,300);touch('pointerdown',2,600,300);
+  touch('pointermove',1,430,300);touch('pointermove',2,630,300);
+  touch('pointerup',1,430,300);touch('pointerup',2,630,300);
+  assert(view()[0]<before[0]);
+  assert(Math.abs(view()[2]-before[2])<1e-6,'A parallel two-finger drag pans without changing the final zoom.');
+  assert(document.getElementById('evidence-panel').hidden);
+  assert.equal(document.querySelectorAll('.notebook-entry').length,1);
+});
+
+test('autocomplete opens after two letters and selects a word directly without a second control', async () => {
+  const {document,event,click}=await page();
+  const search=document.getElementById('case-search'), panel=document.getElementById('case-browser');
+  assert.equal(document.querySelector('select#case-select'),null,'The native long dropdown is removed.');
+  search.value='g';search.dispatchEvent(event('input'));assert(panel.hidden);
+  search.value='ge';search.dispatchEvent(event('input'));assert(!panel.hidden);
+  assert.deepEqual([...document.querySelectorAll('[data-case-id]')].map(el=>el.dataset.caseId),['geometry','geography']);
+  assert.equal(search.getAttribute('aria-expanded'),'true');
+  search.value='geo';search.dispatchEvent(event('input'));
+  click('[data-case-id="geography"]');
+  assert(panel.hidden);assert.equal(search.value,'');
+  assert.equal(document.getElementById('word-title').textContent,'geography');
+  assert(document.getElementById('current-word').textContent.includes('geography'));
+  assert.equal(document.querySelectorAll('.notebook-entry').length,1);
+});
+
+test('browse all groups weekdays and place names without changing the active investigation', async () => {
+  const {document,click,event}=await page();
+  click('[data-node-id="treasure-1"]');click('#challenge-answers button');
+  const points=document.getElementById('detective-points').textContent;
+  click('#browse-cases');
+  const week=document.querySelector('[data-collection-id="weekdays"]');
+  assert.deepEqual([...week.querySelectorAll('.case-name')].map(el=>el.textContent),['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']);
+  const towns=document.querySelector('[data-collection-id="places"]');
+  assert.deepEqual([...towns.querySelectorAll('.case-name')].map(el=>el.textContent),['Grimsby','Manchester']);
+  assert.equal(document.querySelectorAll('[data-case-id]').length,23);
+  assert.equal(document.querySelector('[data-case-id="treasure"]').getAttribute('aria-current'),'true');
+  const escape=event('keydown');escape.key='Escape';document.getElementById('browse-cases').dispatchEvent(escape);
+  assert(document.getElementById('case-browser').hidden);
+  assert.equal(document.getElementById('detective-points').textContent,points);
+  assert.equal(document.querySelectorAll('.notebook-entry').length,2);
+});
+
+test('search handles no matches, keyboard selection and dismissal before switching cases', async () => {
+  const {document,click,event}=await page();
+  const search=document.getElementById('case-search'),panel=document.getElementById('case-browser');
+  search.value='zzzz';search.dispatchEvent(event('input'));
+  assert(!panel.hidden);assert.equal(document.querySelectorAll('[data-case-id]').length,0);
+  assert(document.getElementById('case-search-status').textContent.includes('No mysteries'));
+  click('#browse-cases');assert.equal(document.querySelectorAll('[data-case-id]').length,23);
+  search.value='geo';search.dispatchEvent(event('input'));
+  const enter=event('keydown');enter.key='Enter';search.dispatchEvent(enter);
+  assert.equal(document.getElementById('word-title').textContent,'geometry');assert(panel.hidden);
+  search.value='ma';search.dispatchEvent(event('input'));assert(!panel.hidden);
+  document.getElementById('map').dispatchEvent(event('pointerdown'));assert(panel.hidden);
+});
+
+test('typing uses a compact flat list while Browse all opens the grouped library', async () => {
+  const {document,click,event}=await page();
+  const search=document.getElementById('case-search'),panel=document.getElementById('case-browser');
+  search.value='geo';search.dispatchEvent(event('input'));
+  assert.equal(panel.dataset.view,'search');
+  assert(panel.querySelector('.case-browser-header').hidden);
+  assert.equal(panel.querySelectorAll('.case-collection').length,0);
+  assert.equal(panel.querySelectorAll('[data-case-id]').length,2);
+  assert(document.getElementById('case-search-status').hidden);
+  click('#browse-cases');
+  assert.equal(panel.dataset.view,'browse');
+  assert(!panel.querySelector('.case-browser-header').hidden);
+  assert.equal(panel.querySelectorAll('.case-collection').length,5);
+  assert.equal(panel.querySelectorAll('[data-case-id]').length,23);
+  search.value='geo';search.dispatchEvent(event('input'));
+  assert.equal(panel.dataset.view,'search');
+  click('[data-case-id="geography"]');
+  assert(panel.hidden);assert.equal(document.getElementById('word-title').textContent,'geography');
 });

@@ -211,6 +211,36 @@
             "type": "string",
             "minLength": 1,
             "maxLength": 65
+          },
+          "segments": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "text"
+              ],
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "id": {
+                  "$ref": "#/definitions/id"
+                }
+              }
+            }
+          },
+          "displayOffset": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "number",
+              "minimum": -120,
+              "maximum": 120
+            }
           }
         }
       }
@@ -314,6 +344,9 @@
             "type": "string",
             "minLength": 1,
             "maxLength": 65
+          },
+          "sourceSegmentId": {
+            "$ref": "#/definitions/id"
           }
         }
       }
@@ -370,6 +403,29 @@
           "label": {
             "$ref": "#/definitions/text"
           }
+        }
+      }
+    },
+    "camera": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "center",
+        "width"
+      ],
+      "properties": {
+        "center": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number"
+          }
+        },
+        "width": {
+          "type": "number",
+          "minimum": 35,
+          "maximum": 900
         }
       }
     }

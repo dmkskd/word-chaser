@@ -12,7 +12,8 @@
     "artifacts",
     "cases",
     "rules",
-    "modes"
+    "modes",
+    "collections"
   ],
   "properties": {
     "$schema": {
@@ -123,8 +124,6 @@
         "additionalProperties": false,
         "required": [
           "name",
-          "x",
-          "y",
           "searchHint"
         ],
         "properties": {
@@ -146,8 +145,45 @@
             "type": "string",
             "minLength": 1,
             "maxLength": 180
+          },
+          "coordinates": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": [
+              {
+                "type": "number",
+                "minimum": -180,
+                "maximum": 180
+              },
+              {
+                "type": "number",
+                "minimum": -85,
+                "maximum": 85
+              }
+            ]
           }
-        }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "x",
+              "y"
+            ],
+            "properties": {
+              "x": {},
+              "y": {}
+            }
+          },
+          {
+            "required": [
+              "coordinates"
+            ],
+            "properties": {
+              "coordinates": {}
+            }
+          }
+        ]
       }
     },
     "relations": {
@@ -252,6 +288,42 @@
       "properties": {
         "chaser": {
           "$ref": "#/definitions/mode"
+        }
+      }
+    },
+    "collections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "description",
+          "caseIds"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "caseIds": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          }
         }
       }
     }

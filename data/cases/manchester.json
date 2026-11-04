@@ -1,0 +1,492 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "manchester",
+  "title": "Manchester",
+  "icon": "🪧",
+  "summary": "What is hiding in a city’s name? Follow the ending back in time.",
+  "question": "What does the -chester part of Manchester mean?",
+  "startNodeId": "manchester-now",
+  "goalNodeIds": [
+    "manchester-old",
+    "manchester-element",
+    "manchester-latin"
+  ],
+  "completion": "Ending explained! Manchester’s -chester follows Old English ceaster, borrowed from Latin castra, a military camp. The beginning preserves an older local name. We explained the ending, not every part of the name.",
+  "partner": "A city can stay in one place while its name changes through time.",
+  "sources": [
+    {
+      "id": "names",
+      "title": "Society for Name Studies in Britain and Ireland · Manchester",
+      "url": "https://www.snsbi.org.uk/exploring-names/largest-towns-and-cities/"
+    },
+    {
+      "id": "chester",
+      "title": "Etymonline · Chester and the Latin borrowing",
+      "url": "https://www.etymonline.com/word/Chester"
+    },
+    {
+      "id": "chest",
+      "title": "Etymonline · chest",
+      "url": "https://www.etymonline.com/word/chest"
+    },
+    {
+      "id": "cheese",
+      "title": "American Heritage · cheese",
+      "url": "https://www.ahdictionary.com/word/search.html?q=cheese"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "manchester-now",
+      "form": "Manchester",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "manchester",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A city in north-west England.",
+      "pronunciation": {
+        "text": "Manchester",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "sign",
+        "title": "A city sign",
+        "text": "Manchester’s ending preserves Old English ceaster, referring to a Roman fort. The first part preserves an older local name, Mamucium; its deeper meaning is less certain.",
+        "notice": "A matching sound is a clue. Check the meaning and the older evidence too.",
+        "sourceIds": [
+          "names"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Focus on the ending, rather than trying to explain the whole name."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Manchester’s ending preserves Old English ceaster, referring to a Roman fort. The first part preserves an older local name, Mamucium; its deeper meaning is less certain."
+          }
+        ]
+      },
+      "segments": [
+        {
+          "text": "Man"
+        },
+        {
+          "text": "chester",
+          "id": "ending"
+        }
+      ],
+      "mapCaption": "Today"
+    },
+    {
+      "id": "manchester-old",
+      "form": "Mameceaster",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "manchester",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Recorded in 923",
+      "meaning": "A place name in an old record.",
+      "pronunciation": {
+        "text": "Mameceaster",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An old local name",
+        "text": "Mameceaster is recorded in 923. Its ending is Old English ceaster. The first part preserves the older local name; this case investigates the ending.",
+        "notice": "A matching sound is a clue. Check the meaning and the older evidence too.",
+        "sourceIds": [
+          "names"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare the end of Mameceaster with the end of Manchester."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Mameceaster is recorded in 923. Its ending is Old English ceaster. The first part preserves the older local name; this case investigates the ending."
+          }
+        ]
+      },
+      "displayOffset": [
+        -75,
+        -65
+      ],
+      "segments": [
+        {
+          "text": "Mame"
+        },
+        {
+          "text": "ceaster",
+          "id": "ending"
+        }
+      ],
+      "mapCaption": "Recorded in 923"
+    },
+    {
+      "id": "manchester-element",
+      "form": "ceaster",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "manchester",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Old English · before 1100",
+      "meaning": "A Roman fort or town.",
+      "pronunciation": {
+        "text": "ceaster",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An Old English vocabulary clue",
+        "text": "Old English ceaster was used for Roman forts or towns. It survives in place-name endings such as Manchester’s -chester. This card shares Manchester’s anchor because it explains the local name.",
+        "notice": "A matching sound is a clue. Check the meaning and the older evidence too.",
+        "sourceIds": [
+          "names",
+          "chester"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Could a fort word explain a town-name ending?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Old English ceaster was used for Roman forts or towns. It survives in place-name endings such as Manchester’s -chester. This card shares Manchester’s anchor because it explains the local name."
+          }
+        ]
+      },
+      "displayOffset": [
+        -75,
+        65
+      ],
+      "mapCaption": "Old English · before 1100"
+    },
+    {
+      "id": "manchester-latin",
+      "form": "castra",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "latin-region",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Roman-era Latin",
+      "meaning": "A military camp.",
+      "pronunciation": {
+        "text": "castra",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A Latin camp word",
+        "text": "Latin castra, the plural of castrum, meant a military camp. Borrowed into early English, it became ceaster. The Roman-world marker represents the language, not an exact birthplace.",
+        "notice": "A matching sound is a clue. Check the meaning and the older evidence too.",
+        "sourceIds": [
+          "chester"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare castra with ceaster. Borrowed words can change their sounds."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Latin castra, the plural of castrum, meant a military camp. Borrowed into early English, it became ceaster. The Roman-world marker represents the language, not an exact birthplace."
+          }
+        ]
+      },
+      "mapCaption": "Roman-era Latin"
+    },
+    {
+      "id": "manchester-chest",
+      "form": "chest",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A box for storing things.",
+      "pronunciation": {
+        "text": "chest",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "An English box label",
+        "text": "Chest comes through Old English cest from Latin cista, a box. Manchester’s ending follows ceaster and Latin castra instead. The similar sound does not establish the same root.",
+        "notice": "A matching sound is a clue. Check the meaning and the older evidence too.",
+        "sourceIds": [
+          "chest",
+          "chester"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "A box and a Roman fort are different clues."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Chest comes through Old English cest from Latin cista, a box. Manchester’s ending follows ceaster and Latin castra instead. The similar sound does not establish the same root."
+          }
+        ]
+      },
+      "displayOffset": [
+        -65,
+        35
+      ],
+      "mapCaption": "Today"
+    },
+    {
+      "id": "manchester-cheese",
+      "form": "cheese",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A food made from milk.",
+      "pronunciation": {
+        "text": "cheese",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "An English food label",
+        "text": "Cheese follows Old English cȳse and Latin caseus. It sounds a little like the name ending, but does not explain Manchester’s -chester.",
+        "notice": "A matching sound is a clue. Check the meaning and the older evidence too.",
+        "sourceIds": [
+          "cheese",
+          "chester"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare the meaning as well as the sounds."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Cheese follows Old English cȳse and Latin caseus. It sounds a little like the name ending, but does not explain Manchester’s -chester."
+          }
+        ]
+      },
+      "displayOffset": [
+        65,
+        35
+      ],
+      "mapCaption": "Today"
+    }
+  ],
+  "edges": [
+    {
+      "id": "manchester-old-link",
+      "source": "manchester-now",
+      "target": "manchester-old",
+      "type": "spelling",
+      "evidence": {
+        "title": "A name-history connection",
+        "text": "Yes. Mameceaster is recorded in 923. Its ending helps explain modern -chester.",
+        "sourceIds": [
+          "names"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Mameceaster be an older recorded name for Manchester?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Mameceaster is recorded in 923. Its ending helps explain modern -chester."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Mameceaster is recorded in 923. Its ending helps explain modern -chester."
+          }
+        ]
+      },
+      "timeLabel": "Today → 923"
+    },
+    {
+      "id": "manchester-chest-link",
+      "source": "manchester-now",
+      "target": "manchester-chest",
+      "type": "comparison",
+      "evidence": {
+        "title": "A name-history connection",
+        "text": "No. Chest follows a box word, Latin cista. Manchester’s ending follows a fort word, ceaster.",
+        "sourceIds": [
+          "chest",
+          "chester"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did Manchester’s -chester ending come from the word for a storage chest?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Chest follows a box word, Latin cista. Manchester’s ending follows a fort word, ceaster."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Chest follows a box word, Latin cista. Manchester’s ending follows a fort word, ceaster."
+          }
+        ]
+      },
+      "sourceSegmentId": "ending"
+    },
+    {
+      "id": "manchester-cheese-link",
+      "source": "manchester-now",
+      "target": "manchester-cheese",
+      "type": "comparison",
+      "evidence": {
+        "title": "A name-history connection",
+        "text": "No. Cheese follows Latin caseus. The name ending has a different meaning and history.",
+        "sourceIds": [
+          "cheese",
+          "names"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could the food word cheese explain Manchester’s ending?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Cheese follows Latin caseus. The name ending has a different meaning and history."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Cheese follows Latin caseus. The name ending has a different meaning and history."
+          }
+        ]
+      },
+      "sourceSegmentId": "ending"
+    },
+    {
+      "id": "manchester-element-link",
+      "source": "manchester-old",
+      "target": "manchester-element",
+      "type": "formation",
+      "evidence": {
+        "title": "A name-history connection",
+        "text": "Yes. Ceaster means a Roman fort or town. It explains the ending, not the whole name.",
+        "sourceIds": [
+          "names",
+          "chester"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this Old English fort word explain the ending of Mameceaster?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Ceaster means a Roman fort or town. It explains the ending, not the whole name."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Ceaster means a Roman fort or town. It explains the ending, not the whole name."
+          }
+        ]
+      },
+      "sourceSegmentId": "ending"
+    },
+    {
+      "id": "manchester-latin-link",
+      "source": "manchester-element",
+      "target": "manchester-latin",
+      "type": "borrowing",
+      "evidence": {
+        "title": "A name-history connection",
+        "text": "Yes. Latin castra was borrowed into early English as ceaster. The town-name ending keeps a trace of it.",
+        "sourceIds": [
+          "chester"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Old English ceaster have been borrowed from this Latin camp word?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Latin castra was borrowed into early English as ceaster. The town-name ending keeps a trace of it."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Latin castra was borrowed into early English as ceaster. The town-name ending keeps a trace of it."
+          }
+        ]
+      },
+      "timeLabel": "Old English → Roman-era Latin"
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "manchester-now",
+      "label": "City name"
+    },
+    {
+      "nodeId": "manchester-old",
+      "label": "Old record"
+    },
+    {
+      "nodeId": "manchester-element",
+      "label": "Fort word"
+    },
+    {
+      "nodeId": "manchester-latin",
+      "label": "Latin connection"
+    }
+  ],
+  "camera": {
+    "center": [
+      -1.5,
+      53.4
+    ],
+    "width": 170
+  }
+}

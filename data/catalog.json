@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "title": "Word Chaser",
+  "title": "Junior Word Chaser",
   "languages": {
     "english": {
       "name": "English",
@@ -173,57 +173,68 @@
     "england": {
       "name": "England",
       "x": 334,
-      "y": 316
+      "y": 316,
+      "searchHint": "Where does Big Ben chime? Search around England!"
     },
     "france": {
       "name": "France",
       "x": 362,
-      "y": 363
+      "y": 363,
+      "searchHint": "Where would you find the Eiffel Tower? Try that country!"
     },
     "rome": {
       "name": "Italian peninsula",
       "x": 479,
-      "y": 478
+      "y": 478,
+      "searchHint": "Which country looks like a boot? Search along the boot!"
     },
     "florence": {
       "name": "Italy",
       "x": 464,
-      "y": 448
+      "y": 448,
+      "searchHint": "A country shaped like a boot is hiding another word. Can you find it?"
     },
     "norse": {
       "name": "Scandinavia",
       "x": 438,
-      "y": 141
+      "y": 141,
+      "searchHint": "Head north, beyond the North Sea. Search around Scandinavia!"
     },
     "greece": {
       "name": "Greece",
       "x": 608,
-      "y": 536
+      "y": 536,
+      "searchHint": "Where is Athens? Search around that sunny corner of Europe!"
     },
     "germany": {
       "name": "German-speaking region",
       "x": 450,
-      "y": 325
+      "y": 325,
+      "searchHint": "Where do frankfurters get their name? Search around Germany!"
     },
     "spain": {
       "name": "Spain",
       "x": 292,
-      "y": 501
+      "y": 501,
+      "searchHint": "Which country has Madrid as its capital? Search there!"
     },
     "prague": {
       "name": "Prague · Czech lands (now Czechia)",
       "x": 520,
-      "y": 338
+      "y": 338,
+      "searchHint": "Look east of Germany, in the country whose capital is Prague!"
     },
     "baghdad": {
       "name": "Baghdad · now Iraq",
       "x": 849,
-      "y": 610
+      "y": 610,
+      "searchHint": "Look far to the southeast of Europe, around Baghdad in Iraq!"
     },
     "latin-spain": {
       "name": "Spain · Latin translation tradition",
       "x": 300,
-      "y": 492
+      "y": 492,
+      "searchHint": "Look southwest of France, in the country whose capital is Madrid!"
     }
   },
   "relations": {
@@ -344,5 +355,31 @@
     "correctPoints": 3,
     "assistedPoints": 1,
     "wrongPenalty": 1
+  },
+  "modes": {
+    "chaser": {
+      "label": "Word Chaser",
+      "description": "Explore with clues. Mistakes can be tried again.",
+      "instructions": "Move or drag the glass over an object to reveal its word. Tap the object to test your theory. Ask for a little clue if you need one. Correct theories earn points; mistaken guesses reduce the reward. Keyboard: arrows move, Enter inspects, +/− zoom, P speaks, H gives a hint.",
+      "showMarkerDetails": true,
+      "showPeeks": true,
+      "allowHints": true,
+      "restartOnWrong": false,
+      "showUnvisitedMarkers": true,
+      "showPeekDetails": true,
+      "searchHintSeconds": 0
+    },
+    "investigator": {
+      "label": "Investigator",
+      "description": "Find hidden words. A location hint after a minute. One wrong answer restarts the case.",
+      "instructions": "Start with the visible word. Move or drag the glass around the map to uncover other words, then tap to test your theory. Decide Yes or No using what you know. After a minute of searching, a location riddle gives you a nudge. One wrong answer restarts this case. Keyboard: arrows move, Enter opens a word, +/− zoom.",
+      "showMarkerDetails": false,
+      "showPeeks": true,
+      "allowHints": false,
+      "restartOnWrong": true,
+      "showUnvisitedMarkers": false,
+      "showPeekDetails": false,
+      "searchHintSeconds": 60
+    }
   }
 }

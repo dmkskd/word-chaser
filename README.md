@@ -1,4 +1,4 @@
-# Word Chaser
+# Junior Word Chaser
 
 An HTML word investigation game for a young detective. Move a magnifying glass across Europe, inspect dated books and letters, and follow evidence through languages and time.
 
@@ -49,12 +49,18 @@ A case can have multiple branches, converging paths, and comparison leaves. Ever
 
 ## Play
 
+Choose **Word Chaser** for guided play or **Investigator** to search for hidden words with the glass, with a location riddle after one minute and a full case restart after any wrong answer. Changing modes starts a fresh attempt. Investigator keeps the starting word visible, reveals other words as you hover or drag the glass over them, and unlocks notebook stories after completion.
+
+Share a level directly with `?mode=chaser` (or `?mode=word-chaser`) or `?mode=investigator`. A valid URL mode overrides the saved mode; switching modes resets the attempt.
+
 1. Move the glass (or drag it with a finger) over an object to peek at its word. Moving away dismisses the peek.
 2. Tap an object to open a short meaning and a Yes/No theory. Ask for optional clue pages if needed.
 3. One correct answer records the clue, awards points and returns to the map. There is no second Continue click. A false lead can be ruled out and kept without abandoning the other leads.
 4. Longer explanations remain in the notebook. Clicking outside a question closes it.
 
-The catalog includes all seven days of the week, grouped Monday to Sunday. Their trails distinguish older English words from translated Roman naming ideas. Solving a case places a stamp on the map and briefly celebrates with fireworks (with reduced-motion support).
+The catalog includes all seven days of the week, grouped Monday to Sunday. Their trails distinguish older English words from translated Roman naming ideas. Solving a case places a stamp on the map and celebrates with rising rockets, glowing spark trails and optional synthesized firework sounds. The “Firework sounds” checkbox mutes them; reduced-motion support keeps the solved stamp without animation.
+
+Quiet original detective music starts after your first tap. Use **♪ Music** in the header to mute it. It lowers while a word is spoken and pauses when the page is hidden. The score is in `data/detective-music.json` and plays without audio downloads.
 
 Camera movement never advances progress. Clicking empty map space smoothly zooms. Arrow keys move the glass, Enter inspects an object, +/− zoom, P speaks the object under the glass, and H gives a brief hint. Hints are explicitly requested and disappear after four seconds.
 

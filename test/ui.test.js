@@ -4,24 +4,36 @@ import {readFile} from 'node:fs/promises';
 import vm from 'node:vm';
 import {parseHTML} from 'linkedom';
 
-async function page(storage = new Map(), showOpening = false, reducedMotion = true) {
+async function page(storage = new Map(), showOpening = false, reducedMotion = true, search = '') {
   const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
   const {window, document} = parseHTML(html);
+  window.location = {search, href: 'https://example.test/' + search};
   // The DOM test does not simulate pixels, sound, or native focus/camera animation.
   window.matchMedia = () => ({matches: reducedMotion});
   for (const element of document.querySelectorAll('*')) element.focus = () => {};
   const create = document.createElement.bind(document);
-  document.createElement = (...args) => { const element = create(...args); element.focus = () => {}; return element; };
+  document.createElement = (...args) => {
+    const element = create(...args); element.focus = () => {};
+    if (args[0] === 'canvas') element.getContext = () => ({setTransform() {}, clearRect() {}, beginPath() {}, moveTo() {}, lineTo() {}, stroke() {}, fillRect() {}, createRadialGradient() { return {addColorStop() {}}; }});
+    return element;
+  };
   // Linkedom's select lacks the native setter; emulate the platform contract.
-  Object.defineProperty(document.getElementById('case-select'), 'value', {get() { return this._value || this.querySelector('option')?.value || ''; }, set(value) { this._value = value; }});
+  for (const id of ['case-select']) Object.defineProperty(document.getElementById(id), 'value', {get() { return this._value || this.querySelector('option')?.value || ''; }, set(value) { this._value = value; }});
   for (const dialog of document.querySelectorAll('dialog')) { dialog.showModal = () => dialog.setAttribute('open', ''); dialog.close = () => dialog.removeAttribute('open'); }
-  let timerId = 0; const timers = new Map();
-  const context = vm.createContext({window, document, console, setTimeout: fn => { timers.set(++timerId, fn); return timerId; }, clearTimeout: id => timers.delete(id), localStorage: {getItem: key => storage.get(key) || null, setItem: (key, value) => storage.set(key, value), removeItem: key => storage.delete(key)}});
+  let timerId = 0; const timers = new Map(), timerDelays = new Map();
+  const context = vm.createContext({window, document, console, URL, URLSearchParams, setTimeout: (fn, delay) => { timers.set(++timerId, fn); timerDelays.set(timerId, delay); return timerId; }, clearTimeout: id => timers.delete(id), localStorage: {getItem: key => storage.get(key) || null, setItem: (key, value) => storage.set(key, value), removeItem: key => storage.delete(key)}});
   vm.runInContext(await readFile(new URL('../assets/europe-map.js', import.meta.url), 'utf8'), context);
   vm.runInContext(await readFile(new URL('../assets/app.js', import.meta.url), 'utf8'), context);
   const click = selector => { const element = document.querySelector(selector); assert(element, `Missing ${selector}`); if (typeof element.click === 'function') element.click(); else element.dispatchEvent(new window.Event('click', {bubbles: true})); };
   if (!showOpening && document.getElementById('story-dialog').hasAttribute('open')) click('#story-start');
-  return {document, click, timers, context, event: type => new window.Event(type, {bubbles: true})};
+  function searchTicks(count) {
+    for (let i = 0; i < count; i++) {
+      const scheduled = [...timers].find(([id]) => timerDelays.get(id) === 1000);
+      if (!scheduled) return;
+      timers.delete(scheduled[0]); scheduled[1]();
+    }
+  }
+  return {document, click, timers, context, searchTicks, event: type => new window.Event(type, {bubbles: true})};
 }
 
 test('built page runs the treasure investigation via evidence objects and graph leads', async () => {
@@ -228,7 +240,7 @@ test('solving a case celebrates briefly; reload and case switching do not replay
   assert(ui.document.getElementById('map-fireworks').hidden, 'A single rejected lead is not case completion.');
   ui.click('[data-node-id="house-old"]'); ui.click('#challenge-answers button');
   assert(!ui.document.getElementById('map-fireworks').hidden);
-  assert.equal(ui.document.querySelectorAll('.firework-spark').length, 42);
+  assert(ui.document.querySelector('#map-fireworks canvas'), 'The particle renderer is mounted.');
   const reload = await page(storage, false, false);
   assert(!reload.document.getElementById('map-solved-stamp').hidden);
   assert(reload.document.getElementById('map-fireworks').hidden, 'Restoring a solved case does not replay fireworks.');
@@ -240,7 +252,7 @@ test('solving a case celebrates briefly; reload and case switching do not replay
   assert(!ui.document.getElementById('map-fireworks').hidden);
   select.value = 'monday'; select.dispatchEvent(ui.event('change'));
   assert(ui.document.getElementById('map-fireworks').hidden);
-  assert.equal(ui.document.querySelectorAll('.firework-spark').length, 0);
+  assert.equal(ui.document.querySelectorAll('#map-fireworks canvas').length, 0);
 });
 
 test('reduced motion keeps the solved stamp without fireworks', async () => {
@@ -250,4 +262,193 @@ test('reduced motion keeps the solved stamp without fireworks', async () => {
   click('[data-node-id="house-old"]'); click('#challenge-answers button');
   assert(!document.getElementById('map-solved-stamp').hidden);
   assert(document.getElementById('map-fireworks').hidden);
+});
+
+function inspectHidden(ui, x, y) {
+  ui.click('#zoom-reset');
+  const svg = ui.document.getElementById('map');
+  svg.getBoundingClientRect = () => ({left: 0, top: 0, width: 900, height: 650});
+  const move = ui.event('pointermove');
+  Object.assign(move, {pointerType: 'mouse', clientX: x, clientY: y});
+  svg.dispatchEvent(move);
+  const enter = ui.event('keydown'); enter.key = 'Enter'; svg.dispatchEvent(enter);
+}
+
+test('Investigator shows the starting word and reveals hidden words only under the glass', async () => {
+  const ui = await page();
+  inspectHidden(ui, 322, 246); ui.click('#challenge-answers button');
+  ui.click('[data-mode-id="investigator"]');
+  assert.equal(ui.document.querySelectorAll('.notebook-entry').length, 1, 'Changing mode starts a fresh attempt.');
+  assert.equal(ui.document.querySelectorAll('#pins [data-node-id]').length, 1);
+  assert.equal(ui.document.querySelector('#pins .artifact-title').textContent, 'treasure');
+  assert(ui.document.querySelector('[data-node-id="treasure-0"] .artifact-icon'));
+  assert.equal(ui.document.querySelector('[data-node-id="treasure-0"] .decision-mark').textContent, '✓');
+  assert.equal(ui.document.querySelector('[data-node-id="treasure-1"]'), null);
+  assert.equal(ui.document.querySelector('[data-hover-node-id="treasure-1"]'), null);
+  assert(ui.document.getElementById('help').hidden);
+  assert(ui.document.querySelector('.next-leads').hidden);
+  assert(ui.document.querySelector('.time-machine').hidden);
+  const svg = ui.document.getElementById('map'); svg.getBoundingClientRect = () => ({left: 0, top: 0, width: 900, height: 650});
+  const move = ui.event('pointermove'); move.pointerType = 'mouse'; move.clientX = 322; move.clientY = 246; svg.dispatchEvent(move);
+  assert(!ui.document.getElementById('word-peek').hidden);
+  assert.equal(ui.document.getElementById('peek-word').textContent, 'tresour');
+  const revealed = ui.document.querySelector('[data-hover-node-id="treasure-1"]');
+  assert(revealed.querySelector('.artifact-disc'));
+  assert.equal(revealed.querySelector('.artifact-icon').textContent, '📜');
+  assert.equal(revealed.querySelector('.decision-mark').textContent, '?');
+  assert.equal(revealed.querySelector('.artifact-era'), null);
+  assert(ui.document.getElementById('peek-language').hidden);
+  assert(ui.document.getElementById('peek-meaning').hidden);
+  const away = ui.event('pointermove'); away.pointerType = 'mouse'; away.clientX = 100; away.clientY = 100; svg.dispatchEvent(away);
+  assert(ui.document.getElementById('word-peek').hidden);
+  assert.equal(ui.document.querySelector('[data-hover-node-id]'), null);
+  const hint = ui.event('keydown'); hint.key = 'h'; svg.dispatchEvent(hint);
+  assert(ui.document.getElementById('map-cue').hidden, 'H cannot reveal a hint.');
+  inspectHidden(ui, 322, 246);
+  assert.equal(ui.document.getElementById('evidence-form').textContent, 'tresour');
+  for (const id of ['evidence-meta', 'evidence-meaning', 'reveal-clue', 'reveal-page', 'full-evidence']) assert(ui.document.getElementById(id).hidden, id);
+  ui.click('#reveal-clue'); assert(ui.document.getElementById('reveal-page').hidden);
+  ui.click('#challenge-answers button');
+  assert(ui.document.getElementById('detective-points').textContent.includes('3'));
+  assert([...ui.document.querySelectorAll('.notebook-story')].every(story => story.hidden));
+});
+
+test('Investigator saves current progress but one wrong answer restarts the whole case', async () => {
+  const storage = new Map(); let ui = await page(storage);
+  ui.click('[data-mode-id="investigator"]');
+  inspectHidden(ui, 322, 246); ui.click('#challenge-answers button');
+  inspectHidden(ui, 450, 325); ui.click('#challenge-answers button:nth-child(2)');
+  ui = await page(storage);
+  assert.equal(ui.document.querySelector('[data-mode-id="investigator"]').getAttribute('aria-pressed'), 'true');
+  assert.equal(ui.document.querySelectorAll('.notebook-entry').length, 3);
+  assert(ui.document.getElementById('detective-points').textContent.includes('6'));
+  assert(ui.document.querySelector('[data-node-id="treasure-1"] .artifact-icon'));
+  assert(ui.document.querySelector('[data-node-id="treasure-german"] .artifact-icon'));
+  assert.equal(ui.document.querySelector('[data-node-id="treasure-german"] .decision-mark').textContent, '✕');
+  inspectHidden(ui, 362, 363); ui.click('#challenge-answers button:nth-child(2)');
+  assert.equal(ui.document.querySelectorAll('.notebook-entry').length, 1);
+  assert(ui.document.getElementById('detective-points').textContent.includes('0'));
+  assert(ui.document.getElementById('evidence-panel').hidden);
+  assert.equal(ui.document.querySelectorAll('.graph-edge').length, 0);
+  assert(ui.document.getElementById('map-solved-stamp').hidden);
+  assert(ui.document.getElementById('map-cue').textContent.includes('Case restarted'));
+  ui = await page(storage);
+  assert.equal(ui.document.querySelectorAll('.notebook-entry').length, 1, 'The failed attempt is not restored.');
+  assert.equal(JSON.parse(storage.get('word-chaser-current-v1')).modeId, 'investigator');
+  ui.click('[data-mode-id="chaser"]');
+  assert(!ui.document.getElementById('help').hidden);
+  assert(ui.document.querySelector('#pins .artifact-icon'));
+  inspectHidden(ui, 322, 246); ui.click('#challenge-answers button:nth-child(2)');
+  assert(!ui.document.getElementById('evidence-panel').hidden, 'The normal mode still permits retrying a mistake.');
+});
+
+ test('Investigator still completes a case and unlocks the earned story', async () => {
+  const ui = await page();
+  ui.click('[data-mode-id="investigator"]');
+  const words = ui.document.getElementById('case-select'); words.value = 'house'; words.dispatchEvent(ui.event('change'));
+  assert.equal(ui.document.querySelector('[data-mode-id="investigator"]').getAttribute('aria-pressed'), 'true');
+  inspectHidden(ui, 322, 246); ui.click('#challenge-answers button');
+  assert(!ui.document.getElementById('map-solved-stamp').hidden);
+  assert([...ui.document.querySelectorAll('.notebook-story')].every(story => !story.hidden));
+  assert(!ui.document.getElementById('sources-open').hidden);
+});
+
+
+test('Investigator gives a location riddle only after a full search minute', async () => {
+  const ui = await page();
+  assert(ui.document.getElementById('search-timer').hidden);
+  ui.click('[data-mode-id="investigator"]');
+  const clock = ui.document.getElementById('search-timer');
+  assert.equal(clock.textContent, 'Hint in 1:00');
+  assert(!ui.document.getElementById('search-assist').hidden);
+  assert(ui.document.querySelector('.map-tools #search-timer'));
+  ui.searchTicks(59);
+  assert.equal(clock.textContent, 'Hint in 0:01');
+  assert(ui.document.getElementById('search-location-hint').hidden);
+  ui.searchTicks(1);
+  assert(ui.document.getElementById('search-location-hint').textContent.includes('Big Ben'));
+  assert(!ui.document.getElementById('search-location-hint').hidden);
+  assert.equal(clock.textContent, 'Hint in 1:00');
+  ui.searchTicks(15);
+  assert(!ui.document.getElementById('search-location-hint').hidden, 'The hint stays visible instead of expiring.');
+  assert.equal(ui.document.querySelector('[data-node-id="treasure-1"]'), null, 'The nudge does not reveal a pin.');
+  assert(ui.document.getElementById('detective-points').textContent.includes('0'));
+  inspectHidden(ui, 322, 246);
+  assert(clock.hidden, 'Answering a theory is not searching.');
+  ui.searchTicks(90);
+  assert(ui.document.getElementById('search-location-hint').hidden);
+  ui.click('#challenge-answers button');
+  assert.equal(clock.textContent, 'Hint in 1:00');
+  assert(!clock.hidden);
+  ui.searchTicks(30);
+  ui.click('#restart');
+  assert.equal(clock.textContent, 'Hint in 1:00');
+  ui.click('[data-mode-id="chaser"]');
+  ui.searchTicks(90);
+  assert(clock.hidden);
+  assert(ui.document.getElementById('search-location-hint').hidden);
+});
+
+test('search nudges pause for the story and stop on completion', async () => {
+  const ui = await page();
+  ui.click('[data-mode-id="investigator"]');
+  ui.click('#story-open'); ui.searchTicks(60);
+  assert.equal(ui.document.getElementById('search-timer').textContent, 'Hint in 1:00');
+  assert(ui.document.getElementById('search-location-hint').hidden);
+  ui.click('#story-start'); ui.searchTicks(1);
+  assert.equal(ui.document.getElementById('search-timer').textContent, 'Hint in 0:59');
+  const words = ui.document.getElementById('case-select'); words.value = 'house'; words.dispatchEvent(ui.event('change'));
+  assert.equal(ui.document.getElementById('search-timer').textContent, 'Hint in 1:00');
+  inspectHidden(ui, 322, 246); ui.click('#challenge-answers button');
+  assert(ui.document.getElementById('search-timer').hidden);
+  ui.searchTicks(90);
+  assert(!ui.document.getElementById('map-solved-stamp').hidden);
+  assert(!ui.document.getElementById('search-location-hint').textContent.includes('A little nudge'));
+});
+
+
+test('returning to a cached Investigator page resumes the search timer', async () => {
+  const ui = await page();
+  ui.click('[data-mode-id="investigator"]');
+  ui.searchTicks(20);
+  ui.context.window.dispatchEvent(ui.event('pagehide'));
+  assert(ui.document.getElementById('search-timer').hidden);
+  ui.context.window.dispatchEvent(ui.event('pageshow'));
+  assert(!ui.document.getElementById('search-timer').hidden);
+  ui.searchTicks(60);
+  assert(!ui.document.getElementById('search-location-hint').hidden);
+  assert(ui.document.getElementById('search-location-hint').textContent.includes('Big Ben'));
+});
+
+
+test('the compact toolbar keeps the word count by the chooser and explains mode choices', async () => {
+  const ui = await page();
+  assert(ui.document.querySelector('.word-choice #case-select'));
+  assert(ui.document.querySelector('.word-choice #catalog-count'));
+  assert.equal(ui.document.querySelector('label[for="case-select"]'), null);
+  const choices = ui.document.querySelectorAll('#mode-options .mode-choice');
+  assert.equal(choices.length, 2);
+  for (const choice of choices) {
+    assert(ui.document.getElementById(choice.getAttribute('aria-describedby')).textContent.length > 10);
+  }
+  assert.equal(choices[0].getAttribute('aria-pressed'), 'true');
+  ui.click('[data-mode-id="investigator"]');
+  assert.equal(choices[0].getAttribute('aria-pressed'), 'false');
+  assert.equal(choices[1].getAttribute('aria-pressed'), 'true');
+});
+
+
+test('URL mode selection overrides saved mode safely and accepts the Word Chaser label', async () => {
+  const storage = new Map(); let ui = await page(storage);
+  ui.click('[data-node-id="treasure-1"]'); ui.click('#challenge-answers button');
+  ui = await page(storage, false, true, '?mode=investigator');
+  assert.equal(ui.document.querySelector('[data-mode-id="investigator"]').getAttribute('aria-pressed'), 'true');
+  assert.equal(ui.document.querySelectorAll('.notebook-entry').length, 1, 'Guided progress cannot carry into advanced mode.');
+  assert(!ui.document.getElementById('search-timer').hidden);
+  ui = await page(storage, false, true, '?mode=word-chaser');
+  assert.equal(ui.document.querySelector('[data-mode-id="chaser"]').getAttribute('aria-pressed'), 'true');
+  ui = await page(storage, false, true, '?mode=unknown');
+  assert.equal(ui.document.querySelector('[data-mode-id="chaser"]').getAttribute('aria-pressed'), 'true');
+  const words = ui.document.getElementById('case-select'); words.value = 'house'; words.dispatchEvent(ui.event('change'));
+  assert(ui.document.getElementById('word-tooltip').textContent.startsWith('house — '));
 });

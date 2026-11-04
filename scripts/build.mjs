@@ -10,5 +10,5 @@ try {
       builder.onLoad({filter: /.*/, namespace: 'case-data'}, () => ({contents: `export default ${JSON.stringify(content)};`, loader: 'js'}));
     }}]
   });
-  console.log(`Built Word Chaser with ${content.cases.length} validated JSON cases. No per-word JavaScript.`);
+  console.log(`Built ${content.catalog.title} with ${content.cases.length} validated JSON cases. No per-word JavaScript.`);
 } catch (error) { console.error(error.message); process.exitCode = 1; }

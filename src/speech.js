@@ -1,11 +1,11 @@
 'use strict';
 // Browser speech is a listening aid. Historical forms use explicitly labelled approximations.
-export function createSpeech(){
+export function createSpeech({onSpeakingChange=()=>{}}={}){
  const supported=!!(window.speechSynthesis&&window.SpeechSynthesisUtterance);
  let currentToken=0,activeButton=null,cancelVoiceWait=null;
  const selectedVoices=new Map();
  function status(message){const el=document.getElementById('speech-status');if(el)el.textContent=message;}
- function stop(){currentToken++;if(cancelVoiceWait){cancelVoiceWait();cancelVoiceWait=null;}window.speechSynthesis?.cancel();if(activeButton){activeButton.removeAttribute('aria-busy');activeButton=null;}}
+ function stop(){currentToken++;if(cancelVoiceWait){cancelVoiceWait();cancelVoiceWait=null;}window.speechSynthesis?.cancel();if(activeButton){activeButton.removeAttribute('aria-busy');activeButton=null;}onSpeakingChange(false);}
  function languageKey(tag){return (tag||'').toLowerCase().replace(/_/g,'-');}
  function sameLanguage(a,b){
   const base=tag=>{const code=languageKey(tag).split('-')[0];return code==='no'?'nb':code;};
@@ -56,7 +56,7 @@ export function createSpeech(){
   if(!supported){status('Spoken words are unavailable in this browser. Try Chrome, Edge or Safari.');return;}
   stop();const token=currentToken;
   activeButton=button||null;activeButton?.setAttribute('aria-busy','true');
-  const finish=()=>{if(token!==currentToken)return;activeButton?.removeAttribute('aria-busy');activeButton=null;};
+  const finish=()=>{if(token!==currentToken)return;activeButton?.removeAttribute('aria-busy');activeButton=null;onSpeakingChange(false);};
   function play(choice){
    if(token!==currentToken)return;
    if(!choice){finish();status('A '+value.language+' voice is not available yet. Try again once its voice has loaded or been installed. The word will not be read in an unrelated accent.');return;}
@@ -66,6 +66,7 @@ export function createSpeech(){
    utterance.rate=document.getElementById('speech-slow')?.checked ? .65 : .85;utterance.pitch=1;
    status((value.historical||choice.approximation?'Voice approximation: ':'Listen: ')+value.word+' · '+(voice.name||voice.lang)+' ('+voice.lang+')'+(choice.approximation?' · '+choice.approximation: value.historical?' · historical pronunciation may differ.':''));
    utterance.onend=finish;
+   utterance.onstart=()=>{if(token===currentToken)onSpeakingChange(true);};
    utterance.onerror=e=>{if(token!==currentToken)return;finish();if(!['canceled','interrupted'].includes(e.error))status('Could not play this word with its selected language voice. Try again; no English substitute will be used.');};
    try{window.speechSynthesis.speak(utterance);}catch{finish();status('Could not play this word with its selected language voice.');}
   }

@@ -1,6 +1,6 @@
-# Word Chaser — handover
+# Junior Word Chaser — handover
 
-Updated 4 November 2026, after completing the weekday set and adding fireworks.
+Updated 4 November 2026, after renaming the game Junior Word Chaser and adding particle fireworks with sound.
 
 ## Start here next time
 
@@ -9,23 +9,59 @@ the gameplay with screenshots, especially difficulty, clues, touch interaction
 and compact layout. Preserve those decisions; this is still an evolving
 prototype. Read `data/AUTHORING.md` before adding content.
 
-The game is **Word Chaser**. Keep the project folder named `word-investigator`.
+The game is **Junior Word Chaser**. Keep the project folder named `word-investigator`.
 The audience is an eight-year-old, often playing with an adult, on desktop or
 iPad. The aim is to investigate how English words change locally over time and
 travel between languages—not simply follow the only available correct pin.
 
 ## Gameplay decisions to preserve
 
+- The compact top toolbar puts search, the word chooser and a two-button mode
+  selector on one row when space allows. The word count sits directly below
+  the chooser; the redundant “Your word mystery” label is removed. Mode buttons
+  have hover/focus descriptions and 44px touch targets. Search and the native
+  word dropdown share a 48px height and matching borders/type with the mode
+  group, including explicit Safari select styling. The selected word has a
+  short hover/focus description from its JSON summary.
+- URL `?mode=chaser` (also `word-chaser`) or `?mode=investigator` overrides the
+  saved level. A differing URL mode starts a fresh attempt; unknown values are
+  ignored. Mode buttons update that URL parameter when browser history permits.
+- The Mode selector offers the usual **Word Chaser** and advanced **Investigator**.
+  Rules are data in `catalog.modes`, validated by the catalog schema. Changing
+  mode resets the active case. The active mode is saved with the current case.
+- Investigator shows the starting word and earned stops, always with their
+  artifact pictures and decision badges inside/on the circles. Unvisited targets have
+  no circles, labels or other location hints. Moving or dragging the glass over
+  a hidden location reveals its word and the usual artifact circle with its
+  picture and decision badge; moving away hides them again. Dates and language
+  hints stay hidden. Tap or
+  press Enter to test it. Manual H hints, clue reveals, lead suggestions, time controls
+  and pre-solve stories are unavailable. Earned notebook stories unlock on
+  completion. Any wrong answer immediately restarts the current case, clears
+  points/progress and saves that fresh state. Word Chaser retains retries.
+
+- Investigator gives a playful location nudge after 60 seconds of searching,
+  with a clearly visible “Hint in 1:00” badge among the map tools. Location
+  hints stay in that badge until the next inspection or reset rather than
+  disappearing after 12 seconds. Returning via browser Back/Forward resumes
+  the timer (pagehide previously stopped it without a pageshow restart). Configure `searchHintSeconds` per mode
+  (0 disables it); riddles live in `catalog.places[*].searchHint`. It points to
+  an available connected lead without showing its word or giving the answer.
+  The timer pauses in the opening story or a hidden tab, stops on theory cards,
+  and resets after each correct answer, dismissal, restart or case/mode switch.
+  Completion disables it. Nudges repeat each minute while still searching and
+  do not deduct points or unlock manual clue help.
+
 - The first visit opens a short story: everyone has lost their memories; the
   player traces word histories to help bring them back. The reveal is “From now
-  on, you are… THE WORD CHASER!” One button begins play. Dismissal is saved
+  on, you are… THE JUNIOR WORD CHASER!” One button begins play. Dismissal is saved
   separately under `word-chaser-story-v1`; clicking the brand reopens the story
   without resetting the active investigation.
 - Moving the magnifying glass over an object reveals its word automatically.
   Moving away dismisses that peek. Touch dragging also peeks.
 - Tapping an object opens a short theory card. One Yes/No answer records a
   correct decision, awards points, closes the card and advances as appropriate.
-  No additional Continue/Follow click. Wrong guesses can be revised.
+  No additional Continue/Follow click. In Word Chaser, wrong guesses can be revised.
 - Choices read “Yes, I think so” and “No, I don’t think so”. The × closes the
   card; no extra Keep exploring button is needed.
 - Cards start with evidence, not the verdict. “An older English name for
@@ -61,9 +97,13 @@ travel between languages—not simply follow the only available correct pin.
   disabled for reduced motion). It does
   not intercept taps or require dismissal. Restart/switching cases removes it;
   restoring a completed current case shows it again.
-- Newly solving a case adds three large decorative firework bursts for 4 seconds.
+- Newly solving a case adds three rising rockets and particle bursts for about 5 seconds.
   They do not block taps, are cancelled on restart/switching, and do not replay
   on reload. Reduced-motion users get the stamp without fireworks.
+  Canvas sparks slow down, fall under gravity and leave glowing trails.
+  Synthesized whooshes, booms and crackles use Web Audio; the “Firework sounds”
+  checkbox mutes immediately and saves the preference separately. Unsupported
+  audio is disabled gracefully. Real device rendering/audio still needs review.
 - Keep pins in the correct country. Robot and robota initially looked like
   separate Czech/Hungarian stops; both now sit within Czechia with captions
   explaining “new name” versus “older word”.
@@ -75,6 +115,17 @@ travel between languages—not simply follow the only available correct pin.
   clearer while others are lighter; do not append “· here”.
 - No extra “Word under the glass” audio bar. Speakers sit beside words;
   “Speak slowly” is below the map. P still speaks the word under the glass.
+- Original detective music (“After Hours, On the Case”) starts after a user tap.
+  The header’s “♪ Music” toggle saves its own preference; music continues across
+  word changes, ducks during speech and stops when the page is hidden or left.
+  The user wants cool Japanese detective-anime jazz (Case Closed/Conan as a
+  mood reference), with an entirely original melody. Earlier waltz and reed-led
+  versions were rejected. The current 32-bar, 116 BPM jazz-fusion arrangement
+  uses a recurring call-and-response theme, syncopated electric piano, bass
+  groove and kick/snare/hi-hats. JSON holds the score, velocities and mix;
+  sample synthesis, rolled chord timing, stereo placement and light room reverb
+  run offline. Normal gain .42, speech gain .012. Instrument envelopes and
+  scheduling are tested; musical quality still needs the user's listening review.
 - Voices must match the language and stay consistent. Wait for matching voices
   rather than falling back silently to English. Historical speech is an
   approximation; Latin’s explicit Italian-voice fallback is catalog data.
@@ -118,6 +169,8 @@ Examples of intentional teaching distinctions:
 | `src/investigation.js` | Generic Cytoscape graph, decisions, scoring and state |
 | `src/map-view.js` | SVG map, lens, zoom, touch and trails |
 | `src/main.js`, `src/speech.js` | Shared UI and language voices |
+| `src/fireworks.js`, `src/firework-sound.js` | Canvas particles and synchronized offline sound |
+| `data/detective-music.json`, `src/detective-music.js` | Original score and quiet background-music player |
 | `app.css`, `index.html` | Current layout and page |
 | `scripts/build.mjs`, `assets/app.js` | esbuild source and generated bundle |
 | `test/` | Engine, speech and built-page DOM tests |
@@ -133,7 +186,7 @@ npm run validate
 npm test
 ```
 
-`npm test` builds first. Last full run: **31 tests passed**. DOM tests do not verify actual
+`npm test` builds first. Last full run: **43 tests passed**. DOM tests do not verify actual
 pixels, native voice quality or real iPad behavior. Open `index.html` directly,
 or use `npm start` at `http://localhost:8000`.
 

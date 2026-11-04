@@ -8,12 +8,12 @@ function audio(node) {
   const lang = catalog.languages[node.pronunciation.languageId];
   return {word: node.form, text: node.pronunciation.text, language: lang.voiceLabel, lang: lang.voiceTag, historical: lang.approximate, fallback: lang.fallback};
 }
-function setup(initial) {
+function setup(initial, onSpeakingChange) {
   let voices = initial; const played = [], listeners = new Set();
   const status = {textContent: ''};
   globalThis.document = {getElementById: id => id === 'speech-status' ? status : {checked: false}};
   globalThis.window = {SpeechSynthesisUtterance: class {constructor(text) {this.text = text;}}, speechSynthesis: {getVoices: () => voices, cancel() {}, speak: u => played.push(u), addEventListener: (name, fn) => listeners.add(fn), removeEventListener: (name, fn) => listeners.delete(fn)}};
-  return {speech: createSpeech(), played, status, setVoices(next) {voices = next; for (const fn of [...listeners]) fn();}};
+  return {speech: createSpeech({onSpeakingChange}), played, status, setVoices(next) {voices = next; for (const fn of [...listeners]) fn();}};
 }
 const english = {name: 'English', voiceURI: 'english', lang: 'en-GB'};
 const greek = {name: 'Greek woman', voiceURI: 'greek', lang: 'el-GR'};
@@ -46,4 +46,13 @@ test('explicit Latin approximation comes from the language catalog', () => {
   app.speech.speak(audio(latin)); assert.equal(app.played[0].voice, italian);
   assert(app.status.textContent.includes(catalog.languages.latin.fallback.label));
   app.speech.stop();
+});
+
+test('background audio is ducked only during active speech and restored after cancellation', () => {
+  const states = [], app = setup([english], speaking => states.push(speaking));
+  app.speech.speak({word: 'house', text: 'house', lang: 'en-GB', language: 'English'});
+  assert(!states.includes(true));
+  app.played[0].onstart(); assert.equal(states.at(-1), true);
+  app.speech.stop(); assert.equal(states.at(-1), false);
+  app.played[0].onstart(); assert.equal(states.at(-1), false, 'A cancelled utterance cannot duck the new audio.');
 });

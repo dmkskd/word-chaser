@@ -1,4 +1,4 @@
-# Author a Word Chaser investigation
+# Author a Junior Word Chaser investigation
 
 A new word is a **JSON case file** plus a path in `catalog.json`. No per-word JavaScript, callback, or renderer extension is needed.
 
@@ -155,3 +155,16 @@ histories (house/casa/maison). Never invent words or call a genuine cousin
 unrelated just to make a wrong option. Ask a precise question about a borrowing
 or source, and put the historical explanation in help and feedback rather than
 announcing the verdict in the initial card.
+
+## Play modes
+
+`catalog.modes` defines marker detail, peeks, hints and restart-on-wrong rules.
+These apply to every case without word-specific logic. Investigator hides
+optional help until completion and resets the current attempt after an incorrect
+choice. Author precise questions that remain answerable without optional clue
+pages; the word form and challenge are still visible when a marker is tapped.
+
+Investigator's automatic location nudges use `catalog.places[*].searchHint`.
+Write a short, child-friendly geographical riddle without revealing the word
+or whether a theory is correct. Mode `searchHintSeconds` sets the search delay
+in seconds (currently 60 for Investigator, 0 to disable in Word Chaser).

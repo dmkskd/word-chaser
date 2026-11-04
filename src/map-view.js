@@ -44,7 +44,29 @@ export class MapView {
       circle.setAttribute('cx', a); circle.setAttribute('cy', b); circle.setAttribute('r', 57 * scale);
     }
     document.getElementById('magnified').setAttribute('transform', `translate(${a} ${b}) scale(1.45) translate(${-a} ${-b})`);
-    this.onHover?.(this.hit()?.id || null);
+    this.updateHover(this.hit()?.id || null);
+  }
+  updateHover(id) {
+    document.getElementById('pins').querySelector('[data-hover-node-id]')?.remove();
+    if (id && this.engine && this.mode?.showUnvisitedMarkers === false && !this.engine.visited.has(id)) {
+      const node = this.engine.node(id), place = this.catalog.places[node.placeId];
+      const status = this.engine.nodeStatus(id), visited = this.engine.visited.has(id);
+      const marker = svgNode('g', {
+        transform: `translate(${place.x + node.offset[0]} ${place.y + node.offset[1]})`,
+        class: `evidence-node ${visited ? 'visited' : 'candidate'} ${status}`,
+        'data-hover-node-id': id, 'pointer-events': 'none', 'aria-hidden': 'true'
+      });
+      marker.append(svgNode('circle', {r: 19, class: 'artifact-disc'}));
+      this.appendArtifact(marker, node, status, visited);
+      document.getElementById('pins').append(marker);
+    }
+    this.onHover?.(id);
+  }
+  appendArtifact(group, node, status, visited) {
+    group.append(svgNode('text', {y: 6, 'text-anchor': 'middle', class: 'artifact-icon'}, this.catalog.artifacts[node.evidence.kind].icon));
+    const badge = svgNode('g', {transform: 'translate(14 -14)', class: 'decision-badge', 'aria-hidden': 'true'});
+    badge.append(svgNode('circle', {r: 9, class: 'decision-disc'}), svgNode('text', {y: 4, 'text-anchor': 'middle', class: 'decision-mark'}, status === 'excluded' ? '✕' : visited ? '✓' : '?'));
+    group.append(badge);
   }
   applyView(view) {
     this.view = view;
@@ -80,8 +102,8 @@ export class MapView {
     if (hit) this.onInspect(hit.id);
     else { this.zoom(.72, this.lens, true); this.onHelp(false); }
   }
-  render(engine, catalog, eraId) {
-    this.engine = engine;
+  render(engine, catalog, eraId, mode = {showMarkerDetails: true}) {
+    this.engine = engine; this.catalog = catalog; this.mode = mode;
     const edges = document.getElementById('trails'), nodes = document.getElementById('pins');
     edges.replaceChildren(); nodes.replaceChildren();
     const pointFor = node => { const place = catalog.places[node.placeId]; return [place.x + node.offset[0], place.y + node.offset[1]]; };
@@ -103,23 +125,29 @@ export class MapView {
     }
     for (const id of available) {
       const node = engine.node(id), point = pointFor(node), visited = engine.visited.has(id), current = id === engine.currentId, inEra = node.eraId === eraId;
-      const artifact = catalog.artifacts[node.evidence.kind], era = catalog.eras[node.eraId], status = engine.nodeStatus(id);
-      const group = svgNode('g', {transform: `translate(${point[0]} ${point[1]})`, class: `evidence-node ${current ? 'current' : ''} ${visited ? 'visited' : 'candidate'} ${status} ${inEra ? '' : 'other-era'}`, role: 'button', tabindex: 0, 'data-node-id': id, 'aria-label': `${visited ? node.form : catalog.languages[node.languageId].name}. ${catalog.places[node.placeId].name}, ${era.name}. ${status === 'excluded' ? 'Not our trail.' : visited ? 'Connected.' : 'An unsolved clue.'} Inspect evidence.`});
-      group.append(svgNode('circle', {r: 19, class: 'artifact-disc'}), svgNode('text', {y: 6, 'text-anchor': 'middle', class: 'artifact-icon'}, artifact.icon));
-      const badge = svgNode('g', {transform: 'translate(14 -14)', class: 'decision-badge', 'aria-hidden': 'true'});
-      badge.append(svgNode('circle', {r: 9, class: 'decision-disc'}), svgNode('text', {y: 4, 'text-anchor': 'middle', class: 'decision-mark'}, status === 'excluded' ? '✕' : visited ? '✓' : '?'));
-      group.append(badge);
-      const labelLeft = node.mapLabelSide === 'left' || (!node.mapLabelSide && point[0] > 740);
-      const labelPosition = labelLeft ? {x: -26, 'text-anchor': 'end'} : {x: 26};
-      group.append(svgNode('text', {...labelPosition, y: -4, class: 'artifact-title'}, visited ? node.form : node.mapTitle || catalog.languages[node.languageId].name));
-      group.append(svgNode('text', {...labelPosition, y: 11, class: 'artifact-era'}, status === 'excluded' ? '✕ Not our trail' : `${era.icon} ${visited && node.mapCaption ? node.mapCaption : era.name}`));
+      this.hitNodes.push({id, point});
+      if (mode.showUnvisitedMarkers === false && !visited) continue;
+      const era = catalog.eras[node.eraId], status = engine.nodeStatus(id);
+      const accessibleLabel = mode.showMarkerDetails ? `${visited ? node.form : catalog.languages[node.languageId].name}. ${catalog.places[node.placeId].name}, ${era.name}. ${status === 'excluded' ? 'Not our trail.' : visited ? 'Connected.' : 'An unsolved clue.'} Inspect evidence.` : `${visited ? node.form + (status === 'excluded' ? '. Not our trail.' : '. Connected.') : 'Unexplored word.'} ${catalog.places[node.placeId].name}. Inspect word.`;
+      const group = svgNode('g', {transform: `translate(${point[0]} ${point[1]})`, class: `evidence-node ${current ? 'current' : ''} ${visited ? 'visited' : 'candidate'} ${status} ${inEra ? '' : 'other-era'} ${mode.showMarkerDetails ? '' : 'unlabelled'}`, role: 'button', tabindex: 0, 'data-node-id': id, 'aria-label': accessibleLabel});
+      group.append(svgNode('circle', {r: 19, class: 'artifact-disc'}));
+      if (mode.showMarkerDetails || visited) this.appendArtifact(group, node, status, visited);
+      if (mode.showMarkerDetails) {
+        const labelLeft = node.mapLabelSide === 'left' || (!node.mapLabelSide && point[0] > 740);
+        const labelPosition = labelLeft ? {x: -26, 'text-anchor': 'end'} : {x: 26};
+        group.append(svgNode('text', {...labelPosition, y: -4, class: 'artifact-title'}, visited ? node.form : node.mapTitle || catalog.languages[node.languageId].name));
+        group.append(svgNode('text', {...labelPosition, y: 11, class: 'artifact-era'}, status === 'excluded' ? '✕ Not our trail' : `${era.icon} ${visited && node.mapCaption ? node.mapCaption : era.name}`));
+      }
+      if (!mode.showMarkerDetails && visited) {
+        group.append(svgNode('text', {x: 26, y: 4, class: 'artifact-title'}, node.form));
+      }
       group.addEventListener('pointerdown', event => { if (event.pointerType !== 'touch') event.stopPropagation(); });
       group.addEventListener('pointerup', event => { if (event.pointerType !== 'touch') event.stopPropagation(); });
       group.addEventListener('click', event => { event.stopPropagation(); if (Date.now() >= this.suppressClickUntil) this.onInspect(id); });
       group.addEventListener('keydown', event => { if (['Enter', ' '].includes(event.key)) { event.preventDefault(); event.stopPropagation(); this.onInspect(id); } });
-      nodes.append(group); this.hitNodes.push({id, point});
+      nodes.append(group);
     }
-    this.onHover?.(this.hit()?.id || null);
+    this.updateHover(this.hit()?.id || null);
   }
   bindEvents() {
     const svg = this.svg;
@@ -144,7 +172,7 @@ export class MapView {
       if (!this.touchPoints.size) { this.pinching = false; this.pinchDistance = 0; } this.start = null;
     });
     svg.addEventListener('pointercancel', event => { this.touchPoints.delete(event.pointerId); this.start = null; if (!this.touchPoints.size) this.pinching = false; });
-    svg.addEventListener('pointerleave', () => { if (!this.start) this.onHover?.(null); });
+    svg.addEventListener('pointerleave', () => { if (!this.start) this.updateHover(null); });
     svg.addEventListener('wheel', event => { event.preventDefault(); const point = this.coordinates(event); this.setLens(...point); this.zoom(Math.exp(Math.max(-100, Math.min(100, event.deltaY * (event.deltaMode === 1 ? 16 : 1))) * .002), point); }, {passive: false});
     svg.addEventListener('keydown', event => {
       if (event.target !== svg) return;

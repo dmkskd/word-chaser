@@ -11,7 +11,8 @@
     "relations",
     "artifacts",
     "cases",
-    "rules"
+    "rules",
+    "modes"
   ],
   "properties": {
     "$schema": {
@@ -123,7 +124,8 @@
         "required": [
           "name",
           "x",
-          "y"
+          "y",
+          "searchHint"
         ],
         "properties": {
           "name": {
@@ -139,6 +141,11 @@
             "type": "number",
             "minimum": 0,
             "maximum": 650
+          },
+          "searchHint": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 180
           }
         }
       }
@@ -228,6 +235,78 @@
           "type": "integer",
           "minimum": 0,
           "maximum": 100
+        }
+      }
+    },
+    "modes": {
+      "type": "object",
+      "required": [
+        "chaser"
+      ],
+      "propertyNames": {
+        "pattern": "^[a-z][a-z0-9-]*$"
+      },
+      "additionalProperties": {
+        "$ref": "#/definitions/mode"
+      },
+      "properties": {
+        "chaser": {
+          "$ref": "#/definitions/mode"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "mode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "description",
+        "instructions",
+        "showMarkerDetails",
+        "showPeeks",
+        "allowHints",
+        "restartOnWrong",
+        "showUnvisitedMarkers",
+        "showPeekDetails",
+        "searchHintSeconds"
+      ],
+      "properties": {
+        "label": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "instructions": {
+          "type": "string",
+          "minLength": 1
+        },
+        "showMarkerDetails": {
+          "type": "boolean"
+        },
+        "showPeeks": {
+          "type": "boolean"
+        },
+        "allowHints": {
+          "type": "boolean"
+        },
+        "restartOnWrong": {
+          "type": "boolean"
+        },
+        "showUnvisitedMarkers": {
+          "type": "boolean"
+        },
+        "showPeekDetails": {
+          "type": "boolean"
+        },
+        "searchHintSeconds": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3600
         }
       }
     }

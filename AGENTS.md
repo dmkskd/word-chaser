@@ -1,4 +1,4 @@
-# Working on Word Chaser
+# Working on Junior Word Chaser
 
 Read `STATUS.md` first for the current gameplay decisions, architecture,
 publishing setup and outstanding work. Read `data/AUTHORING.md` before adding

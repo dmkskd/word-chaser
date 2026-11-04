@@ -7,7 +7,7 @@ const {catalog, cases} = content;
 const $ = id => document.getElementById(id);
 const speech = createSpeech();
 const storageKey = 'word-chaser-current-v1';
-let saved = {}, engine, selectedEra, evidenceId = null, cueTimer = null, evidenceFeedback = null;
+let saved = {}, engine, selectedEra, evidenceId = null, cueTimer = null, evidenceFeedback = null, fireworksTimer = null;
 try { localStorage.removeItem('word-chaser-graph-v2'); const stored = JSON.parse(localStorage.getItem(storageKey)); saved = stored && typeof stored === 'object' && !Array.isArray(stored) ? stored : {}; } catch { /* Storage is optional. */ }
 const map = new MapView($('map'), window.EUROPE_MAP, {onInspect: inspect, onHelp: showHint, onSpeak: speakNode, onHover: showPeek, onDismiss: closeEvidence});
 function showPeek(id) {
@@ -39,7 +39,7 @@ function persist() {
 }
 function selectCase(id, restore = false) {
   const wordCase = cases.find(c => c.id === id); if (!wordCase) return;
-  speech.stop(); closeEvidence(); hideCue();
+  speech.stop(); closeEvidence(); hideCue(); clearFireworks();
   const snapshot = restore && saved.caseId === id ? saved.snapshot : undefined;
   engine?.destroy();
   engine = new Investigation(catalog, wordCase, snapshot); selectedEra = engine.node().eraId;
@@ -159,15 +159,40 @@ function renderEvidence() {
 }
 function answerTheory(choiceId) {
   if (!evidenceId) return;
+  const wasComplete = engine.complete;
   evidenceFeedback = engine.answer(evidenceId, choiceId);
   if (evidenceFeedback.correct) {
     const reward = evidenceFeedback.earned, edge = engine.linkTo(evidenceId);
     const ruledOut = edge && catalog.relations[edge.type].outcome === 'excluded';
     followEvidence();
+    if (!wasComplete && engine.complete) celebrateCase();
     cue(`⭐ +${reward} · ${ruledOut ? 'Good catch!' : engine.complete ? 'Case solved!' : 'Clue cracked!'}`, ruledOut ? 2000 : 4000);
     return;
   }
   persist();renderProgress();renderEvidence();
+}
+
+function clearFireworks() {
+  if (fireworksTimer !== null) clearTimeout(fireworksTimer);
+  fireworksTimer = null; $('map-fireworks').hidden = true; $('map-fireworks').replaceChildren();
+}
+function celebrateCase() {
+  clearFireworks();
+  if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
+  const colors = ['#d9a22f', '#397b69', '#d58b59', '#6b89b3'];
+  for (const [index, x, y] of [[0, 24, 30], [1, 50, 22], [2, 76, 35]]) {
+    const burst = textElement('div', '', 'firework-burst');
+    burst.style.left = x + '%'; burst.style.top = y + '%'; burst.style.setProperty('--burst-delay', index * .45 + 's');
+    for (let ray = 0; ray < 14; ray++) {
+      const spark = textElement('i', '', 'firework-spark'), angle = ray * Math.PI * 2 / 14, radius = 110 + ray % 3 * 30;
+      spark.style.setProperty('--spark-x', Math.cos(angle) * radius + 'px');
+      spark.style.setProperty('--spark-y', Math.sin(angle) * radius + 15 + 'px');
+      spark.style.color = colors[(ray + index) % colors.length]; burst.append(spark);
+    }
+    $('map-fireworks').append(burst);
+  }
+  $('map-fireworks').hidden = false;
+  fireworksTimer = setTimeout(clearFireworks, 4000);
 }
 
 function closeEvidence() { evidenceId = null; evidenceFeedback = null; $('evidence-panel').hidden = true; if ($('word-peek')) $('word-peek').hidden = true; }
@@ -218,6 +243,18 @@ $('sources-open').addEventListener('click', () => {
   $('sources-dialog').showModal();
 });
 $('sources-close').addEventListener('click', () => $('sources-dialog').close());
+const storyKey = 'word-chaser-story-v1';
+function rememberStory() { try { localStorage.setItem(storyKey, 'seen'); } catch { /* The story still works without storage. */ } }
+$('story-start').addEventListener('click', () => {
+  rememberStory(); $('story-dialog').close(); $('map').focus({preventScroll: true});
+});
+$('story-dialog').addEventListener('cancel', rememberStory);
+$('story-open').addEventListener('click', event => {
+  event.preventDefault(); speech.stop(); closeEvidence(); hideCue(); $('story-dialog').showModal();
+});
 window.addEventListener('pagehide', () => speech.stop());
 renderCatalog(); selectCase(cases.some(c => c.id === saved.caseId) ? saved.caseId : cases[0].id, true);
+let storySeen = false;
+try { storySeen = localStorage.getItem(storyKey) === 'seen'; } catch { /* Show the opening if storage is unavailable. */ }
+if (!storySeen) $('story-dialog').showModal();
 if (!speech.supported) $('speech-status').textContent = 'Spoken words are unavailable in this browser.';

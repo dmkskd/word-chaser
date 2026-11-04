@@ -1,0 +1,445 @@
+{
+  "schemaVersion": 1,
+  "id": "friday",
+  "title": "Friday",
+  "icon": "📅",
+  "summary": "A short day name carrying a story from long ago.",
+  "question": "Where did Friday get its name?",
+  "startNodeId": "friday-now",
+  "goalNodeIds": [
+    "friday-old",
+    "friday-latin"
+  ],
+  "completion": "Friday keeps an older goddess name, Frīg, in English. German Freitag shares that naming family. The Roman calendar used Venus’s day; Friday was not named after frying food.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · Friday",
+      "url": "https://www.etymonline.com/word/Friday"
+    },
+    {
+      "id": "english",
+      "title": "American Heritage · Friday",
+      "url": "https://www.ahdictionary.com/word/search.html?q=Friday"
+    },
+    {
+      "id": "relative",
+      "title": "Duden · Freitag",
+      "url": "https://www.duden.de/rechtschreibung/Freitag"
+    },
+    {
+      "id": "false1",
+      "title": "CNRTL · vendredi",
+      "url": "https://www.cnrtl.fr/definition/vendredi"
+    },
+    {
+      "id": "false2",
+      "title": "Etymonline · fry",
+      "url": "https://www.etymonline.com/word/fry"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "friday-now",
+      "form": "Friday",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "The day after Thursday.",
+      "pronunciation": {
+        "text": "Friday",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A calendar label",
+        "text": "A short day name carrying a story from long ago.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "english"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Look for an older spelling before deciding where this name came from."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "A short day name carrying a story from long ago."
+          }
+        ]
+      }
+    },
+    {
+      "id": "friday-old",
+      "form": "Frīgedæg",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        -12,
+        -70
+      ],
+      "period": "Before 1100",
+      "meaning": "A day name on an old English calendar.",
+      "pronunciation": {
+        "text": "Frīgedæg",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word on an old calendar",
+        "text": "Frīg was a goddess linked with love and marriage. Her name is preserved in Frīgedæg, the older English form behind Friday. This is a goddess-name story, not a cooking name.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "english"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "The first part is a goddess’s name. Dæg is the word for day."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Frīg was a goddess linked with love and marriage. Her name is preserved in Frīgedæg, the older English form behind Friday. This is a goddess-name story, not a cooking name."
+          }
+        ]
+      }
+    },
+    {
+      "id": "friday-latin",
+      "form": "dies Veneris",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "rome",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Roman naming tradition",
+      "meaning": "A day name on a Roman calendar.",
+      "pronunciation": {
+        "text": "dies Veneris",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "tablet",
+        "title": "A Roman calendar clue",
+        "text": "Dies Veneris meant Venus’s day. Venus was a Roman goddess linked with love. The Germanic calendar used its own goddess-name tradition in the matching place.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Could two different goddess names fill the same place in a calendar?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Dies Veneris meant Venus’s day. Venus was a Roman goddess linked with love. The Germanic calendar used its own goddess-name tradition in the matching place."
+          }
+        ]
+      }
+    },
+    {
+      "id": "friday-relative",
+      "form": "Freitag",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Friday, in German.",
+      "pronunciation": {
+        "text": "Freitag",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "Another calendar clue",
+        "text": "Freitag and Friday share an older Germanic goddess-name tradition. Their histories are related; English did not borrow its word from modern German.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "relative"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare the older names and meanings, not just their modern sounds."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Freitag and Friday share an older Germanic goddess-name tradition. Their histories are related; English did not borrow its word from modern German."
+          }
+        ]
+      }
+    },
+    {
+      "id": "friday-false1",
+      "form": "vendredi",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Friday, in French.",
+      "pronunciation": {
+        "text": "vendredi",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Vendredi keeps a Latin Venus-day name. English Friday follows an older Germanic goddess-name form instead. Same day and a shared calendar idea, but not a borrowing from French.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "false1"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "The meaning matches the weekday. Does the word history show that English borrowed this word?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Vendredi keeps a Latin Venus-day name. English Friday follows an older Germanic goddess-name form instead. Same day and a shared calendar idea, but not a borrowing from French."
+          }
+        ]
+      }
+    },
+    {
+      "id": "friday-false2",
+      "form": "fry",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        -29,
+        -32
+      ],
+      "period": "Today",
+      "meaning": "To cook food in hot fat or oil.",
+      "pronunciation": {
+        "text": "fry",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Fry is a cooking word that came through French. Friday’s older English name contains a goddess’s name. Similar sounds do not make the frying pan the source of the weekday.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "false2"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare the meaning and dates. A matching sound can start a theory, but it needs evidence."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Fry is a cooking word that came through French. Friday’s older English name contains a goddess’s name. Similar sounds do not make the frying pan the source of the weekday."
+          }
+        ]
+      },
+      "mapLabelSide": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "friday-now-to-friday-old",
+      "source": "friday-now",
+      "target": "friday-old",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Frīg was a goddess linked with love and marriage. Her name is preserved in Frīgedæg, the older English form behind Friday. This is a goddess-name story, not a cooking name.",
+        "sourceIds": [
+          "history",
+          "english"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Frīgedæg be an older form of Friday?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Frīg was a goddess linked with love and marriage. Her name is preserved in Frīgedæg, the older English form behind Friday. This is a goddess-name story, not a cooking name."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Frīg was a goddess linked with love and marriage. Her name is preserved in Frīgedæg, the older English form behind Friday. This is a goddess-name story, not a cooking name."
+          }
+        ]
+      },
+      "timeLabel": "Today → before 1100"
+    },
+    {
+      "id": "friday-old-to-friday-latin",
+      "source": "friday-old",
+      "target": "friday-latin",
+      "type": "translation",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Dies Veneris meant Venus’s day. Venus was a Roman goddess linked with love. The Germanic calendar used its own goddess-name tradition in the matching place.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this Roman day name help explain the older English naming idea?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Dies Veneris meant Venus’s day. Venus was a Roman goddess linked with love. The Germanic calendar used its own goddess-name tradition in the matching place."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Dies Veneris meant Venus’s day. Venus was a Roman goddess linked with love. The Germanic calendar used its own goddess-name tradition in the matching place."
+          }
+        ]
+      },
+      "timeLabel": "Old English → Roman times"
+    },
+    {
+      "id": "friday-now-to-friday-relative",
+      "source": "friday-now",
+      "target": "friday-relative",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Freitag and Friday share an older Germanic goddess-name tradition. Their histories are related; English did not borrow its word from modern German.",
+        "sourceIds": [
+          "history",
+          "relative"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could German Freitag and English Friday share an older word family?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Freitag and Friday share an older Germanic goddess-name tradition. Their histories are related; English did not borrow its word from modern German."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Freitag and Friday share an older Germanic goddess-name tradition. Their histories are related; English did not borrow its word from modern German."
+          }
+        ]
+      }
+    },
+    {
+      "id": "friday-now-to-friday-false1",
+      "source": "friday-now",
+      "target": "friday-false1",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Vendredi keeps a Latin Venus-day name. English Friday follows an older Germanic goddess-name form instead. Same day and a shared calendar idea, but not a borrowing from French.",
+        "sourceIds": [
+          "history",
+          "false1"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English Friday borrow its name from French vendredi?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. Vendredi keeps a Latin Venus-day name. English Friday follows an older Germanic goddess-name form instead. Same day and a shared calendar idea, but not a borrowing from French."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Vendredi keeps a Latin Venus-day name. English Friday follows an older Germanic goddess-name form instead. Same day and a shared calendar idea, but not a borrowing from French."
+          }
+        ]
+      }
+    },
+    {
+      "id": "friday-now-to-friday-false2",
+      "source": "friday-now",
+      "target": "friday-false2",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Fry is a cooking word that came through French. Friday’s older English name contains a goddess’s name. Similar sounds do not make the frying pan the source of the weekday.",
+        "sourceIds": [
+          "history",
+          "false2"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did Friday get its name from the cooking word fry?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. Fry is a cooking word that came through French. Friday’s older English name contains a goddess’s name. Similar sounds do not make the frying pan the source of the weekday."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Fry is a cooking word that came through French. Friday’s older English name contains a goddess’s name. Similar sounds do not make the frying pan the source of the weekday."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "friday-now",
+      "label": "Today"
+    },
+    {
+      "nodeId": "friday-old",
+      "label": "Older English clue"
+    },
+    {
+      "nodeId": "friday-latin",
+      "label": "Roman naming idea"
+    }
+  ],
+  "$schema": "../case.schema.json"
+}

@@ -321,7 +321,8 @@
             "feedback": "There is a connection to discover. Yes: this is the thunder-god name behind Thursday."
           }
         ]
-      }
+      },
+      "timeLabel": "Today → before 1100"
     },
     {
       "id": "thursday-now-to-thursday-german",
@@ -442,7 +443,8 @@
             "feedback": "There is a connection to discover. Yes: Jupiter’s day was translated using a local thunder god. This is a travelling idea, not a borrowed Latin word."
           }
         ]
-      }
+      },
+      "timeLabel": "Old English → Roman times"
     },
     {
       "id": "thursday-soundalike-lead",

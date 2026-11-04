@@ -1,0 +1,445 @@
+{
+  "schemaVersion": 1,
+  "id": "wednesday",
+  "title": "Wednesday",
+  "icon": "📅",
+  "summary": "A day whose spelling keeps a clue that its modern sound almost hides.",
+  "question": "Where did Wednesday get its name?",
+  "startNodeId": "wednesday-now",
+  "goalNodeIds": [
+    "wednesday-old",
+    "wednesday-latin"
+  ],
+  "completion": "Wednesday keeps Woden’s name. Woden and Norse Odin are corresponding god names; the Roman calendar used Mercury here. German Mittwoch names the same day using a middle-of-the-week idea.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · Wednesday",
+      "url": "https://www.etymonline.com/word/Wednesday"
+    },
+    {
+      "id": "english",
+      "title": "American Heritage · Wednesday",
+      "url": "https://www.ahdictionary.com/word/search.html?q=Wednesday"
+    },
+    {
+      "id": "relative",
+      "title": "American Heritage · Wednesday word history",
+      "url": "https://www.ahdictionary.com/word/search.html?q=Wednesday"
+    },
+    {
+      "id": "false1",
+      "title": "Duden · Mittwoch",
+      "url": "https://www.duden.de/rechtschreibung/Mittwoch"
+    },
+    {
+      "id": "false2",
+      "title": "American Heritage · wed",
+      "url": "https://www.ahdictionary.com/word/search.html?q=wed"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "wednesday-now",
+      "form": "Wednesday",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "The day after Tuesday.",
+      "pronunciation": {
+        "text": "Wednesday",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A calendar label",
+        "text": "A day whose spelling keeps a clue that its modern sound almost hides.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "english"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Look for an older spelling before deciding where this name came from."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "A day whose spelling keeps a clue that its modern sound almost hides."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wednesday-old",
+      "form": "Wōdnesdæg",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        -12,
+        -70
+      ],
+      "period": "Before 1100",
+      "meaning": "A day name on an old English calendar.",
+      "pronunciation": {
+        "text": "Wōdnesdæg",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word on an old calendar",
+        "text": "Woden was a god in old Germanic stories, linked with poetry. Wōdnesdæg meant his day. The spelling and pronunciation changed as the name became Wednesday.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "english"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try finding Woden’s name in the older spelling. Dæg means day."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Woden was a god in old Germanic stories, linked with poetry. Wōdnesdæg meant his day. The spelling and pronunciation changed as the name became Wednesday."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wednesday-latin",
+      "form": "dies Mercurii",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "rome",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Roman naming tradition",
+      "meaning": "A day name on a Roman calendar.",
+      "pronunciation": {
+        "text": "dies Mercurii",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "tablet",
+        "title": "A Roman calendar clue",
+        "text": "Dies Mercurii meant Mercury’s day. In the Germanic calendar, Woden’s name filled the corresponding place. The calendar idea travelled, with a different god’s name.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare a day named for Mercury with a day named for Woden. Could the calendar idea be shared?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Dies Mercurii meant Mercury’s day. In the Germanic calendar, Woden’s name filled the corresponding place. The calendar idea travelled, with a different god’s name."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wednesday-relative",
+      "form": "Óðinn",
+      "languageId": "old-norse",
+      "eraId": "medieval",
+      "placeId": "norse",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Medieval Norse",
+      "meaning": "A name in an old Norse story.",
+      "pronunciation": {
+        "text": "Óðinn",
+        "languageId": "old-norse"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A name in a Norse story",
+        "text": "Óðinn, usually called Odin in modern English, is the Norse name corresponding to Woden. The names link our calendar clue with another language’s stories.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "relative"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare the older names and meanings, not just their modern sounds."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Óðinn, usually called Odin in modern English, is the Norse name corresponding to Woden. The names link our calendar clue with another language’s stories."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wednesday-false1",
+      "form": "Mittwoch",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Wednesday, in German.",
+      "pronunciation": {
+        "text": "Mittwoch",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Mittwoch means middle of the week. English Wednesday keeps Woden’s name instead. These are different ways of naming the same day; English did not borrow Wednesday from Mittwoch.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "false1"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "The meaning matches the weekday. Does the word history show that English borrowed this word?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Mittwoch means middle of the week. English Wednesday keeps Woden’s name instead. These are different ways of naming the same day; English did not borrow Wednesday from Mittwoch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wednesday-false2",
+      "form": "wed",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        -29,
+        -32
+      ],
+      "period": "Today",
+      "meaning": "To get married.",
+      "pronunciation": {
+        "text": "wed",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Wed means to get married. Wednesday follows Woden’s name instead. The letters wed look tempting, but the older calendar spelling points to a different story.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "false2"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare the meaning and dates. A matching sound can start a theory, but it needs evidence."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Wed means to get married. Wednesday follows Woden’s name instead. The letters wed look tempting, but the older calendar spelling points to a different story."
+          }
+        ]
+      },
+      "mapLabelSide": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "wednesday-now-to-wednesday-old",
+      "source": "wednesday-now",
+      "target": "wednesday-old",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Woden was a god in old Germanic stories, linked with poetry. Wōdnesdæg meant his day. The spelling and pronunciation changed as the name became Wednesday.",
+        "sourceIds": [
+          "history",
+          "english"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Wōdnesdæg be an older form of Wednesday?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Woden was a god in old Germanic stories, linked with poetry. Wōdnesdæg meant his day. The spelling and pronunciation changed as the name became Wednesday."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Woden was a god in old Germanic stories, linked with poetry. Wōdnesdæg meant his day. The spelling and pronunciation changed as the name became Wednesday."
+          }
+        ]
+      },
+      "timeLabel": "Today → before 1100"
+    },
+    {
+      "id": "wednesday-old-to-wednesday-latin",
+      "source": "wednesday-old",
+      "target": "wednesday-latin",
+      "type": "translation",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Dies Mercurii meant Mercury’s day. In the Germanic calendar, Woden’s name filled the corresponding place. The calendar idea travelled, with a different god’s name.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this Roman day name help explain the older English naming idea?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Dies Mercurii meant Mercury’s day. In the Germanic calendar, Woden’s name filled the corresponding place. The calendar idea travelled, with a different god’s name."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Dies Mercurii meant Mercury’s day. In the Germanic calendar, Woden’s name filled the corresponding place. The calendar idea travelled, with a different god’s name."
+          }
+        ]
+      },
+      "timeLabel": "Old English → Roman times"
+    },
+    {
+      "id": "wednesday-old-to-wednesday-relative",
+      "source": "wednesday-old",
+      "target": "wednesday-relative",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Óðinn, usually called Odin in modern English, is the Norse name corresponding to Woden. The names link our calendar clue with another language’s stories.",
+        "sourceIds": [
+          "history",
+          "relative"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Óðinn and Woden be names for the same god?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Óðinn, usually called Odin in modern English, is the Norse name corresponding to Woden. The names link our calendar clue with another language’s stories."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Óðinn, usually called Odin in modern English, is the Norse name corresponding to Woden. The names link our calendar clue with another language’s stories."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wednesday-now-to-wednesday-false1",
+      "source": "wednesday-now",
+      "target": "wednesday-false1",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Mittwoch means middle of the week. English Wednesday keeps Woden’s name instead. These are different ways of naming the same day; English did not borrow Wednesday from Mittwoch.",
+        "sourceIds": [
+          "history",
+          "false1"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English Wednesday get its name from German Mittwoch?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. Mittwoch means middle of the week. English Wednesday keeps Woden’s name instead. These are different ways of naming the same day; English did not borrow Wednesday from Mittwoch."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Mittwoch means middle of the week. English Wednesday keeps Woden’s name instead. These are different ways of naming the same day; English did not borrow Wednesday from Mittwoch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "wednesday-now-to-wednesday-false2",
+      "source": "wednesday-now",
+      "target": "wednesday-false2",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Wed means to get married. Wednesday follows Woden’s name instead. The letters wed look tempting, but the older calendar spelling points to a different story.",
+        "sourceIds": [
+          "history",
+          "false2"
+        ]
+      },
+      "challenge": {
+        "prompt": "Was Wednesday named after wed, meaning to get married?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. Wed means to get married. Wednesday follows Woden’s name instead. The letters wed look tempting, but the older calendar spelling points to a different story."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Wed means to get married. Wednesday follows Woden’s name instead. The letters wed look tempting, but the older calendar spelling points to a different story."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "wednesday-now",
+      "label": "Today"
+    },
+    {
+      "nodeId": "wednesday-old",
+      "label": "Older English clue"
+    },
+    {
+      "nodeId": "wednesday-latin",
+      "label": "Roman naming idea"
+    }
+  ],
+  "$schema": "../case.schema.json"
+}

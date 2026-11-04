@@ -18,7 +18,7 @@ For an HTTP preview, run `npm start` and open http://localhost:8000. `npm test` 
 
 ## Content is data
 
-All 15 current cases are JSON. The interpreter contains no word-name conditions, word-specific click handlers, or hand-written exceptions for branches.
+All 21 current cases are JSON. The interpreter contains no word-name conditions, word-specific click handlers, or hand-written exceptions for branches.
 
 | File | Purpose |
 | --- | --- |
@@ -53,6 +53,8 @@ A case can have multiple branches, converging paths, and comparison leaves. Ever
 2. Tap an object to open a short meaning and a Yes/No theory. Ask for optional clue pages if needed.
 3. One correct answer records the clue, awards points and returns to the map. There is no second Continue click. A false lead can be ruled out and kept without abandoning the other leads.
 4. Longer explanations remain in the notebook. Clicking outside a question closes it.
+
+The catalog includes all seven days of the week, grouped Monday to Sunday. Their trails distinguish older English words from translated Roman naming ideas. Solving a case places a stamp on the map and briefly celebrates with fireworks (with reduced-motion support).
 
 Camera movement never advances progress. Clicking empty map space smoothly zooms. Arrow keys move the glass, Enter inspects an object, +/− zoom, P speaks the object under the glass, and H gives a brief hint. Hints are explicitly requested and disappear after four seconds.
 

@@ -193,3 +193,22 @@ test('house comparisons reward rejecting a shared meaning while retaining genuin
   assert(engine.complete);
   engine.destroy();
 });
+
+test('the whole week is available, with English forms and translated Roman naming ideas', () => {
+  const week = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+  const registeredWeek = cases.filter(c => week.includes(c.id));
+  assert.deepEqual(registeredWeek.map(c => c.id), week);
+  for (const wordCase of registeredWeek) {
+    const engine = new Investigation(catalog, wordCase);
+    const old = wordCase.nodes.find(n => n.id === wordCase.id + '-old');
+    const latin = wordCase.nodes.find(n => n.id === wordCase.id + '-latin');
+    assert.equal(old.languageId, 'old-english');
+    assert.equal(latin.languageId, 'latin');
+    assert(wordCase.edges.some(e => e.source === old.id && e.target === latin.id && e.type === 'translation'));
+    go(engine, old.id);
+    assert(!engine.complete, wordCase.id + ' still needs the older naming idea.');
+    go(engine, latin.id);
+    assert(engine.complete, wordCase.id);
+    engine.destroy();
+  }
+});

@@ -1,0 +1,444 @@
+{
+  "schemaVersion": 1,
+  "id": "monday",
+  "title": "Monday",
+  "icon": "📅",
+  "summary": "A familiar day name with a much older story hidden inside.",
+  "question": "Where did Monday get its name?",
+  "startNodeId": "monday-now",
+  "goalNodeIds": [
+    "monday-old",
+    "monday-latin"
+  ],
+  "completion": "Monday keeps an older English Moon-day name. Its calendar idea came from a Roman Moon-day tradition. German Montag is a cousin; Italian lunedì keeps the Latin sounds more clearly.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · Monday",
+      "url": "https://www.etymonline.com/word/Monday"
+    },
+    {
+      "id": "english",
+      "title": "American Heritage · Monday",
+      "url": "https://www.ahdictionary.com/word/search.html?q=Monday"
+    },
+    {
+      "id": "relative",
+      "title": "Duden · Montag",
+      "url": "https://www.duden.de/rechtschreibung/Montag"
+    },
+    {
+      "id": "false1",
+      "title": "Treccani · lunedì",
+      "url": "https://www.treccani.it/vocabolario/lunedi/"
+    },
+    {
+      "id": "false2",
+      "title": "RAE · moneda",
+      "url": "https://dle.rae.es/moneda"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "monday-now",
+      "form": "Monday",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "The day after Sunday.",
+      "pronunciation": {
+        "text": "Monday",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A calendar label",
+        "text": "A familiar day name with a much older story hidden inside.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "english"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Look for an older spelling before deciding where this name came from."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "A familiar day name with a much older story hidden inside."
+          }
+        ]
+      }
+    },
+    {
+      "id": "monday-old",
+      "form": "Mōnandæg",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        -12,
+        -70
+      ],
+      "period": "Before 1100",
+      "meaning": "A day name on an old English calendar.",
+      "pronunciation": {
+        "text": "Mōnandæg",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word on an old calendar",
+        "text": "Mōna meant Moon and dæg meant day. Monday developed from this Old English name through later spellings. People translated a Roman Moon-day idea into their own words.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "english"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try separating the name into two parts. Dæg means day. What could mōna be?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Mōna meant Moon and dæg meant day. Monday developed from this Old English name through later spellings. People translated a Roman Moon-day idea into their own words."
+          }
+        ]
+      }
+    },
+    {
+      "id": "monday-latin",
+      "form": "Lunae dies",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "rome",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Roman naming tradition",
+      "meaning": "A day name on a Roman calendar.",
+      "pronunciation": {
+        "text": "Lunae dies",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "tablet",
+        "title": "A Roman calendar clue",
+        "text": "Lunae dies meant the Moon’s day. English speakers translated this calendar idea using their own words for Moon and day; they did not simply borrow the Latin sounds.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Luna is the Latin Moon name. Could a naming idea travel even when its sounds change?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Lunae dies meant the Moon’s day. English speakers translated this calendar idea using their own words for Moon and day; they did not simply borrow the Latin sounds."
+          }
+        ]
+      }
+    },
+    {
+      "id": "monday-relative",
+      "form": "Montag",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Monday, in German.",
+      "pronunciation": {
+        "text": "Montag",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "Another calendar clue",
+        "text": "Montag and Monday share older Germanic words for Moon and day. Both keep a Moon-day naming tradition; English did not borrow Monday from modern German.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "relative"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare the older names and meanings, not just their modern sounds."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Montag and Monday share older Germanic words for Moon and day. Both keep a Moon-day naming tradition; English did not borrow Monday from modern German."
+          }
+        ]
+      }
+    },
+    {
+      "id": "monday-false1",
+      "form": "lunedì",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Monday, in Italian.",
+      "pronunciation": {
+        "text": "lunedì",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Lunedì names the same day and comes from Latin Lunae dies. English Monday uses older English words instead. The naming idea connects, but English did not borrow the Italian word.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "false1"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "The meaning matches the weekday. Does the word history show that English borrowed this word?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Lunedì names the same day and comes from Latin Lunae dies. English Monday uses older English words instead. The naming idea connects, but English did not borrow the Italian word."
+          }
+        ]
+      }
+    },
+    {
+      "id": "monday-false2",
+      "form": "moneda",
+      "languageId": "spanish",
+      "eraId": "today",
+      "placeId": "spain",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A coin, in Spanish.",
+      "pronunciation": {
+        "text": "moneda",
+        "languageId": "spanish"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Moneda means a coin and follows Latin moneta. Monday’s first part follows the older English word for Moon. A similar opening sound does not make the coin its source.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "false2"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare the meaning and dates. A matching sound can start a theory, but it needs evidence."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Moneda means a coin and follows Latin moneta. Monday’s first part follows the older English word for Moon. A similar opening sound does not make the coin its source."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "monday-now-to-monday-old",
+      "source": "monday-now",
+      "target": "monday-old",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Mōna meant Moon and dæg meant day. Monday developed from this Old English name through later spellings. People translated a Roman Moon-day idea into their own words.",
+        "sourceIds": [
+          "history",
+          "english"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Mōnandæg be an older form of Monday?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Mōna meant Moon and dæg meant day. Monday developed from this Old English name through later spellings. People translated a Roman Moon-day idea into their own words."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Mōna meant Moon and dæg meant day. Monday developed from this Old English name through later spellings. People translated a Roman Moon-day idea into their own words."
+          }
+        ]
+      },
+      "timeLabel": "Today → before 1100"
+    },
+    {
+      "id": "monday-old-to-monday-latin",
+      "source": "monday-old",
+      "target": "monday-latin",
+      "type": "translation",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Lunae dies meant the Moon’s day. English speakers translated this calendar idea using their own words for Moon and day; they did not simply borrow the Latin sounds.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this Roman day name help explain the older English naming idea?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Lunae dies meant the Moon’s day. English speakers translated this calendar idea using their own words for Moon and day; they did not simply borrow the Latin sounds."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Lunae dies meant the Moon’s day. English speakers translated this calendar idea using their own words for Moon and day; they did not simply borrow the Latin sounds."
+          }
+        ]
+      },
+      "timeLabel": "Old English → Roman times"
+    },
+    {
+      "id": "monday-now-to-monday-relative",
+      "source": "monday-now",
+      "target": "monday-relative",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Montag and Monday share older Germanic words for Moon and day. Both keep a Moon-day naming tradition; English did not borrow Monday from modern German.",
+        "sourceIds": [
+          "history",
+          "relative"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could German Montag and English Monday share an older word family?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Montag and Monday share older Germanic words for Moon and day. Both keep a Moon-day naming tradition; English did not borrow Monday from modern German."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Montag and Monday share older Germanic words for Moon and day. Both keep a Moon-day naming tradition; English did not borrow Monday from modern German."
+          }
+        ]
+      }
+    },
+    {
+      "id": "monday-now-to-monday-false1",
+      "source": "monday-now",
+      "target": "monday-false1",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Lunedì names the same day and comes from Latin Lunae dies. English Monday uses older English words instead. The naming idea connects, but English did not borrow the Italian word.",
+        "sourceIds": [
+          "history",
+          "false1"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English Monday get its word from Italian lunedì?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. Lunedì names the same day and comes from Latin Lunae dies. English Monday uses older English words instead. The naming idea connects, but English did not borrow the Italian word."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Lunedì names the same day and comes from Latin Lunae dies. English Monday uses older English words instead. The naming idea connects, but English did not borrow the Italian word."
+          }
+        ]
+      }
+    },
+    {
+      "id": "monday-now-to-monday-false2",
+      "source": "monday-now",
+      "target": "monday-false2",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Moneda means a coin and follows Latin moneta. Monday’s first part follows the older English word for Moon. A similar opening sound does not make the coin its source.",
+        "sourceIds": [
+          "history",
+          "false2"
+        ]
+      },
+      "challenge": {
+        "prompt": "Was Monday named after Spanish moneda, meaning a coin?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. Moneda means a coin and follows Latin moneta. Monday’s first part follows the older English word for Moon. A similar opening sound does not make the coin its source."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Moneda means a coin and follows Latin moneta. Monday’s first part follows the older English word for Moon. A similar opening sound does not make the coin its source."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "monday-now",
+      "label": "Today"
+    },
+    {
+      "nodeId": "monday-old",
+      "label": "Older English clue"
+    },
+    {
+      "nodeId": "monday-latin",
+      "label": "Roman naming idea"
+    }
+  ],
+  "$schema": "../case.schema.json"
+}

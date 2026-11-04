@@ -1,0 +1,378 @@
+{
+  "schemaVersion": 1,
+  "id": "saturday",
+  "title": "Saturday",
+  "icon": "📅",
+  "summary": "A day name with a Roman clue waiting further down the trail.",
+  "question": "Where did Saturday get its name?",
+  "startNodeId": "saturday-now",
+  "goalNodeIds": [
+    "saturday-old",
+    "saturday-latin"
+  ],
+  "completion": "Saturday keeps Saturn’s name from a Roman day-name tradition. English adapted the name and used its own word for day. French samedi follows a Sabbath-day name instead.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · Saturday",
+      "url": "https://www.etymonline.com/word/Saturday"
+    },
+    {
+      "id": "english",
+      "title": "American Heritage · Saturday",
+      "url": "https://www.ahdictionary.com/word/search.html?q=Saturday"
+    },
+    {
+      "id": "saturn",
+      "title": "American Heritage · Saturn",
+      "url": "https://www.ahdictionary.com/word/search.html?q=Saturn"
+    },
+    {
+      "id": "false1",
+      "title": "CNRTL · samedi",
+      "url": "https://www.cnrtl.fr/definition/samedi"
+    },
+    {
+      "id": "false2",
+      "title": "American Heritage · sit and sat",
+      "url": "https://www.ahdictionary.com/word/search.html?q=sit"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "saturday-now",
+      "form": "Saturday",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "The day after Friday.",
+      "pronunciation": {
+        "text": "Saturday",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A calendar label",
+        "text": "A day name with a Roman clue waiting further down the trail.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "english"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Look for an older spelling before deciding where this name came from."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "A day name with a Roman clue waiting further down the trail."
+          }
+        ]
+      }
+    },
+    {
+      "id": "saturday-old",
+      "form": "Sæternesdæg",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        -12,
+        -70
+      ],
+      "period": "Before 1100",
+      "meaning": "A day name on an old English calendar.",
+      "pronunciation": {
+        "text": "Sæternesdæg",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word on an old calendar",
+        "text": "Sæternesdæg kept an adapted form of Saturn’s name and the English word for day. It copied part of a Roman day name. Later spellings gave us Saturday.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "english"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare Sæternes with Saturn. Could the name of a Roman god be hiding here?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Sæternesdæg kept an adapted form of Saturn’s name and the English word for day. It copied part of a Roman day name. Later spellings gave us Saturday."
+          }
+        ]
+      }
+    },
+    {
+      "id": "saturday-latin",
+      "form": "Saturni dies",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "rome",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Roman naming tradition",
+      "meaning": "A day name on a Roman calendar.",
+      "pronunciation": {
+        "text": "Saturni dies",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "tablet",
+        "title": "A Roman calendar clue",
+        "text": "Saturni dies meant Saturn’s day. Saturn was a Roman god linked with farming; a planet also carries his name. The English name kept his name and translated the day part.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "saturn"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Look at Saturni and the first part of Saturday. Which part changed language?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Saturni dies meant Saturn’s day. Saturn was a Roman god linked with farming; a planet also carries his name. The English name kept his name and translated the day part."
+          }
+        ]
+      }
+    },
+    {
+      "id": "saturday-false1",
+      "form": "samedi",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Saturday, in French.",
+      "pronunciation": {
+        "text": "samedi",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Samedi names Saturday in French, but its older name follows the Sabbath, a day of rest. English Saturday keeps Saturn’s name. The same day can have a different naming history.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "false1"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "The meaning matches the weekday. Does the word history show that English borrowed this word?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Samedi names Saturday in French, but its older name follows the Sabbath, a day of rest. English Saturday keeps Saturn’s name. The same day can have a different naming history."
+          }
+        ]
+      }
+    },
+    {
+      "id": "saturday-false2",
+      "form": "sat",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        -29,
+        -32
+      ],
+      "period": "Today",
+      "meaning": "As in: I sat on a chair.",
+      "pronunciation": {
+        "text": "sat",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Sat is a form of sit. Saturday’s older calendar name points to Saturn instead. A matching first syllable does not make sitting down the source of the weekday.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "false2"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare the meaning and dates. A matching sound can start a theory, but it needs evidence."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Sat is a form of sit. Saturday’s older calendar name points to Saturn instead. A matching first syllable does not make sitting down the source of the weekday."
+          }
+        ]
+      },
+      "mapLabelSide": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "saturday-now-to-saturday-old",
+      "source": "saturday-now",
+      "target": "saturday-old",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Sæternesdæg kept an adapted form of Saturn’s name and the English word for day. It copied part of a Roman day name. Later spellings gave us Saturday.",
+        "sourceIds": [
+          "history",
+          "english"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Sæternesdæg be an older form of Saturday?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Sæternesdæg kept an adapted form of Saturn’s name and the English word for day. It copied part of a Roman day name. Later spellings gave us Saturday."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Sæternesdæg kept an adapted form of Saturn’s name and the English word for day. It copied part of a Roman day name. Later spellings gave us Saturday."
+          }
+        ]
+      },
+      "timeLabel": "Today → before 1100"
+    },
+    {
+      "id": "saturday-old-to-saturday-latin",
+      "source": "saturday-old",
+      "target": "saturday-latin",
+      "type": "translation",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Saturni dies meant Saturn’s day. Saturn was a Roman god linked with farming; a planet also carries his name. The English name kept his name and translated the day part.",
+        "sourceIds": [
+          "history",
+          "saturn"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this Roman day name help explain the older English naming idea?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Saturni dies meant Saturn’s day. Saturn was a Roman god linked with farming; a planet also carries his name. The English name kept his name and translated the day part."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Saturni dies meant Saturn’s day. Saturn was a Roman god linked with farming; a planet also carries his name. The English name kept his name and translated the day part."
+          }
+        ]
+      },
+      "timeLabel": "Old English → Roman times"
+    },
+    {
+      "id": "saturday-now-to-saturday-false1",
+      "source": "saturday-now",
+      "target": "saturday-false1",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Samedi names Saturday in French, but its older name follows the Sabbath, a day of rest. English Saturday keeps Saturn’s name. The same day can have a different naming history.",
+        "sourceIds": [
+          "history",
+          "false1"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English Saturday borrow its name from French samedi?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. Samedi names Saturday in French, but its older name follows the Sabbath, a day of rest. English Saturday keeps Saturn’s name. The same day can have a different naming history."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Samedi names Saturday in French, but its older name follows the Sabbath, a day of rest. English Saturday keeps Saturn’s name. The same day can have a different naming history."
+          }
+        ]
+      }
+    },
+    {
+      "id": "saturday-now-to-saturday-false2",
+      "source": "saturday-now",
+      "target": "saturday-false2",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Sat is a form of sit. Saturday’s older calendar name points to Saturn instead. A matching first syllable does not make sitting down the source of the weekday.",
+        "sourceIds": [
+          "history",
+          "false2"
+        ]
+      },
+      "challenge": {
+        "prompt": "Was Saturday named after sat, as in sat on a chair?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. Sat is a form of sit. Saturday’s older calendar name points to Saturn instead. A matching first syllable does not make sitting down the source of the weekday."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Sat is a form of sit. Saturday’s older calendar name points to Saturn instead. A matching first syllable does not make sitting down the source of the weekday."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "saturday-now",
+      "label": "Today"
+    },
+    {
+      "nodeId": "saturday-old",
+      "label": "Older English clue"
+    },
+    {
+      "nodeId": "saturday-latin",
+      "label": "Roman naming idea"
+    }
+  ],
+  "$schema": "../case.schema.json"
+}

@@ -4,11 +4,11 @@ import {readFile} from 'node:fs/promises';
 import vm from 'node:vm';
 import {parseHTML} from 'linkedom';
 
-async function page(storage = new Map()) {
+async function page(storage = new Map(), showOpening = false, reducedMotion = true) {
   const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
   const {window, document} = parseHTML(html);
   // The DOM test does not simulate pixels, sound, or native focus/camera animation.
-  window.matchMedia = () => ({matches: true});
+  window.matchMedia = () => ({matches: reducedMotion});
   for (const element of document.querySelectorAll('*')) element.focus = () => {};
   const create = document.createElement.bind(document);
   document.createElement = (...args) => { const element = create(...args); element.focus = () => {}; return element; };
@@ -20,12 +20,13 @@ async function page(storage = new Map()) {
   vm.runInContext(await readFile(new URL('../assets/europe-map.js', import.meta.url), 'utf8'), context);
   vm.runInContext(await readFile(new URL('../assets/app.js', import.meta.url), 'utf8'), context);
   const click = selector => { const element = document.querySelector(selector); assert(element, `Missing ${selector}`); if (typeof element.click === 'function') element.click(); else element.dispatchEvent(new window.Event('click', {bubbles: true})); };
+  if (!showOpening && document.getElementById('story-dialog').hasAttribute('open')) click('#story-start');
   return {document, click, timers, context, event: type => new window.Event(type, {bubbles: true})};
 }
 
 test('built page runs the treasure investigation via evidence objects and graph leads', async () => {
   const {document, click} = await page();
-  assert.equal(document.getElementById('case-select').querySelectorAll('option').length, 15);
+  assert.equal(document.getElementById('case-select').querySelectorAll('option').length, 21);
   assert.equal(document.getElementById('map-cue').hidden, true);
   assert(document.querySelector('[data-node-id="treasure-1"]'));
   click('[data-node-id="treasure-1"]');
@@ -199,4 +200,54 @@ test('confirmed algebra trails show both the spatial route and the jump in time'
   assert(document.querySelector('#trails').textContent.includes('Today → 1100s'));
   click('[data-node-id="algebra-arabic"]'); click('#challenge-answers button');
   assert(document.querySelector('#trails').textContent.includes('1100s → around 820'));
+});
+
+test('the opening mission appears once and can be replayed without resetting a case', async () => {
+  const storage = new Map();
+  let ui = await page(storage, true);
+  assert(ui.document.getElementById('story-dialog').hasAttribute('open'));
+  assert(ui.document.getElementById('story-title').textContent.includes('Everyone has lost'));
+  ui.click('#story-start');
+  assert(!ui.document.getElementById('story-dialog').hasAttribute('open'));
+  ui.click('[data-node-id="treasure-1"]'); ui.click('#challenge-answers button');
+  ui.click('#story-open');
+  assert(ui.document.getElementById('story-dialog').hasAttribute('open'));
+  ui.click('#story-start');
+  assert.equal(ui.document.querySelectorAll('.notebook-entry').length, 2);
+  ui = await page(storage, true);
+  assert(!ui.document.getElementById('story-dialog').hasAttribute('open'), 'Reload resumes play without repeating the opening.');
+  assert.equal(ui.document.querySelectorAll('.notebook-entry').length, 2);
+});
+
+test('solving a case celebrates briefly; reload and case switching do not replay fireworks', async () => {
+  const storage = new Map();
+  const ui = await page(storage, false, false);
+  const select = ui.document.getElementById('case-select');
+  select.value = 'house'; select.dispatchEvent(ui.event('change'));
+  ui.click('[data-node-id="house-italian"]'); ui.click('#challenge-answers button:nth-child(2)');
+  assert(ui.document.getElementById('map-fireworks').hidden, 'A single rejected lead is not case completion.');
+  ui.click('[data-node-id="house-old"]'); ui.click('#challenge-answers button');
+  assert(!ui.document.getElementById('map-fireworks').hidden);
+  assert.equal(ui.document.querySelectorAll('.firework-spark').length, 42);
+  const reload = await page(storage, false, false);
+  assert(!reload.document.getElementById('map-solved-stamp').hidden);
+  assert(reload.document.getElementById('map-fireworks').hidden, 'Restoring a solved case does not replay fireworks.');
+  for (const fn of [...ui.timers.values()]) fn();
+  assert(ui.document.getElementById('map-fireworks').hidden);
+  assert(!ui.document.getElementById('map-solved-stamp').hidden, 'The stamp remains after the sparks fade.');
+  ui.click('#restart');
+  ui.click('[data-node-id="house-old"]'); ui.click('#challenge-answers button');
+  assert(!ui.document.getElementById('map-fireworks').hidden);
+  select.value = 'monday'; select.dispatchEvent(ui.event('change'));
+  assert(ui.document.getElementById('map-fireworks').hidden);
+  assert.equal(ui.document.querySelectorAll('.firework-spark').length, 0);
+});
+
+test('reduced motion keeps the solved stamp without fireworks', async () => {
+  const {document, click, event} = await page();
+  const select = document.getElementById('case-select');
+  select.value = 'house'; select.dispatchEvent(event('change'));
+  click('[data-node-id="house-old"]'); click('#challenge-answers button');
+  assert(!document.getElementById('map-solved-stamp').hidden);
+  assert(document.getElementById('map-fireworks').hidden);
 });

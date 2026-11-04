@@ -1,0 +1,445 @@
+{
+  "schemaVersion": 1,
+  "id": "tuesday",
+  "title": "Tuesday",
+  "icon": "📅",
+  "summary": "A day name with a mysterious opening sound. What is hiding there?",
+  "question": "Where did Tuesday get its name?",
+  "startNodeId": "tuesday-now",
+  "goalNodeIds": [
+    "tuesday-old",
+    "tuesday-latin"
+  ],
+  "completion": "Tuesday comes from an older English name for Tiw’s day. Its calendar slot matched Roman Mars’s day. Norse Týsdagr is a cousin; the name is not built from two.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · Tuesday",
+      "url": "https://www.etymonline.com/word/Tuesday"
+    },
+    {
+      "id": "english",
+      "title": "American Heritage · Tuesday",
+      "url": "https://www.ahdictionary.com/word/search.html?q=Tuesday"
+    },
+    {
+      "id": "relative",
+      "title": "Etymonline · Tuesday and its Norse relative",
+      "url": "https://www.etymonline.com/word/Tuesday"
+    },
+    {
+      "id": "false1",
+      "title": "Académie française · mardi",
+      "url": "https://www.dictionnaire-academie.fr/article/A9M1062"
+    },
+    {
+      "id": "false2",
+      "title": "American Heritage · two",
+      "url": "https://www.ahdictionary.com/word/search.html?q=two"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "tuesday-now",
+      "form": "Tuesday",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "The day after Monday.",
+      "pronunciation": {
+        "text": "Tuesday",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A calendar label",
+        "text": "A day name with a mysterious opening sound. What is hiding there?",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "english"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Look for an older spelling before deciding where this name came from."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "A day name with a mysterious opening sound. What is hiding there?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tuesday-old",
+      "form": "Tīwesdæg",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        -12,
+        -70
+      ],
+      "period": "Before 1100",
+      "meaning": "A day name on an old English calendar.",
+      "pronunciation": {
+        "text": "Tīwesdæg",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word on an old calendar",
+        "text": "Tiw was a god linked with war in old Germanic stories. Tīwesdæg named his day. Later English forms became Tuesday; the name was not built from the number two.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "english"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "The first part is a name. Look for Tiw before the word for day."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Tiw was a god linked with war in old Germanic stories. Tīwesdæg named his day. Later English forms became Tuesday; the name was not built from the number two."
+          }
+        ]
+      }
+    },
+    {
+      "id": "tuesday-latin",
+      "form": "dies Martis",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "rome",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Roman naming tradition",
+      "meaning": "A day name on a Roman calendar.",
+      "pronunciation": {
+        "text": "dies Martis",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "tablet",
+        "title": "A Roman calendar clue",
+        "text": "Dies Martis meant Mars’s day. Mars was a Roman god linked with war. The Germanic calendar used Tiw’s name in the matching place: the naming idea was translated.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Mars and Tiw were both linked with war. Could one name have taken the other’s place?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Dies Martis meant Mars’s day. Mars was a Roman god linked with war. The Germanic calendar used Tiw’s name in the matching place: the naming idea was translated."
+          }
+        ]
+      }
+    },
+    {
+      "id": "tuesday-relative",
+      "form": "Týsdagr",
+      "languageId": "old-norse",
+      "eraId": "medieval",
+      "placeId": "norse",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Medieval Norse",
+      "meaning": "A day name on a Norse calendar.",
+      "pronunciation": {
+        "text": "Týsdagr",
+        "languageId": "old-norse"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "Another calendar clue",
+        "text": "Týr was the Norse name corresponding to Tiw. Týsdagr and the older English day name belong to a shared Germanic naming family. This is not proof of a direct Viking borrowing.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "relative"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare the older names and meanings, not just their modern sounds."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Týr was the Norse name corresponding to Tiw. Týsdagr and the older English day name belong to a shared Germanic naming family. This is not proof of a direct Viking borrowing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "tuesday-false1",
+      "form": "mardi",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Tuesday, in French.",
+      "pronunciation": {
+        "text": "mardi",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Mardi comes from the Latin name for Mars’s day. English Tuesday uses Tiw’s name instead. They share a calendar tradition, but English did not borrow its word from French mardi.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "false1"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "The meaning matches the weekday. Does the word history show that English borrowed this word?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Mardi comes from the Latin name for Mars’s day. English Tuesday uses Tiw’s name instead. They share a calendar tradition, but English did not borrow its word from French mardi."
+          }
+        ]
+      }
+    },
+    {
+      "id": "tuesday-false2",
+      "form": "two",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        -29,
+        -32
+      ],
+      "period": "Today",
+      "meaning": "The number 2.",
+      "pronunciation": {
+        "text": "two",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Two and Tuesday can start with the same sound. But Tuesday’s older form contains Tiw’s name; the number two follows a different Old English word. Sound alone is not proof.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "false2"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare the meaning and dates. A matching sound can start a theory, but it needs evidence."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Two and Tuesday can start with the same sound. But Tuesday’s older form contains Tiw’s name; the number two follows a different Old English word. Sound alone is not proof."
+          }
+        ]
+      },
+      "mapLabelSide": "left"
+    }
+  ],
+  "edges": [
+    {
+      "id": "tuesday-now-to-tuesday-old",
+      "source": "tuesday-now",
+      "target": "tuesday-old",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Tiw was a god linked with war in old Germanic stories. Tīwesdæg named his day. Later English forms became Tuesday; the name was not built from the number two.",
+        "sourceIds": [
+          "history",
+          "english"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Tīwesdæg be an older form of Tuesday?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Tiw was a god linked with war in old Germanic stories. Tīwesdæg named his day. Later English forms became Tuesday; the name was not built from the number two."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Tiw was a god linked with war in old Germanic stories. Tīwesdæg named his day. Later English forms became Tuesday; the name was not built from the number two."
+          }
+        ]
+      },
+      "timeLabel": "Today → before 1100"
+    },
+    {
+      "id": "tuesday-old-to-tuesday-latin",
+      "source": "tuesday-old",
+      "target": "tuesday-latin",
+      "type": "translation",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Dies Martis meant Mars’s day. Mars was a Roman god linked with war. The Germanic calendar used Tiw’s name in the matching place: the naming idea was translated.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this Roman day name help explain the older English naming idea?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Dies Martis meant Mars’s day. Mars was a Roman god linked with war. The Germanic calendar used Tiw’s name in the matching place: the naming idea was translated."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Dies Martis meant Mars’s day. Mars was a Roman god linked with war. The Germanic calendar used Tiw’s name in the matching place: the naming idea was translated."
+          }
+        ]
+      },
+      "timeLabel": "Old English → Roman times"
+    },
+    {
+      "id": "tuesday-old-to-tuesday-relative",
+      "source": "tuesday-old",
+      "target": "tuesday-relative",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Týr was the Norse name corresponding to Tiw. Týsdagr and the older English day name belong to a shared Germanic naming family. This is not proof of a direct Viking borrowing.",
+        "sourceIds": [
+          "history",
+          "relative"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Týsdagr and Tīwesdæg share a god-name family?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Týr was the Norse name corresponding to Tiw. Týsdagr and the older English day name belong to a shared Germanic naming family. This is not proof of a direct Viking borrowing."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Týr was the Norse name corresponding to Tiw. Týsdagr and the older English day name belong to a shared Germanic naming family. This is not proof of a direct Viking borrowing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "tuesday-now-to-tuesday-false1",
+      "source": "tuesday-now",
+      "target": "tuesday-false1",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Mardi comes from the Latin name for Mars’s day. English Tuesday uses Tiw’s name instead. They share a calendar tradition, but English did not borrow its word from French mardi.",
+        "sourceIds": [
+          "history",
+          "false1"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English Tuesday borrow its name from French mardi?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. Mardi comes from the Latin name for Mars’s day. English Tuesday uses Tiw’s name instead. They share a calendar tradition, but English did not borrow its word from French mardi."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Mardi comes from the Latin name for Mars’s day. English Tuesday uses Tiw’s name instead. They share a calendar tradition, but English did not borrow its word from French mardi."
+          }
+        ]
+      }
+    },
+    {
+      "id": "tuesday-now-to-tuesday-false2",
+      "source": "tuesday-now",
+      "target": "tuesday-false2",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Two and Tuesday can start with the same sound. But Tuesday’s older form contains Tiw’s name; the number two follows a different Old English word. Sound alone is not proof.",
+        "sourceIds": [
+          "history",
+          "false2"
+        ]
+      },
+      "challenge": {
+        "prompt": "Was Tuesday named after the English number two?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. Two and Tuesday can start with the same sound. But Tuesday’s older form contains Tiw’s name; the number two follows a different Old English word. Sound alone is not proof."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Two and Tuesday can start with the same sound. But Tuesday’s older form contains Tiw’s name; the number two follows a different Old English word. Sound alone is not proof."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "tuesday-now",
+      "label": "Today"
+    },
+    {
+      "nodeId": "tuesday-old",
+      "label": "Older English clue"
+    },
+    {
+      "nodeId": "tuesday-latin",
+      "label": "Roman naming idea"
+    }
+  ],
+  "$schema": "../case.schema.json"
+}

@@ -1,10 +1,10 @@
 # Word Chaser — handover
 
-Updated 4 November 2026, after the first GitHub Pages setup.
+Updated 4 November 2026, after completing the weekday set and adding fireworks.
 
 ## Start here next time
 
-The HTML game is working and has 15 JSON investigations. The user is refining
+The HTML game is working and has 21 JSON investigations. The user is refining
 the gameplay with screenshots, especially difficulty, clues, touch interaction
 and compact layout. Preserve those decisions; this is still an evolving
 prototype. Read `data/AUTHORING.md` before adding content.
@@ -16,6 +16,11 @@ travel between languages—not simply follow the only available correct pin.
 
 ## Gameplay decisions to preserve
 
+- The first visit opens a short story: everyone has lost their memories; the
+  player traces word histories to help bring them back. The reveal is “From now
+  on, you are… THE WORD CHASER!” One button begins play. Dismissal is saved
+  separately under `word-chaser-story-v1`; clicking the brand reopens the story
+  without resetting the active investigation.
 - Moving the magnifying glass over an object reveals its word automatically.
   Moving away dismisses that peek. Touch dragging also peeks.
 - Tapping an object opens a short theory card. One Yes/No answer records a
@@ -42,6 +47,7 @@ travel between languages—not simply follow the only available correct pin.
   do not change investigation progress.
 - Hints are requested, temporary and near the glass. Optional card clues expand
   below their link; the card is top-anchored so it grows downwards.
+- The “Good catch!” reward message lasts 2 seconds; other cues default to 4.
 
 ## Current visual and audio decisions
 
@@ -55,6 +61,9 @@ travel between languages—not simply follow the only available correct pin.
   disabled for reduced motion). It does
   not intercept taps or require dismissal. Restart/switching cases removes it;
   restoring a completed current case shows it again.
+- Newly solving a case adds three large decorative firework bursts for 4 seconds.
+  They do not block taps, are cancelled on restart/switching, and do not replay
+  on reload. Reduced-motion users get the stamp without fireworks.
 - Keep pins in the correct country. Robot and robota initially looked like
   separate Czech/Hungarian stops; both now sit within Czechia with captions
   explaining “new name” versus “older word”.
@@ -72,8 +81,9 @@ travel between languages—not simply follow the only available correct pin.
 
 ## Content at this checkpoint
 
-Playable cases: treasure, piano, window, fart, dinosaur, school, Thursday,
-January, robot, algebra, geometry, geography, art, maths and house.
+Playable cases: treasure, piano, window, fart, dinosaur, school, all seven
+days (Monday through Sunday), January, robot, algebra, geometry, geography,
+art, maths and house. The seven days are grouped together in weekday order.
 
 Examples of intentional teaching distinctions:
 
@@ -81,6 +91,12 @@ Examples of intentional teaching distinctions:
   tesoro is a cousin, not a fabricated French → Italian borrowing step.
 - Dinosauria is a scientific name from 1842, built using Greek parts. It is
   not an ancient Roman dinosaur name.
+- All seven weekdays trace older English forms and Roman naming ideas.
+  Translation edges represent the naming idea; do not label them all literal
+  Latin borrowings. Saturday retains Saturn’s adapted name. Friday uses the
+  Frīg/Frigg naming tradition; do not casually substitute Freyja. Sunday’s
+  sundae option tests direction in time: the newer dessert cannot supply the
+  older weekday, even if its own name may be connected with Sunday.
 - January’s Latin clue explains Janus: doors, beginnings and two faces.
 - Algebra starts with a child-sized hidden-number puzzle, `□ + 2 = 5`.
   Its Arabic book clue explains finding unknown numbers for practical problems.
@@ -109,15 +125,15 @@ Examples of intentional teaching distinctions:
 Add cases as JSON, not word-specific JavaScript. Cytoscape is an in-memory graph,
 not a database. Optional display fields are `mapTitle`, `mapCaption` and
 `mapLabelSide`; `edge.timeLabel` renders a clock label on a confirmed trail.
-Algebra currently demonstrates `Today → 1100s → around 820`.
+Algebra demonstrates `Today → 1100s → around 820`. The seven weekday cases
+also label their confirmed English/Roman time jumps.
 
 ```sh
 npm run validate
 npm test
 ```
 
-`npm test` builds first. Last full run: **27 tests passed**. The subsequent tiny
-speaker CSS change was built successfully. DOM tests do not verify actual
+`npm test` builds first. Last full run: **31 tests passed**. DOM tests do not verify actual
 pixels, native voice quality or real iPad behavior. Open `index.html` directly,
 or use `npm start` at `http://localhost:8000`.
 
@@ -149,8 +165,8 @@ case. The older multi-case storage key is removed on startup.
    labels rather than assuming every medieval French form is “Old French”.
 3. Check label collisions and geographic placement as more pins are added.
    Offsets must not suggest travel to the wrong country.
-4. Extend the time-label experiment beyond algebra using sourced dates; avoid
-   inventing precise years from a language’s broad era band.
+4. Time labels now cover algebra and all seven weekday cases. Extend to other
+   cases using sourced dates; avoid inventing precise years from broad eras.
 5. Consider consolidating the many appended CSS overrides when tackling layout
    more broadly. Preserve current touch and compactness decisions.
 6. Ideas, not playable yet: tangerine/Tangier for a North African coastal clue;

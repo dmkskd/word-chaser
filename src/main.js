@@ -191,6 +191,8 @@ function inspect(id) {
     link.href = source.url; link.target = '_blank'; link.rel = 'noopener'; return link;
   }));
   renderEvidence(); $('evidence-panel').hidden = false;
+  $('evidence-content').scrollTop = 0;
+  $('evidence-panel').scrollTop = 0;
   map.focus(point(node));
   ($('challenge-answers').querySelector('button') || $('close-evidence')).focus({preventScroll: true});
 }

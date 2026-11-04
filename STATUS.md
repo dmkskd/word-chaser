@@ -87,6 +87,12 @@ travel between languages—not simply follow the only available correct pin.
 
 ## Current visual and audio decisions
 
+- Phone evidence cards use the viewport rather than the short map as their
+  height limit, including narrow landscape screens. Yes/No decisions sit in a
+  separate non-scrolling footer; clue/story content scrolls above them. New
+  cards reset their scroll positions. DOM behavior is covered; actual phone
+  viewport/keyboard rendering still needs device review.
+
 - Use short, soft translucent cards rather than dense opaque boxes.
 - Map pins retain their artifact picture, with a small overlaid `?`, `✓` or `✕`.
   Correctly rejected words are crossed out. Child-facing copy says “Not our
@@ -186,7 +192,7 @@ npm run validate
 npm test
 ```
 
-`npm test` builds first. Last full run: **43 tests passed**. DOM tests do not verify actual
+`npm test` builds first. Last full run: **50 tests passed**. DOM tests do not verify actual
 pixels, native voice quality or real iPad behavior. Open `index.html` directly,
 or use `npm start` at `http://localhost:8000`.
 
@@ -211,6 +217,13 @@ case. The older multi-case storage key is removed on startup.
   failure. User configured Pages outside this session.
 
 ## Useful next work, not promises already implemented
+
+Place-name investigations are proposed in `PLACE-NAME-DESIGN.md`, not yet
+implemented. The user wants local UK towns connected to wider European language
+history (Grimsby and Manchester), requiring deeper geographic detail. Reuse the
+case graph and existing difficulties; add scoped name parts and accurate map
+anchors rather than a separate UK difficulty. The design records the current
+engine's limitation when testing several incoming links to one shared root.
 
 1. Test the published site and actual iPad touch/audio, including tiny speaker
    targets, card overflow and zoom near Baghdad at the map edge.

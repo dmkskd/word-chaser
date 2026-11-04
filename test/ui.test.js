@@ -452,3 +452,25 @@ test('URL mode selection overrides saved mode safely and accepts the Word Chaser
   const words = ui.document.getElementById('case-select'); words.value = 'house'; words.dispatchEvent(ui.event('change'));
   assert(ui.document.getElementById('word-tooltip').textContent.startsWith('house — '));
 });
+
+
+test('evidence decisions stay outside the scrolling content and new cards reset their scroll', async () => {
+  const {document, click} = await page();
+  const content = document.getElementById('evidence-content');
+  const panel = document.getElementById('evidence-panel');
+  click('[data-node-id="treasure-1"]');
+  const answers = document.getElementById('challenge-answers');
+  assert.equal(answers.parentElement, panel, 'Decisions have their own non-scrolling area.');
+  assert(!content.contains(answers));
+  assert.equal(answers.getAttribute('aria-labelledby'), 'challenge-prompt');
+  click('#reveal-clue');
+  assert(!document.getElementById('reveal-page').hidden);
+  assert.equal(answers.querySelectorAll('button').length, 2, 'Revealing help retains both decisions.');
+  content.scrollTop = 180; panel.scrollTop = 90;
+  click('#close-evidence');
+  click('[data-node-id="treasure-german"]');
+  assert.equal(content.scrollTop, 0);
+  assert.equal(panel.scrollTop, 0);
+  click('#challenge-answers button:nth-child(2)');
+  assert(panel.hidden, 'A correct No still records the clue in one tap.');
+});

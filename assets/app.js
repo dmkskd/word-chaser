@@ -31748,6 +31748,8 @@
     }));
     renderEvidence();
     $2("evidence-panel").hidden = false;
+    $2("evidence-content").scrollTop = 0;
+    $2("evidence-panel").scrollTop = 0;
     map2.focus(point(node));
     ($2("challenge-answers").querySelector("button") || $2("close-evidence")).focus({ preventScroll: true });
   }

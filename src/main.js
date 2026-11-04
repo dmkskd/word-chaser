@@ -57,6 +57,7 @@ function render() {
   map.render(engine, catalog, selectedEra);
   renderNotebook(); renderEras(); renderPuzzles(); renderProgress();
   $('complete').hidden = !engine.complete; $('complete-text').textContent = c.completion;
+  $('map-solved-stamp').hidden = !engine.complete;
 }
 function renderProgress() {
   $('detective-points').textContent = `⭐ ${engine.points} ${engine.points === 1 ? 'point' : 'points'}`;
@@ -163,7 +164,7 @@ function answerTheory(choiceId) {
     const reward = evidenceFeedback.earned, edge = engine.linkTo(evidenceId);
     const ruledOut = edge && catalog.relations[edge.type].outcome === 'excluded';
     followEvidence();
-    cue(`⭐ +${reward} · ${ruledOut ? 'Good catch!' : engine.complete ? 'Case solved!' : 'Clue cracked!'}`);
+    cue(`⭐ +${reward} · ${ruledOut ? 'Good catch!' : engine.complete ? 'Case solved!' : 'Clue cracked!'}`, ruledOut ? 2000 : 4000);
     return;
   }
   persist();renderProgress();renderEvidence();
@@ -180,13 +181,13 @@ function followEvidence() {
 }
 
 function hideCue() { if (cueTimer !== null) clearTimeout(cueTimer); cueTimer = null; $('map-cue').hidden = true; }
-function cue(message) {
+function cue(message, duration = 4000) {
   hideCue(); const panel = $('map-cue'); panel.textContent = message; panel.hidden = false;
   // A brief prompt near the lens, never a permanent instruction layer.
   const [vx, vy, w, h] = map.view;
   panel.style.left = Math.max(2, Math.min(65, (map.lens[0] - vx) / w * 100 + 7)) + '%';
   panel.style.top = Math.max(4, Math.min(75, (map.lens[1] - vy) / h * 100 - 6)) + '%';
-  cueTimer = setTimeout(hideCue, 4000);
+  cueTimer = setTimeout(hideCue, duration);
 }
 function showHint(explicit = true) {
   if (!explicit) return;

@@ -50,6 +50,11 @@ travel between languages—not simply follow the only available correct pin.
   Correctly rejected words are crossed out. Child-facing copy says “Not our
   trail”, not “Ruled out” or “Decision needed”.
 - The current stop has a green highlight. Red looked like a wrong answer.
+- Completion places a persistent, tilted “CASE SOLVED” stamp directly on the
+  map, with a short stamping animation followed by a 1.5-second wobble (both
+  disabled for reduced motion). It does
+  not intercept taps or require dismissal. Restart/switching cases removes it;
+  restoring a completed current case shows it again.
 - Keep pins in the correct country. Robot and robota initially looked like
   separate Czech/Hungarian stops; both now sit within Czechia with captions
   explaining “new name” versus “older word”.

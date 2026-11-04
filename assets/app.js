@@ -31026,6 +31026,7 @@
     renderProgress();
     $2("complete").hidden = !engine.complete;
     $2("complete-text").textContent = c.completion;
+    $2("map-solved-stamp").hidden = !engine.complete;
   }
   function renderProgress() {
     $2("detective-points").textContent = `\u2B50 ${engine.points} ${engine.points === 1 ? "point" : "points"}`;
@@ -31169,7 +31170,7 @@
       const reward = evidenceFeedback.earned, edge = engine.linkTo(evidenceId);
       const ruledOut = edge && catalog.relations[edge.type].outcome === "excluded";
       followEvidence();
-      cue(`\u2B50 +${reward} \xB7 ${ruledOut ? "Good catch!" : engine.complete ? "Case solved!" : "Clue cracked!"}`);
+      cue(`\u2B50 +${reward} \xB7 ${ruledOut ? "Good catch!" : engine.complete ? "Case solved!" : "Clue cracked!"}`, ruledOut ? 2e3 : 4e3);
       return;
     }
     persist();
@@ -31201,7 +31202,7 @@
     cueTimer = null;
     $2("map-cue").hidden = true;
   }
-  function cue(message) {
+  function cue(message, duration = 4e3) {
     hideCue();
     const panel = $2("map-cue");
     panel.textContent = message;
@@ -31209,7 +31210,7 @@
     const [vx, vy, w, h] = map2.view;
     panel.style.left = Math.max(2, Math.min(65, (map2.lens[0] - vx) / w * 100 + 7)) + "%";
     panel.style.top = Math.max(4, Math.min(75, (map2.lens[1] - vy) / h * 100 - 6)) + "%";
-    cueTimer = setTimeout(hideCue, 4e3);
+    cueTimer = setTimeout(hideCue, duration);
   }
   function showHint(explicit = true) {
     if (!explicit) return;

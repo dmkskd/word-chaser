@@ -42,11 +42,15 @@ test('built page runs the treasure investigation via evidence objects and graph 
   click('[data-node-id="treasure-italian"]');click('#challenge-answers button');assert(document.getElementById('evidence-panel').hidden);
   click('[data-node-id="treasure-3"]');click('#challenge-answers button');assert(document.getElementById('evidence-panel').hidden);
   assert.equal(document.getElementById('complete').hidden, true, 'French evidence is still outstanding.');
+  assert(document.getElementById('map-solved-stamp').hidden);
   click('[data-node-id="treasure-1"]');
   click('[data-node-id="treasure-2"]');click('#challenge-answers button');assert(document.getElementById('evidence-panel').hidden);
   assert.equal(document.getElementById('complete').hidden, false);
+  assert(!document.getElementById('map-solved-stamp').hidden);
   assert(document.querySelector('.graph-edge.dotted.reviewed'));
   assert(document.querySelector('.graph-edge.dashed.reviewed'));
+  click('#restart');
+  assert(document.getElementById('map-solved-stamp').hidden, 'Restart removes the solved stamp.');
 });
 
 test('hints are explicit and temporary, and the catalog is searchable', async () => {

@@ -50,3 +50,30 @@
 .trail-time{pointer-events:none}
 .trail-time rect{fill:#fffcf0;fill-opacity:.94;stroke:#c4cdb6;stroke-width:.7}
 .trail-time text{font:500 8px var(--sans);fill:#526d58}
+/* Each notebook row carries its own result; no duplicate list above it. */
+.notebook-entry{padding:5px 0}
+.notebook-entry-heading{gap:6px}
+.notebook-entry-heading .word-link{font-size:16px;line-height:1.25}
+.notebook-result{flex-shrink:0;font:600 12px var(--sans);color:var(--green)}
+.notebook-entry.excluded .notebook-result{color:#9a7353}
+.notebook-entry>small{margin:0 0 1px}
+.notebook-entry .notebook-story{margin-top:0}
+.notebook-story summary{min-height:20px}
+.detective-progress{margin:12px 0 14px;padding:10px 0}
+@media(pointer:coarse){.notebook-story summary{min-height:40px}}
+/* One compact notebook header instead of two stacked title rows. */
+.notebook{padding-top:12px}
+.notebook-header{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.notebook-header .spoken-title{display:flex;align-items:center;gap:6px;flex:1;min-width:0;margin:0;flex-wrap:nowrap}
+.notebook-header .spoken-title h2{font-size:28px;line-height:1.15;overflow-wrap:anywhere}
+.notebook-header .spoken-title #hear-start{flex-shrink:0}
+.notebook-header .restart-button{min-height:30px;padding:4px 7px;font-size:9px;background:#edf1e3;border-color:#c9d4bd;border-radius:6px}
+@media(max-width:780px){.notebook-header{grid-column:1/-1}}
+@media(pointer:coarse){.notebook-header .restart-button{min-height:44px}}
+.notebook-header .restart-button{display:inline-flex;align-items:center;justify-content:center;min-width:32px;width:32px;min-height:32px;padding:0;font-size:20px;line-height:1}
+.legend .slow-speech{display:inline-flex;align-items:center;gap:5px;margin-left:auto;min-height:32px;font-size:10px;letter-spacing:0;cursor:pointer}
+.slow-speech input{accent-color:var(--green)}
+@media(pointer:coarse){.notebook-header .restart-button{min-width:44px;width:44px;min-height:44px}.legend .slow-speech{min-height:44px}}
+/* Small visible speaker; the touch hit area extends without enlarging the icon. */
+.notebook-header .spoken-title #hear-start{position:relative;min-width:24px;width:24px;min-height:24px;height:24px;padding:2px;font-size:10px;border-radius:5px}
+@media(pointer:coarse){.notebook-header .spoken-title #hear-start::after{content:"";position:absolute;inset:-10px}.notebook-header .spoken-title{gap:12px}}

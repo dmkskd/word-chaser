@@ -28,6 +28,11 @@
       "id": "comparison",
       "title": "Duden · Landkarte",
       "url": "https://www.duden.de/rechtschreibung/Landkarte"
+    },
+    {
+      "id": "soundalike",
+      "title": "Treccani · gelato",
+      "url": "https://www.treccani.it/vocabolario/gelato/"
     }
   ],
   "nodes": [
@@ -214,7 +219,8 @@
             "text": "Italian geografia also leads back through Latin to Greek. Italian and English are cousins here; English did not borrow this modern Italian word directly."
           }
         ]
-      }
+      },
+      "mapLabelSide": "left"
     },
     {
       "id": "geography-map",
@@ -249,6 +255,44 @@
           {
             "title": "A little more evidence",
             "text": "A Landkarte can help you study geography, but this German word did not supply the English subject name."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geography-soundalike",
+      "form": "gelato",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        35,
+        -15
+      ],
+      "period": "Today",
+      "meaning": "Ice cream, in Italian.",
+      "pronunciation": {
+        "text": "gelato",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Gelato is ice cream; its name is connected with freezing. The geo in geography comes from Greek for earth. A similar opening sound is not enough.",
+        "notice": "Compare its sound and meaning, then check the word history.",
+        "sourceIds": [
+          "history",
+          "soundalike"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Listen and compare",
+            "text": "Say gelato and geography slowly. Similar sounds can start a theory. Does the meaning help too?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Gelato is ice cream; its name is connected with freezing. The geo in geography comes from Greek for earth. A similar opening sound is not enough."
           }
         ]
       }
@@ -434,6 +478,37 @@
             "label": "No, I don’t think so",
             "correct": false,
             "feedback": "There is a connection to discover. Yes. Italian keeps another branch of the Latin word family."
+          }
+        ]
+      }
+    },
+    {
+      "id": "geography-soundalike-lead",
+      "source": "geography-now",
+      "target": "geography-soundalike",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this word history",
+        "text": "Gelato is ice cream; its name is connected with freezing. The geo in geography comes from Greek for earth. A similar opening sound is not enough.",
+        "sourceIds": [
+          "history",
+          "soundalike"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the geo in geography come from Italian gelato?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. Gelato is ice cream; its name is connected with freezing. The geo in geography comes from Greek for earth. A similar opening sound is not enough."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Good catch! Gelato is ice cream; its name is connected with freezing. The geo in geography comes from Greek for earth. A similar opening sound is not enough."
           }
         ]
       }

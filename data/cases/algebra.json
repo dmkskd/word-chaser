@@ -32,6 +32,11 @@
       "id": "translation",
       "title": "Robert of Chester’s Latin translation · historical edition",
       "url": "https://www.wilbourhall.org/pdfs/mbp/robertofchesters00khuw.pdf"
+    },
+    {
+      "id": "soundalike",
+      "title": "RAE · alegría",
+      "url": "https://dle.rae.es/alegr%C3%ADa"
     }
   ],
   "nodes": [
@@ -223,6 +228,44 @@
           }
         ]
       }
+    },
+    {
+      "id": "algebra-soundalike",
+      "form": "alegría",
+      "languageId": "spanish",
+      "eraId": "today",
+      "placeId": "spain",
+      "offset": [
+        -28,
+        30
+      ],
+      "period": "Today",
+      "meaning": "Joy or happiness, in Spanish.",
+      "pronunciation": {
+        "text": "alegría",
+        "languageId": "spanish"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Alegría means joy. Algebra follows Arabic al-jabr through medieval Latin. Their similar letters tempted us, but the book history points elsewhere.",
+        "notice": "Compare its sound and meaning, then check the word history.",
+        "sourceIds": [
+          "history",
+          "soundalike"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Listen and compare",
+            "text": "Say alegría and algebra slowly. Similar sounds can start a theory. Does the meaning help too?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Alegría means joy. Algebra follows Arabic al-jabr through medieval Latin. Their similar letters tempted us, but the book history points elsewhere."
+          }
+        ]
+      }
     }
   ],
   "edges": [
@@ -381,6 +424,37 @@
         ]
       },
       "timeLabel": "Today → 1100s"
+    },
+    {
+      "id": "algebra-soundalike-lead",
+      "source": "algebra-now",
+      "target": "algebra-soundalike",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this word history",
+        "text": "Alegría means joy. Algebra follows Arabic al-jabr through medieval Latin. Their similar letters tempted us, but the book history points elsewhere.",
+        "sourceIds": [
+          "history",
+          "soundalike"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English algebra get its name from Spanish alegría?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. Alegría means joy. Algebra follows Arabic al-jabr through medieval Latin. Their similar letters tempted us, but the book history points elsewhere."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Good catch! Alegría means joy. Algebra follows Arabic al-jabr through medieval Latin. Their similar letters tempted us, but the book history points elsewhere."
+          }
+        ]
+      }
     }
   ],
   "puzzles": [],

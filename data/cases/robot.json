@@ -22,6 +22,11 @@
       "id": "german",
       "title": "Duden · Roboter",
       "url": "https://www.duden.de/rechtschreibung/Roboter"
+    },
+    {
+      "id": "soundalike",
+      "title": "Académie française · rabot",
+      "url": "https://www.dictionnaire-academie.fr/article/A9R0043"
     }
   ],
   "nodes": [
@@ -212,6 +217,44 @@
           }
         ]
       }
+    },
+    {
+      "id": "robot-soundalike",
+      "form": "rabot",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A tool for smoothing wood, in French.",
+      "pronunciation": {
+        "text": "rabot",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "A rabot smooths wood. Robot spread from a Czech play and the Czech word robota. Almost matching letters do not put the French tool in that borrowing story.",
+        "notice": "Compare its sound and meaning, then check the word history.",
+        "sourceIds": [
+          "history",
+          "soundalike"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Listen and compare",
+            "text": "Say rabot and robot slowly. Similar sounds can start a theory. Does the meaning help too?"
+          },
+          {
+            "title": "Check the history",
+            "text": "A rabot smooths wood. Robot spread from a Czech play and the Czech word robota. Almost matching letters do not put the French tool in that borrowing story."
+          }
+        ]
+      }
     }
   ],
   "edges": [
@@ -331,6 +374,37 @@
             "label": "No, I don’t think so",
             "correct": false,
             "feedback": "There is a connection to discover. Yes. Robota supplied the name for the fictional workers."
+          }
+        ]
+      }
+    },
+    {
+      "id": "robot-soundalike-lead",
+      "source": "robot-now",
+      "target": "robot-soundalike",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this word history",
+        "text": "A rabot smooths wood. Robot spread from a Czech play and the Czech word robota. Almost matching letters do not put the French tool in that borrowing story.",
+        "sourceIds": [
+          "history",
+          "soundalike"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English robot get its name from French rabot?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. A rabot smooths wood. Robot spread from a Czech play and the Czech word robota. Almost matching letters do not put the French tool in that borrowing story."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Good catch! A rabot smooths wood. Robot spread from a Czech play and the Czech word robota. Almost matching letters do not put the French tool in that borrowing story."
           }
         ]
       }

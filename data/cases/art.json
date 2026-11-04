@@ -22,6 +22,11 @@
       "id": "italian",
       "title": "Treccani · arte",
       "url": "https://www.treccani.it/vocabolario/arte/"
+    },
+    {
+      "id": "soundalike",
+      "title": "Duden · Art",
+      "url": "https://www.duden.de/rechtschreibung/Art"
     }
   ],
   "nodes": [
@@ -210,6 +215,44 @@
           }
         ]
       }
+    },
+    {
+      "id": "art-soundalike",
+      "form": "Art",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A kind or type, in German.",
+      "pronunciation": {
+        "text": "Art",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "German Art can mean a kind or type. English art meaning skill or creative work came through French from Latin. Matching spelling alone cannot prove a borrowing.",
+        "notice": "Compare its sound and meaning, then check the word history.",
+        "sourceIds": [
+          "history",
+          "soundalike"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Listen and compare",
+            "text": "Say Art and art slowly. Similar sounds can start a theory. Does the meaning help too?"
+          },
+          {
+            "title": "Check the history",
+            "text": "German Art can mean a kind or type. English art meaning skill or creative work came through French from Latin. Matching spelling alone cannot prove a borrowing."
+          }
+        ]
+      }
     }
   ],
   "edges": [
@@ -361,6 +404,37 @@
             "label": "No, I don’t think so",
             "correct": false,
             "feedback": "There is a connection to discover. Yes. Arte belongs to the same Latin family."
+          }
+        ]
+      }
+    },
+    {
+      "id": "art-soundalike-lead",
+      "source": "art-now",
+      "target": "art-soundalike",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this word history",
+        "text": "German Art can mean a kind or type. English art meaning skill or creative work came through French from Latin. Matching spelling alone cannot prove a borrowing.",
+        "sourceIds": [
+          "history",
+          "soundalike"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English art get its name from German Art?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. German Art can mean a kind or type. English art meaning skill or creative work came through French from Latin. Matching spelling alone cannot prove a borrowing."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Good catch! German Art can mean a kind or type. English art meaning skill or creative work came through French from Latin. Matching spelling alone cannot prove a borrowing."
           }
         ]
       }

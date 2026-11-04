@@ -22,6 +22,11 @@
       "id": "german",
       "title": "Duden · Donnerstag",
       "url": "https://www.duden.de/rechtschreibung/Donnerstag"
+    },
+    {
+      "id": "soundalike",
+      "title": "Duden · Durst",
+      "url": "https://www.duden.de/rechtschreibung/Durst"
     }
   ],
   "nodes": [
@@ -247,6 +252,44 @@
           }
         ]
       }
+    },
+    {
+      "id": "thursday-soundalike",
+      "form": "Durst",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        20,
+        -42
+      ],
+      "period": "Today",
+      "meaning": "Thirst, in German.",
+      "pronunciation": {
+        "text": "Durst",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Durst means thirst. Thursday’s history is about a thunder god, not needing a drink. Check the older calendar names as well as the sounds.",
+        "notice": "Compare its sound and meaning, then check the word history.",
+        "sourceIds": [
+          "history",
+          "soundalike"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Listen and compare",
+            "text": "Say Durst and Thursday slowly. Similar sounds can start a theory. Does the meaning help too?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Durst means thirst. Thursday’s history is about a thunder god, not needing a drink. Check the older calendar names as well as the sounds."
+          }
+        ]
+      }
     }
   ],
   "edges": [
@@ -397,6 +440,37 @@
             "label": "No, I don’t think so",
             "correct": false,
             "feedback": "There is a connection to discover. Yes: Jupiter’s day was translated using a local thunder god. This is a travelling idea, not a borrowed Latin word."
+          }
+        ]
+      }
+    },
+    {
+      "id": "thursday-soundalike-lead",
+      "source": "thursday-now",
+      "target": "thursday-soundalike",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this word history",
+        "text": "Durst means thirst. Thursday’s history is about a thunder god, not needing a drink. Check the older calendar names as well as the sounds.",
+        "sourceIds": [
+          "history",
+          "soundalike"
+        ]
+      },
+      "challenge": {
+        "prompt": "Was Thursday named after German Durst, meaning thirst?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. Durst means thirst. Thursday’s history is about a thunder god, not needing a drink. Check the older calendar names as well as the sounds."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Good catch! Durst means thirst. Thursday’s history is about a thunder god, not needing a drink. Check the older calendar names as well as the sounds."
           }
         ]
       }

@@ -38,6 +38,11 @@
       "id": "janus",
       "title": "Etymonline · Janus",
       "url": "https://www.etymonline.com/word/Janus"
+    },
+    {
+      "id": "soundalike",
+      "title": "CNRTL · genou",
+      "url": "https://www.cnrtl.fr/definition/genou"
     }
   ],
   "nodes": [
@@ -235,8 +240,8 @@
       "eraId": "today",
       "placeId": "france",
       "offset": [
-        -70,
-        42
+        -30,
+        0
       ],
       "period": "Today",
       "meaning": "June, in French.",
@@ -261,6 +266,45 @@
           {
             "title": "A little more evidence",
             "text": "Juin names June, not January. The opening sound can tempt us onto the wrong trail."
+          }
+        ]
+      },
+      "mapLabelSide": "left"
+    },
+    {
+      "id": "january-soundalike",
+      "form": "genou",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        40
+      ],
+      "period": "Today",
+      "meaning": "A knee, in French.",
+      "pronunciation": {
+        "text": "genou",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Genou means knee. January’s month-name trail leads through older French to Latin Ianuarius. A similar sound does not turn a body part into this month’s name.",
+        "notice": "Compare its sound and meaning, then check the word history.",
+        "sourceIds": [
+          "history",
+          "soundalike"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Listen and compare",
+            "text": "Say genou and January slowly. Similar sounds can start a theory. Does the meaning help too?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Genou means knee. January’s month-name trail leads through older French to Latin Ianuarius. A similar sound does not turn a body part into this month’s name."
           }
         ]
       }
@@ -445,6 +489,37 @@
             "label": "No, I don’t think so",
             "correct": false,
             "feedback": "There is a connection to discover. Yes. Gennaio and January meet at a Latin month name."
+          }
+        ]
+      }
+    },
+    {
+      "id": "january-soundalike-lead",
+      "source": "january-now",
+      "target": "january-soundalike",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this word history",
+        "text": "Genou means knee. January’s month-name trail leads through older French to Latin Ianuarius. A similar sound does not turn a body part into this month’s name.",
+        "sourceIds": [
+          "history",
+          "soundalike"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the month name January come from French genou?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. Genou means knee. January’s month-name trail leads through older French to Latin Ianuarius. A similar sound does not turn a body part into this month’s name."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Good catch! Genou means knee. January’s month-name trail leads through older French to Latin Ianuarius. A similar sound does not turn a body part into this month’s name."
           }
         ]
       }

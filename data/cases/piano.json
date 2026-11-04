@@ -21,6 +21,11 @@
       "id": "long-name",
       "title": "American Heritage · pianoforte",
       "url": "https://ahdictionary.com/word/search.html?q=pianoforte"
+    },
+    {
+      "id": "soundalike",
+      "title": "RAE · pino",
+      "url": "https://dle.rae.es/pino"
     }
   ],
   "nodes": [
@@ -168,6 +173,44 @@
           {
             "title": "What the history tells us",
             "text": "French piano also belongs to the Italian instrument-name family. The longer Italian name is pianoforte."
+          }
+        ]
+      }
+    },
+    {
+      "id": "piano-soundalike",
+      "form": "pino",
+      "languageId": "spanish",
+      "eraId": "today",
+      "placeId": "spain",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A pine tree, in Spanish.",
+      "pronunciation": {
+        "text": "pino",
+        "languageId": "spanish"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Pino names a pine tree. The instrument name piano is short for Italian pianoforte. Similar sounds led us to a different word.",
+        "notice": "Compare its sound and meaning, then check the word history.",
+        "sourceIds": [
+          "etymology",
+          "soundalike"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Listen and compare",
+            "text": "Say pino and piano slowly. Similar sounds can start a theory. Does the meaning help too?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Pino names a pine tree. The instrument name piano is short for Italian pianoforte. Similar sounds led us to a different word."
           }
         ]
       }
@@ -320,6 +363,37 @@
             "label": "No, I don’t think so",
             "correct": true,
             "feedback": "Klavier is a German name for a keyboard instrument. This case traces piano to Italian pianoforte."
+          }
+        ]
+      }
+    },
+    {
+      "id": "piano-soundalike-lead",
+      "source": "piano-0",
+      "target": "piano-soundalike",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this word history",
+        "text": "Pino names a pine tree. The instrument name piano is short for Italian pianoforte. Similar sounds led us to a different word.",
+        "sourceIds": [
+          "etymology",
+          "soundalike"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the instrument name piano come from Spanish pino?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. Pino names a pine tree. The instrument name piano is short for Italian pianoforte. Similar sounds led us to a different word."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Good catch! Pino names a pine tree. The instrument name piano is short for Italian pianoforte. Similar sounds led us to a different word."
           }
         ]
       }

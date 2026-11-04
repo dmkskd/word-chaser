@@ -22,6 +22,11 @@
       "id": "german",
       "title": "German Schule",
       "url": "https://www.duden.de/rechtschreibung/Schule"
+    },
+    {
+      "id": "soundalike",
+      "title": "American Heritage · skull",
+      "url": "https://www.ahdictionary.com/word/search.html?q=skull"
     }
   ],
   "nodes": [
@@ -280,6 +285,44 @@
           {
             "title": "What the history tells us",
             "text": "A school of fish has a different word history from a school for learning."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-soundalike",
+      "form": "skull",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        -35,
+        -28
+      ],
+      "period": "Today",
+      "meaning": "The bones protecting your brain.",
+      "pronunciation": {
+        "text": "skull",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Skull protects your brain, but it did not give school its name. School follows Latin schola and Greek skholē. A similar sound is a starting clue, not proof.",
+        "notice": "Compare its sound and meaning, then check the word history.",
+        "sourceIds": [
+          "etymology",
+          "soundalike"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Listen and compare",
+            "text": "Say skull and school slowly. Similar sounds can start a theory. Does the meaning help too?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Skull protects your brain, but it did not give school its name. School follows Latin schola and Greek skholē. A similar sound is a starting clue, not proof."
           }
         ]
       }
@@ -709,6 +752,67 @@
     {
       "id": "school-french-lead-school-fish",
       "source": "school-french",
+      "target": "school-fish",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test another lead",
+        "text": "A school of fish has a different word history from a school for learning.",
+        "sourceIds": [
+          "etymology"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this word explain where English school came from?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. A school of fish has a different word history from a school for learning."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "A school of fish has a different word history from a school for learning."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-soundalike-lead",
+      "source": "school-0",
+      "target": "school-soundalike",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this word history",
+        "text": "Skull protects your brain, but it did not give school its name. School follows Latin schola and Greek skholē. A similar sound is a starting clue, not proof.",
+        "sourceIds": [
+          "etymology",
+          "soundalike"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did school get its name from the English word skull?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. Skull protects your brain, but it did not give school its name. School follows Latin schola and Greek skholē. A similar sound is a starting clue, not proof."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Good catch! Skull protects your brain, but it did not give school its name. School follows Latin schola and Greek skholē. A similar sound is a starting clue, not proof."
+          }
+        ]
+      }
+    },
+    {
+      "id": "school-start-fish",
+      "source": "school-0",
       "target": "school-fish",
       "type": "comparison",
       "evidence": {

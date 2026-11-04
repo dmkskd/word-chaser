@@ -147,3 +147,11 @@ language's entire era for the date of a particular book or borrowing.
 
 The UI saves only the active case. Reloading resumes it; selecting another
 word replaces that saved attempt and starts the selected word fresh.
+
+Each current case has two distinct false trails, with at least one No decision
+available immediately. Mix real words with misleading sounds (robot/rabot),
+matching spellings (English art/German Art), and matching meanings with different
+histories (house/casa/maison). Never invent words or call a genuine cousin
+unrelated just to make a wrong option. Ask a precise question about a borrowing
+or source, and put the historical explanation in help and feedback rather than
+announcing the verdict in the initial card.

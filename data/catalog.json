@@ -330,7 +330,8 @@
     "cases/geometry.json",
     "cases/geography.json",
     "cases/art.json",
-    "cases/maths.json"
+    "cases/maths.json",
+    "cases/house.json"
   ],
   "$schema": "catalog.schema.json",
   "rules": {

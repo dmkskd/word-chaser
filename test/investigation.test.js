@@ -168,3 +168,28 @@ test('Greek evidence stays available after a dinosaur detour through French', ()
   go(restored, 'dinosaur-2');assert(restored.complete);
   engine.destroy();restored.destroy();
 });
+
+test('each case offers two distinct false trails, including a No decision from the start', () => {
+  for (const wordCase of cases) {
+    const engine = new Investigation(catalog, wordCase);
+    const falseTrails = wordCase.edges.filter(e => catalog.relations[e.type].outcome === 'excluded');
+    assert.equal(new Set(falseTrails.map(e => e.target)).size, 2, wordCase.id);
+    assert(engine.outgoing().some(e => e.challenge.choices.some(c => c.id === 'no' && c.correct)), wordCase.id);
+    engine.destroy();
+  }
+});
+
+test('house comparisons reward rejecting a shared meaning while retaining genuine family connections', () => {
+  const engine = new Investigation(catalog, cases.find(c => c.id === 'house'));
+  engine.inspect('house-italian');
+  assert.equal(engine.answer('house-italian', 'no').correct, true);
+  engine.follow('house-italian');
+  assert.equal(engine.nodeStatus('house-italian'), 'excluded');
+  assert.equal(engine.currentId, 'house-now');
+  assert(!engine.complete);
+  go(engine, 'house-german');
+  assert.equal(engine.nodeStatus('house-german'), 'connected');
+  go(engine, 'house-old');
+  assert(engine.complete);
+  engine.destroy();
+});

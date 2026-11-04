@@ -33,6 +33,11 @@
       "id": "comparison",
       "title": "American Heritage · mat",
       "url": "https://www.ahdictionary.com/word/search.html?q=mat"
+    },
+    {
+      "id": "soundalike",
+      "title": "Duden · Matsch",
+      "url": "https://www.duden.de/rechtschreibung/Matsch"
     }
   ],
   "nodes": [
@@ -261,6 +266,44 @@
         ]
       },
       "mapLabelSide": "left"
+    },
+    {
+      "id": "maths-soundalike",
+      "form": "Matsch",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Mud or slush, in German.",
+      "pronunciation": {
+        "text": "Matsch",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Matsch means mud or slush. Maths is a shortening of mathematics. Listen closely: similar sounds can belong to different word stories.",
+        "notice": "Compare its sound and meaning, then check the word history.",
+        "sourceIds": [
+          "history",
+          "soundalike"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Listen and compare",
+            "text": "Say Matsch and maths slowly. Similar sounds can start a theory. Does the meaning help too?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Matsch means mud or slush. Maths is a shortening of mathematics. Listen closely: similar sounds can belong to different word stories."
+          }
+        ]
+      }
     }
   ],
   "edges": [
@@ -443,6 +486,37 @@
             "label": "No, I don’t think so",
             "correct": false,
             "feedback": "There is a connection to discover. Yes. The Italian word leads through Latin to Greek."
+          }
+        ]
+      }
+    },
+    {
+      "id": "maths-soundalike-lead",
+      "source": "maths-now",
+      "target": "maths-soundalike",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this word history",
+        "text": "Matsch means mud or slush. Maths is a shortening of mathematics. Listen closely: similar sounds can belong to different word stories.",
+        "sourceIds": [
+          "history",
+          "soundalike"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the school-subject name maths come from German Matsch?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. Matsch means mud or slush. Maths is a shortening of mathematics. Listen closely: similar sounds can belong to different word stories."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Good catch! Matsch means mud or slush. Maths is a shortening of mathematics. Listen closely: similar sounds can belong to different word stories."
           }
         ]
       }

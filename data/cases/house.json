@@ -1,0 +1,435 @@
+{
+  "schemaVersion": 1,
+  "id": "house",
+  "title": "house",
+  "icon": "🏠",
+  "summary": "Same building, different names. Which words share a history?",
+  "question": "Does the same meaning mean the same root?",
+  "startNodeId": "house-now",
+  "goalNodeIds": [
+    "house-old"
+  ],
+  "completion": "House comes through Middle English hous from Old English hūs. German Haus and Old Norse hús are cousins. Casa and maison name the same thing, but follow Latin word histories instead.",
+  "partner": "A similar sound is a clue. Let’s check the evidence.",
+  "sources": [
+    {
+      "id": "history",
+      "title": "American Heritage · house",
+      "url": "https://www.ahdictionary.com/word/search.html?q=house"
+    },
+    {
+      "id": "family",
+      "title": "Etymonline · house",
+      "url": "https://www.etymonline.com/word/house"
+    },
+    {
+      "id": "german",
+      "title": "Duden · Haus",
+      "url": "https://www.duden.de/rechtschreibung/Haus"
+    },
+    {
+      "id": "italian",
+      "title": "Treccani · casa",
+      "url": "https://www.treccani.it/vocabolario/casa/"
+    },
+    {
+      "id": "french",
+      "title": "Académie française · maison",
+      "url": "https://www.dictionnaire-academie.fr/article/A9M0242"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "house-now",
+      "form": "house",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A building where people live.",
+      "pronunciation": {
+        "text": "house",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A house label",
+        "text": "One building can have different names in different languages. Which names belong to the English word’s family?",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Does the same meaning always mean the same word history?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "One building can have different names in different languages. Which names belong to the English word’s family?"
+          }
+        ]
+      }
+    },
+    {
+      "id": "house-old",
+      "form": "hūs",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        -12,
+        -70
+      ],
+      "period": "Old English · before 1100",
+      "meaning": "A word for a building people live in.",
+      "pronunciation": {
+        "text": "hūs",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An English building description",
+        "text": "House developed from Old English hūs, through Middle English hous. The spelling and sound changed in England.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare hūs and house. Try listening as well as looking."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "House developed from Old English hūs, through Middle English hous. The spelling and sound changed in England."
+          }
+        ]
+      }
+    },
+    {
+      "id": "house-german",
+      "form": "Haus",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A house, in German.",
+      "pronunciation": {
+        "text": "Haus",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A German building label",
+        "text": "Haus and English house share an older Germanic ancestor. They are cousins; English did not borrow its word from modern German.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "german"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "The sound and meaning match closely. What does the older history tell us?"
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Haus and English house share an older Germanic ancestor. They are cousins; English did not borrow its word from modern German."
+          }
+        ]
+      }
+    },
+    {
+      "id": "house-norse",
+      "form": "hús",
+      "languageId": "old-norse",
+      "eraId": "medieval",
+      "placeId": "norse",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Medieval Norse",
+      "meaning": "A house, in Old Norse.",
+      "pronunciation": {
+        "text": "hús",
+        "languageId": "old-norse"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A northern building description",
+        "text": "Old Norse hús shares the Germanic family of Old English hūs and German Haus. This is a cousin, not proof that English borrowed house from the Vikings.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "family"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare the English, German and Norse forms."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Old Norse hús shares the Germanic family of Old English hūs and German Haus. This is a cousin, not proof that English borrowed house from the Vikings."
+          }
+        ]
+      }
+    },
+    {
+      "id": "house-italian",
+      "form": "casa",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A house, in Italian.",
+      "pronunciation": {
+        "text": "casa",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "letter",
+        "title": "An Italian building label",
+        "text": "Casa names the same kind of building. Its history leads to Latin casa, a rustic dwelling. English house follows Old English hūs instead.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Same building, different sound. Check whether their older forms meet."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Casa names the same kind of building. Its history leads to Latin casa, a rustic dwelling. English house follows Old English hūs instead."
+          }
+        ]
+      }
+    },
+    {
+      "id": "house-french",
+      "form": "maison",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A house, in French.",
+      "pronunciation": {
+        "text": "maison",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A French building label",
+        "text": "Maison also names a house, but comes from Latin mansio, a place to stay. English house follows a different, Germanic trail.",
+        "notice": "Compare the sounds, meaning and dates. Similar words need historical evidence too.",
+        "sourceIds": [
+          "history",
+          "french"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Sharing a meaning does not prove a borrowing."
+          },
+          {
+            "title": "A little more evidence",
+            "text": "Maison also names a house, but comes from Latin mansio, a place to stay. English house follows a different, Germanic trail."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "house-now-to-house-old",
+      "source": "house-now",
+      "target": "house-old",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. House developed from Old English hūs through Middle English hous.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this older English word help explain house?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. House developed from Old English hūs through Middle English hous."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. House developed from Old English hūs through Middle English hous."
+          }
+        ]
+      }
+    },
+    {
+      "id": "house-now-to-house-german",
+      "source": "house-now",
+      "target": "house-german",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. They share an older Germanic ancestor; this is not a borrowing from modern German.",
+        "sourceIds": [
+          "family",
+          "german"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could German Haus and English house be word-family cousins?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. They share an older Germanic ancestor; this is not a borrowing from modern German."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. They share an older Germanic ancestor; this is not a borrowing from modern German."
+          }
+        ]
+      }
+    },
+    {
+      "id": "house-now-to-house-norse",
+      "source": "house-now",
+      "target": "house-norse",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Old Norse hús and Old English hūs belong to the same Germanic family.",
+        "sourceIds": [
+          "family"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could the Norse and English words share an older family?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Old Norse hús and Old English hūs belong to the same Germanic family."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "There is a connection to discover. Yes. Old Norse hús and Old English hūs belong to the same Germanic family."
+          }
+        ]
+      }
+    },
+    {
+      "id": "house-now-to-house-italian",
+      "source": "house-now",
+      "target": "house-italian",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. The meaning matches, but casa follows Latin and house follows Old English.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English house get its name from Italian casa?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. No. The meaning matches, but casa follows Latin and house follows Old English."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. The meaning matches, but casa follows Latin and house follows Old English."
+          }
+        ]
+      }
+    },
+    {
+      "id": "house-now-to-house-french",
+      "source": "house-now",
+      "target": "house-french",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Maison and house name the same thing, but their histories follow different trails.",
+        "sourceIds": [
+          "history",
+          "french"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English house get its name from French maison?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Try comparing the dates and meanings again. No. Maison and house name the same thing, but their histories follow different trails."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Maison and house name the same thing, but their histories follow different trails."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "house-now",
+      "label": "Today"
+    },
+    {
+      "nodeId": "house-old",
+      "label": "The older English word"
+    }
+  ],
+  "$schema": "../case.schema.json"
+}

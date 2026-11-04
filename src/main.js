@@ -31,7 +31,7 @@ function audioData(nodeOrPuzzle) {
 }
 function speakNode(id) {
   if (!id) { $('speech-status').textContent = 'Move the glass over a visible word or object to hear it.'; return; }
-  speech.speak(audioData(engine.node(id)), $('hear-map'));
+  speech.speak(audioData(engine.node(id)));
 }
 function persist() {
   saved = {caseId: engine.case.id, snapshot: engine.snapshot()};
@@ -65,10 +65,6 @@ function renderProgress() {
   $('progress-label').textContent = `${found} of ${total} main clues connected`;
   $('progress-track').setAttribute('aria-valuenow', String(Math.round(found / total * 100)));
   $('progress-fill').style.width = (found / total * 100) + '%';
-  $('milestone-list').replaceChildren(...engine.case.milestones.map(milestone => {
-    const done = engine.visited.has(milestone.nodeId), li = textElement('li', `${done ? '✓' : '○'} ${done ? engine.node(milestone.nodeId).form : milestone.label}`, done ? 'found' : 'waiting');
-    return li;
-  }));
 }
 function renderNotebook() {
   $('visited-list').replaceChildren(...[...engine.visited].map(id => {
@@ -79,7 +75,9 @@ function renderNotebook() {
     const story = document.createElement('details'); story.className = 'notebook-story'; story.append(textElement('summary', 'Read the story'), textElement('p', node.evidence.text), textElement('p', node.evidence.notice));
     const hear = document.createElement('button'); speech.bind(hear, audioData(node));
     hear.classList.add('notebook-audio'); hear.textContent = catalog.languages[node.pronunciation.languageId].approximate ? '🔊 ≈' : '🔊';
-    const heading = document.createElement('div'); heading.className = 'notebook-entry-heading'; heading.append(open, hear);
+    const badge = textElement('span', status === 'excluded' ? '✕' : '✓', 'notebook-result');
+    badge.setAttribute('aria-label', status === 'excluded' ? 'Not our trail' : 'Connected');
+    const heading = document.createElement('div'); heading.className = 'notebook-entry-heading'; heading.append(badge, open, hear);
     card.append(heading, meta, story); return card;
   }));
   const leads = engine.leads();
@@ -213,7 +211,6 @@ $('map').addEventListener('keydown', event => { if (event.key === 'Escape') clos
 $('back-clue').addEventListener('click', () => { closeEvidence(); hideCue(); engine.back(); selectedEra = engine.node().eraId; persist(); map.reset(); map.setLens(...point(engine.node())); render(); });
 $('zoom-reset').addEventListener('click', () => map.reset());
 $('help').addEventListener('click', () => showHint(true));
-$('hear-map').disabled = !speech.supported; $('hear-map').addEventListener('click', () => speakNode(map.hit()?.id));
 $('restart').addEventListener('click', () => selectCase(engine.case.id));
 $('sources-open').addEventListener('click', () => {
   $('sources-list').replaceChildren(...engine.case.sources.map(source => { const link = textElement('a', source.title + ' ↗'); link.href = source.url; link.target = '_blank'; link.rel = 'noopener'; return link; }));

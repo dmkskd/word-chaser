@@ -25,7 +25,7 @@ async function page(storage = new Map()) {
 
 test('built page runs the treasure investigation via evidence objects and graph leads', async () => {
   const {document, click} = await page();
-  assert.equal(document.getElementById('case-select').querySelectorAll('option').length, 14);
+  assert.equal(document.getElementById('case-select').querySelectorAll('option').length, 15);
   assert.equal(document.getElementById('map-cue').hidden, true);
   assert(document.querySelector('[data-node-id="treasure-1"]'));
   click('[data-node-id="treasure-1"]');

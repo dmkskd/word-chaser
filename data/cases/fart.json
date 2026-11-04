@@ -16,6 +16,11 @@
       "id": "etymology",
       "title": "Word history",
       "url": "https://www.etymonline.com/word/fart"
+    },
+    {
+      "id": "soundalike",
+      "title": "CNRTL · phare",
+      "url": "https://www.cnrtl.fr/definition/phare"
     }
   ],
   "nodes": [
@@ -163,6 +168,44 @@
           {
             "title": "What the history tells us",
             "text": "French péter is not the source of the English word fart. This case follows the English word back to Old English feortan."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fart-soundalike",
+      "form": "phare",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        45
+      ],
+      "period": "Today",
+      "meaning": "A lighthouse, in French.",
+      "pronunciation": {
+        "text": "phare",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Phare names a lighthouse. Fart follows an older English verb, feortan. The similar opening sound does not explain its history.",
+        "notice": "Compare its sound and meaning, then check the word history.",
+        "sourceIds": [
+          "etymology",
+          "soundalike"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Listen and compare",
+            "text": "Say phare and fart slowly. Similar sounds can start a theory. Does the meaning help too?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Phare names a lighthouse. Fart follows an older English verb, feortan. The similar opening sound does not explain its history."
           }
         ]
       }
@@ -315,6 +358,37 @@
             "label": "No, I don’t think so",
             "correct": true,
             "feedback": "French péter is not the source of the English word fart. This case follows the English word back to Old English feortan."
+          }
+        ]
+      }
+    },
+    {
+      "id": "fart-soundalike-lead",
+      "source": "fart-0",
+      "target": "fart-soundalike",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this word history",
+        "text": "Phare names a lighthouse. Fart follows an older English verb, feortan. The similar opening sound does not explain its history.",
+        "sourceIds": [
+          "etymology",
+          "soundalike"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English fart come from French phare?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. Phare names a lighthouse. Fart follows an older English verb, feortan. The similar opening sound does not explain its history."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Good catch! Phare names a lighthouse. Fart follows an older English verb, feortan. The similar opening sound does not explain its history."
           }
         ]
       }

@@ -37,6 +37,11 @@
       "id": "specimen-3",
       "title": "Natural History Museum · T. rex",
       "url": "https://www.nhm.ac.uk/discover/dino-directory/tyrannosaurus.html"
+    },
+    {
+      "id": "soundalike",
+      "title": "CNRTL · dîner",
+      "url": "https://www.cnrtl.fr/definition/d%C3%AEner"
     }
   ],
   "nodes": [
@@ -221,6 +226,44 @@
           {
             "title": "What the history tells us",
             "text": "The English word lizard is not the word from which Owen built Dinosauria. He used Greek sauros for the lizard part."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinosaur-soundalike",
+      "form": "dîner",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        45
+      ],
+      "period": "Today",
+      "meaning": "To eat dinner, in French.",
+      "pronunciation": {
+        "text": "dîner",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Dîner is about eating a meal. Dinosaur follows the scientific name Dinosauria, built from Greek word parts. The similar opening sounds do not give us the same word history.",
+        "notice": "Compare its sound and meaning, then check the word history.",
+        "sourceIds": [
+          "etymology",
+          "soundalike"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Listen and compare",
+            "text": "Say dîner and dinosaur slowly. Similar sounds can start a theory. Does the meaning help too?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Dîner is about eating a meal. Dinosaur follows the scientific name Dinosauria, built from Greek word parts. The similar opening sounds do not give us the same word history."
           }
         ]
       }
@@ -463,6 +506,37 @@
             "label": "No, I don’t think so",
             "correct": true,
             "feedback": "The English word lizard is not the word from which Owen built Dinosauria. He used Greek sauros for the lizard part."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinosaur-soundalike-lead",
+      "source": "dinosaur-0",
+      "target": "dinosaur-soundalike",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this word history",
+        "text": "Dîner is about eating a meal. Dinosaur follows the scientific name Dinosauria, built from Greek word parts. The similar opening sounds do not give us the same word history.",
+        "sourceIds": [
+          "etymology",
+          "soundalike"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did dinosaur get its name from French dîner?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. Dîner is about eating a meal. Dinosaur follows the scientific name Dinosauria, built from Greek word parts. The similar opening sounds do not give us the same word history."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Good catch! Dîner is about eating a meal. Dinosaur follows the scientific name Dinosauria, built from Greek word parts. The similar opening sounds do not give us the same word history."
           }
         ]
       }

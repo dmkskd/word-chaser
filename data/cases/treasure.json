@@ -22,6 +22,11 @@
       "id": "german",
       "title": "German Schatz",
       "url": "https://www.duden.de/rechtschreibung/Schatz"
+    },
+    {
+      "id": "soundalike",
+      "title": "Treccani · tre",
+      "url": "https://www.treccani.it/vocabolario/tre/"
     }
   ],
   "nodes": [
@@ -208,7 +213,8 @@
             "text": "Tesoro is related to treasure. Both word histories lead back to Latin thesaurus. Italian is a different branch; English borrowed its word through French."
           }
         ]
-      }
+      },
+      "mapLabelSide": "left"
     },
     {
       "id": "treasure-german",
@@ -243,6 +249,44 @@
           {
             "title": "What the history tells us",
             "text": "Schatz means treasure. Its recorded German history includes older scaz and scha(t)z. It follows a different history from English treasure."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-soundalike",
+      "form": "tre",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        35,
+        -15
+      ],
+      "period": "Today",
+      "meaning": "Three, in Italian.",
+      "pronunciation": {
+        "text": "tre",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to compare",
+        "text": "Tre means three, from Latin tres. Treasure follows Old French tresor and Latin thesaurus. The matching opening letters do not make tre its source.",
+        "notice": "Compare its sound and meaning, then check the word history.",
+        "sourceIds": [
+          "etymology",
+          "soundalike"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Listen and compare",
+            "text": "Say tre and treasure slowly. Similar sounds can start a theory. Does the meaning help too?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Tre means three, from Latin tres. Treasure follows Old French tresor and Latin thesaurus. The matching opening letters do not make tre its source."
           }
         ]
       }
@@ -605,6 +649,37 @@
             "label": "No, I don’t think so",
             "correct": false,
             "feedback": "Look again at the meaning and the historical evidence. This clue does connect with our investigation."
+          }
+        ]
+      }
+    },
+    {
+      "id": "treasure-soundalike-lead",
+      "source": "treasure-0",
+      "target": "treasure-soundalike",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this word history",
+        "text": "Tre means three, from Latin tres. Treasure follows Old French tresor and Latin thesaurus. The matching opening letters do not make tre its source.",
+        "sourceIds": [
+          "etymology",
+          "soundalike"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English treasure get its name from Italian tre, meaning three?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "A good theory to test. Tre means three, from Latin tres. Treasure follows Old French tresor and Latin thesaurus. The matching opening letters do not make tre its source."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "Good catch! Tre means three, from Latin tres. Treasure follows Old French tresor and Latin thesaurus. The matching opening letters do not make tre its source."
           }
         ]
       }

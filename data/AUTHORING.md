@@ -167,7 +167,7 @@ pages; the word form and challenge are still visible when a marker is tapped.
 Investigator's automatic location nudges use `catalog.places[*].searchHint`.
 Write a short, child-friendly geographical riddle without revealing the word
 or whether a theory is correct. Mode `searchHintSeconds` sets the search delay
-in seconds (currently 60 for Investigator, 0 to disable in Word Chaser).
+in seconds (currently 30 for Investigator, 0 to disable in Word Chaser).
 
 
 ## Place-name cases and close geography

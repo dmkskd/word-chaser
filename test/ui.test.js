@@ -355,21 +355,21 @@ test('Investigator saves current progress but one wrong answer restarts the whol
 });
 
 
-test('Investigator gives a location riddle only after a full search minute', async () => {
+test('Investigator gives a location riddle only after 30 seconds of searching', async () => {
   const ui = await page();
   assert(ui.document.getElementById('search-timer').hidden);
   ui.click('[data-mode-id="investigator"]');
   const clock = ui.document.getElementById('search-timer');
-  assert.equal(clock.textContent, 'Hint in 1:00');
+  assert.equal(clock.textContent, 'Hint in 0:30');
   assert(!ui.document.getElementById('search-assist').hidden);
   assert(ui.document.querySelector('.map-tools #search-timer'));
-  ui.searchTicks(59);
+  ui.searchTicks(29);
   assert.equal(clock.textContent, 'Hint in 0:01');
   assert(ui.document.getElementById('search-location-hint').hidden);
   ui.searchTicks(1);
   assert(ui.document.getElementById('search-location-hint').textContent.includes('Big Ben'));
   assert(!ui.document.getElementById('search-location-hint').hidden);
-  assert.equal(clock.textContent, 'Hint in 1:00');
+  assert.equal(clock.textContent, 'Hint in 0:30');
   ui.searchTicks(15);
   assert(!ui.document.getElementById('search-location-hint').hidden, 'The hint stays visible instead of expiring.');
   assert.equal(ui.document.querySelector('[data-node-id="treasure-1"]'), null, 'The nudge does not reveal a pin.');
@@ -379,11 +379,11 @@ test('Investigator gives a location riddle only after a full search minute', asy
   ui.searchTicks(90);
   assert(ui.document.getElementById('search-location-hint').hidden);
   ui.click('#challenge-answers button');
-  assert.equal(clock.textContent, 'Hint in 1:00');
+  assert.equal(clock.textContent, 'Hint in 0:30');
   assert(!clock.hidden);
   ui.searchTicks(30);
   ui.click('#restart');
-  assert.equal(clock.textContent, 'Hint in 1:00');
+  assert.equal(clock.textContent, 'Hint in 0:30');
   ui.click('[data-mode-id="chaser"]');
   ui.searchTicks(90);
   assert(clock.hidden);
@@ -394,12 +394,12 @@ test('search nudges pause for the story and stop on completion', async () => {
   const ui = await page();
   ui.click('[data-mode-id="investigator"]');
   ui.click('#story-open'); ui.searchTicks(60);
-  assert.equal(ui.document.getElementById('search-timer').textContent, 'Hint in 1:00');
+  assert.equal(ui.document.getElementById('search-timer').textContent, 'Hint in 0:30');
   assert(ui.document.getElementById('search-location-hint').hidden);
   ui.click('#story-start'); ui.searchTicks(1);
-  assert.equal(ui.document.getElementById('search-timer').textContent, 'Hint in 0:59');
+  assert.equal(ui.document.getElementById('search-timer').textContent, 'Hint in 0:29');
   chooseWord(ui.document, 'house');
-  assert.equal(ui.document.getElementById('search-timer').textContent, 'Hint in 1:00');
+  assert.equal(ui.document.getElementById('search-timer').textContent, 'Hint in 0:30');
   inspectHidden(ui, 322, 246); ui.click('#challenge-answers button');
   assert(ui.document.getElementById('search-timer').hidden);
   ui.searchTicks(90);
@@ -515,7 +515,7 @@ test('Investigator town views keep hidden clues and leaders out of the map until
   const svg=document.getElementById('map');const before=svg.getAttribute('viewBox');
   click('#zoom-reset');click('#zoom-local');assert.equal(svg.getAttribute('viewBox'),before);
   assert.equal(document.querySelectorAll('[data-node-id]').length,1);
-  assert(document.getElementById('search-timer').textContent.includes('1:00'));
+  assert(document.getElementById('search-timer').textContent.includes('0:30'));
 });
 
 test('two-finger panning moves the close map without answering or revealing a hidden location', async () => {

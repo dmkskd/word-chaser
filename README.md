@@ -51,7 +51,7 @@ A case can have multiple branches, converging paths, and comparison leaves. Ever
 
 Type two letters in **Find a word…** to see matching words immediately, then tap a result. **Browse all** shows the complete collection grouped into weekdays, town/city names, familiar words with local roots, time/calendar, colours, food/meals, learning/inventions and everyday discoveries. Opening or searching the browser keeps your current progress; choosing a word starts its case fresh.
 
-Choose **Word Chaser** for guided play or **Investigator** to search for hidden words with the glass, with a location riddle after one minute and a full case restart after any wrong answer. Changing modes starts a fresh attempt. Investigator keeps the starting word visible, reveals other words as you hover or drag the glass over them, and unlocks notebook stories after completion.
+Choose **Word Chaser** for guided play or **Investigator** to search for hidden words with the glass, with a location riddle after 30 seconds and a full case restart after any wrong answer. Changing modes starts a fresh attempt. Investigator keeps the starting word visible, reveals other words as you hover or drag the glass over them, and unlocks notebook stories after completion.
 
 Share a level directly with `?mode=chaser` (or `?mode=word-chaser`) or `?mode=investigator`. A valid URL mode overrides the saved mode; switching modes resets the attempt.
 

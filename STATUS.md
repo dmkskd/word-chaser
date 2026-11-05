@@ -54,8 +54,8 @@ travel between languages—not simply follow the only available correct pin.
   completion. Any wrong answer immediately restarts the current case, clears
   points/progress and saves that fresh state. Word Chaser retains retries.
 
-- Investigator gives a playful location nudge after 60 seconds of searching,
-  with a clearly visible “Hint in 1:00” badge among the map tools. Location
+- Investigator gives a playful location nudge after 30 seconds of searching,
+  with a clearly visible “Hint in 0:30” badge among the map tools. Location
   hints stay in that badge until the next inspection or reset rather than
   disappearing after 12 seconds. Returning via browser Back/Forward resumes
   the timer (pagehide previously stopped it without a pageshow restart). Configure `searchHintSeconds` per mode
@@ -63,7 +63,7 @@ travel between languages—not simply follow the only available correct pin.
   an available connected lead without showing its word or giving the answer.
   The timer pauses in the opening story or a hidden tab, stops on theory cards,
   and resets after each correct answer, dismissal, restart or case/mode switch.
-  Completion disables it. Nudges repeat each minute while still searching and
+  Completion disables it. Nudges repeat every 30 seconds while still searching and
   do not deduct points or unlock manual clue help.
 
 - The first visit opens a short story: everyone has lost their memories; the

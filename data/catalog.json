@@ -553,15 +553,15 @@
     },
     "investigator": {
       "label": "Investigator",
-      "description": "Find hidden words. A location hint after a minute. One wrong answer restarts the case.",
-      "instructions": "Start with the visible word. Move or drag the glass around the map to uncover other words, then tap to test your theory. Decide Yes or No using what you know. After a minute of searching, a location riddle gives you a nudge. One wrong answer restarts this case. Keyboard: arrows move, Enter opens a word, +/− zoom. Zoom with +/− or pinch. Use two fingers to pan, or Shift + arrow keys. Whole Europe shows the wider map.",
+      "description": "Find hidden words. A location hint after 30 seconds. One wrong answer restarts the case.",
+      "instructions": "Start with the visible word. Move or drag the glass around the map to uncover other words, then tap to test your theory. Decide Yes or No using what you know. After 30 seconds of searching, a location riddle gives you a nudge. One wrong answer restarts this case. Keyboard: arrows move, Enter opens a word, +/− zoom. Zoom with +/− or pinch. Use two fingers to pan, or Shift + arrow keys. Whole Europe shows the wider map.",
       "showMarkerDetails": false,
       "showPeeks": true,
       "allowHints": false,
       "restartOnWrong": true,
       "showUnvisitedMarkers": false,
       "showPeekDetails": false,
-      "searchHintSeconds": 60
+      "searchHintSeconds": 30
     }
   },
   "collections": [

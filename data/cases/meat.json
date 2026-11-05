@@ -1,0 +1,369 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "meat",
+  "title": "meat",
+  "icon": "🍖",
+  "summary": "An old food word whose meaning changed.",
+  "question": "Did meat always mean the food it means today?",
+  "startNodeId": "meat-now",
+  "goalNodeIds": [
+    "meat-old",
+    "meat-norse"
+  ],
+  "completion": "Meat continues Old English mete, meaning food generally. Its meaning became narrower. Old Norse matr is a cousin; French viande and English meet follow other trails.",
+  "partner": "A familiar word can carry a surprising history. Follow the evidence!",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · meat",
+      "url": "https://www.etymonline.com/word/meat"
+    },
+    {
+      "id": "viande",
+      "title": "Etymonline · viand",
+      "url": "https://www.etymonline.com/word/viand"
+    },
+    {
+      "id": "meet",
+      "title": "Etymonline · meet",
+      "url": "https://www.etymonline.com/word/meet"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "meat-now",
+      "form": "meat",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Animal flesh used as food.",
+      "pronunciation": {
+        "text": "meat",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "Your starting word",
+        "text": "Meat once had a wider meaning. The older evidence may surprise you.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Meat once had a wider meaning. The older evidence may surprise you."
+          }
+        ]
+      }
+    },
+    {
+      "id": "meat-old",
+      "form": "mete",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Old English · before 1100",
+      "meaning": "Food of many kinds.",
+      "pronunciation": {
+        "text": "mete",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An old word-list clue",
+        "text": "Old English mete meant food generally, not only animal flesh. English meat later narrowed its meaning.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Old English mete meant food generally, not only animal flesh. English meat later narrowed its meaning."
+          }
+        ]
+      },
+      "displayOffset": [
+        -60,
+        -65
+      ]
+    },
+    {
+      "id": "meat-norse",
+      "form": "matr",
+      "languageId": "old-norse",
+      "eraId": "medieval",
+      "placeId": "norse",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Medieval Norse",
+      "meaning": "Food, in Old Norse.",
+      "pronunciation": {
+        "text": "matr",
+        "languageId": "old-norse"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Old Norse matr and English meat share an older Germanic family. The broad food meaning helps explain the older English word.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Old Norse matr and English meat share an older Germanic family. The broad food meaning helps explain the older English word."
+          }
+        ]
+      }
+    },
+    {
+      "id": "meat-french",
+      "form": "viande",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Meat, in French.",
+      "pronunciation": {
+        "text": "viande",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "French viande once also meant food generally, but follows a Latin history. It did not give English meat its name.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history",
+          "viande"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "French viande once also meant food generally, but follows a Latin history. It did not give English meat its name."
+          }
+        ]
+      }
+    },
+    {
+      "id": "meat-meet",
+      "form": "meet",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Come together with someone.",
+      "pronunciation": {
+        "text": "meet",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Meet and meat sound alike today. Meet follows Old English metan, while meat follows mete, meaning food.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history",
+          "meet"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Meet and meat sound alike today. Meet follows Old English metan, while meat follows mete, meaning food."
+          }
+        ]
+      },
+      "displayOffset": [
+        -65,
+        45
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "meat-old-link",
+      "source": "meat-now",
+      "target": "meat-old",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. The meaning narrowed from food in general to animal flesh.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could an older word meaning food explain meat?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The meaning narrowed from food in general to animal flesh."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. The meaning narrowed from food in general to animal flesh."
+          }
+        ]
+      }
+    },
+    {
+      "id": "meat-norse-link",
+      "source": "meat-now",
+      "target": "meat-norse",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. They share an older Germanic food-word family.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Old Norse matr and English meat be word-family cousins?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. They share an older Germanic food-word family."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. They share an older Germanic food-word family."
+          }
+        ]
+      }
+    },
+    {
+      "id": "meat-french-link",
+      "source": "meat-now",
+      "target": "meat-french",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Both changed meaning, but meat follows Old English mete, not French viande.",
+        "sourceIds": [
+          "history",
+          "viande"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English meat get its name from French viande?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Both changed meaning, but meat follows Old English mete, not French viande."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Both changed meaning, but meat follows Old English mete, not French viande."
+          }
+        ]
+      }
+    },
+    {
+      "id": "meat-meet-link",
+      "source": "meat-now",
+      "target": "meat-meet",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Same sound today, different older words.",
+        "sourceIds": [
+          "history",
+          "meet"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the food word meat come from meeting someone?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Same sound today, different older words."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Same sound today, different older words."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "meat-now",
+      "label": "meat"
+    },
+    {
+      "nodeId": "meat-old",
+      "label": "mete"
+    },
+    {
+      "nodeId": "meat-norse",
+      "label": "matr"
+    }
+  ]
+}

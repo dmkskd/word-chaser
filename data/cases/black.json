@@ -1,0 +1,369 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "black",
+  "title": "black",
+  "icon": "⚫",
+  "summary": "An ink clue and two French colours.",
+  "question": "Can word relatives have different meanings?",
+  "startNodeId": "black-now",
+  "goalNodeIds": [
+    "black-old",
+    "black-swedish"
+  ],
+  "completion": "Black continues Old English blæc. Swedish bläck, meaning ink, is a relative. French noir names the same colour but did not give English black its name.",
+  "partner": "A familiar word can carry a surprising history. Follow the evidence!",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · black",
+      "url": "https://www.etymonline.com/word/black"
+    },
+    {
+      "id": "noir",
+      "title": "CNRTL · noir",
+      "url": "https://www.cnrtl.fr/etymologie/noir"
+    },
+    {
+      "id": "blanc",
+      "title": "CNRTL · blanc",
+      "url": "https://www.cnrtl.fr/etymologie/blanc"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "black-now",
+      "form": "black",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "The colour of coal or soot.",
+      "pronunciation": {
+        "text": "black",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "Your starting word",
+        "text": "Follow the colour word, then compare other names for dark things.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Follow the colour word, then compare other names for dark things."
+          }
+        ]
+      }
+    },
+    {
+      "id": "black-old",
+      "form": "blæc",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Old English · before 1100",
+      "meaning": "A dark colour in an old word list.",
+      "pronunciation": {
+        "text": "blæc",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An old word-list clue",
+        "text": "Black continues Old English blæc. Do not confuse this with the different Old English word blāc, meaning pale or bright.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Black continues Old English blæc. Do not confuse this with the different Old English word blāc, meaning pale or bright."
+          }
+        ]
+      },
+      "displayOffset": [
+        -60,
+        -65
+      ]
+    },
+    {
+      "id": "black-swedish",
+      "form": "bläck",
+      "languageId": "swedish",
+      "eraId": "today",
+      "placeId": "sweden",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Ink, in Swedish.",
+      "pronunciation": {
+        "text": "bläck",
+        "languageId": "swedish"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Swedish bläck means ink. It belongs to the older family of English black: a word relative can change its meaning.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Swedish bläck means ink. It belongs to the older family of English black: a word relative can change its meaning."
+          }
+        ]
+      }
+    },
+    {
+      "id": "black-noir",
+      "form": "noir",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Black, in French.",
+      "pronunciation": {
+        "text": "noir",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Noir follows Latin niger. English black continues Old English blæc; French noir is not its source.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "noir",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Noir follows Latin niger. English black continues Old English blæc; French noir is not its source."
+          }
+        ]
+      }
+    },
+    {
+      "id": "black-blanc",
+      "form": "blanc",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "White, in French.",
+      "pronunciation": {
+        "text": "blanc",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Blanc means white and has a Germanic history. That does not make French blanc the source of English black. The question tests a direct borrowing, not every possible distant relationship.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "blanc",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Blanc means white and has a Germanic history. That does not make French blanc the source of English black. The question tests a direct borrowing, not every possible distant relationship."
+          }
+        ]
+      },
+      "displayOffset": [
+        0,
+        65
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "black-old-link",
+      "source": "black-now",
+      "target": "black-old",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Black continues Old English blæc.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this older English colour word explain black?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Black continues Old English blæc."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Black continues Old English blæc."
+          }
+        ]
+      }
+    },
+    {
+      "id": "black-swedish-link",
+      "source": "black-now",
+      "target": "black-swedish",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Bläck and black are relatives even though one now names ink.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this Swedish ink word belong to black’s older word family?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Bläck and black are relatives even though one now names ink."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Bläck and black are relatives even though one now names ink."
+          }
+        ]
+      }
+    },
+    {
+      "id": "black-noir-link",
+      "source": "black-now",
+      "target": "black-noir",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Same colour, different trail: English black follows blæc.",
+        "sourceIds": [
+          "history",
+          "noir"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English black come from French noir?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Same colour, different trail: English black follows blæc."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Same colour, different trail: English black follows blæc."
+          }
+        ]
+      }
+    },
+    {
+      "id": "black-blanc-link",
+      "source": "black-now",
+      "target": "black-blanc",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. French blanc means white; black already has its own Old English history.",
+        "sourceIds": [
+          "history",
+          "blanc"
+        ]
+      },
+      "challenge": {
+        "prompt": "Was English black borrowed from French blanc?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. French blanc means white; black already has its own Old English history."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. French blanc means white; black already has its own Old English history."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "black-now",
+      "label": "black"
+    },
+    {
+      "nodeId": "black-old",
+      "label": "blæc"
+    },
+    {
+      "nodeId": "black-swedish",
+      "label": "bläck"
+    }
+  ]
+}

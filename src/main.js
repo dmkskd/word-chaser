@@ -9,6 +9,8 @@ import musicScore from '../data/detective-music.json';
 import {evidencePoint} from './geography.js';
 import {renderWordParts} from './word-parts.js';
 import {createCasePicker} from './case-picker.js';
+import {renderTextEvidence} from './text-evidence.js';
+import {renderEvidenceTimeline} from './evidence-timeline.js';
 
 const {catalog, cases} = content;
 const $ = id => document.getElementById(id);
@@ -116,6 +118,8 @@ function render() {
   renderWordParts($('word-title'), engine.node(c.startNodeId), c.edges.find(edge => edge.source === c.startNodeId && edge.sourceSegmentId)?.sourceSegmentId);
   $('hear-start').textContent = '🔊';
   map.render(engine, catalog, selectedEra, mode);
+  renderEvidenceTimeline($('evidence-timeline'), engine, mode, inspect);
+  $('text-trail-key').hidden = !c.nodes.some(node => node.kind === 'attestation');
   renderNotebook(); renderEras(); renderPuzzles(); renderProgress();
   $('complete').hidden = !engine.complete; $('complete-text').textContent = c.completion;
   $('map-solved-stamp').hidden = !engine.complete;
@@ -135,6 +139,10 @@ function renderNotebook() {
     if (id === engine.currentId) open.setAttribute('aria-current', 'location');
     const meta = textElement('small', `${status === 'excluded' ? '✕ Not our trail · ' : ''}${catalog.languages[node.languageId].name} · ${node.period}`);
     const story = document.createElement('details'); story.className = 'notebook-story'; story.append(textElement('summary', 'Read the story'), textElement('p', node.evidence.text), textElement('p', node.evidence.notice));
+    if (node.evidence.textSource) {
+      const passage = document.createElement('div'); passage.className = 'book-evidence';
+      renderTextEvidence(passage, node); story.append(passage);
+    }
     story.hidden = !currentMode().allowHints && !engine.complete;
     const hear = document.createElement('button'); speech.bind(hear, audioData(node));
     hear.classList.add('notebook-audio'); hear.textContent = catalog.languages[node.pronunciation.languageId].approximate ? '🔊 ≈' : '🔊';
@@ -171,7 +179,10 @@ function renderPuzzles() {
   }));
 }
 function inspect(id) {
-  if (engine.visited.has(id)) { engine.returnTo(id); closeEvidence(); hideCue(); selectedEra = engine.node().eraId; persist(); render(); map.setLens(...point(engine.node())); return; }
+  if (engine.visited.has(id)) {
+    engine.returnTo(id); persist();
+    if (engine.node(id).kind !== 'attestation') { closeEvidence(); hideCue(); selectedEra = engine.node().eraId; render(); map.setLens(...point(engine.node())); return; }
+  }
   stopSearchTimer();
   const {node} = engine.inspect(id);
   hideCue(); evidenceId = id; evidenceFeedback = null; selectedEra = node.eraId; render();
@@ -204,6 +215,7 @@ function renderEvidence() {
   if (!evidenceId) return;
   const node = engine.node(evidenceId), edge = engine.linkTo(evidenceId), solved = !edge || engine.tested.has(edge.id);
   const count = engine.revealed.get(evidenceId) || 0;
+  renderTextEvidence($('book-evidence'), node, currentMode().allowHints || engine.visited.has(evidenceId));
   $('reveal-page').hidden = !currentMode().allowHints || count === 0;
   if (count) {
     const page = node.evidence.pages[Math.min(count - 1, node.evidence.pages.length - 1)];

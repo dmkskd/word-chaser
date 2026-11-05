@@ -1,0 +1,620 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "chortle",
+  "title": "chortle",
+  "icon": "📖",
+  "summary": "A laughing word hidden in an old story. Hunt through places and time.",
+  "question": "Can you follow this laughing word back to an animal sound?",
+  "startNodeId": "chortle-now",
+  "goalNodeIds": [
+    "chortle-book",
+    "chortle-chuckle",
+    "chortle-chukken"
+  ],
+  "completion": "You followed three links: today’s chortle → Carroll’s poem → its probable chuckle ingredient → Middle English chukken, a clucking sound. Collins calls chuckle + snort a probable blend, not a certainty. Oxford marks an author association, not a proven birthplace.",
+  "partner": "A book can be a clue. Look closely at its words and its date!",
+  "sources": [
+    {
+      "id": "passage",
+      "title": "Lewis Carroll · Through the Looking-Glass, Jabberwocky (primary text)",
+      "url": "https://www.gutenberg.org/cache/epub/12/pg12-images.html"
+    },
+    {
+      "id": "dictionary",
+      "title": "Collins · chortle, coinage attribution and probable blend",
+      "url": "https://www.collinsdictionary.com/dictionary/english/chortle"
+    },
+    {
+      "id": "publication",
+      "title": "Lewis Carroll Society · publication in 1871, edition dated 1872",
+      "url": "https://lewiscarrollsociety.org.uk/publishing-of-alice/"
+    },
+    {
+      "id": "oxford",
+      "title": "Christ Church, Oxford · Lewis Carroll association",
+      "url": "https://www.chch.ox.ac.uk/college/library-archives/lewis-carroll-collection"
+    },
+    {
+      "id": "short",
+      "title": "Etymonline · short and Old English sceort",
+      "url": "https://www.etymonline.com/word/short"
+    },
+    {
+      "id": "french",
+      "title": "CNRTL · rire",
+      "url": "https://www.cnrtl.fr/etymologie/rire"
+    },
+    {
+      "id": "chuckle",
+      "title": "Collins · chuckle and its Middle English clucking-word history",
+      "url": "https://www.collinsdictionary.com/dictionary/english/chuckle"
+    },
+    {
+      "id": "chuckle-history",
+      "title": "Etymonline · chuckle, chukken and changing meanings",
+      "url": "https://www.etymonline.com/word/chuckle"
+    },
+    {
+      "id": "snort-history",
+      "title": "Etymonline · snort and earlier snorten",
+      "url": "https://www.etymonline.com/word/snort"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "chortle-now",
+      "form": "chortle",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "To laugh with a happy chuckling sound.",
+      "pronunciation": {
+        "text": "chortle",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word heard today",
+        "text": "This modern word can be traced into a poem. We are hunting written evidence as well as places.",
+        "notice": "A passage can show a word being used. A separate source is needed to establish who invented it.",
+        "sourceIds": [
+          "dictionary"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Read and compare",
+            "text": "Try saying the word, then look for an earlier written form."
+          },
+          {
+            "title": "What the sources say",
+            "text": "This modern word can be traced into a poem. We are hunting written evidence as well as places."
+          }
+        ]
+      },
+      "date": {
+        "label": "Today",
+        "startYear": 2026,
+        "endYear": 2026
+      }
+    },
+    {
+      "id": "chortle-book",
+      "form": "chortled",
+      "languageId": "english",
+      "eraId": "nineteenth",
+      "placeId": "oxford",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Book published 1871 · first edition dated 1872",
+      "meaning": "A word inside a poem.",
+      "pronunciation": {
+        "text": "chortled",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "book",
+        "title": "A page from an old story",
+        "text": "The poem supplies written evidence of chortled. Collins separately credits Carroll with coining chortle, probably by blending chuckle and snort. The passage alone does not prove invention.",
+        "notice": "A passage can show a word being used. A separate source is needed to establish who invented it.",
+        "sourceIds": [
+          "passage",
+          "dictionary",
+          "publication",
+          "oxford"
+        ],
+        "illustrative": false,
+        "pages": [
+          {
+            "title": "Read and compare",
+            "text": "In the line, the speaker feels joy. What kind of sound might chortled describe?"
+          },
+          {
+            "title": "What the sources say",
+            "text": "The poem supplies written evidence of chortled. Collins separately credits Carroll with coining chortle, probably by blending chuckle and snort. The passage alone does not prove invention."
+          }
+        ],
+        "textSource": {
+          "workTitle": "Through the Looking-Glass",
+          "creator": "Lewis Carroll",
+          "publicationYear": 1871,
+          "editionDate": "1872",
+          "section": "Jabberwocky",
+          "excerpt": "He chortled in his joy.",
+          "focusText": "chortled",
+          "claim": "attested-use",
+          "sourceIds": [
+            "passage"
+          ],
+          "locationRole": "author-associated",
+          "locationNote": "Oxford marks Carroll’s association with Christ Church. It is not a proven birthplace of this word or the poem’s fictional setting."
+        }
+      },
+      "kind": "attestation",
+      "date": {
+        "label": "1871 · published",
+        "startYear": 1871,
+        "endYear": 1871
+      },
+      "mapTitle": "An old storybook",
+      "mapCaption": "Oxford · author association"
+    },
+    {
+      "id": "chortle-short",
+      "form": "sceort",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Old English · broad period before 1100",
+      "meaning": "Not long: short, in Old English.",
+      "pronunciation": {
+        "text": "sceort",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "An older English word",
+        "text": "Sceort developed into short, a word about length. Chortle is the laughing word credited to Carroll. Greater age and a similar sound do not make sceort its source.",
+        "notice": "A passage can show a word being used. A separate source is needed to establish who invented it.",
+        "sourceIds": [
+          "short",
+          "dictionary"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Read and compare",
+            "text": "This word is about length. Does the meaning fit a joyful laugh?"
+          },
+          {
+            "title": "What the sources say",
+            "text": "Sceort developed into short, a word about length. Chortle is the laughing word credited to Carroll. Greater age and a similar sound do not make sceort its source."
+          }
+        ]
+      },
+      "displayOffset": [
+        110,
+        90
+      ],
+      "date": {
+        "label": "Before 1100 · broad period",
+        "startYear": 500,
+        "endYear": 1100
+      }
+    },
+    {
+      "id": "chortle-french",
+      "form": "rire",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "To laugh, in French.",
+      "pronunciation": {
+        "text": "rire",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A French word to compare",
+        "text": "French rire means to laugh and follows Latin ridere. Matching the action does not make it the source of English chortle.",
+        "notice": "A passage can show a word being used. A separate source is needed to establish who invented it.",
+        "sourceIds": [
+          "french",
+          "dictionary"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Read and compare",
+            "text": "Same action, different sounds. Is there evidence of a borrowing?"
+          },
+          {
+            "title": "What the sources say",
+            "text": "French rire means to laugh and follows Latin ridere. Matching the action does not make it the source of English chortle."
+          }
+        ]
+      }
+    },
+    {
+      "id": "chortle-chuckle",
+      "form": "chuckle",
+      "languageId": "english",
+      "eraId": "renaissance",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "displayOffset": [
+        -110,
+        0
+      ],
+      "mapCaption": "English evidence · broad location",
+      "period": "1590s · earlier sense: laugh loudly",
+      "meaning": "To laugh quietly.",
+      "pronunciation": {
+        "text": "chuckle",
+        "languageId": "english"
+      },
+      "date": {
+        "label": "1590s · earlier sense: laugh loudly",
+        "startYear": 1590,
+        "endYear": 1599
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An earlier sound-word",
+        "text": "Chuckle is recorded in the 1590s with a louder laughing meaning; its quieter meaning developed later. Collins suggests it probably helped form chortle, together with snort.",
+        "notice": "This pin represents English evidence, not a known town of invention.",
+        "sourceIds": [
+          "dictionary",
+          "chuckle",
+          "chuckle-history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Listen closely",
+            "text": "Say chuckle, then chortle. Compare their beginnings and their laughing meanings."
+          },
+          {
+            "title": "What the sources say",
+            "text": "Chuckle is recorded in the 1590s with a louder laughing meaning; its quieter meaning developed later. Collins suggests it probably helped form chortle, together with snort."
+          }
+        ]
+      }
+    },
+    {
+      "id": "chortle-chukken",
+      "form": "chukken",
+      "languageId": "middle-english",
+      "eraId": "medieval",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "displayOffset": [
+        -110,
+        -110
+      ],
+      "mapCaption": "English evidence · broad location",
+      "period": "Late 1300s · Middle English",
+      "meaning": "To make a clucking noise.",
+      "pronunciation": {
+        "text": "chukken",
+        "languageId": "middle-english"
+      },
+      "date": {
+        "label": "Late 1300s · Middle English",
+        "startYear": 1375,
+        "endYear": 1399
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An earlier sound-word",
+        "text": "Middle English chukken meant to make a clucking noise. Chuckle developed from it as a repeated-sound form. An animal noise became part of the history of a laughing word.",
+        "notice": "This pin represents English evidence, not a known town of invention.",
+        "sourceIds": [
+          "chuckle",
+          "chuckle-history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Listen closely",
+            "text": "Could a repeated clucking sound become a word for repeated little laughs?"
+          },
+          {
+            "title": "What the sources say",
+            "text": "Middle English chukken meant to make a clucking noise. Chuckle developed from it as a repeated-sound form. An animal noise became part of the history of a laughing word."
+          }
+        ]
+      }
+    },
+    {
+      "id": "chortle-snort",
+      "form": "snort",
+      "languageId": "english",
+      "eraId": "medieval",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "displayOffset": [
+        110,
+        -110
+      ],
+      "mapCaption": "English evidence · broad location",
+      "period": "Older history: snorten, early 1400s",
+      "meaning": "To blow air noisily through your nose.",
+      "pronunciation": {
+        "text": "snort",
+        "languageId": "english"
+      },
+      "date": {
+        "label": "Early 1400s · earlier snorten",
+        "startYear": 1400,
+        "endYear": 1425
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An earlier sound-word",
+        "text": "Snort is older than Carroll’s poem. Collins suggests chortle probably combines chuckle and snort. It is another possible ingredient, not a word that developed from chuckle.",
+        "notice": "This pin represents English evidence, not a known town of invention.",
+        "sourceIds": [
+          "dictionary",
+          "snort-history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Listen closely",
+            "text": "Try the sound through your nose. Compare the ending with chortle."
+          },
+          {
+            "title": "What the sources say",
+            "text": "Snort is older than Carroll’s poem. Collins suggests chortle probably combines chuckle and snort. It is another possible ingredient, not a word that developed from chuckle."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "chortle-book-link",
+      "source": "chortle-now",
+      "target": "chortle-book",
+      "type": "attested-in",
+      "evidence": {
+        "title": "Test the written evidence",
+        "text": "Yes. Chortled appears in Jabberwocky, published in 1871. It records use; the separate dictionary evidence attributes the coinage to Carroll.",
+        "sourceIds": [
+          "passage",
+          "publication",
+          "dictionary"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this passage supply an earlier written example of our word chortle?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Chortled appears in Jabberwocky, published in 1871. It records use; the separate dictionary evidence attributes the coinage to Carroll."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Chortled appears in Jabberwocky, published in 1871. It records use; the separate dictionary evidence attributes the coinage to Carroll."
+          }
+        ]
+      },
+      "timeLabel": "Today → published 1871"
+    },
+    {
+      "id": "chortle-short-link",
+      "source": "chortle-now",
+      "target": "chortle-short",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test the written evidence",
+        "text": "No. Being older is not enough. Sceort follows the length-word trail; chortle is the laughing word.",
+        "sourceIds": [
+          "short",
+          "dictionary"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this older word meaning short explain the laughing word chortle?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Being older is not enough. Sceort follows the length-word trail; chortle is the laughing word."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Being older is not enough. Sceort follows the length-word trail; chortle is the laughing word."
+          }
+        ]
+      }
+    },
+    {
+      "id": "chortle-french-link",
+      "source": "chortle-now",
+      "target": "chortle-french",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test the written evidence",
+        "text": "No. Same action, different history. The sourced chortle trail leads to Carroll’s poem.",
+        "sourceIds": [
+          "french",
+          "dictionary"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English chortle get its name from French rire?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Same action, different history. The sourced chortle trail leads to Carroll’s poem."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Same action, different history. The sourced chortle trail leads to Carroll’s poem."
+          }
+        ]
+      }
+    },
+    {
+      "id": "chortle-chuckle-link",
+      "source": "chortle-book",
+      "target": "chortle-chuckle",
+      "type": "probable-blend",
+      "timeLabel": "1871 → 1590s",
+      "evidence": {
+        "title": "Follow the sound",
+        "text": "Yes. Collins suggests chuckle and snort are the probable ingredients. That is a supported possibility, not a proven recipe.",
+        "sourceIds": [
+          "dictionary",
+          "chuckle"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could chuckle be one of the older words probably mixed to make chortle?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Collins suggests chuckle and snort are the probable ingredients. That is a supported possibility, not a proven recipe."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the sounds and meanings once more. Yes. Collins suggests chuckle and snort are the probable ingredients. That is a supported possibility, not a proven recipe."
+          }
+        ]
+      }
+    },
+    {
+      "id": "chortle-chukken-link",
+      "source": "chortle-chuckle",
+      "target": "chortle-chukken",
+      "type": "formation",
+      "timeLabel": "1590s → late 1300s",
+      "evidence": {
+        "title": "Follow the sound",
+        "text": "Yes! Chuckle developed from Middle English chukken. The older word imitated a clucking noise.",
+        "sourceIds": [
+          "chuckle",
+          "chuckle-history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did chuckle grow from this older word for a clucking sound?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes! Chuckle developed from Middle English chukken. The older word imitated a clucking noise."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the sounds and meanings once more. Yes! Chuckle developed from Middle English chukken. The older word imitated a clucking noise."
+          }
+        ]
+      }
+    },
+    {
+      "id": "chortle-snort-link",
+      "source": "chortle-book",
+      "target": "chortle-snort",
+      "type": "probable-blend",
+      "timeLabel": "1871 → older nose-sound word",
+      "evidence": {
+        "title": "Follow the sound",
+        "text": "Yes. Snort is the other probable ingredient. Both older words existed before Carroll’s poem.",
+        "sourceIds": [
+          "dictionary",
+          "snort-history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could snort supply the other sound in the dictionary’s probable chuckle + snort blend?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Snort is the other probable ingredient. Both older words existed before Carroll’s poem."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the sounds and meanings once more. Yes. Snort is the other probable ingredient. Both older words existed before Carroll’s poem."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "chortle-now",
+      "label": "Today’s word"
+    },
+    {
+      "nodeId": "chortle-book",
+      "label": "Written clue from 1871"
+    },
+    {
+      "nodeId": "chortle-chuckle",
+      "label": "A probable laughing ingredient"
+    },
+    {
+      "nodeId": "chortle-chukken",
+      "label": "An older clucking sound"
+    }
+  ],
+  "camera": {
+    "center": [
+      -0.8,
+      51.6
+    ],
+    "width": 130
+  }
+}

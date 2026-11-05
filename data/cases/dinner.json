@@ -1,0 +1,365 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "dinner",
+  "title": "dinner",
+  "icon": "🍽️",
+  "summary": "A meal name that travelled—and changed its timetable.",
+  "question": "Has dinner always meant an evening meal?",
+  "startNodeId": "dinner-now",
+  "goalNodeIds": [
+    "dinner-french-old"
+  ],
+  "completion": "Dinner was borrowed from Old French disner. Its earlier meaning involved the first meal after fasting. In English it names the main meal, whose time varies by period and community.",
+  "partner": "A familiar word can carry a surprising history. Follow the evidence!",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · dinner",
+      "url": "https://www.etymonline.com/word/dinner"
+    },
+    {
+      "id": "noise",
+      "title": "Etymonline · din",
+      "url": "https://www.etymonline.com/word/din"
+    },
+    {
+      "id": "italian",
+      "title": "Treccani · cena",
+      "url": "https://www.treccani.it/vocabolario/cena/"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "dinner-now",
+      "form": "dinner",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "The main meal of the day, often in the evening.",
+      "pronunciation": {
+        "text": "dinner",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "Your starting word",
+        "text": "Dinner has not always happened at the same time of day.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Dinner has not always happened at the same time of day."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinner-french-old",
+      "form": "disner",
+      "languageId": "old-french",
+      "eraId": "medieval",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Old French · from the 1000s",
+      "meaning": "A word for the first meal after going without food.",
+      "pronunciation": {
+        "text": "disner",
+        "languageId": "old-french"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word to investigate",
+        "text": "English dinner was borrowed from Old French disner. Its earlier history concerns breaking a fast. The main meal gradually moved later for many people.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "English dinner was borrowed from Old French disner. Its earlier history concerns breaking a fast. The main meal gradually moved later for many people."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinner-french",
+      "form": "dîner",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "An evening meal word in French used in France.",
+      "pronunciation": {
+        "text": "dîner",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Modern French dîner and English dinner follow the older French disner. They are related, but modern French is not an older source.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Modern French dîner and English dinner follow the older French disner. They are related, but modern French is not an older source."
+          }
+        ]
+      },
+      "displayOffset": [
+        0,
+        65
+      ]
+    },
+    {
+      "id": "dinner-italian",
+      "form": "cena",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "An evening meal, in Italian.",
+      "pronunciation": {
+        "text": "cena",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Italian cena comes from Latin cēna. It can describe a similar meal without being the source of English dinner.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "italian",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Italian cena comes from Latin cēna. It can describe a similar meal without being the source of English dinner."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinner-din",
+      "form": "din",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A loud, continuing noise.",
+      "pronunciation": {
+        "text": "din",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Din follows Old English dyne, a noise word. Dinner follows a French meal word, not the noise at a table.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "noise",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Din follows Old English dyne, a noise word. Dinner follows a French meal word, not the noise at a table."
+          }
+        ]
+      },
+      "displayOffset": [
+        -65,
+        45
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "dinner-old-link",
+      "source": "dinner-now",
+      "target": "dinner-french-old",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. English borrowed dinner from Old French disner.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this older French meal word explain English dinner?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. English borrowed dinner from Old French disner."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. English borrowed dinner from Old French disner."
+          }
+        ]
+      },
+      "timeLabel": "English from about 1300 → older French"
+    },
+    {
+      "id": "dinner-french-link",
+      "source": "dinner-now",
+      "target": "dinner-french",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Both follow Old French disner; modern dîner is not the earlier source.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could dinner and modern French dîner share an older French source?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Both follow Old French disner; modern dîner is not the earlier source."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Both follow Old French disner; modern dîner is not the earlier source."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinner-italian-link",
+      "source": "dinner-now",
+      "target": "dinner-italian",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Same kind of meal, but dinner follows French disner.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English dinner get its name from Italian cena?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Same kind of meal, but dinner follows French disner."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Same kind of meal, but dinner follows French disner."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dinner-din-link",
+      "source": "dinner-now",
+      "target": "dinner-din",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. The noise word and the meal word have different histories.",
+        "sourceIds": [
+          "history",
+          "noise"
+        ]
+      },
+      "challenge": {
+        "prompt": "Was dinner named after making a din at the table?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. The noise word and the meal word have different histories."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. The noise word and the meal word have different histories."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "dinner-now",
+      "label": "dinner"
+    },
+    {
+      "nodeId": "dinner-french-old",
+      "label": "disner"
+    }
+  ]
+}

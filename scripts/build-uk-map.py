@@ -35,6 +35,12 @@ labels=[
  ('Chester',[-2.8931,53.1934],'city'),('Derby',[-1.4768,52.9225],'city'),
  ('York',[-1.0827,53.9583],'city'),('London',[-.1276,51.5072],'city'),
  ('Edinburgh',[-3.1883,55.9533],'city'),('Cardiff',[-3.1791,51.4816],'city'),
+ ('Glasgow',[-4.2518, 55.8642],'city'),
+ ('Sandwich',[1.337, 51.274],'city'),
+ ('Exeter',[-3.534, 50.718],'city'),
+ ('Devon',[-3.6, 51.0],'region'),
+ ('Cornwall',[-5.0, 50.25],'region'),
+ ('Kent',[0.8, 51.1],'region'),
  ('Yorkshire',[-1.6,54.35],'region'),('Lincolnshire',[-.2,53.15],'region'),
  ('Lancashire',[-2.65,54.05],'region'),('Scotland',[-4.1,57],'region'),
  ('Wales',[-3.8,52.3],'region'),('England',[-1.5,51.9],'region')]

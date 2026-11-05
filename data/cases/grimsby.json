@@ -82,7 +82,12 @@
           "id": "ending"
         }
       ],
-      "mapCaption": "Today"
+      "mapCaption": "Today",
+      "date": {
+        "label": "Today",
+        "startYear": 2026,
+        "endYear": 2026
+      }
     },
     {
       "id": "grimsby-old",
@@ -133,7 +138,12 @@
           "id": "ending"
         }
       ],
-      "mapCaption": "Recorded in 1086"
+      "mapCaption": "Recorded in 1086",
+      "date": {
+        "label": "1086 · recorded",
+        "startYear": 1086,
+        "endYear": 1086
+      }
     },
     {
       "id": "grimsby-norse",

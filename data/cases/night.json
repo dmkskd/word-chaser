@@ -1,0 +1,445 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "night",
+  "title": "night",
+  "icon": "🌙",
+  "summary": "A dark-time word, an armoured sound-alike and a distant Roman cousin.",
+  "question": "Which clues belong to night’s family?",
+  "startNodeId": "night-now",
+  "goalNodeIds": [
+    "night-old",
+    "night-german",
+    "night-latin"
+  ],
+  "completion": "Night follows Old English niht. German Nacht is a cousin; Latin nox is a more distant relative. Knight is a different word despite the matching sound.",
+  "partner": "A familiar word can carry a surprising history. Follow the evidence!",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · night",
+      "url": "https://www.etymonline.com/word/night"
+    },
+    {
+      "id": "knight",
+      "title": "Etymonline · knight",
+      "url": "https://www.etymonline.com/word/knight"
+    },
+    {
+      "id": "nine",
+      "title": "Etymonline · nine",
+      "url": "https://www.etymonline.com/word/nine"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "night-now",
+      "form": "night",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "The dark part of a day.",
+      "pronunciation": {
+        "text": "night",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "Your starting word",
+        "text": "Some night words look different; one perfect sound-alike follows another trail.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Some night words look different; one perfect sound-alike follows another trail."
+          }
+        ]
+      }
+    },
+    {
+      "id": "night-old",
+      "form": "niht",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Old English · before 1100",
+      "meaning": "Darkness and the night-time.",
+      "pronunciation": {
+        "text": "niht",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An old word-list clue",
+        "text": "Night developed from Old English niht. Its relatives include German Nacht and Latin nox.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Night developed from Old English niht. Its relatives include German Nacht and Latin nox."
+          }
+        ]
+      },
+      "displayOffset": [
+        -60,
+        -65
+      ]
+    },
+    {
+      "id": "night-german",
+      "form": "Nacht",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Night, in German.",
+      "pronunciation": {
+        "text": "Nacht",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "German Nacht and English night share an older Germanic ancestor.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "German Nacht and English night share an older Germanic ancestor."
+          }
+        ]
+      }
+    },
+    {
+      "id": "night-latin",
+      "form": "nox",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "rome",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Roman-era Latin",
+      "meaning": "Night, in Latin.",
+      "pronunciation": {
+        "text": "nox",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Latin nox and English night share a more distant ancestor. English did not borrow night directly from Latin.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Latin nox and English night share a more distant ancestor. English did not borrow night directly from Latin."
+          }
+        ]
+      }
+    },
+    {
+      "id": "night-knight",
+      "form": "knight",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A person with a knight’s title, often pictured in armour.",
+      "pronunciation": {
+        "text": "knight",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Knight follows Old English cniht. Night follows niht. They sound alike today, but their older forms and meanings differ.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "knight",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Knight follows Old English cniht. Night follows niht. They sound alike today, but their older forms and meanings differ."
+          }
+        ]
+      },
+      "displayOffset": [
+        -65,
+        45
+      ]
+    },
+    {
+      "id": "night-nine",
+      "form": "neun",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "The number nine, in German.",
+      "pronunciation": {
+        "text": "neun",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "German neun belongs to the number-nine family, not the night-word family. A similar opening sound can mislead.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "nine",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "German neun belongs to the number-nine family, not the night-word family. A similar opening sound can mislead."
+          }
+        ]
+      },
+      "displayOffset": [
+        0,
+        65
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "night-old-link",
+      "source": "night-now",
+      "target": "night-old",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Night continues Old English niht.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this old English dark-time word explain night?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Night continues Old English niht."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Night continues Old English niht."
+          }
+        ]
+      }
+    },
+    {
+      "id": "night-german-link",
+      "source": "night-now",
+      "target": "night-german",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. They share an older Germanic ancestor.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could German Nacht and English night be word-family cousins?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. They share an older Germanic ancestor."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. They share an older Germanic ancestor."
+          }
+        ]
+      }
+    },
+    {
+      "id": "night-latin-link",
+      "source": "night-now",
+      "target": "night-latin",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. They share a distant ancestor, without a direct Latin-to-English borrowing.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Latin nox be a distant word-family cousin of night?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. They share a distant ancestor, without a direct Latin-to-English borrowing."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. They share a distant ancestor, without a direct Latin-to-English borrowing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "night-knight-link",
+      "source": "night-now",
+      "target": "night-knight",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Knight follows cniht; night follows niht.",
+        "sourceIds": [
+          "history",
+          "knight"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the dark-time word night come from a knight in armour?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Knight follows cniht; night follows niht."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Knight follows cniht; night follows niht."
+          }
+        ]
+      }
+    },
+    {
+      "id": "night-nine-link",
+      "source": "night-now",
+      "target": "night-nine",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Nine and night follow different word families.",
+        "sourceIds": [
+          "history",
+          "nine"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does the number word neun explain English night?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Nine and night follow different word families."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Nine and night follow different word families."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "night-now",
+      "label": "night"
+    },
+    {
+      "nodeId": "night-old",
+      "label": "niht"
+    },
+    {
+      "nodeId": "night-german",
+      "label": "Nacht"
+    },
+    {
+      "nodeId": "night-latin",
+      "label": "nox"
+    }
+  ]
+}

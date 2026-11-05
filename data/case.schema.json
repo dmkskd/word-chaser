@@ -193,6 +193,84 @@
                     }
                   }
                 }
+              },
+              "textSource": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "workTitle",
+                  "creator",
+                  "section",
+                  "publicationYear",
+                  "editionDate",
+                  "excerpt",
+                  "focusText",
+                  "claim",
+                  "sourceIds",
+                  "locationRole",
+                  "locationNote"
+                ],
+                "properties": {
+                  "workTitle": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 250
+                  },
+                  "creator": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 250
+                  },
+                  "section": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 250
+                  },
+                  "editionDate": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 250
+                  },
+                  "focusText": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 250
+                  },
+                  "locationNote": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 250
+                  },
+                  "publicationYear": {
+                    "type": "integer",
+                    "minimum": -10000,
+                    "maximum": 3000
+                  },
+                  "excerpt": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 600
+                  },
+                  "claim": {
+                    "enum": [
+                      "attested-use",
+                      "early-known-use",
+                      "meaning-change"
+                    ]
+                  },
+                  "sourceIds": {
+                    "$ref": "#/definitions/references"
+                  },
+                  "locationRole": {
+                    "enum": [
+                      "publication-place",
+                      "author-associated",
+                      "documented-use-region",
+                      "setting",
+                      "unlocated"
+                    ]
+                  }
+                }
               }
             }
           },
@@ -240,6 +318,36 @@
               "type": "number",
               "minimum": -120,
               "maximum": 120
+            }
+          },
+          "kind": {
+            "enum": [
+              "form",
+              "attestation"
+            ]
+          },
+          "date": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "label"
+            ],
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+              },
+              "startYear": {
+                "type": "integer",
+                "minimum": -10000,
+                "maximum": 3000
+              },
+              "endYear": {
+                "type": "integer",
+                "minimum": -10000,
+                "maximum": 3000
+              }
             }
           }
         }

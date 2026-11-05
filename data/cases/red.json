@@ -1,0 +1,465 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "red",
+  "title": "red",
+  "icon": "🔴",
+  "summary": "Red, rouge, rosso: can different sounds hide a family connection?",
+  "question": "Are red, rouge and rosso related?",
+  "startNodeId": "red-now",
+  "goalNodeIds": [
+    "red-old",
+    "red-french",
+    "red-italian"
+  ],
+  "completion": "Red follows Old English rēad. French rouge and Italian rosso follow Latin words. They are distant relatives from an older colour-word family, not a chain of modern borrowings.",
+  "partner": "A familiar word can carry a surprising history. Follow the evidence!",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · red",
+      "url": "https://www.etymonline.com/word/red"
+    },
+    {
+      "id": "rouge",
+      "title": "Etymonline · rouge",
+      "url": "https://www.etymonline.com/word/rouge"
+    },
+    {
+      "id": "rosso",
+      "title": "Treccani · rosso from Latin russus",
+      "url": "https://www.treccani.it/vocabolario/rosso/"
+    },
+    {
+      "id": "family",
+      "title": "Linguistics · historical colour-word families",
+      "url": "https://www.degruyterbrill.com/document/doi/10.1515/ling-2023-0161/html"
+    },
+    {
+      "id": "read",
+      "title": "Etymonline · read",
+      "url": "https://www.etymonline.com/word/read"
+    },
+    {
+      "id": "reed",
+      "title": "Etymonline · reed",
+      "url": "https://www.etymonline.com/word/reed"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "red-now",
+      "form": "red",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "The colour of a ripe tomato.",
+      "pronunciation": {
+        "text": "red",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "Your starting word",
+        "text": "Red, rouge and rosso can look different while belonging to a very old word family. Compare the evidence.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history",
+          "family"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Red, rouge and rosso can look different while belonging to a very old word family. Compare the evidence."
+          }
+        ]
+      }
+    },
+    {
+      "id": "red-old",
+      "form": "rēad",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Old English · before 1100",
+      "meaning": "A colour in an old word list.",
+      "pronunciation": {
+        "text": "rēad",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An old word-list clue",
+        "text": "English red developed from Old English rēad. Intermediate Middle English forms include red and rede.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "English red developed from Old English rēad. Intermediate Middle English forms include red and rede."
+          }
+        ]
+      },
+      "displayOffset": [
+        -60,
+        -65
+      ]
+    },
+    {
+      "id": "red-french",
+      "form": "rouge",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Red, in French.",
+      "pronunciation": {
+        "text": "rouge",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "French rouge follows Latin rubeus. Its older family also contains English red. The two are distant cousins, not a borrowing of red from modern French.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "rouge",
+          "family"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "French rouge follows Latin rubeus. Its older family also contains English red. The two are distant cousins, not a borrowing of red from modern French."
+          }
+        ]
+      }
+    },
+    {
+      "id": "red-italian",
+      "form": "rosso",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Red, in Italian.",
+      "pronunciation": {
+        "text": "rosso",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Italian rosso comes from Latin russus. It shares a distant older root with red and rouge, despite their different sounds.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "rosso",
+          "family"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Italian rosso comes from Latin russus. It shares a distant older root with red and rouge, despite their different sounds."
+          }
+        ]
+      }
+    },
+    {
+      "id": "red-read",
+      "form": "read",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Look at written words, as in “I read books”.",
+      "pronunciation": {
+        "text": "read",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "The reading word follows Old English rǣdan. The colour follows rēad. Similar letters do not give these words the same history.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "read",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "The reading word follows Old English rǣdan. The colour follows rēad. Similar letters do not give these words the same history."
+          }
+        ]
+      },
+      "displayOffset": [
+        -65,
+        45
+      ]
+    },
+    {
+      "id": "red-reed",
+      "form": "reed",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A tall plant that grows near water.",
+      "pronunciation": {
+        "text": "reed",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Reed follows Old English hrēod, a plant word. The colour red follows rēad instead.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "reed",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Reed follows Old English hrēod, a plant word. The colour red follows rēad instead."
+          }
+        ]
+      },
+      "displayOffset": [
+        65,
+        45
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "red-old-link",
+      "source": "red-now",
+      "target": "red-old",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Red continues Old English rēad through Middle English forms.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this older colour word explain red?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Red continues Old English rēad through Middle English forms."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Red continues Old English rēad through Middle English forms."
+          }
+        ]
+      }
+    },
+    {
+      "id": "red-french-link",
+      "source": "red-now",
+      "target": "red-french",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Rouge follows Latin; red follows Germanic. Those branches meet further back.",
+        "sourceIds": [
+          "rouge",
+          "family"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could red and French rouge share a distant word-family ancestor?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Rouge follows Latin; red follows Germanic. Those branches meet further back."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Rouge follows Latin; red follows Germanic. Those branches meet further back."
+          }
+        ]
+      }
+    },
+    {
+      "id": "red-italian-link",
+      "source": "red-now",
+      "target": "red-italian",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Rosso follows Latin russus, from the same distant colour-word family.",
+        "sourceIds": [
+          "rosso",
+          "family"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Italian rosso be a distant word-family cousin of red?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Rosso follows Latin russus, from the same distant colour-word family."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Rosso follows Latin russus, from the same distant colour-word family."
+          }
+        ]
+      }
+    },
+    {
+      "id": "red-read-link",
+      "source": "red-now",
+      "target": "red-read",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. The colour and the reading word follow different Old English words.",
+        "sourceIds": [
+          "read",
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the colour red get its name from reading words?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. The colour and the reading word follow different Old English words."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. The colour and the reading word follow different Old English words."
+          }
+        ]
+      }
+    },
+    {
+      "id": "red-reed-link",
+      "source": "red-now",
+      "target": "red-reed",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. The plant follows hrēod; the colour follows rēad.",
+        "sourceIds": [
+          "reed",
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the colour red get its name from the plant reed?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. The plant follows hrēod; the colour follows rēad."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. The plant follows hrēod; the colour follows rēad."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "red-now",
+      "label": "red"
+    },
+    {
+      "nodeId": "red-old",
+      "label": "rēad"
+    },
+    {
+      "nodeId": "red-french",
+      "label": "rouge"
+    },
+    {
+      "nodeId": "red-italian",
+      "label": "rosso"
+    }
+  ]
+}

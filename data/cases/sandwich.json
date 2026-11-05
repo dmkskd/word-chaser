@@ -1,0 +1,381 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "sandwich",
+  "title": "sandwich",
+  "icon": "🥪",
+  "summary": "An everyday lunch with a hidden link to a town in Kent.",
+  "question": "How can a food name lead to a British town?",
+  "startNodeId": "sandwich-now",
+  "goalNodeIds": [
+    "sandwich-earl",
+    "sandwich-town"
+  ],
+  "completion": "Sandwich honours the Earl of Sandwich, whose title connects it to Sandwich in Kent. This explains the food’s name; it does not establish that filled bread was invented in that town.",
+  "partner": "A familiar word can carry a surprising history. Follow the evidence!",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · sandwich",
+      "url": "https://www.etymonline.com/word/sandwich"
+    },
+    {
+      "id": "town",
+      "title": "Sandwich Guildhall Museum · location in Kent",
+      "url": "https://sandwichguildhallmuseum.co.uk/visit-us/"
+    },
+    {
+      "id": "panino",
+      "title": "Treccani · panino",
+      "url": "https://www.treccani.it/vocabolario/panino/"
+    },
+    {
+      "id": "sandal",
+      "title": "Larousse · sandale",
+      "url": "https://www.larousse.fr/dictionnaires/francais/sandale/70818"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "sandwich-now",
+      "form": "sandwich",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Bread with a filling.",
+      "pronunciation": {
+        "text": "sandwich",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A word to investigate",
+        "text": "The food name honours John Montagu, the Earl of Sandwich. His title leads to a town in Kent; that is not proof the food was invented in that town.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "The food name honours John Montagu, the Earl of Sandwich. His title leads to a town in Kent; that is not proof the food was invented in that town."
+          }
+        ]
+      }
+    },
+    {
+      "id": "sandwich-earl",
+      "form": "Earl of Sandwich",
+      "languageId": "english",
+      "eraId": "earlymodern",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Food name recorded in 1762",
+      "meaning": "A title held by John Montagu.",
+      "pronunciation": {
+        "text": "Earl of Sandwich",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "letter",
+        "title": "A word to investigate",
+        "text": "The food was named for John Montagu, fourth Earl of Sandwich, in the 1700s. The familiar card-table story is a story, not proof that he invented filled bread.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "The food was named for John Montagu, fourth Earl of Sandwich, in the 1700s. The familiar card-table story is a story, not proof that he invented filled bread."
+          }
+        ]
+      },
+      "displayOffset": [
+        -65,
+        -65
+      ]
+    },
+    {
+      "id": "sandwich-town",
+      "form": "Sandwich",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "sandwich-kent",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A town in Kent, south-east England.",
+      "pronunciation": {
+        "text": "Sandwich",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "sign",
+        "title": "A word to investigate",
+        "text": "The Earl’s title takes its place name from Sandwich in Kent. The food therefore has a place-name connection through a person’s title.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history",
+          "town"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "The Earl’s title takes its place name from Sandwich in Kent. The food therefore has a place-name connection through a person’s title."
+          }
+        ]
+      },
+      "mapCaption": "Kent · south-east England"
+    },
+    {
+      "id": "sandwich-italian",
+      "form": "panino",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A small bread roll, often filled.",
+      "pronunciation": {
+        "text": "panino",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Panino is formed from Italian pane, bread. It describes similar food but did not give English sandwich its name.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "panino",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Panino is formed from Italian pane, bread. It describes similar food but did not give English sandwich its name."
+          }
+        ]
+      }
+    },
+    {
+      "id": "sandwich-french",
+      "form": "sandale",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A sandal: a kind of shoe.",
+      "pronunciation": {
+        "text": "sandale",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "French sandale names footwear. A similar beginning does not explain the food name sandwich, which honours the Earl.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "sandal",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "French sandale names footwear. A similar beginning does not explain the food name sandwich, which honours the Earl."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "sandwich-earl-link",
+      "source": "sandwich-now",
+      "target": "sandwich-earl",
+      "type": "namesake",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. The food name honours the fourth Earl of Sandwich.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could the food sandwich have been named after this Earl?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The food name honours the fourth Earl of Sandwich."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. The food name honours the fourth Earl of Sandwich."
+          }
+        ]
+      },
+      "timeLabel": "Today → food name recorded 1762"
+    },
+    {
+      "id": "sandwich-town-link",
+      "source": "sandwich-earl",
+      "target": "sandwich-town",
+      "type": "namesake",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Sandwich is a Kent town. The connection is through the title, not proof the food was invented there.",
+        "sourceIds": [
+          "history",
+          "town"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does the Earl’s title connect our food name with this town in Kent?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Sandwich is a Kent town. The connection is through the title, not proof the food was invented there."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Sandwich is a Kent town. The connection is through the title, not proof the food was invented there."
+          }
+        ]
+      }
+    },
+    {
+      "id": "sandwich-italian-link",
+      "source": "sandwich-now",
+      "target": "sandwich-italian",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Similar food can follow a different word history.",
+        "sourceIds": [
+          "history",
+          "panino"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English sandwich get its name from Italian panino?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Similar food can follow a different word history."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Similar food can follow a different word history."
+          }
+        ]
+      }
+    },
+    {
+      "id": "sandwich-french-link",
+      "source": "sandwich-now",
+      "target": "sandwich-french",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. One names footwear; the food honours the Earl of Sandwich.",
+        "sourceIds": [
+          "history",
+          "sandal"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the food name sandwich come from French sandale?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. One names footwear; the food honours the Earl of Sandwich."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. One names footwear; the food honours the Earl of Sandwich."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "sandwich-now",
+      "label": "sandwich"
+    },
+    {
+      "nodeId": "sandwich-earl",
+      "label": "Earl of Sandwich"
+    },
+    {
+      "nodeId": "sandwich-town",
+      "label": "Sandwich"
+    }
+  ],
+  "camera": {
+    "center": [
+      0.5,
+      51.3
+    ],
+    "width": 170
+  }
+}

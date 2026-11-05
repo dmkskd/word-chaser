@@ -1,0 +1,312 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "pixie",
+  "title": "pixie",
+  "icon": "🧚",
+  "summary": "A familiar story word with a West Country home.",
+  "question": "Where do the early English fairy-word clues lead?",
+  "startNodeId": "pixie-now",
+  "goalNodeIds": [
+    "pixie-west"
+  ],
+  "completion": "Pixie has an early home in south-western English dialect and folklore, including Devon and Cornwall. Its exact birthplace and deeper root are uncertain: the evidence supports a region, not one invented town of origin.",
+  "partner": "A familiar word can carry a surprising history. Follow the evidence!",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · pixie",
+      "url": "https://www.etymonline.com/word/pixie"
+    },
+    {
+      "id": "pixel",
+      "title": "Etymonline · pixel",
+      "url": "https://www.etymonline.com/word/pixel"
+    },
+    {
+      "id": "pickaxe",
+      "title": "Etymonline · pickaxe",
+      "url": "https://www.etymonline.com/word/pickaxe"
+    },
+    {
+      "id": "devon-stories",
+      "title": "Dartmoor National Park · pixie legends in Devon",
+      "url": "https://www.dartmoor.gov.uk/learning/dartmoor-legends/the-legend-of-the-bed-of-tulips"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "pixie-now",
+      "form": "pixie",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A small fairy in stories.",
+      "pronunciation": {
+        "text": "pixie",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A word to investigate",
+        "text": "Pixie is familiar across English, but its early home is south-western English dialect and folklore. Its deeper origin is uncertain.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Pixie is familiar across English, but its early home is south-western English dialect and folklore. Its deeper origin is uncertain."
+          }
+        ]
+      }
+    },
+    {
+      "id": "pixie-west",
+      "form": "pixy",
+      "languageId": "english",
+      "eraId": "renaissance",
+      "placeId": "west-country",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "South-west dialect · from the 1600s",
+      "meaning": "A fairy in old West Country stories.",
+      "pronunciation": {
+        "text": "pixy",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A West Country story",
+        "text": "Pixy is an older spelling associated with south-west England, including Devon and Cornwall. The word is recorded from the 1600s. We cannot name one proven birthplace or a certain deeper root.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history",
+          "devon-stories"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Pixy is an older spelling associated with south-west England, including Devon and Cornwall. The word is recorded from the 1600s. We cannot name one proven birthplace or a certain deeper root."
+          }
+        ]
+      },
+      "mapCaption": "Devon & Cornwall · from the 1600s"
+    },
+    {
+      "id": "pixie-pixel",
+      "form": "pixel",
+      "languageId": "english",
+      "eraId": "twentieth",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Modern screen vocabulary",
+      "meaning": "A tiny picture element on a screen.",
+      "pronunciation": {
+        "text": "pixel",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Pixel combines pix, meaning pictures, with part of element. It is a modern technical word, much newer than the fairy name.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "pixel",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Pixel combines pix, meaning pictures, with part of element. It is a modern technical word, much newer than the fairy name."
+          }
+        ]
+      },
+      "displayOffset": [
+        -65,
+        45
+      ]
+    },
+    {
+      "id": "pixie-pickaxe",
+      "form": "pickaxe",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A tool for breaking rock or soil.",
+      "pronunciation": {
+        "text": "pickaxe",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Pickaxe follows older tool words through French and medieval Latin. That is not evidence that it supplied the West Country fairy name.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "pickaxe",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Pickaxe follows older tool words through French and medieval Latin. That is not evidence that it supplied the West Country fairy name."
+          }
+        ]
+      },
+      "displayOffset": [
+        65,
+        45
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "pixie-west-link",
+      "source": "pixie-now",
+      "target": "pixie-west",
+      "type": "spelling",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Pixy belongs to south-west dialect and folklore. Its precise deeper origin remains uncertain.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this older West Country fairy word help trace the history of pixie?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Pixy belongs to south-west dialect and folklore. Its precise deeper origin remains uncertain."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Pixy belongs to south-west dialect and folklore. Its precise deeper origin remains uncertain."
+          }
+        ]
+      },
+      "timeLabel": "Today → records from the 1600s"
+    },
+    {
+      "id": "pixie-pixel-link",
+      "source": "pixie-now",
+      "target": "pixie-pixel",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. The fairy word was recorded centuries before pixel.",
+        "sourceIds": [
+          "history",
+          "pixel"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the fairy name pixie come from the screen word pixel?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. The fairy word was recorded centuries before pixel."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. The fairy word was recorded centuries before pixel."
+          }
+        ]
+      }
+    },
+    {
+      "id": "pixie-pickaxe-link",
+      "source": "pixie-now",
+      "target": "pixie-pickaxe",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. A shared opening sound is not historical evidence for that connection.",
+        "sourceIds": [
+          "history",
+          "pickaxe"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this tool word explain where the fairy name pixie came from?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. A shared opening sound is not historical evidence for that connection."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. A shared opening sound is not historical evidence for that connection."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "pixie-now",
+      "label": "pixie"
+    },
+    {
+      "nodeId": "pixie-west",
+      "label": "pixy"
+    }
+  ],
+  "camera": {
+    "center": [
+      -2.4,
+      51
+    ],
+    "width": 170
+  }
+}

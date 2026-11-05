@@ -227,3 +227,26 @@ main{padding-top:16px}
 .case-browser[data-view=search] .case-tile[aria-current=true]{background:#edf2e3}
 .case-browser[data-view=search] .case-tile>span:first-child{font-size:18px}
 .case-browser[data-view=search] #case-search-status{padding:8px;margin:0;font-size:12px}
+/* Dated evidence is another view of the same investigation, not another score. */
+.evidence-timeline{padding:14px 18px;background:#f9f6e9;border-top:1px solid #c5d4c6;min-width:0}
+.evidence-timeline h3{margin:0;font:600 12px/1.4 var(--sans);color:var(--green)}
+.evidence-timeline>p{margin:4px 0 10px;color:var(--muted);font-size:11px}
+.timeline-stops{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.timeline-stops li{flex:1;min-width:120px;max-width:240px}
+.timeline-stop{width:100%;min-height:52px;text-align:left;border:1px solid #c4cdb4;border-radius:8px;background:#fffbed;color:var(--green);padding:8px 11px}
+.timeline-stop strong,.timeline-stop span{display:block}
+.timeline-stop strong{font:600 13px/1.4 var(--sans)}
+.timeline-stop span{font-size:11px;margin-top:3px;overflow-wrap:anywhere}
+.timeline-stop:hover,.timeline-stop[aria-current=true]{background:#e7eedb;border-color:#78996b}
+.timeline-stop.excluded span{color:#95684c;text-decoration:line-through}
+.book-evidence{margin:12px 0;padding:12px 14px;border-left:3px solid #9d91af;border-radius:4px 10px 10px 4px;background:#f4f0e4}
+.book-evidence .book-credit{margin:0;font:500 13px/1.4 var(--serif);color:var(--ink)}
+.book-evidence .book-date{margin:5px 0;font-size:11px;color:var(--muted)}
+.book-passage{margin:12px 0;font:500 23px/1.5 var(--serif);white-space:pre-line;color:var(--ink)}
+.book-passage mark{background:#e5edc7;color:inherit;border-bottom:2px solid #849a63;padding:0 2px}
+.book-evidence .book-note,.book-evidence .book-location{font:11px/1.5 var(--sans);color:var(--muted);margin:7px 0 0}
+.graph-edge.evidence{stroke:#81708f;stroke-dasharray:3 4}
+.legend .text-evidence-line{border-top:2px dashed #81708f}
+@media(max-width:600px){.evidence-timeline{padding:12px}.timeline-stops li{min-width:110px}.book-evidence{padding:10px;margin-block:9px}.book-passage{font-size:20px}.book-evidence .book-credit{font-size:12px}}
+.book-provenance{margin-top:6px;font-size:11px;color:var(--muted)}
+.book-provenance summary{min-height:32px;display:list-item;padding-block:6px}

@@ -82,7 +82,12 @@
           "id": "ending"
         }
       ],
-      "mapCaption": "Today"
+      "mapCaption": "Today",
+      "date": {
+        "label": "Today",
+        "startYear": 2026,
+        "endYear": 2026
+      }
     },
     {
       "id": "manchester-old",
@@ -133,7 +138,12 @@
           "id": "ending"
         }
       ],
-      "mapCaption": "Recorded in 923"
+      "mapCaption": "Recorded in 923",
+      "date": {
+        "label": "923 · recorded",
+        "startYear": 923,
+        "endYear": 923
+      }
     },
     {
       "id": "manchester-element",

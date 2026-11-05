@@ -109,6 +109,24 @@
         "lang": "it-IT",
         "label": "Italian-voice approximation for Latin"
       }
+    },
+    "dutch": {
+      "name": "Dutch",
+      "voiceTag": "nl-NL",
+      "voiceLabel": "Dutch",
+      "approximate": false
+    },
+    "danish": {
+      "name": "Danish",
+      "voiceTag": "da-DK",
+      "voiceLabel": "Danish",
+      "approximate": false
+    },
+    "swedish": {
+      "name": "Swedish",
+      "voiceTag": "sv-SE",
+      "voiceLabel": "Swedish",
+      "approximate": false
     }
   },
   "eras": {
@@ -275,6 +293,62 @@
         41.9
       ],
       "searchHint": "Look towards the Italian peninsula, where Rome stands. This marker represents Latin vocabulary."
+    },
+    "netherlands": {
+      "name": "Netherlands · Dutch vocabulary",
+      "coordinates": [
+        5.2,
+        52.1
+      ],
+      "searchHint": "Look across the North Sea, where Amsterdam is!"
+    },
+    "denmark": {
+      "name": "Denmark · Danish vocabulary",
+      "coordinates": [
+        10,
+        56
+      ],
+      "searchHint": "Look north of Germany, on the peninsula pointing into the sea."
+    },
+    "sweden": {
+      "name": "Sweden · Swedish vocabulary",
+      "coordinates": [
+        15,
+        58.5
+      ],
+      "searchHint": "Search the long Scandinavian country east of Norway."
+    },
+    "glasgow": {
+      "name": "Glasgow · Scotland",
+      "coordinates": [
+        -4.2518,
+        55.8642
+      ],
+      "searchHint": "Head north into Scotland, then look west, near the River Clyde."
+    },
+    "sandwich-kent": {
+      "name": "Sandwich · Kent",
+      "coordinates": [
+        1.337,
+        51.274
+      ],
+      "searchHint": "Search the far south-east of England, in Kent."
+    },
+    "west-country": {
+      "name": "South-west England · Devon and Cornwall",
+      "coordinates": [
+        -4.2,
+        50.7
+      ],
+      "searchHint": "Follow England’s long south-western peninsula towards Devon and Cornwall."
+    },
+    "oxford": {
+      "name": "Oxford · Carroll’s university association",
+      "coordinates": [
+        -1.2544,
+        51.752
+      ],
+      "searchHint": "Look west of London for the university city on the Thames: Oxford."
     }
   },
   "relations": {
@@ -331,6 +405,24 @@
       "category": "ancestry",
       "line": "solid",
       "outcome": "connected"
+    },
+    "namesake": {
+      "label": "Named after",
+      "category": "ancestry",
+      "line": "solid",
+      "outcome": "connected"
+    },
+    "attested-in": {
+      "label": "Found in this text",
+      "category": "evidence",
+      "line": "dashed",
+      "outcome": "connected"
+    },
+    "probable-blend": {
+      "label": "Probable blend ingredient",
+      "category": "related",
+      "line": "dashed",
+      "outcome": "connected"
     }
   },
   "artifacts": {
@@ -369,6 +461,10 @@
     "sign": {
       "icon": "🪧",
       "label": "Place-name sign"
+    },
+    "book": {
+      "icon": "📖",
+      "label": "Book passage"
     }
   },
   "cases": [
@@ -394,13 +490,54 @@
     "cases/maths.json",
     "cases/house.json",
     "cases/grimsby.json",
-    "cases/manchester.json"
+    "cases/manchester.json",
+    "cases/herring.json",
+    "cases/red.json",
+    "cases/black.json",
+    "cases/white.json",
+    "cases/meat.json",
+    "cases/lunch.json",
+    "cases/dinner.json",
+    "cases/day.json",
+    "cases/night.json",
+    "cases/sandwich.json",
+    "cases/mackintosh.json",
+    "cases/pixie.json",
+    "cases/chortle.json"
   ],
   "$schema": "catalog.schema.json",
   "rules": {
     "correctPoints": 3,
     "assistedPoints": 1,
-    "wrongPenalty": 1
+    "wrongPenalty": 1,
+    "minimumConnectedHops": 3,
+    "shortCaseHopExceptions": {
+      "piano": 1,
+      "window": 1,
+      "fart": 1,
+      "dinosaur": 2,
+      "monday": 2,
+      "tuesday": 2,
+      "wednesday": 2,
+      "thursday": 2,
+      "friday": 2,
+      "saturday": 2,
+      "sunday": 2,
+      "robot": 2,
+      "algebra": 2,
+      "art": 2,
+      "house": 1,
+      "grimsby": 2,
+      "black": 2,
+      "white": 2,
+      "meat": 2,
+      "lunch": 1,
+      "dinner": 1,
+      "day": 2,
+      "sandwich": 2,
+      "mackintosh": 1,
+      "pixie": 1
+    }
   },
   "modes": {
     "chaser": {
@@ -430,6 +567,14 @@
   },
   "collections": [
     {
+      "id": "books",
+      "title": "Words from books",
+      "description": "Follow a word into an old story, poem or play.",
+      "caseIds": [
+        "chortle"
+      ]
+    },
+    {
       "id": "weekdays",
       "title": "Days of the week",
       "description": "Follow the stories behind Monday to Sunday.",
@@ -453,11 +598,44 @@
       ]
     },
     {
-      "id": "calendar",
-      "title": "Months",
-      "description": "Explore the names on a calendar.",
+      "id": "regional",
+      "title": "Familiar words, local roots",
+      "description": "Everyday words with connections to places within Britain.",
       "caseIds": [
+        "sandwich",
+        "mackintosh",
+        "pixie"
+      ]
+    },
+    {
+      "id": "calendar",
+      "title": "Time & calendar",
+      "description": "Day, night and a name on the calendar.",
+      "caseIds": [
+        "day",
+        "night",
         "january"
+      ]
+    },
+    {
+      "id": "colours",
+      "title": "Colours",
+      "description": "Same colour, different sounds. Which words share a family?",
+      "caseIds": [
+        "red",
+        "black",
+        "white"
+      ]
+    },
+    {
+      "id": "food",
+      "title": "Food & meals",
+      "description": "Food names and meal words with surprising histories.",
+      "caseIds": [
+        "herring",
+        "meat",
+        "lunch",
+        "dinner"
       ]
     },
     {

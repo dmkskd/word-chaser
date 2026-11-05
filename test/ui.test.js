@@ -44,7 +44,7 @@ function chooseWord(document, id) {
 
 test('built page runs the treasure investigation via evidence objects and graph leads', async () => {
   const {document, click} = await page();
-  assert.equal(document.querySelectorAll('[data-case-id]').length, 23);
+  assert.equal(document.querySelectorAll('[data-case-id]').length, 36);
   assert.equal(document.getElementById('map-cue').hidden, true);
   assert(document.querySelector('[data-node-id="treasure-1"]'));
   click('[data-node-id="treasure-1"]');
@@ -558,7 +558,7 @@ test('browse all groups weekdays and place names without changing the active inv
   assert.deepEqual([...week.querySelectorAll('.case-name')].map(el=>el.textContent),['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']);
   const towns=document.querySelector('[data-collection-id="places"]');
   assert.deepEqual([...towns.querySelectorAll('.case-name')].map(el=>el.textContent),['Grimsby','Manchester']);
-  assert.equal(document.querySelectorAll('[data-case-id]').length,23);
+  assert.equal(document.querySelectorAll('[data-case-id]').length,36);
   assert.equal(document.querySelector('[data-case-id="treasure"]').getAttribute('aria-current'),'true');
   const escape=event('keydown');escape.key='Escape';document.getElementById('browse-cases').dispatchEvent(escape);
   assert(document.getElementById('case-browser').hidden);
@@ -572,7 +572,7 @@ test('search handles no matches, keyboard selection and dismissal before switchi
   search.value='zzzz';search.dispatchEvent(event('input'));
   assert(!panel.hidden);assert.equal(document.querySelectorAll('[data-case-id]').length,0);
   assert(document.getElementById('case-search-status').textContent.includes('No mysteries'));
-  click('#browse-cases');assert.equal(document.querySelectorAll('[data-case-id]').length,23);
+  click('#browse-cases');assert.equal(document.querySelectorAll('[data-case-id]').length,36);
   search.value='geo';search.dispatchEvent(event('input'));
   const enter=event('keydown');enter.key='Enter';search.dispatchEvent(enter);
   assert.equal(document.getElementById('word-title').textContent,'geometry');assert(panel.hidden);
@@ -592,10 +592,86 @@ test('typing uses a compact flat list while Browse all opens the grouped library
   click('#browse-cases');
   assert.equal(panel.dataset.view,'browse');
   assert(!panel.querySelector('.case-browser-header').hidden);
-  assert.equal(panel.querySelectorAll('.case-collection').length,5);
-  assert.equal(panel.querySelectorAll('[data-case-id]').length,23);
+  assert.equal(panel.querySelectorAll('.case-collection').length,9);
+  assert.equal(panel.querySelectorAll('[data-case-id]').length,36);
   search.value='geo';search.dispatchEvent(event('input'));
   assert.equal(panel.dataset.view,'search');
   click('[data-case-id="geography"]');
   assert(panel.hidden);assert.equal(document.getElementById('word-title').textContent,'geography');
+});
+
+test('new food, colour and regional cases are searchable and grouped, with one-answer progression', async () => {
+  const {document,click,event}=await page();
+  const search=document.getElementById('case-search');search.value='he';search.dispatchEvent(event('input'));
+  assert.equal(document.querySelectorAll('[data-case-id]').length,1);click('[data-case-id="herring"]');
+  assert.equal(document.getElementById('word-title').textContent,'herring');
+  click('[data-node-id="herring-danish"]');click('#challenge-answers button:nth-child(2)');
+  assert(document.getElementById('evidence-panel').hidden);
+  for(const id of ['herring-old','herring-dutch','herring-german']) {click(`[data-node-id="${id}"]`);click('#challenge-answers button');}
+  assert(!document.getElementById('complete').hidden);
+  click('#browse-cases');
+  assert.equal(document.querySelector('[data-collection-id="food"]').querySelectorAll('[data-case-id]').length,4);
+  assert.equal(document.querySelector('[data-collection-id="colours"]').querySelectorAll('[data-case-id]').length,3);
+  assert.equal(document.querySelector('[data-collection-id="regional"]').querySelectorAll('[data-case-id]').length,3);
+  click('[data-case-id="pixie"]');
+  assert.equal(document.querySelectorAll('.notebook-entry').length,1);
+  click('[data-node-id="pixie-west"]');click('#challenge-answers button');
+  assert(!document.getElementById('complete').hidden);
+  assert(document.querySelector('[data-node-id="pixie-west"]').textContent.includes('Devon & Cornwall'));
+});
+
+test('map and timeline open the same book and reviewing it cannot award points twice', async () => {
+  const storage=new Map();let ui=await page(storage);
+  chooseWord(ui.document,'chortle');
+  const timeline=ui.document.getElementById('evidence-timeline');
+  assert.deepEqual([...timeline.querySelectorAll('[data-timeline-id]')].map(el=>el.dataset.timelineId),['chortle-short','chortle-book','chortle-now']);
+  ui.click('[data-timeline-id="chortle-book"]');
+  assert.equal(ui.document.getElementById('evidence-form').textContent,'chortled');
+  const book=ui.document.getElementById('book-evidence');
+  assert.equal(book.querySelector('mark').textContent,'chortled');
+  assert(book.textContent.includes('Lewis Carroll'));assert(book.textContent.includes('1871'));
+  assert(book.textContent.includes('1872'));assert(book.textContent.includes('association'));
+  assert(!book.querySelector('details').open,'Extra provenance stays collapsed so the first card remains short.');
+  ui.click('#challenge-answers button');
+  assert(ui.document.getElementById('complete').hidden, 'The book is only the first hop.');
+  assert.equal(ui.document.getElementById('detective-points').textContent,'⭐ 3 points');
+  ui.click('[data-node-id="chortle-book"]');
+  assert(!ui.document.getElementById('evidence-panel').hidden,'Discovered book can be reopened on the map.');
+  assert.equal(ui.document.querySelectorAll('#challenge-answers button').length,0);
+  ui.click('#close-evidence');ui.click('[data-timeline-id="chortle-book"]');
+  assert(!ui.document.getElementById('evidence-panel').hidden);
+  assert.equal(ui.document.getElementById('detective-points').textContent,'⭐ 3 points');
+  ui=await page(storage);ui.click('[data-timeline-id="chortle-book"]');
+  assert(!ui.document.getElementById('book-evidence').hidden);
+  assert.equal(ui.document.getElementById('detective-points').textContent,'⭐ 3 points');
+  ui.click('#close-evidence');ui.click('[data-timeline-id="chortle-chuckle"]');
+  ui.click('#challenge-answers button');
+  assert(ui.document.getElementById('complete').hidden,'Two hops still do not complete the case.');
+  ui.click('[data-timeline-id="chortle-chukken"]');ui.click('#challenge-answers button');
+  assert(!ui.document.getElementById('complete').hidden,'The third required connection completes the case.');
+  assert.equal(ui.document.getElementById('detective-points').textContent,'⭐ 9 points');
+  ui=await page(storage);
+  assert(!ui.document.getElementById('complete').hidden,'Completed three-hop trail restores on reload.');
+  assert.equal(ui.document.getElementById('detective-points').textContent,'⭐ 9 points');
+  chooseWord(ui.document,'house');
+  assert(ui.document.getElementById('evidence-timeline').hidden,'Undated cases do not get a fabricated evidence timeline.');
+});
+
+test('Investigator timeline shows earned evidence without leaking hidden books, dates or locations', async () => {
+  const ui=await page();chooseWord(ui.document,'chortle');ui.click('[data-mode-id="investigator"]');
+  const timeline=ui.document.getElementById('evidence-timeline');
+  assert.equal(timeline.querySelectorAll('[data-timeline-id]').length,1);
+  assert(!timeline.textContent.includes('1871'));assert(!timeline.textContent.includes('Oxford'));
+  // Oxford's geographic projection in the full-Europe coordinate system.
+  inspectHidden(ui,320.36,311.75);
+  assert.equal(ui.document.getElementById('evidence-form').textContent,'chortled');
+  const book=ui.document.getElementById('book-evidence');
+  assert.equal(book.querySelector('mark').textContent,'chortled');
+  assert(!book.textContent.includes('1871'));assert(!book.textContent.includes('Lewis Carroll'));
+  ui.click('#challenge-answers button');
+  assert(ui.document.getElementById('complete').hidden, 'The book is only the first hop.');
+  assert.equal(timeline.querySelectorAll('[data-timeline-id]').length,2);
+  ui.click('[data-timeline-id="chortle-book"]');
+  assert(ui.document.getElementById('book-evidence').textContent.includes('1871'));
+  assert.equal(ui.document.getElementById('detective-points').textContent,'⭐ 3 points');
 });

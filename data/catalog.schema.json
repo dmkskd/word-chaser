@@ -207,7 +207,8 @@
             "enum": [
               "ancestry",
               "related",
-              "comparison"
+              "comparison",
+              "evidence"
             ]
           },
           "line": {
@@ -254,7 +255,9 @@
       "required": [
         "correctPoints",
         "assistedPoints",
-        "wrongPenalty"
+        "wrongPenalty",
+        "minimumConnectedHops",
+        "shortCaseHopExceptions"
       ],
       "properties": {
         "correctPoints": {
@@ -271,6 +274,20 @@
           "type": "integer",
           "minimum": 0,
           "maximum": 100
+        },
+        "minimumConnectedHops": {
+          "type": "integer",
+          "minimum": 3,
+          "maximum": 10
+        },
+        "shortCaseHopExceptions": {
+          "description": "Existing short cases awaiting researched expansion. New cases must meet the minimum; exceptions may not regress or remain after expansion.",
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2
+          }
         }
       }
     },

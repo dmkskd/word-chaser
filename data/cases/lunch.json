@@ -1,0 +1,304 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "lunch",
+  "title": "lunch",
+  "icon": "🥪",
+  "summary": "A short meal name with a longer clue.",
+  "question": "Was lunch shortened from another word?",
+  "startNodeId": "lunch-now",
+  "goalNodeIds": [
+    "lunch-longer"
+  ],
+  "completion": "Lunch is shortened from luncheon. Its deeper origin is uncertain: possible stories should not be presented as facts.",
+  "partner": "A familiar word can carry a surprising history. Follow the evidence!",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · lunch",
+      "url": "https://www.etymonline.com/word/lunch"
+    },
+    {
+      "id": "longer",
+      "title": "Etymonline · luncheon",
+      "url": "https://www.etymonline.com/word/luncheon"
+    },
+    {
+      "id": "lunge",
+      "title": "Etymonline · lunge",
+      "url": "https://www.etymonline.com/word/lunge"
+    },
+    {
+      "id": "french",
+      "title": "CNRTL · déjeuner",
+      "url": "https://www.cnrtl.fr/definition/d%C3%A9jeuner"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "lunch-now",
+      "form": "lunch",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A meal around the middle of the day.",
+      "pronunciation": {
+        "text": "lunch",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "Your starting word",
+        "text": "Our meal name has a longer form. Its deeper history is less certain.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Our meal name has a longer form. Its deeper history is less certain."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lunch-longer",
+      "form": "luncheon",
+      "languageId": "english",
+      "eraId": "renaissance",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Meal word · 1600s",
+      "meaning": "A longer name for a meal.",
+      "pronunciation": {
+        "text": "luncheon",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word to investigate",
+        "text": "Lunch, as a meal name, is shortened from luncheon. Luncheon also had an older meaning of a piece of food. Its deeper origin is uncertain.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history",
+          "longer"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Lunch, as a meal name, is shortened from luncheon. Luncheon also had an older meaning of a piece of food. Its deeper origin is uncertain."
+          }
+        ]
+      },
+      "displayOffset": [
+        -60,
+        -65
+      ]
+    },
+    {
+      "id": "lunch-french",
+      "form": "déjeuner",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A lunch word in French used in France.",
+      "pronunciation": {
+        "text": "déjeuner",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Déjeuner names a midday meal in much of France. It has a French history connected with breaking a fast; English lunch follows luncheon instead.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "french",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Déjeuner names a midday meal in much of France. It has a French history connected with breaking a fast; English lunch follows luncheon instead."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lunch-lunge",
+      "form": "lunge",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A sudden movement forward.",
+      "pronunciation": {
+        "text": "lunge",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Lunge is a movement word shortened from French allonge. It is not the source of the meal word lunch.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "lunge",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Lunge is a movement word shortened from French allonge. It is not the source of the meal word lunch."
+          }
+        ]
+      },
+      "displayOffset": [
+        -65,
+        45
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "lunch-longer-link",
+      "source": "lunch-now",
+      "target": "lunch-longer",
+      "type": "shortening",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Lunch is shortened from luncheon. The word’s deeper history remains uncertain.",
+        "sourceIds": [
+          "history",
+          "longer"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could lunch be a shortened form of this longer meal name?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Lunch is shortened from luncheon. The word’s deeper history remains uncertain."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Lunch is shortened from luncheon. The word’s deeper history remains uncertain."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lunch-french-link",
+      "source": "lunch-now",
+      "target": "lunch-french",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. A meal can have different names. English lunch follows luncheon.",
+        "sourceIds": [
+          "french",
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English lunch get its name from French déjeuner?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. A meal can have different names. English lunch follows luncheon."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. A meal can have different names. English lunch follows luncheon."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lunch-lunge-link",
+      "source": "lunch-now",
+      "target": "lunch-lunge",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Similar sounds, different meanings and histories.",
+        "sourceIds": [
+          "lunge",
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the meal word lunch come from the movement lunge?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Similar sounds, different meanings and histories."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Similar sounds, different meanings and histories."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "lunch-now",
+      "label": "lunch"
+    },
+    {
+      "nodeId": "lunch-longer",
+      "label": "luncheon"
+    }
+  ]
+}

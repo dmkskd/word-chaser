@@ -2,7 +2,7 @@
 
 A new word is a **JSON case file** plus a path and collection membership in `catalog.json`. No per-word JavaScript, callback, or renderer extension is needed.
 
-Use `cases/fart.json` for a small example or `cases/treasure.json` for a graph with three leads and a converging root.
+Use `cases/chortle.json` for a three-hop book/sound investigation or `cases/treasure.json` for a graph with three leads and a converging root. The old fart case is below the new length rule and awaits expansion.
 
 ## 1. Describe the word forms
 
@@ -215,3 +215,70 @@ Search opens suggestions at two characters. It prefers title prefixes, then
 substrings, and uses collection titles, summaries and languages when no title
 matches. Browse all exposes the complete grouped library. Merely searching or
 browsing never resets the investigation; selecting a word does.
+
+
+## Familiar words with regional histories
+
+The regional theme is about words a Londoner recognises which carry local
+connections elsewhere in Britain, not specialist regional vocabulary. See
+sandwich, mackintosh and pixie. Distinguish a namesake, a word’s early dialect
+home, and a precise documented invention. `namesake` means named after a person
+or place, without pretending their name is an ordinary borrowed vocabulary word.
+
+A broad regional history needs a regional anchor and honest uncertainty, not a
+fabricated city of origin. Pixie’s deeper origin remains uncertain; sandwich’s
+Kent connection is through a title, not proof the food was invented in the town.
+Keep evidence dates separate from the events they describe, and from later
+first-recorded word dates.
+
+
+## Minimum investigation length
+
+Every new case must require **at least three connected hops after the starting
+word** before it can finish. This is a minimum solution length, not a count of
+all the nodes in the file. Set goals so that a shorter branch cannot finish the
+case. Correct No answers, optional comparisons, optional relatives, revisits and
+cycles do not count toward the minimum. Use real sourced steps; never invent an
+ancestry or force three page-opening clicks to lengthen a shallow history.
+
+`catalog.rules.minimumConnectedHops` is 3. Validation searches for a solution
+below that length and rejects it. The 25 existing shorter cases are explicitly
+listed in `shortCaseHopExceptions` with their current minimum; this is a
+migration backlog, not permission for new short cases. Do not add new exceptions.
+Expanding an old case to three hops requires removing its exception; shortening
+one below its recorded baseline fails validation. `npm run validate` prints the
+backlog. A three-hop case may branch, provided its goals still require three
+separate earned connections.
+
+Chortle requires the poem, the probable chuckle ingredient, and the older
+Middle English clucking word. Snort is an optional parallel ingredient, never
+an invented ancestor of chuckle. `probable-blend` labels that uncertainty in the
+relationship and in the question, rather than asserting a proven recipe.
+
+## Books and dated evidence
+
+Optional `node.kind: "attestation"` requires `node.date` and
+`node.evidence.textSource`. See chortle for the complete schema-valid example.
+Text metadata contains workTitle, creator, section, publicationYear,
+editionDate, excerpt, focusText, claim, sourceIds, locationRole and locationNote.
+The short readable excerpt highlights focusText. Extra provenance is collapsed
+under About this page. Text is rendered as text, never executable HTML.
+
+Use `attested-in` to mean a word occurs in a text, not that it was borrowed from
+a book. A passage proves use; an independent source must support an attribution
+of invention. Current claims are attested-use, early-known-use and meaning-change.
+A publication date can differ from the date printed in an edition.
+
+Optional `node.date` has a label and either both startYear/endYear or neither
+(for an explicitly unknown date). It supplements, rather than replaces, the
+broad era. Only source-supported dates belong here. Timeline and map open the
+same decision and share scoring, restoration and earned progress. Investigator
+shows only visited dates in the timeline and hides book credits/dates until
+earned. Reopening an earned book is read-only and awards no points.
+
+Keep locationRole and locationNote honest: publication-place, author-associated,
+documented-use-region, setting or unlocated. The first implementation still
+requires a placeId for every node; fully mapless text evidence remains future
+work. Oxford is Carroll’s university association, not a proven place where he
+invented chortle. Broad English evidence anchors for the sound words are not
+claims of London origins. Manchester and Grimsby also have dated evidence stops.

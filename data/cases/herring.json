@@ -1,0 +1,457 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "herring",
+  "title": "herring",
+  "icon": "🐟",
+  "summary": "A fish-name mystery around the North Sea.",
+  "question": "Does a northern sound prove a Viking borrowing?",
+  "startNodeId": "herring-now",
+  "goalNodeIds": [
+    "herring-old",
+    "herring-dutch",
+    "herring-german"
+  ],
+  "completion": "Herring continues Old English hæring. Dutch haring and German Hering are cousins. Danish sild names the same fish on another trail. The earliest beginning of herring is still uncertain.",
+  "partner": "A familiar word can carry a surprising history. Follow the evidence!",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Oxford Learner’s Dictionaries · herring",
+      "url": "https://www.oxfordlearnersdictionaries.com/us/definition/english/herring"
+    },
+    {
+      "id": "family",
+      "title": "Oxford University Press · the two fish-name families",
+      "url": "https://blog.oup.com/2012/07/herring-sild-sardine-word-origin/"
+    },
+    {
+      "id": "older",
+      "title": "Etymonline · herring",
+      "url": "https://www.etymonline.com/word/herring"
+    },
+    {
+      "id": "sild",
+      "title": "Den Danske Ordbog · sild",
+      "url": "https://ordnet.dk/ddo/ordbog/sild"
+    },
+    {
+      "id": "hearing",
+      "title": "Oxford Learner’s Dictionaries · hearing",
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/hearing"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "herring-now",
+      "form": "herring",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A silver sea fish that swims in large groups.",
+      "pronunciation": {
+        "text": "herring",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "Your starting word",
+        "text": "English has an old fish name. Similar names around the North Sea do not automatically prove a borrowing.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "English has an old fish name. Similar names around the North Sea do not automatically prove a borrowing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "herring-old",
+      "form": "hæring",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Old English · before 1100",
+      "meaning": "A fish in an old word list.",
+      "pronunciation": {
+        "text": "hæring",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An old word-list clue",
+        "text": "Herring continues Old English hæring, also written hering. Its history reaches older West Germanic speech, but its very first origin is uncertain.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history",
+          "older"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Herring continues Old English hæring, also written hering. Its history reaches older West Germanic speech, but its very first origin is uncertain."
+          }
+        ]
+      },
+      "displayOffset": [
+        -60,
+        -65
+      ]
+    },
+    {
+      "id": "herring-dutch",
+      "form": "haring",
+      "languageId": "dutch",
+      "eraId": "today",
+      "placeId": "netherlands",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "The same fish, in Dutch.",
+      "pronunciation": {
+        "text": "haring",
+        "languageId": "dutch"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Dutch haring and English herring share an older West Germanic word family. They are cousins; modern Dutch is not the source of English herring.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history",
+          "family"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Dutch haring and English herring share an older West Germanic word family. They are cousins; modern Dutch is not the source of English herring."
+          }
+        ]
+      }
+    },
+    {
+      "id": "herring-german",
+      "form": "Hering",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "The same fish, in German.",
+      "pronunciation": {
+        "text": "Hering",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "German Hering belongs to the same older West Germanic family as English herring. A family connection is different from a direct borrowing.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history",
+          "family"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "German Hering belongs to the same older West Germanic family as English herring. A family connection is different from a direct borrowing."
+          }
+        ]
+      }
+    },
+    {
+      "id": "herring-danish",
+      "form": "sild",
+      "languageId": "danish",
+      "eraId": "today",
+      "placeId": "denmark",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A Danish name for this fish.",
+      "pronunciation": {
+        "text": "sild",
+        "languageId": "danish"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Danish sild continues a Scandinavian fish name. It names the same fish, but it is not the source of English herring. Both names have uncertain deeper origins.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "sild",
+          "family"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Danish sild continues a Scandinavian fish name. It names the same fish, but it is not the source of English herring. Both names have uncertain deeper origins."
+          }
+        ]
+      }
+    },
+    {
+      "id": "herring-hearing",
+      "form": "hearing",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Being able to hear sounds.",
+      "pronunciation": {
+        "text": "hearing",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Hearing is about hearing sounds. Herring is the fish word, already found in Old English. Their similar sound is not evidence of a fish-name origin.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "hearing",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Hearing is about hearing sounds. Herring is the fish word, already found in Old English. Their similar sound is not evidence of a fish-name origin."
+          }
+        ]
+      },
+      "displayOffset": [
+        -65,
+        45
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "herring-old-link",
+      "source": "herring-now",
+      "target": "herring-old",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Herring continues Old English hæring or hering.",
+        "sourceIds": [
+          "history",
+          "older"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this older fish word explain English herring?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Herring continues Old English hæring or hering."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Herring continues Old English hæring or hering."
+          }
+        ]
+      },
+      "timeLabel": "Today → Old English"
+    },
+    {
+      "id": "herring-dutch-link",
+      "source": "herring-now",
+      "target": "herring-dutch",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. They share an older West Germanic family, rather than English borrowing from modern Dutch.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Dutch haring and English herring be cousins in an older word family?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. They share an older West Germanic family, rather than English borrowing from modern Dutch."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. They share an older West Germanic family, rather than English borrowing from modern Dutch."
+          }
+        ]
+      }
+    },
+    {
+      "id": "herring-german-link",
+      "source": "herring-now",
+      "target": "herring-german",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. German Hering and English herring belong to the same older family.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could German Hering be a word-family cousin of herring?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. German Hering and English herring belong to the same older family."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. German Hering and English herring belong to the same older family."
+          }
+        ]
+      }
+    },
+    {
+      "id": "herring-danish-link",
+      "source": "herring-now",
+      "target": "herring-danish",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Same fish, different name trail. English already continues its own Old English fish word.",
+        "sourceIds": [
+          "history",
+          "family",
+          "sild"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English herring get its name from Danish sild?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Same fish, different name trail. English already continues its own Old English fish word."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Same fish, different name trail. English already continues its own Old English fish word."
+          }
+        ]
+      }
+    },
+    {
+      "id": "herring-hearing-link",
+      "source": "herring-now",
+      "target": "herring-hearing",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. The sounds are close, but hearing describes a sense; herring follows an old fish name.",
+        "sourceIds": [
+          "hearing",
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the fish name herring come from the word hearing?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. The sounds are close, but hearing describes a sense; herring follows an old fish name."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. The sounds are close, but hearing describes a sense; herring follows an old fish name."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "herring-now",
+      "label": "herring"
+    },
+    {
+      "nodeId": "herring-old",
+      "label": "hæring"
+    },
+    {
+      "nodeId": "herring-dutch",
+      "label": "haring"
+    },
+    {
+      "nodeId": "herring-german",
+      "label": "Hering"
+    }
+  ]
+}

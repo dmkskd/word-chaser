@@ -1,10 +1,10 @@
 # Junior Word Chaser — handover
 
-Updated 4 November 2026, after adding detailed UK map zoom and the first place-name cases.
+Updated 5 November 2026, after the book/timeline slice and the three-hop minimum rule.
 
 ## Start here next time
 
-The HTML game is working and has 23 JSON investigations. The user is refining
+The HTML game is working and has 36 JSON investigations. The user is refining
 the gameplay with screenshots, especially difficulty, clues, touch interaction
 and compact layout. Preserve those decisions; this is still an evolving
 prototype. Read `data/AUTHORING.md` before adding content.
@@ -23,9 +23,10 @@ travel between languages—not simply follow the only available correct pin.
   the larger grouped panel. Panels suppress horizontal overflow. Prefer name prefixes, then name
   substrings; fall back to collection/summary/language matches (e.g. Greek).
   One letter or clearing search closes suggestions; Enter picks the first match.
-- Browse all clears the query and shows all 23 cases grouped by
-  `catalog.collections`: weekdays (Monday–Sunday), town/city names, months,
-  numbers/learning/inventions, and everyday discoveries. Each case must appear
+- Browse all clears the query and shows all 36 cases grouped by
+  `catalog.collections`: weekdays (Monday–Sunday), town/city names, familiar
+  words with local roots, time/calendar, colours, food/meals, learning/inventions
+  everyday discoveries and words from books. Each case must appear
   exactly once; schema/reference validation checks collections. Categories
   and membership are JSON data, not JavaScript word-name checks.
 - The compact browser has a bounded scrolling panel, 44px word buttons, a
@@ -154,9 +155,47 @@ travel between languages—not simply follow the only available correct pin.
 
 Playable cases: treasure, piano, window, fart, dinosaur, school, all seven
 days (Monday through Sunday), January, robot, algebra, geometry, geography,
-art, maths, house, Grimsby and Manchester. The seven days are grouped together in weekday order.
+art, maths, house, Grimsby and Manchester. New cases: herring; red, black, white;
+meat, lunch, dinner; day, night; sandwich, mackintosh and pixie. The seven days
+remain grouped together in weekday order. All cases have two false trails.
 
 Examples of intentional teaching distinctions:
+
+- The regional brief means **nationally familiar words with local histories**,
+  not specialist local vocabulary. The user explicitly rejected bal maiden as
+  an example: a London user should discover the regional connections of a word
+  they recognise. Bal maiden and Devonian were researched but not added.
+- Pixie’s early home is south-west English dialect/folklore, including Devon
+  and Cornwall. It has a broad regional anchor and visible caption; the exact
+  birthplace and deeper origin remain uncertain. Do not turn folklore evidence
+  into a proven invention in a specific town.
+- Sandwich honours an Earl, whose title connects to Sandwich in Kent. Do not
+  say the filled-bread food was invented in the town or treat the card-table
+  story as established fact. The Earl clue is in England; the title’s place
+  connection is a separate step to Kent.
+- Mackintosh follows the Glasgow chemist Charles Macintosh, not the later
+  architect or computer. `catalog.relations.namesake` generically means named
+  after; it is distinct from ordinary word-part formation. Waterproof-cloth
+  patent date 1823 is not the date the coat word was first recorded (1836).
+- Herring continues Old English hæring/hering; Dutch haring and German Hering
+  are cousins. Danish sild names the same fish but is not the English source.
+  The deeper origin is uncertain. Dutch, Danish and Swedish have their own
+  voice tags; no unrelated English voice fallback was introduced.
+- Red/rouge/rosso are distant cousins, with English Germanic and French/Italian
+  Latin branches. They are not a chain of modern borrowings. French rouge
+  follows Latin rubeus, Italian rosso Latin russus. Swedish bläck (ink) is a
+  black-word relative; French blanc is never asserted to be wholly unrelated
+  to black, only rejected as a direct borrowing source. White/weiß are cousins.
+- Meat once meant food generally; English lunch is shortened from luncheon,
+  whose deeper origin is uncertain (no definite Spanish route). Dinner comes
+  from Old French disner and its mealtime shifted; modern French dîner is a
+  relative rather than the older source. Meal names vary by community.
+- Day/Tag are relatives, but Latin diēs is not English day’s source. Night/Nacht
+  and Latin nox share ancestry; knight is a false sound-alike. Uncertain deep
+  reconstructions are not authored as definitely attested words.
+- Local map labels now include Glasgow, Sandwich, Exeter, Devon, Cornwall and
+  Kent. New anchors represent vocabulary regions or particular evidence,
+  rather than falsely assigning every word to one city of invention.
 
 - Treasure changes in England before its French and Latin trail. Italian
   tesoro is a cousin, not a fabricated French → Italian borrowing step.
@@ -206,7 +245,7 @@ npm run validate
 npm test
 ```
 
-`npm test` builds first. Last full run: **61 tests passed**. DOM tests do not verify actual
+`npm test` builds first. Last full run: **70 tests passed**. DOM tests do not verify actual
 pixels, native voice quality or real iPad behavior. Open `index.html` directly,
 or use `npm start` at `http://localhost:8000`.
 
@@ -231,6 +270,14 @@ case. The older multi-case storage key is removed on startup.
   failure. User configured Pages outside this session.
 
 ## Useful next work, not promises already implemented
+
+The user clarified that UK word hunting means tracing familiar words through
+both places and historical texts, including Shakespeare/Chaucer-style literary
+evidence. It is not limited to regional vocabulary or town names. Proposed
+implementation and a researched chortle example are in `BOOK-TRAIL-DESIGN.md`.
+Book-attestation nodes and a coordinated evidence timeline are now implemented in chortle; dated stops also appear for Manchester and Grimsby.
+Keep attestation separate from coinage and an author's location separate from
+the word's birthplace.
 
 Place-name investigations Grimsby and Manchester are now implemented. See
 `PLACE-NAME-DESIGN.md` for the design and remaining shared-root limitation.
@@ -257,7 +304,7 @@ investigate endings rather than claim to explain the entire name.
   Earned distant connections can expand the camera; undiscovered targets do
   not trigger framing or leader lines in Investigator. Camera changes preserve
   progress, and no word-name conditions were added.
-- All 61 automated tests pass, including both new cases, shared-location
+- All 65 automated tests pass, including both new cases, shared-location
   geometry, segment validation, local/Europe navigation and two-finger pan.
   Browser access was unavailable; headless Chrome also could not launch in the
   sandbox. Actual close-map, label collision and phone/iPad visuals are unverified.
@@ -278,3 +325,37 @@ investigate endings rather than claim to explain the entire name.
 
 Earlier prototypes remain in `prototype/atlas-v1/` and `case-files.html`.
 Develop the active `src/`, JSON and `app.css`, not those archived versions.
+
+
+## Latest implementation: books and minimum length
+
+Chortle is playable under Words from books, bringing the library to 36 cases
+in nine groups. The required route is today’s word → the 1871 poem → the
+probable chuckle ingredient → Middle English chukken (clucking noise). Snort is
+an optional parallel ingredient. Probable blend is a distinct, visibly qualified
+relation; it must never become a claimed certainty. Chortle cannot complete
+at the book, after two decisions, or by replacing the third hop with a false
+trail or optional branch. Old saved one-hop chortle progress reopens as incomplete.
+
+`src/text-evidence.js` renders a short highlighted quotation and collapsed
+provenance. `src/evidence-timeline.js` opens the same inspection as the map;
+there are no separate points or duplicate answers. Investigator timelines show
+only earned dates. Hidden book credits/dates unlock after the decision. Earned
+books can reopen read-only from either view. The schema/validator covers text
+references, highlighted excerpts, date ranges and publication dates. The current
+slice requires geographic anchors even for books; mapless texts remain future
+work. Do not misrepresent author associations as a word’s geographic birthplace.
+
+New rule: **at least three required connected hops**, excluding the start,
+correct No answers, optional detours and revisits. Validation rejects a shorter
+solution for new cases. `catalog.rules.shortCaseHopExceptions` explicitly holds
+25 legacy cases awaiting researched expansion; their current lengths cannot
+regress and expanded cases must leave the list. Do not add new exceptions.
+Run `npm run validate` for their names and current one/two-hop lengths. The
+whole existing library has NOT yet been expanded to meet the new rule.
+
+70 automated tests pass, including three-hop completion, restoration, no repeat
+rewards, map/timeline coordination and Investigator secrecy. The final extended
+trail was not visually verified in Safari: native UI control was interrupted by
+concurrent user activity. Automated DOM coverage does not establish phone/iPad
+layout or audio quality. Generated assets were rebuilt; nothing published here.

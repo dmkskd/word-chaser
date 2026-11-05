@@ -1,0 +1,369 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "white",
+  "title": "white",
+  "icon": "⚪",
+  "summary": "One colour, several names. Which ones share a history?",
+  "question": "Are matching meanings enough?",
+  "startNodeId": "white-now",
+  "goalNodeIds": [
+    "white-old",
+    "white-german"
+  ],
+  "completion": "White follows Old English hwīt. German weiß is a cousin. French blanc means the same colour but follows another word family.",
+  "partner": "A familiar word can carry a surprising history. Follow the evidence!",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · white",
+      "url": "https://www.etymonline.com/word/white"
+    },
+    {
+      "id": "blanc",
+      "title": "CNRTL · blanc",
+      "url": "https://www.cnrtl.fr/etymologie/blanc"
+    },
+    {
+      "id": "wait",
+      "title": "Etymonline · wait",
+      "url": "https://www.etymonline.com/word/wait"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "white-now",
+      "form": "white",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "The colour of snow or milk.",
+      "pronunciation": {
+        "text": "white",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "Your starting word",
+        "text": "Compare white with colour words and a tempting sound-alike.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Compare white with colour words and a tempting sound-alike."
+          }
+        ]
+      }
+    },
+    {
+      "id": "white-old",
+      "form": "hwīt",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Old English · before 1100",
+      "meaning": "A bright colour in an old word list.",
+      "pronunciation": {
+        "text": "hwīt",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An old word-list clue",
+        "text": "White developed from Old English hwīt, through Middle English whit.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "White developed from Old English hwīt, through Middle English whit."
+          }
+        ]
+      },
+      "displayOffset": [
+        -60,
+        -65
+      ]
+    },
+    {
+      "id": "white-german",
+      "form": "weiß",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "White, in German.",
+      "pronunciation": {
+        "text": "weiß",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "German weiß and English white share an older Germanic ancestor. They are cousins, not a borrowing from modern German.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "German weiß and English white share an older Germanic ancestor. They are cousins, not a borrowing from modern German."
+          }
+        ]
+      }
+    },
+    {
+      "id": "white-blanc",
+      "form": "blanc",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "White, in French.",
+      "pronunciation": {
+        "text": "blanc",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Blanc means the same colour but follows the Germanic blank family. English white follows hwīt instead.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history",
+          "blanc"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Blanc means the same colour but follows the Germanic blank family. English white follows hwīt instead."
+          }
+        ]
+      }
+    },
+    {
+      "id": "white-wait",
+      "form": "wait",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Stay until something happens.",
+      "pronunciation": {
+        "text": "wait",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Wait came through French words for watching. White follows an older English colour word. A similar sound does not prove a connection.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history",
+          "wait"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Wait came through French words for watching. White follows an older English colour word. A similar sound does not prove a connection."
+          }
+        ]
+      },
+      "displayOffset": [
+        -65,
+        45
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "white-old-link",
+      "source": "white-now",
+      "target": "white-old",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. White continues Old English hwīt.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could hwīt help explain the English colour white?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. White continues Old English hwīt."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. White continues Old English hwīt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "white-german-link",
+      "source": "white-now",
+      "target": "white-german",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. They share an older Germanic ancestor.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could German weiß and English white be word-family cousins?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. They share an older Germanic ancestor."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. They share an older Germanic ancestor."
+          }
+        ]
+      }
+    },
+    {
+      "id": "white-blanc-link",
+      "source": "white-now",
+      "target": "white-blanc",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Same colour, different word history. White follows hwīt.",
+        "sourceIds": [
+          "history",
+          "blanc"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English white get its name from French blanc?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Same colour, different word history. White follows hwīt."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Same colour, different word history. White follows hwīt."
+          }
+        ]
+      }
+    },
+    {
+      "id": "white-wait-link",
+      "source": "white-now",
+      "target": "white-wait",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Wait and white follow different word histories.",
+        "sourceIds": [
+          "history",
+          "wait"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the colour white get its name from the action wait?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Wait and white follow different word histories."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Wait and white follow different word histories."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "white-now",
+      "label": "white"
+    },
+    {
+      "nodeId": "white-old",
+      "label": "hwīt"
+    },
+    {
+      "nodeId": "white-german",
+      "label": "weiß"
+    }
+  ]
+}

@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {loadContent} from '../scripts/content.mjs';
-import {createValidator} from '../src/validation.js';
+import {createValidator, minimumRequiredHops} from '../src/validation.js';
 import {Investigation} from '../src/investigation.js';
 
 const {catalog, cases} = await loadContent();
@@ -103,7 +103,7 @@ test('content validation rejects missing evidence sources, dangling links and un
 
 test('a 500-case catalog validates as data without instantiating 500 active sessions', () => {
   const many = Array.from({length: 500}, (_, i) => ({...structuredClone(treasure), id: `case-${i}`}));
-  assert.deepEqual(validate({...catalog, collections: [{id: 'many', title: 'Many words', description: 'Scale test', caseIds: many.map(c => c.id)}]}, many), []);
+  assert.deepEqual(validate({...catalog, rules: {...catalog.rules, shortCaseHopExceptions: {}}, collections: [{id: 'many', title: 'Many words', description: 'Scale test', caseIds: many.map(c => c.id)}]}, many), []);
 });
 
 test('theories have rewards, consequences, and no repeat-point farming', () => {
@@ -250,6 +250,96 @@ test('collections reject missing, duplicate and ungrouped cases', () => {
   assert(validate(unknown,cases).some(e=>e.includes('unknown case missing')));
   const duplicate=structuredClone(catalog);duplicate.collections[1].caseIds.push(duplicate.collections[0].caseIds[0]);
   assert(validate(duplicate,cases).some(e=>e.includes('duplicate grouped case')));
-  const absent=structuredClone(catalog);absent.collections[0].caseIds.pop();
+  const absent=structuredClone(catalog);absent.collections.find(c=>c.id==='weekdays').caseIds.pop();
   assert(validate(absent,cases).some(e=>e.includes('ungrouped case sunday')));
+});
+
+test('herring rewards true cousins and rejects the same-fish Scandinavian source theory', () => {
+  const wordCase=cases.find(c=>c.id==='herring'),engine=new Investigation(catalog,wordCase);
+  engine.inspect('herring-danish');assert.equal(engine.answer('herring-danish','no').correct,true);engine.follow('herring-danish');
+  assert.equal(engine.nodeStatus('herring-danish'),'excluded');assert.equal(engine.currentId,'herring-now');
+  for(const id of ['herring-dutch','herring-german','herring-old'])go(engine,id);
+  assert(engine.complete);assert.equal(engine.points,12);
+  assert.equal(engine.linkTo('herring-german').type,'related');
+  assert(wordCase.completion.includes('uncertain'));
+  engine.destroy();
+});
+
+test('colour and time cases keep shared ancestry distinct from direct borrowing', () => {
+  for(const [id,relatives] of [['red',['red-french','red-italian']],['white',['white-german']],['night',['night-latin']]]) {
+    const engine=new Investigation(catalog,cases.find(c=>c.id===id));
+    for(const target of relatives) {assert.equal(engine.linkTo(target).type,'related');go(engine,target);assert.equal(engine.nodeStatus(target),'connected');}
+    engine.destroy();
+  }
+  const day=new Investigation(catalog,cases.find(c=>c.id==='day'));day.inspect('day-latin');assert.equal(day.answer('day-latin','no').correct,true);day.destroy();
+});
+
+test('familiar regional words preserve place links and do not invent exact pixie origins', () => {
+  const sandwich=new Investigation(catalog,cases.find(c=>c.id==='sandwich'));
+  go(sandwich,'sandwich-earl');assert(!sandwich.complete);
+  go(sandwich,'sandwich-town');assert(sandwich.complete);
+  assert.equal(sandwich.node().placeId,'sandwich-kent');sandwich.destroy();
+  const coat=new Investigation(catalog,cases.find(c=>c.id==='mackintosh'));
+  go(coat,'mackintosh-computer');assert.equal(coat.nodeStatus('mackintosh-computer'),'excluded');
+  go(coat,'mackintosh-architect');assert.equal(coat.nodeStatus('mackintosh-architect'),'excluded');
+  go(coat,'mackintosh-chemist');assert(coat.complete);assert.equal(coat.node().placeId,'glasgow');coat.destroy();
+  const pixie=cases.find(c=>c.id==='pixie');assert(pixie.completion.includes('uncertain'));
+  assert.equal(pixie.nodes.find(n=>n.id==='pixie-west').placeId,'west-country');
+  assert(catalog.collections.find(c=>c.id==='regional').caseIds.includes('pixie'));
+  assert(!cases.some(c=>c.id==='bal-maiden'),'Specialist local vocabulary is not the requested regional theme.');
+});
+
+test('book attestations use normal scoring and keep textual evidence separate from ancestry', () => {
+  const wordCase=cases.find(c=>c.id==='chortle'),engine=new Investigation(catalog,wordCase);
+  const book=engine.node('chortle-book');
+  assert.equal(book.kind,'attestation');assert.equal(book.evidence.textSource.claim,'attested-use');
+  assert.equal(book.date.startYear,1871);assert.equal(book.evidence.textSource.editionDate,'1872');
+  assert.equal(catalog.relations[engine.linkTo(book.id).type].category,'evidence');
+  go(engine,'chortle-short');assert.equal(engine.nodeStatus('chortle-short'),'excluded');
+  go(engine,book.id);assert(!engine.complete, 'A single book clue must not solve the case.');
+  go(engine,'chortle-chuckle');assert(!engine.complete);
+  go(engine,'chortle-chukken');assert(engine.complete);assert.equal(engine.points,12);
+  assert.equal(engine.answer(book.id,'yes').earned,0);
+  const restored=new Investigation(catalog,wordCase,engine.snapshot());
+  assert(restored.complete);assert.equal(restored.points,12);
+  restored.destroy();engine.destroy();
+});
+
+test('text evidence validation checks dates, references, excerpts and relationship targets', () => {
+  const original=cases.find(c=>c.id==='chortle');
+  const checks=[
+    [d=>{d.nodes[1].evidence.textSource.focusText='missing word';},'highlighted text'],
+    [d=>{d.nodes[1].evidence.textSource.sourceIds=['missing'];},'unknown source'],
+    [d=>{d.nodes[1].date.endYear=1800;},'reversed evidence date'],
+    [d=>{d.nodes[1].evidence.textSource.publicationYear=1900;},'outside evidence date'],
+    [d=>{delete d.nodes[1].evidence.textSource;},'attestation needs'],
+    [d=>{delete d.nodes[2].date.endYear;},'both range endpoints'],
+    [d=>{d.edges[0].target='chortle-short';},'must target an attestation']
+  ];
+  for(const [change,message] of checks) {
+    const modified=structuredClone(original);change(modified);
+    assert(validate(catalog,cases.map(c=>c.id===original.id?modified:c)).some(e=>e.includes(message)),message);
+  }
+});
+
+test('new cases need three required connected hops, with no credit for false trails or optional loops', () => {
+  const original=cases.find(c=>c.id==='chortle');
+  assert.equal(minimumRequiredHops(catalog, original),3);
+  const check=(wordCase,cat=catalog)=>validate(cat,cases.map(c=>c.id===original.id?wordCase:c));
+  const short=structuredClone(original);short.goalNodeIds=['chortle-book'];
+  assert.equal(minimumRequiredHops(catalog,short),1,'Optional ingredients cannot disguise a one-hop goal.');
+  assert(check(short).some(e=>e.includes('can finish in 1')));
+  short.edges.push({...short.edges[0],id:'book-back',source:'chortle-book',target:'chortle-now',type:'spelling'});
+  assert.equal(minimumRequiredHops(catalog,short),1,'Revisits and cycles do not lengthen the shortest solution.');
+  const engine=new Investigation(catalog,original);
+  go(engine,'chortle-short');go(engine,'chortle-french');go(engine,'chortle-book');
+  assert(!engine.complete,'Two correct No answers cannot replace real forward hops.');
+  go(engine,'chortle-snort');assert(!engine.complete,'A side branch cannot replace the required older evidence.');
+  go(engine,'chortle-chuckle');assert(!engine.complete);
+  go(engine,'chortle-chukken');assert(engine.complete);engine.destroy();
+  const stricter=structuredClone(catalog);delete stricter.rules.shortCaseHopExceptions.window;
+  assert(validate(stricter,cases).some(e=>e.startsWith('window ')&&e.includes('at least 3')));
+  const regression=structuredClone(catalog);regression.rules.shortCaseHopExceptions.dinosaur=2;
+  const shortened=structuredClone(cases.find(c=>c.id==='dinosaur'));shortened.goalNodeIds=['dinosaur-1'];
+  assert(validate(regression,cases.map(c=>c.id==='dinosaur'?shortened:c)).some(e=>e.includes('short case regressed')));
 });

@@ -18,7 +18,7 @@ For an HTTP preview, run `npm start` and open http://localhost:8000. `npm test` 
 
 ## Content is data
 
-All 23 current cases are JSON. The interpreter contains no word-name conditions, word-specific click handlers, or hand-written exceptions for branches.
+All 36 current cases are JSON. The interpreter contains no word-name conditions, word-specific click handlers, or hand-written exceptions for branches.
 
 | File | Purpose |
 | --- | --- |
@@ -49,7 +49,7 @@ A case can have multiple branches, converging paths, and comparison leaves. Ever
 
 ## Play
 
-Type two letters in **Find a word…** to see matching words immediately, then tap a result. **Browse all** shows the complete collection grouped into weekdays, town/city names, months, learning/inventions and everyday discoveries. Opening or searching the browser keeps your current progress; choosing a word starts its case fresh.
+Type two letters in **Find a word…** to see matching words immediately, then tap a result. **Browse all** shows the complete collection grouped into weekdays, town/city names, familiar words with local roots, time/calendar, colours, food/meals, learning/inventions and everyday discoveries. Opening or searching the browser keeps your current progress; choosing a word starts its case fresh.
 
 Choose **Word Chaser** for guided play or **Investigator** to search for hidden words with the glass, with a location riddle after one minute and a full case restart after any wrong answer. Changing modes starts a fresh attempt. Investigator keeps the starting word visible, reveals other words as you hover or drag the glass over them, and unlocks notebook stories after completion.
 
@@ -59,6 +59,8 @@ Share a level directly with `?mode=chaser` (or `?mode=word-chaser`) or `?mode=in
 2. Tap an object to open a short meaning and a Yes/No theory. Ask for optional clue pages if needed.
 3. One correct answer records the clue, awards points and returns to the map. There is no second Continue click. A false lead can be ruled out and kept without abandoning the other leads.
 4. Longer explanations remain in the notebook. Clicking outside a question closes it.
+
+The catalog also includes herring, red/black/white, meat/lunch/dinner, day/night, and familiar words with local connections: sandwich (Kent via an Earl’s title), mackintosh (Glasgow chemist) and pixie (south-west dialect and folklore, exact origin uncertain).
 
 The catalog includes all seven days of the week, grouped Monday to Sunday. Their trails distinguish older English words from translated Roman naming ideas. Solving a case places a stamp on the map and celebrates with rising rockets, glowing spark trails and optional synthesized firework sounds. The “Firework sounds” checkbox mutes them; reduced-motion support keeps the solved stamp without animation.
 
@@ -93,3 +95,11 @@ Questions, answer choices, correct answers, feedback, short reveal pages and pro
 The notebook shows points, tested theories, a progress bar and compact evidence rows with result badges. Scores, guesses, help and discovered comparisons for the current case survive backtracking and reload. The local progress format is `word-chaser-current-v1`; previous cases are discarded when switching words.
 
 Touch interaction is covered by simulated pointer-event tests; actual iPad rendering/audio still needs device review.
+
+
+Books now form a **Words from books** collection. Chortle follows a readable
+poem excerpt and a three-hop word/sound investigation. Map and dated timeline
+share decisions and points; discovered books can be read again without scoring.
+New cases must require three connected hops. `npm run validate` also lists the
+25 older short cases awaiting expansion; those remain playable during migration.
+See [authoring rules](data/AUTHORING.md) for the exact length and evidence checks.

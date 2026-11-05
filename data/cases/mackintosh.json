@@ -1,0 +1,319 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "mackintosh",
+  "title": "mackintosh",
+  "icon": "🧥",
+  "summary": "An everyday raincoat name with a Glasgow connection.",
+  "question": "Which Charles gave the coat its name?",
+  "startNodeId": "mackintosh-now",
+  "goalNodeIds": [
+    "mackintosh-chemist"
+  ],
+  "completion": "Mackintosh is named after Charles Macintosh, a Glasgow chemist associated with waterproof fabric patented in 1823. The later architect and computer are false trails.",
+  "partner": "A familiar word can carry a surprising history. Follow the evidence!",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · mackintosh",
+      "url": "https://www.etymonline.com/word/mackintosh"
+    },
+    {
+      "id": "chemist",
+      "title": "Science Museum Group · Charles Macintosh & Co",
+      "url": "https://collection.sciencemuseumgroup.org.uk/people/ap31229/charles-macintosh-co"
+    },
+    {
+      "id": "glasgow",
+      "title": "Linda Hall Library · Charles Macintosh",
+      "url": "https://www.lindahall.org/about/news/scientist-of-the-day/charles-macintosh/"
+    },
+    {
+      "id": "computer",
+      "title": "Apple · Macintosh introduced in 1984",
+      "url": "https://support.apple.com/en-ae/112190"
+    },
+    {
+      "id": "architect",
+      "title": "Glasgow History · chemist and architect distinguished",
+      "url": "https://glasgowhistory.co.uk/charles-macintosh"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "mackintosh-now",
+      "form": "mackintosh",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A waterproof coat, also called a mac.",
+      "pronunciation": {
+        "text": "mackintosh",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A word to investigate",
+        "text": "A raincoat word used across Britain carries a Scottish chemist’s name. The name is a clue to a person, not a local word only Glaswegians use.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history",
+          "chemist"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "A raincoat word used across Britain carries a Scottish chemist’s name. The name is a clue to a person, not a local word only Glaswegians use."
+          }
+        ]
+      }
+    },
+    {
+      "id": "mackintosh-chemist",
+      "form": "Charles Macintosh",
+      "languageId": "english",
+      "eraId": "nineteenth",
+      "placeId": "glasgow",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Waterproof fabric · 1823",
+      "meaning": "A chemist who developed waterproof cloth.",
+      "pronunciation": {
+        "text": "Charles Macintosh",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "report",
+        "title": "A word to investigate",
+        "text": "Charles Macintosh was a Glasgow chemist. He patented waterproof fabric in 1823. Coats made with it took his name, often with an added k.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "chemist",
+          "glasgow"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Charles Macintosh was a Glasgow chemist. He patented waterproof fabric in 1823. Coats made with it took his name, often with an added k."
+          }
+        ]
+      },
+      "mapCaption": "Glasgow · Scotland · 1823"
+    },
+    {
+      "id": "mackintosh-computer",
+      "form": "Macintosh",
+      "languageId": "english",
+      "eraId": "twentieth",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Computer introduced in 1984",
+      "meaning": "An Apple computer name.",
+      "pronunciation": {
+        "text": "Macintosh",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "The Macintosh computer was introduced in 1984, long after the raincoat name. This is a computer label seen in London, not a claim that the computer began there.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "computer",
+          "chemist"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "The Macintosh computer was introduced in 1984, long after the raincoat name. This is a computer label seen in London, not a claim that the computer began there."
+          }
+        ]
+      },
+      "displayOffset": [
+        -65,
+        45
+      ]
+    },
+    {
+      "id": "mackintosh-architect",
+      "form": "Charles Rennie Mackintosh",
+      "languageId": "english",
+      "eraId": "nineteenth",
+      "placeId": "glasgow",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Architect born in 1868",
+      "meaning": "An architect and designer.",
+      "pronunciation": {
+        "text": "Charles Rennie Mackintosh",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "letter",
+        "title": "A word to investigate",
+        "text": "The architect Charles Rennie Mackintosh was born in 1868. The raincoat name was already in use: the chemist Charles Macintosh is the relevant person.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "architect",
+          "chemist"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "The architect Charles Rennie Mackintosh was born in 1868. The raincoat name was already in use: the chemist Charles Macintosh is the relevant person."
+          }
+        ]
+      },
+      "displayOffset": [
+        0,
+        75
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "mackintosh-chemist-link",
+      "source": "mackintosh-now",
+      "target": "mackintosh-chemist",
+      "type": "namesake",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. The coat takes its name from Charles Macintosh and his waterproof fabric.",
+        "sourceIds": [
+          "chemist",
+          "glasgow"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could the raincoat be named after this Glasgow chemist?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The coat takes its name from Charles Macintosh and his waterproof fabric."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. The coat takes its name from Charles Macintosh and his waterproof fabric."
+          }
+        ]
+      },
+      "timeLabel": "Today → waterproof fabric patented 1823"
+    },
+    {
+      "id": "mackintosh-computer-link",
+      "source": "mackintosh-now",
+      "target": "mackintosh-computer",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. The raincoat name is much older than the computer introduced in 1984.",
+        "sourceIds": [
+          "chemist",
+          "computer"
+        ]
+      },
+      "challenge": {
+        "prompt": "Was the raincoat named after the Macintosh computer?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. The raincoat name is much older than the computer introduced in 1984."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. The raincoat name is much older than the computer introduced in 1984."
+          }
+        ]
+      }
+    },
+    {
+      "id": "mackintosh-architect-link",
+      "source": "mackintosh-now",
+      "target": "mackintosh-architect",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. The chemist is the namesake. The architect was born after the coat name was already in use.",
+        "sourceIds": [
+          "chemist",
+          "architect"
+        ]
+      },
+      "challenge": {
+        "prompt": "Was the raincoat named after the architect Charles Rennie Mackintosh?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. The chemist is the namesake. The architect was born after the coat name was already in use."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. The chemist is the namesake. The architect was born after the coat name was already in use."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "mackintosh-now",
+      "label": "mackintosh"
+    },
+    {
+      "nodeId": "mackintosh-chemist",
+      "label": "Charles Macintosh"
+    }
+  ],
+  "camera": {
+    "center": [
+      -2.5,
+      54
+    ],
+    "width": 240
+  }
+}

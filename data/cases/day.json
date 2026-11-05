@@ -1,0 +1,362 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "day",
+  "title": "day",
+  "icon": "☀️",
+  "summary": "A familiar time word and a tempting Roman clue.",
+  "question": "Does the Roman word explain English day?",
+  "startNodeId": "day-now",
+  "goalNodeIds": [
+    "day-old",
+    "day-german"
+  ],
+  "completion": "Day follows Old English dæg. German Tag is a cousin. Latin diēs looks promising, but it is not the source of English day.",
+  "partner": "A familiar word can carry a surprising history. Follow the evidence!",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · day",
+      "url": "https://www.etymonline.com/word/day"
+    },
+    {
+      "id": "dye",
+      "title": "Etymonline · dye",
+      "url": "https://www.etymonline.com/word/dye"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "day-now",
+      "form": "day",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "The light part of the day, or a whole 24 hours.",
+      "pronunciation": {
+        "text": "day",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "Your starting word",
+        "text": "Compare an older English form, another Germanic name and a Roman look-alike.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Compare an older English form, another Germanic name and a Roman look-alike."
+          }
+        ]
+      }
+    },
+    {
+      "id": "day-old",
+      "form": "dæg",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Old English · before 1100",
+      "meaning": "The daylight part of a day.",
+      "pronunciation": {
+        "text": "dæg",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An old word-list clue",
+        "text": "Day continues Old English dæg. Its Germanic family includes German Tag and Dutch dag. Its deepest root is debated.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Day continues Old English dæg. Its Germanic family includes German Tag and Dutch dag. Its deepest root is debated."
+          }
+        ]
+      },
+      "displayOffset": [
+        -60,
+        -65
+      ]
+    },
+    {
+      "id": "day-german",
+      "form": "Tag",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A day, in German.",
+      "pronunciation": {
+        "text": "Tag",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "German Tag and English day share an older Germanic ancestor. Different starting sounds can still belong to one family.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "German Tag and English day share an older Germanic ancestor. Different starting sounds can still belong to one family."
+          }
+        ]
+      }
+    },
+    {
+      "id": "day-latin",
+      "form": "diēs",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "rome",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Roman-era Latin",
+      "meaning": "A day, in Latin.",
+      "pronunciation": {
+        "text": "diēs",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Latin diēs has a similar meaning and opening sound, but it is not the source of English day. Day follows Old English dæg.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Latin diēs has a similar meaning and opening sound, but it is not the source of English day. Day follows Old English dæg."
+          }
+        ]
+      }
+    },
+    {
+      "id": "day-dye",
+      "form": "dye",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A substance used to colour something.",
+      "pronunciation": {
+        "text": "dye",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Dye follows Old English dēag, a colour word. Day follows dæg, a word for daylight.",
+        "notice": "Compare sounds, meanings and dates. What does the evidence support?",
+        "sourceIds": [
+          "history",
+          "dye"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try listening, then compare the meaning and the date."
+          },
+          {
+            "title": "Check the history",
+            "text": "Dye follows Old English dēag, a colour word. Day follows dæg, a word for daylight."
+          }
+        ]
+      },
+      "displayOffset": [
+        -65,
+        45
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "day-old-link",
+      "source": "day-now",
+      "target": "day-old",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Day continues Old English dæg.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this older English daylight word explain day?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Day continues Old English dæg."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Day continues Old English dæg."
+          }
+        ]
+      }
+    },
+    {
+      "id": "day-german-link",
+      "source": "day-now",
+      "target": "day-german",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. They share an older Germanic ancestor.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could day and German Tag be word-family cousins?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. They share an older Germanic ancestor."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. They share an older Germanic ancestor."
+          }
+        ]
+      }
+    },
+    {
+      "id": "day-latin-link",
+      "source": "day-now",
+      "target": "day-latin",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Similar meaning and sound are not enough: day follows dæg.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Was English day borrowed from Latin diēs?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Similar meaning and sound are not enough: day follows dæg."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Similar meaning and sound are not enough: day follows dæg."
+          }
+        ]
+      }
+    },
+    {
+      "id": "day-dye-link",
+      "source": "day-now",
+      "target": "day-dye",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. They follow different Old English words.",
+        "sourceIds": [
+          "history",
+          "dye"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the time word day come from the colouring word dye?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. They follow different Old English words."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. They follow different Old English words."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "day-now",
+      "label": "day"
+    },
+    {
+      "nodeId": "day-old",
+      "label": "dæg"
+    },
+    {
+      "nodeId": "day-german",
+      "label": "Tag"
+    }
+  ]
+}

@@ -101,5 +101,5 @@ Books now form a **Words from books** collection. Chortle follows a readable
 poem excerpt and a three-hop word/sound investigation. Map and dated timeline
 share decisions and points; discovered books can be read again without scoring.
 New cases must require three connected hops. `npm run validate` also lists the
-25 older short cases awaiting expansion; those remain playable during migration.
+24 older short cases awaiting expansion; those remain playable during migration.
 See [authoring rules](data/AUTHORING.md) for the exact length and evidence checks.

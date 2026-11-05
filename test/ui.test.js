@@ -675,3 +675,23 @@ test('Investigator timeline shows earned evidence without leaking hidden books, 
   assert(ui.document.getElementById('book-evidence').textContent.includes('1871'));
   assert.equal(ui.document.getElementById('detective-points').textContent,'⭐ 3 points');
 });
+
+test('sandwich continues beyond the town and old two-hop saves cannot show Case solved', async () => {
+  const storage=new Map();let ui=await page(storage);chooseWord(ui.document,'sandwich');
+  for(const id of ['sandwich-earl','sandwich-town']) {
+    ui.click(`[data-node-id="${id}"]`);ui.click('#challenge-answers button');
+    assert(ui.document.getElementById('complete').hidden,'Finding the Earl and town is not enough.');
+  }
+  ui=await page(storage);
+  assert(ui.document.getElementById('complete').hidden,'Previously completed two-hop progress is now incomplete.');
+  assert(ui.document.querySelector('[data-node-id="sandwich-old"]'));
+  ui.click('[data-node-id="sandwich-old"]');ui.click('#challenge-answers button');
+  assert(ui.document.getElementById('complete').hidden,'The fourth hop is still required.');
+  ui.click('[data-node-id="sandwich-witch"]');ui.click('#challenge-answers button:nth-child(2)');
+  assert(ui.document.getElementById('complete').hidden,'Rejecting the sound-alike cannot replace the final connection.');
+  ui.click('[data-node-id="sandwich-wic"]');ui.click('#challenge-answers button');
+  assert(!ui.document.getElementById('complete').hidden);
+  assert.equal(ui.document.getElementById('detective-points').textContent,'⭐ 15 points');
+  ui=await page(storage);assert(!ui.document.getElementById('complete').hidden);
+  assert.equal(ui.document.getElementById('detective-points').textContent,'⭐ 15 points');
+});

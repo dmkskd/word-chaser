@@ -5,13 +5,15 @@
   "title": "sandwich",
   "icon": "🥪",
   "summary": "An everyday lunch with a hidden link to a town in Kent.",
-  "question": "How can a food name lead to a British town?",
+  "question": "Can you follow a sandwich from your lunchbox to an old settlement name?",
   "startNodeId": "sandwich-now",
   "goalNodeIds": [
     "sandwich-earl",
-    "sandwich-town"
+    "sandwich-town",
+    "sandwich-old",
+    "sandwich-wic"
   ],
-  "completion": "Sandwich honours the Earl of Sandwich, whose title connects it to Sandwich in Kent. This explains the food’s name; it does not establish that filled bread was invented in that town.",
+  "completion": "Four links solved! The food name honours the Earl of Sandwich; his title leads to Sandwich in Kent. Its older name Sandwic combines sand with wīc, a settlement word. Here it describes a settlement on sand. The food was not named after a witch, and this trail does not prove filled bread was invented in the town.",
   "partner": "A familiar word can carry a surprising history. Follow the evidence!",
   "sources": [
     {
@@ -28,6 +30,21 @@
       "id": "panino",
       "title": "Treccani · panino",
       "url": "https://www.treccani.it/vocabolario/panino/"
+    },
+    {
+      "id": "town-history",
+      "title": "E. W. Parkin · The Ancient Cinque Port of Sandwich, Kent Archaeological Society",
+      "url": "https://www.kentarchaeology.org.uk/journal/100/ancient-cinque-port-sandwich"
+    },
+    {
+      "id": "wic",
+      "title": "Kent Archaeological Society · Old English wic in Kent place names",
+      "url": "https://www.kentarchaeology.org.uk/journal/136/greenwich-and-early-emporia-kent"
+    },
+    {
+      "id": "witch",
+      "title": "Etymonline · witch and Old English wicce",
+      "url": "https://www.etymonline.com/word/witch"
     },
     {
       "id": "sandal",
@@ -192,6 +209,145 @@
       }
     },
     {
+      "id": "sandwich-witch",
+      "form": "witch",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A person who does magic in stories.",
+      "pronunciation": {
+        "text": "witch",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A familiar sound to compare",
+        "text": "Witch comes through Old English wicce, a different word from the settlement element wīc. A similar sound does not make Sandwich a place named for a witch.",
+        "notice": "Follow the name, its meaning and its history. A matching sound alone is not enough.",
+        "sourceIds": [
+          "witch",
+          "town-history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Does the town’s history describe a magical person or a settlement on sand?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Witch comes through Old English wicce, a different word from the settlement element wīc. A similar sound does not make Sandwich a place named for a witch."
+          }
+        ]
+      },
+      "displayOffset": [
+        65,
+        85
+      ]
+    },
+    {
+      "id": "sandwich-old",
+      "form": "Sandwic",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "sandwich-kent",
+      "offset": [
+        0,
+        0
+      ],
+      "displayOffset": [
+        -100,
+        -75
+      ],
+      "mapLabelSide": "left",
+      "mapCaption": "Kent · town-name evidence",
+      "period": "Old English · before 1100",
+      "meaning": "A place name in an older spelling.",
+      "pronunciation": {
+        "text": "Sandwic",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "An older town name",
+        "text": "Sandwic is an older spelling of the Kent town’s name. The name describes a settlement on sand. It existed long before the food name.",
+        "notice": "Follow the name, its meaning and its history. A matching sound alone is not enough.",
+        "sourceIds": [
+          "town-history",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare Sandwic with Sandwich. Which sounds and letters stayed?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Sandwic is an older spelling of the Kent town’s name. The name describes a settlement on sand. It existed long before the food name."
+          }
+        ]
+      },
+      "segments": [
+        {
+          "text": "Sand"
+        },
+        {
+          "text": "wic",
+          "id": "ending"
+        }
+      ]
+    },
+    {
+      "id": "sandwich-wic",
+      "form": "wīc",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "sandwich-kent",
+      "offset": [
+        0,
+        0
+      ],
+      "displayOffset": [
+        -110,
+        60
+      ],
+      "mapLabelSide": "left",
+      "mapCaption": "Kent · town-name evidence",
+      "period": "Old English · a place-name element",
+      "meaning": "A settlement: a place where people live.",
+      "pronunciation": {
+        "text": "wīc",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word hidden in a place name",
+        "text": "Old English wīc was used for settlements and places with particular activities. In Sandwic, sand plus wīc describes a settlement on sand. The similar sound of witch does not explain this place name.",
+        "notice": "Follow the name, its meaning and its history. A matching sound alone is not enough.",
+        "sourceIds": [
+          "town-history",
+          "wic"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "The first part names the sandy ground. What might the ending tell us about the place?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Old English wīc was used for settlements and places with particular activities. In Sandwic, sand plus wīc describes a settlement on sand. The similar sound of witch does not explain this place name."
+          }
+        ]
+      }
+    },
+    {
       "id": "sandwich-french",
       "form": "sandale",
       "languageId": "french",
@@ -325,6 +481,102 @@
       }
     },
     {
+      "id": "sandwich-witch-link",
+      "source": "sandwich-old",
+      "target": "sandwich-witch",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Witch and the settlement word wīc have different histories. The town name describes a settlement on sand.",
+        "sourceIds": [
+          "witch",
+          "town-history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Was the ending of Sandwic taken from witch, the word for a magical person?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Compare the meaning as well as the sound. No. Witch and the settlement word wīc have different histories. The town name describes a settlement on sand."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Witch and the settlement word wīc have different histories. The town name describes a settlement on sand."
+          }
+        ]
+      },
+      "sourceSegmentId": "ending"
+    },
+    {
+      "id": "sandwich-old-link",
+      "source": "sandwich-town",
+      "target": "sandwich-old",
+      "type": "spelling",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Sandwic is the older town name. Now investigate the pieces inside it.",
+        "sourceIds": [
+          "town-history",
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could Sandwic be an older spelling of the same Kent town?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Sandwic is the older town name. Now investigate the pieces inside it."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes. Sandwic is the older town name. Now investigate the pieces inside it."
+          }
+        ]
+      },
+      "timeLabel": "Town today → Old English name"
+    },
+    {
+      "id": "sandwich-wic-link",
+      "source": "sandwich-old",
+      "target": "sandwich-wic",
+      "type": "formation",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes! Sand plus wīc describes a settlement on sand. Our lunchbox word leads back through a title and a town to an old description of a place.",
+        "sourceIds": [
+          "town-history",
+          "wic"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does the ending of Sandwic use this old word for a settlement?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes! Sand plus wīc describes a settlement on sand. Our lunchbox word leads back through a title and a town to an old description of a place."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Look again. Yes! Sand plus wīc describes a settlement on sand. Our lunchbox word leads back through a title and a town to an old description of a place."
+          }
+        ]
+      },
+      "sourceSegmentId": "ending"
+    },
+    {
       "id": "sandwich-french-link",
       "source": "sandwich-now",
       "target": "sandwich-french",
@@ -369,6 +621,14 @@
     {
       "nodeId": "sandwich-town",
       "label": "Sandwich"
+    },
+    {
+      "nodeId": "sandwich-old",
+      "label": "The older town name"
+    },
+    {
+      "nodeId": "sandwich-wic",
+      "label": "The settlement ending"
     }
   ],
   "camera": {

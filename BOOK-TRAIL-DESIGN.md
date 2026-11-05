@@ -109,7 +109,7 @@ modern word → the poem → probable chuckle ingredient → Middle English chuk
 Snort is another probable ingredient on a parallel optional branch. The
 probability belongs in the question and relationship label, not just a footnote.
 New cases must require three earned connections; optional/rejected leads cannot
-inflate that minimum. The 25 legacy exceptions are an explicit expansion backlog.
+inflate that minimum. The 24 legacy exceptions are an explicit expansion backlog.
 The book/timeline slice still requires place anchors, and final phone layout
 needs real device review; neither fully mapless text evidence nor all legacy
 case expansions are complete.

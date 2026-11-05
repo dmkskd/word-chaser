@@ -81,7 +81,7 @@ travel between languages—not simply follow the only available correct pin.
 - Cards start with evidence, not the verdict. “An older English name for
   January” gave away the Jenever answer; it now says “A word on an old calendar”.
   Reveal explanations through optional clues, feedback and notebook stories.
-- Each case has two distinct false trails, including an immediately available
+- Each case has at least two distinct false trails, including an immediately available
   No decision. Mix similar sounds, identical spelling and identical meaning
   with different histories. All words must be real and sourced.
 - Distinguish direct ancestry, related cousins, translated ideas and comparisons.
@@ -157,7 +157,7 @@ Playable cases: treasure, piano, window, fart, dinosaur, school, all seven
 days (Monday through Sunday), January, robot, algebra, geometry, geography,
 art, maths, house, Grimsby and Manchester. New cases: herring; red, black, white;
 meat, lunch, dinner; day, night; sandwich, mackintosh and pixie. The seven days
-remain grouped together in weekday order. All cases have two false trails.
+remain grouped together in weekday order. All cases have at least two false trails.
 
 Examples of intentional teaching distinctions:
 
@@ -245,7 +245,7 @@ npm run validate
 npm test
 ```
 
-`npm test` builds first. Last full run: **70 tests passed**. DOM tests do not verify actual
+`npm test` builds first. Last full run: **71 tests passed**. DOM tests do not verify actual
 pixels, native voice quality or real iPad behavior. Open `index.html` directly,
 or use `npm start` at `http://localhost:8000`.
 
@@ -349,13 +349,34 @@ work. Do not misrepresent author associations as a word’s geographic birthplac
 New rule: **at least three required connected hops**, excluding the start,
 correct No answers, optional detours and revisits. Validation rejects a shorter
 solution for new cases. `catalog.rules.shortCaseHopExceptions` explicitly holds
-25 legacy cases awaiting researched expansion; their current lengths cannot
+24 legacy cases awaiting researched expansion; their current lengths cannot
 regress and expanded cases must leave the list. Do not add new exceptions.
 Run `npm run validate` for their names and current one/two-hop lengths. The
 whole existing library has NOT yet been expanded to meet the new rule.
 
-70 automated tests pass, including three-hop completion, restoration, no repeat
+71 automated tests pass, including three-hop completion, restoration, no repeat
 rewards, map/timeline coordination and Investigator secrecy. The final extended
 trail was not visually verified in Safari: native UI control was interrupted by
 concurrent user activity. Automated DOM coverage does not establish phone/iPad
 layout or audio quality. Generated assets were rebuilt; nothing published here.
+
+
+## Sandwich expanded to four required hops
+
+The old food → Earl → town route was still too short. It now continues through
+Old English Sandwic and its wīc ending (settlement), for four required connected
+hops. All historical town forms use the Sandwich, Kent anchor with screen
+separation and leaders; the wīc pin represents its use in this town name, not a
+claimed birthplace of the general word. The town-name evidence is cited to Kent
+Archaeological Society research. No exact year is invented for the older form.
+
+Panino and sandale remain initial false leads; witch is a later sound-alike at
+the ending investigation. The two ending challenges highlight the wic segment.
+The old filled-bread invention/card-table caveat is preserved. Sandwich has left
+the short-case exceptions list, leaving 24 cases awaiting researched expansion.
+
+71 tests pass. The built-page test verifies no completion at the Earl, town,
+old name or rejected witch; completion needs the settlement ending. Reloading
+old two-hop progress continues the expanded case rather than showing the stamp.
+Generated assets rebuilt. This change has automated DOM/engine coverage, without
+a new native-browser or phone visual review. No publishing action performed.

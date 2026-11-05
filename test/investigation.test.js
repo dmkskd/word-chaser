@@ -169,11 +169,11 @@ test('Greek evidence stays available after a dinosaur detour through French', ()
   engine.destroy();restored.destroy();
 });
 
-test('each case offers two distinct false trails, including a No decision from the start', () => {
+test('each case offers at least two distinct false trails, including a No decision from the start', () => {
   for (const wordCase of cases) {
     const engine = new Investigation(catalog, wordCase);
     const falseTrails = wordCase.edges.filter(e => catalog.relations[e.type].outcome === 'excluded');
-    assert.equal(new Set(falseTrails.map(e => e.target)).size, 2, wordCase.id);
+    assert(new Set(falseTrails.map(e => e.target)).size >= 2, wordCase.id);
     assert(engine.outgoing().some(e => e.challenge.choices.some(c => c.id === 'no' && c.correct)), wordCase.id);
     engine.destroy();
   }
@@ -277,7 +277,12 @@ test('colour and time cases keep shared ancestry distinct from direct borrowing'
 test('familiar regional words preserve place links and do not invent exact pixie origins', () => {
   const sandwich=new Investigation(catalog,cases.find(c=>c.id==='sandwich'));
   go(sandwich,'sandwich-earl');assert(!sandwich.complete);
-  go(sandwich,'sandwich-town');assert(sandwich.complete);
+  go(sandwich,'sandwich-town');assert(!sandwich.complete);
+  go(sandwich,'sandwich-old');assert(!sandwich.complete);
+  go(sandwich,'sandwich-witch');assert(!sandwich.complete);assert.equal(sandwich.nodeStatus('sandwich-witch'),'excluded');
+  go(sandwich,'sandwich-wic');assert(sandwich.complete);
+  assert.equal(minimumRequiredHops(catalog,sandwich.case,5),4);
+  assert(!Object.hasOwn(catalog.rules.shortCaseHopExceptions,'sandwich'));
   assert.equal(sandwich.node().placeId,'sandwich-kent');sandwich.destroy();
   const coat=new Investigation(catalog,cases.find(c=>c.id==='mackintosh'));
   go(coat,'mackintosh-computer');assert.equal(coat.nodeStatus('mackintosh-computer'),'excluded');

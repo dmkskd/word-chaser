@@ -148,7 +148,7 @@ language's entire era for the date of a particular book or borrowing.
 The UI saves only the active case. Reloading resumes it; selecting another
 word replaces that saved attempt and starts the selected word fresh.
 
-Each current case has two distinct false trails, with at least one No decision
+Each current case has at least two distinct false trails, with at least one No decision
 available immediately. Mix real words with misleading sounds (robot/rabot),
 matching spellings (English art/German Art), and matching meanings with different
 histories (house/casa/maison). Never invent words or call a genuine cousin
@@ -242,7 +242,7 @@ cycles do not count toward the minimum. Use real sourced steps; never invent an
 ancestry or force three page-opening clicks to lengthen a shallow history.
 
 `catalog.rules.minimumConnectedHops` is 3. Validation searches for a solution
-below that length and rejects it. The 25 existing shorter cases are explicitly
+below that length and rejects it. The 24 existing shorter cases are explicitly
 listed in `shortCaseHopExceptions` with their current minimum; this is a
 migration backlog, not permission for new short cases. Do not add new exceptions.
 Expanding an old case to three hops requires removing its exception; shortening
@@ -282,3 +282,9 @@ requires a placeId for every node; fully mapless text evidence remains future
 work. Oxford is Carroll’s university association, not a proven place where he
 invented chortle. Broad English evidence anchors for the sound words are not
 claims of London origins. Manchester and Grimsby also have dated evidence stops.
+
+
+Sandwich is a four-hop example: food → title → town → older spelling Sandwic
+→ settlement element wīc. Its goals include each required stop. The ending is
+segmented on Sandwic; a later witch false trail tests sound against meaning.
+All local forms stay anchored at the Kent town, separated with displayOffset.

@@ -253,7 +253,9 @@ export class MapView {
     svg.addEventListener('pointercancel', cancelPointer);
     // An interrupted capture must not leave an old finger in the next pinch.
     svg.addEventListener('lostpointercapture', cancelPointer);
-    svg.addEventListener('pointerleave', () => { if (!this.start) this.updateHover(null); });
+    // Touch release can produce pointerleave even though the lens remains over
+    // the same hidden marker. Keep that peek until another touch moves away.
+    svg.addEventListener('pointerleave', event => { if (event.pointerType !== 'touch' && !this.start) this.updateHover(null); });
     svg.addEventListener('wheel', event => { event.preventDefault(); const point = this.coordinates(event); this.setLens(...point); this.zoom(Math.exp(Math.max(-100, Math.min(100, event.deltaY * (event.deltaMode === 1 ? 16 : 1))) * .002), point); }, {passive: false});
     svg.addEventListener('keydown', event => {
       if (event.target !== svg) return;

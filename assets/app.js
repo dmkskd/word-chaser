@@ -30855,8 +30855,8 @@
       });
       svg.addEventListener("pointercancel", cancelPointer);
       svg.addEventListener("lostpointercapture", cancelPointer);
-      svg.addEventListener("pointerleave", () => {
-        if (!this.start) this.updateHover(null);
+      svg.addEventListener("pointerleave", (event3) => {
+        if (event3.pointerType !== "touch" && !this.start) this.updateHover(null);
       });
       svg.addEventListener("wheel", (event3) => {
         event3.preventDefault();

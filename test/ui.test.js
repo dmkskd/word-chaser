@@ -453,14 +453,14 @@ test('the compact toolbar keeps the word count by the chooser and explains mode 
   assert(ui.document.querySelector('.word-choice #catalog-count'));
   assert.equal(ui.document.querySelector('label[for="case-select"]'), null);
   const choices = ui.document.querySelectorAll('#mode-options .mode-choice');
-  assert.equal(choices.length, 2);
+  assert.equal(choices.length, 3);
   for (const choice of choices) {
     assert(ui.document.getElementById(choice.getAttribute('aria-describedby')).textContent.length > 10);
   }
   assert.equal(choices[0].getAttribute('aria-pressed'), 'true');
   ui.click('[data-mode-id="investigator"]');
   assert.equal(choices[0].getAttribute('aria-pressed'), 'false');
-  assert.equal(choices[1].getAttribute('aria-pressed'), 'true');
+  assert.equal(choices[2].getAttribute('aria-pressed'), 'true');
 });
 
 

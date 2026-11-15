@@ -348,3 +348,43 @@ test('new cases need three required connected hops, with no credit for false tra
   const shortened=structuredClone(cases.find(c=>c.id==='dinosaur'));shortened.goalNodeIds=['dinosaur-1'];
   assert(validate(regression,cases.map(c=>c.id==='dinosaur'?shortened:c)).some(e=>e.includes('short case regressed')));
 });
+
+test('biscuit, camera and companion require substantial sourced trails across European word families', () => {
+  const routes={biscuit:['biscuit-french','biscuit-latin','biscuit-twice','biscuit-baked'],camera:['camera-obscura','camera-latin','camera-french','camera-spanish'],companion:['companion-french','companion-latin','companion-bread']};
+  for(const [id,route] of Object.entries(routes)) {
+    const wordCase=cases.find(c=>c.id===id),engine=new Investigation(catalog,wordCase);
+    assert.equal(minimumRequiredHops(catalog,wordCase,5),route.length);
+    assert(!Object.hasOwn(catalog.rules.shortCaseHopExceptions,id));
+    for(const edge of engine.outgoing().filter(e=>catalog.relations[e.type].outcome==='excluded')) {
+      go(engine,edge.target);assert.equal(engine.nodeStatus(edge.target),'excluded');
+    }
+    for(const [index,target] of route.entries()) {go(engine,target);assert.equal(engine.complete,index===route.length-1,`${id} cannot finish early`);}
+    const restored=new Investigation(catalog,wordCase,engine.snapshot());
+    assert(restored.complete);assert.equal(restored.points,engine.points);
+    restored.destroy();engine.destroy();
+  }
+  const biscuit=new Investigation(catalog,cases.find(c=>c.id==='biscuit'));
+  go(biscuit,'biscuit-french');go(biscuit,'biscuit-italian');assert(!biscuit.complete);
+  assert.equal(biscuit.linkTo('biscuit-italian').type,'related');biscuit.destroy();
+  const camera=new Investigation(catalog,cases.find(c=>c.id==='camera'));
+  go(camera,'camera-obscura');go(camera,'camera-latin');go(camera,'camera-italian');assert(!camera.complete);
+  assert.equal(camera.linkTo('camera-italian').type,'related');camera.destroy();
+  const companion=new Investigation(catalog,cases.find(c=>c.id==='companion'));
+  for(const target of routes.companion)go(companion,target);
+  for(const target of ['companion-italian','companion-spanish']) {go(companion,target);assert.equal(companion.nodeStatus(target),'connected');}
+  assert.equal(companion.linkTo('companion-spanish').type,'related');companion.destroy();
+});
+
+test('yesterday requires both Old English parts and keeps its German cousin optional', () => {
+  const wordCase=cases.find(c=>c.id==='yesterday');
+  assert.equal(minimumRequiredHops(catalog,wordCase,5),4);
+  for(const parts of [['yesterday-yester','yesterday-day'],['yesterday-day','yesterday-yester']]) {
+    const engine=new Investigation(catalog,wordCase);
+    for(const target of ['yesterday-yeast','yesterday-french']) {go(engine,target);assert.equal(engine.nodeStatus(target),'excluded');}
+    for(const target of ['yesterday-middle','yesterday-old',parts[0]]) {go(engine,target);assert(!engine.complete);}
+    if(parts[0]==='yesterday-yester') {go(engine,'yesterday-german');assert(!engine.complete);}
+    go(engine,parts[1]);assert(engine.complete);
+    const restored=new Investigation(catalog,wordCase,engine.snapshot());assert(restored.complete);
+    restored.destroy();engine.destroy();
+  }
+});

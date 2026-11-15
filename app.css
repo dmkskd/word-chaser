@@ -250,3 +250,6 @@ main{padding-top:16px}
 @media(max-width:600px){.evidence-timeline{padding:12px}.timeline-stops li{min-width:110px}.book-evidence{padding:10px;margin-block:9px}.book-passage{font-size:20px}.book-evidence .book-credit{font-size:12px}}
 .book-provenance{margin-top:6px;font-size:11px;color:var(--muted)}
 .book-provenance summary{min-height:32px;display:list-item;padding-block:6px}
+
+/* Keep map gestures on the HTML surface too, including tablet Safari. */
+.map-holder{touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}

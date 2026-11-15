@@ -44,7 +44,7 @@ function chooseWord(document, id) {
 
 test('built page runs the treasure investigation via evidence objects and graph leads', async () => {
   const {document, click} = await page();
-  assert.equal(document.querySelectorAll('[data-case-id]').length, 36);
+  assert.equal(document.querySelectorAll('[data-case-id]').length, 40);
   assert.equal(document.getElementById('map-cue').hidden, true);
   assert(document.querySelector('[data-node-id="treasure-1"]'));
   click('[data-node-id="treasure-1"]');
@@ -154,6 +154,31 @@ test('iPad-style touch dragging peeks, and a single answer completes the decisio
   assert.equal(document.querySelectorAll('.notebook-entry').length, 2);
   assert.equal(document.getElementById('detective-points').textContent, '⭐ 3 points');
   assert.equal(document.querySelector('#follow-evidence'), null, 'There is no second Continue control.');
+});
+
+test('tablet dragging recovers after lost capture and respects an offset, letterboxed map', async () => {
+  const {document, event} = await page();
+  const svg = document.getElementById('map');
+  // A tablet map shares the page with the notebook and need not fill its box.
+  svg.getBoundingClientRect = () => ({left: 100, top: 80, width: 720, height: 600});
+  const touch = (type, id, x, y) => {
+    const e = event(type);
+    Object.assign(e, {pointerType: 'touch', pointerId: id, clientX: x, clientY: y});
+    svg.dispatchEvent(e);
+  };
+  touch('pointerdown', 1, 400, 400);
+  touch('pointerdown', 2, 500, 400);
+  touch('lostpointercapture', 1, 400, 400);
+  touch('pointercancel', 2, 500, 400);
+  const before = svg.getAttribute('viewBox');
+  touch('pointerdown', 3, 400, 400);
+  // Scale .8, plus 40px of vertical letterboxing: (322,246) -> (357.6,316.8).
+  touch('pointermove', 3, 357.6, 316.8);
+  assert.equal(document.getElementById('peek-word').textContent, 'tresour');
+  assert(!document.getElementById('word-peek').hidden);
+  touch('pointerup', 3, 357.6, 316.8);
+  assert.equal(svg.getAttribute('viewBox'), before, 'A recovered single finger moves the glass, not the camera.');
+  assert(document.getElementById('evidence-panel').hidden);
 });
 
 test('clue pictures keep their decision badges, and Greek remains visible after a detour', async () => {
@@ -558,7 +583,7 @@ test('browse all groups weekdays and place names without changing the active inv
   assert.deepEqual([...week.querySelectorAll('.case-name')].map(el=>el.textContent),['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']);
   const towns=document.querySelector('[data-collection-id="places"]');
   assert.deepEqual([...towns.querySelectorAll('.case-name')].map(el=>el.textContent),['Grimsby','Manchester']);
-  assert.equal(document.querySelectorAll('[data-case-id]').length,36);
+  assert.equal(document.querySelectorAll('[data-case-id]').length,40);
   assert.equal(document.querySelector('[data-case-id="treasure"]').getAttribute('aria-current'),'true');
   const escape=event('keydown');escape.key='Escape';document.getElementById('browse-cases').dispatchEvent(escape);
   assert(document.getElementById('case-browser').hidden);
@@ -572,7 +597,7 @@ test('search handles no matches, keyboard selection and dismissal before switchi
   search.value='zzzz';search.dispatchEvent(event('input'));
   assert(!panel.hidden);assert.equal(document.querySelectorAll('[data-case-id]').length,0);
   assert(document.getElementById('case-search-status').textContent.includes('No mysteries'));
-  click('#browse-cases');assert.equal(document.querySelectorAll('[data-case-id]').length,36);
+  click('#browse-cases');assert.equal(document.querySelectorAll('[data-case-id]').length,40);
   search.value='geo';search.dispatchEvent(event('input'));
   const enter=event('keydown');enter.key='Enter';search.dispatchEvent(enter);
   assert.equal(document.getElementById('word-title').textContent,'geometry');assert(panel.hidden);
@@ -593,7 +618,7 @@ test('typing uses a compact flat list while Browse all opens the grouped library
   assert.equal(panel.dataset.view,'browse');
   assert(!panel.querySelector('.case-browser-header').hidden);
   assert.equal(panel.querySelectorAll('.case-collection').length,9);
-  assert.equal(panel.querySelectorAll('[data-case-id]').length,36);
+  assert.equal(panel.querySelectorAll('[data-case-id]').length,40);
   search.value='geo';search.dispatchEvent(event('input'));
   assert.equal(panel.dataset.view,'search');
   click('[data-case-id="geography"]');
@@ -610,7 +635,7 @@ test('new food, colour and regional cases are searchable and grouped, with one-a
   for(const id of ['herring-old','herring-dutch','herring-german']) {click(`[data-node-id="${id}"]`);click('#challenge-answers button');}
   assert(!document.getElementById('complete').hidden);
   click('#browse-cases');
-  assert.equal(document.querySelector('[data-collection-id="food"]').querySelectorAll('[data-case-id]').length,4);
+  assert.equal(document.querySelector('[data-collection-id="food"]').querySelectorAll('[data-case-id]').length,5);
   assert.equal(document.querySelector('[data-collection-id="colours"]').querySelectorAll('[data-case-id]').length,3);
   assert.equal(document.querySelector('[data-collection-id="regional"]').querySelectorAll('[data-case-id]').length,3);
   click('[data-case-id="pixie"]');
@@ -694,4 +719,26 @@ test('sandwich continues beyond the town and old two-hop saves cannot show Case 
   assert.equal(ui.document.getElementById('detective-points').textContent,'⭐ 15 points');
   ui=await page(storage);assert(!ui.document.getElementById('complete').hidden);
   assert.equal(ui.document.getElementById('detective-points').textContent,'⭐ 15 points');
+});
+
+test('new European discoveries are searchable, grouped and finish only after their required hops', async () => {
+  const ui=await page();
+  for(const [id,prefix,group,route] of [
+    ['biscuit','bi','food',['biscuit-french','biscuit-latin','biscuit-twice','biscuit-baked']],
+    ['camera','ca','learning',['camera-obscura','camera-latin','camera-french','camera-spanish']],
+    ['companion','co','everyday',['companion-french','companion-latin','companion-bread']],
+    ['yesterday','ye','calendar',['yesterday-middle','yesterday-old','yesterday-yester','yesterday-day']]
+  ]) {
+    const search=ui.document.getElementById('case-search');search.value=prefix;search.dispatchEvent(ui.event('input'));
+    ui.click(`[data-case-id="${id}"]`);assert.equal(ui.document.getElementById('word-title').textContent,id);
+    assert.equal(ui.document.querySelectorAll('.notebook-entry').length,1,'Choosing a word starts a fresh case.');
+    for(const [index,target] of route.entries()) {
+      ui.click(`[data-node-id="${target}"]`);ui.click('#challenge-answers button');
+      assert.equal(ui.document.getElementById('complete').hidden,index<route.length-1);
+    }
+    assert.equal(ui.document.getElementById('detective-points').textContent,`⭐ ${route.length*3} points`);
+    ui.click('#browse-cases');
+    assert(ui.document.querySelector(`[data-collection-id="${group}"] [data-case-id="${id}"]`));
+    ui.click('#close-browser');
+  }
 });

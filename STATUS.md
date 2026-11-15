@@ -1,10 +1,10 @@
 # Junior Word Chaser — handover
 
-Updated 5 November 2026, after the book/timeline slice and the three-hop minimum rule.
+Updated 11 November 2026, after yesterday and tablet gesture recovery.
 
 ## Start here next time
 
-The HTML game is working and has 36 JSON investigations. The user is refining
+The HTML game is working and has 40 JSON investigations. The user is refining
 the gameplay with screenshots, especially difficulty, clues, touch interaction
 and compact layout. Preserve those decisions; this is still an evolving
 prototype. Read `data/AUTHORING.md` before adding content.
@@ -23,7 +23,7 @@ travel between languages—not simply follow the only available correct pin.
   the larger grouped panel. Panels suppress horizontal overflow. Prefer name prefixes, then name
   substrings; fall back to collection/summary/language matches (e.g. Greek).
   One letter or clearing search closes suggestions; Enter picks the first match.
-- Browse all clears the query and shows all 36 cases grouped by
+- Browse all clears the query and shows all 40 cases grouped by
   `catalog.collections`: weekdays (Monday–Sunday), town/city names, familiar
   words with local roots, time/calendar, colours, food/meals, learning/inventions
   everyday discoveries and words from books. Each case must appear
@@ -245,7 +245,7 @@ npm run validate
 npm test
 ```
 
-`npm test` builds first. Last full run: **71 tests passed**. DOM tests do not verify actual
+`npm test` builds first. Last full run: **73 tests passed**. DOM tests do not verify actual
 pixels, native voice quality or real iPad behavior. Open `index.html` directly,
 or use `npm start` at `http://localhost:8000`.
 
@@ -380,3 +380,65 @@ old name or rejected witch; completion needs the settlement ending. Reloading
 old two-hop progress continues the expanded case rather than showing the stamp.
 Generated assets rebuilt. This change has automated DOM/engine coverage, without
 a new native-browser or phone visual review. No publishing action performed.
+
+
+## European discoveries batch: biscuit, camera, companion
+
+Library: 39 cases, nine existing collections. Biscuit is in Food & meals, camera
+in Numbers, learning & inventions, companion in Everyday discoveries. New content
+is JSON only; the interpreter has no new per-word conditions. No new legacy
+short-case exceptions. Investigator hints remain at 30 seconds.
+
+- Biscuit requires Old French bescuit → medieval Latin biscoctum → both bis
+  (twice) and coctus (cooked/baked): four earned connections after the start.
+  Italian biscotto is a relative and influenced English spelling, not a
+  fabricated intermediate modern borrowing. The older name does not imply all
+  modern biscuits are baked twice. Dutch koekje explains cookie, not biscuit;
+  basket is a second false sound/association lead, with its uncertain deeper
+  origin left uncertain.
+- Camera requires camera obscura → Latin camera → French chambre AND Spanish
+  cámara: four connections, including two daughter-language branches, not a
+  fictitious France-to-Spain borrowing. Italian camera (room) is optional.
+  The dark-chamber name changed meaning as it became the photographic device
+  name. The English-use pin is not a claimed London invention site. Camel and
+  German Fotoapparat are false source theories; the latter names the same object.
+- Companion requires Old French compagnon → Late Latin companionem → Latin
+  panis (bread): three connections. Pane and pan are optional Italian/Spanish
+  bread relatives. The older image is bread sharing, not a rule that companions
+  always eat together. Compass shares a com element but does not supply the
+  whole word; German Freund belongs with English friend. The Latin Frankish-law
+  anchor does not assert invention in modern France.
+
+Sources are cited inside each case: Etymonline histories, Treccani, RAE,
+Académie française and PONS. No new Greek stops were added. Latin vocabulary
+anchors represent word evidence broadly, not precise birthplaces. Exact dates
+were not fabricated to make timelines.
+
+73 automated tests pass. New engine/UI tests cover complete required routes,
+false-source decisions, related branches, restoration, search and grouping,
+point totals and refusal to finish early. Assets rebuilt and content validation
+passes (39 cases, 234 word forms, 226 relationships). Phone/native browser pixels
+were not reviewed for this batch. No publishing action performed.
+
+
+## Yesterday and tablet gesture recovery
+
+Added yesterday to Time & calendar (40 cases total). Four required connections
+trace yesterday → Middle English yesterdai → Old English geostran dæg → both
+geostran and dæg. German gestern is an optional cousin, not a borrowing source.
+Yeast and French hier are false source theories; the latter is rejected as a
+borrowing, without claiming its deeper family is unrelated. Sources are cited
+inside the case. All stops use broad vocabulary anchors, not invention sites.
+
+The user reports difficult magnifying-glass movement on iPad while iPhone works.
+The map's HTML wrapper now disables native touch panning, text selection and
+long-press callouts as well as the SVG. Lost pointer capture now clears tracked
+contacts so an interrupted gesture cannot leave a stale finger in the next pinch.
+This is a targeted hardening change; the precise reported iPad symptom and
+resolution have not been confirmed on a physical device.
+
+75 automated tests pass, including interrupted gesture recovery on an offset,
+letterboxed tablet map, existing single-finger dragging/two-finger panning, and
+yesterday's branching goals, restoration, search and grouping. Content validation
+passes: 40 cases, 242 forms, 233 relationships. Generated assets rebuilt.
+No publishing action performed. Real iPad Safari movement remains unverified.

@@ -210,6 +210,11 @@ export class MapView {
   }
   bindEvents() {
     const svg = this.svg;
+    const cancelPointer = event => {
+      this.touchPoints.delete(event.pointerId);
+      this.start = null; this.panStart = null;
+      if (!this.touchPoints.size) { this.pinching = false; this.pinchDistance = 0; this.pinchCenter = null; }
+    };
     svg.addEventListener('pointerdown', event => {
       this.onDismiss?.();
       this.start = [event.clientX, event.clientY];
@@ -245,7 +250,9 @@ export class MapView {
       if (!this.pinching && this.start && Math.hypot(event.clientX - this.start[0], event.clientY - this.start[1]) < 10) this.activate();
       if (!this.touchPoints.size) { this.pinching = false; this.pinchDistance = 0; } this.start = null;
     });
-    svg.addEventListener('pointercancel', event => { this.touchPoints.delete(event.pointerId); this.start = null; this.panStart = null; if (!this.touchPoints.size) this.pinching = false; });
+    svg.addEventListener('pointercancel', cancelPointer);
+    // An interrupted capture must not leave an old finger in the next pinch.
+    svg.addEventListener('lostpointercapture', cancelPointer);
     svg.addEventListener('pointerleave', () => { if (!this.start) this.updateHover(null); });
     svg.addEventListener('wheel', event => { event.preventDefault(); const point = this.coordinates(event); this.setLens(...point); this.zoom(Math.exp(Math.max(-100, Math.min(100, event.deltaY * (event.deltaMode === 1 ? 16 : 1))) * .002), point); }, {passive: false});
     svg.addEventListener('keydown', event => {

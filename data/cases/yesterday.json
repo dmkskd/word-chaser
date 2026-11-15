@@ -1,0 +1,629 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "yesterday",
+  "title": "yesterday",
+  "icon": "⏪",
+  "summary": "Step back through English and uncover two old time-word parts.",
+  "question": "What is hiding inside yesterday?",
+  "startNodeId": "yesterday-now",
+  "goalNodeIds": [
+    "yesterday-middle",
+    "yesterday-old",
+    "yesterday-yester",
+    "yesterday-day"
+  ],
+  "completion": "You traced yesterday through Middle English yesterdai to Old English geostran dæg, then uncovered geostran (yesterday) and dæg (day). German gestern is a cousin of the first part. The English word carries both old parts!",
+  "partner": "Travel backwards through the word, then investigate both pieces.",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · yesterday",
+      "url": "https://www.etymonline.com/word/yesterday"
+    },
+    {
+      "id": "yester",
+      "title": "Etymonline · yester- and German gestern",
+      "url": "https://www.etymonline.com/word/yester-"
+    },
+    {
+      "id": "day",
+      "title": "Etymonline · day",
+      "url": "https://www.etymonline.com/word/day"
+    },
+    {
+      "id": "yeast",
+      "title": "Etymonline · yeast",
+      "url": "https://www.etymonline.com/word/yeast"
+    },
+    {
+      "id": "french",
+      "title": "Académie française · hier, from Latin heri",
+      "url": "https://www.dictionnaire-academie.fr/article/A9H0670"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "yesterday-now",
+      "form": "yesterday",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "The day before today.",
+      "pronunciation": {
+        "text": "yesterday",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Yesterday has travelled through centuries of English. Investigate its older forms and the parts inside them.",
+        "notice": "Compare the sounds, meanings and dates.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Which part of yesterday can you still use as a word today?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Yesterday has travelled through centuries of English. Investigate its older forms and the parts inside them."
+          }
+        ]
+      },
+      "mapCaption": "English vocabulary · broad anchor"
+    },
+    {
+      "id": "yesterday-middle",
+      "form": "yesterdai",
+      "languageId": "middle-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Middle English · about 1100–1500",
+      "meaning": "The day before today.",
+      "pronunciation": {
+        "text": "yesterdai",
+        "languageId": "middle-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word to investigate",
+        "text": "Middle English yesterdai is an earlier form of yesterday. Its ending looks different, but it still names the day before today.",
+        "notice": "Compare the sounds, meanings and dates.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare dai with day. Do the sound and meaning fit?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Middle English yesterdai is an earlier form of yesterday. Its ending looks different, but it still names the day before today."
+          }
+        ]
+      },
+      "displayOffset": [
+        -80,
+        -65
+      ],
+      "mapCaption": "English vocabulary · broad anchor"
+    },
+    {
+      "id": "yesterday-old",
+      "form": "geostran dæg",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Old English · before 1100",
+      "meaning": "An old expression for the day before today.",
+      "pronunciation": {
+        "text": "geostran dæg",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word to investigate",
+        "text": "Old English geostran dæg lies behind Middle English yesterdai. Its two parts are geostran (yesterday) and dæg (day).",
+        "notice": "Compare the sounds, meanings and dates.",
+        "sourceIds": [
+          "history",
+          "yester",
+          "day"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "There is a space in this old form. Can you investigate both parts?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Old English geostran dæg lies behind Middle English yesterdai. Its two parts are geostran (yesterday) and dæg (day)."
+          }
+        ]
+      },
+      "displayOffset": [
+        20,
+        -120
+      ],
+      "segments": [
+        {
+          "text": "geostran",
+          "id": "previous"
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "dæg",
+          "id": "day"
+        }
+      ],
+      "mapCaption": "English vocabulary · broad anchor"
+    },
+    {
+      "id": "yesterday-yester",
+      "form": "geostran",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Old English · before 1100",
+      "meaning": "Yesterday, in Old English.",
+      "pronunciation": {
+        "text": "geostran",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word to investigate",
+        "text": "Geostran supplies the first part of geostran dæg. It survives in yester-, as in yesterday and yesteryear.",
+        "notice": "Compare the sounds, meanings and dates.",
+        "sourceIds": [
+          "yester"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "This part points backwards from today."
+          },
+          {
+            "title": "Check the history",
+            "text": "Geostran supplies the first part of geostran dæg. It survives in yester-, as in yesterday and yesteryear."
+          }
+        ]
+      },
+      "displayOffset": [
+        -110,
+        -65
+      ],
+      "mapCaption": "English vocabulary · broad anchor"
+    },
+    {
+      "id": "yesterday-day",
+      "form": "dæg",
+      "languageId": "old-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Old English · before 1100",
+      "meaning": "A day, in Old English.",
+      "pronunciation": {
+        "text": "dæg",
+        "languageId": "old-english"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word to investigate",
+        "text": "Dæg supplies the second part of geostran dæg. It developed into our word day.",
+        "notice": "Compare the sounds, meanings and dates.",
+        "sourceIds": [
+          "history",
+          "day"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Could the last part be a familiar time word?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Dæg supplies the second part of geostran dæg. It developed into our word day."
+          }
+        ]
+      },
+      "displayOffset": [
+        -110,
+        35
+      ],
+      "mapCaption": "English vocabulary · broad anchor"
+    },
+    {
+      "id": "yesterday-german",
+      "form": "gestern",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today · German",
+      "meaning": "The day before today.",
+      "pronunciation": {
+        "text": "gestern",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "German gestern and Old English geostran share an older Germanic ancestor. German uses this relative on its own; English yesterday also includes the day part.",
+        "notice": "Compare the sounds, meanings and dates.",
+        "sourceIds": [
+          "yester",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare gestern with geostran. Cousins need not look exactly the same."
+          },
+          {
+            "title": "Check the history",
+            "text": "German gestern and Old English geostran share an older Germanic ancestor. German uses this relative on its own; English yesterday also includes the day part."
+          }
+        ]
+      }
+    },
+    {
+      "id": "yesterday-yeast",
+      "form": "yeast",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "england",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Something bakers use to help bread dough rise.",
+      "pronunciation": {
+        "text": "yeast",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Yeast follows Old English gist, a word for yeast or froth. It does not supply the first part of yesterday. Similar sounds can hide different histories.",
+        "notice": "Compare the sounds, meanings and dates.",
+        "sourceIds": [
+          "yeast",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Does a bread-making word explain a name for the previous day?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Yeast follows Old English gist, a word for yeast or froth. It does not supply the first part of yesterday. Similar sounds can hide different histories."
+          }
+        ]
+      },
+      "displayOffset": [
+        85,
+        55
+      ],
+      "mapCaption": "English vocabulary · broad anchor"
+    },
+    {
+      "id": "yesterday-french",
+      "form": "hier",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today · French",
+      "meaning": "The day before today.",
+      "pronunciation": {
+        "text": "hier",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "French hier follows Latin heri. English yesterday continues older English forms; it was not borrowed from hier. Shared meaning does not prove borrowing.",
+        "notice": "Compare the sounds, meanings and dates.",
+        "sourceIds": [
+          "french",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Two languages can name the same day without borrowing the same word."
+          },
+          {
+            "title": "Check the history",
+            "text": "French hier follows Latin heri. English yesterday continues older English forms; it was not borrowed from hier. Shared meaning does not prove borrowing."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "yesterday-middle-link",
+      "source": "yesterday-now",
+      "target": "yesterday-middle",
+      "type": "spelling",
+      "challenge": {
+        "prompt": "Could yesterdai be an earlier English form of yesterday?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The Middle English form kept the same meaning while its spelling changed."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the word and meaning again. Yes. The Middle English form kept the same meaning while its spelling changed."
+          }
+        ]
+      },
+      "evidence": {
+        "title": "Follow the evidence",
+        "text": "Yes. The Middle English form kept the same meaning while its spelling changed.",
+        "sourceIds": [
+          "history"
+        ]
+      }
+    },
+    {
+      "id": "yesterday-old-link",
+      "source": "yesterday-middle",
+      "target": "yesterday-old",
+      "type": "inheritance",
+      "challenge": {
+        "prompt": "Could this Old English expression explain Middle English yesterdai?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Yesterdai developed from Old English geostran dæg."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the word and meaning again. Yes. Yesterdai developed from Old English geostran dæg."
+          }
+        ]
+      },
+      "evidence": {
+        "title": "Follow the evidence",
+        "text": "Yes. Yesterdai developed from Old English geostran dæg.",
+        "sourceIds": [
+          "history"
+        ]
+      }
+    },
+    {
+      "id": "yesterday-yester-link",
+      "source": "yesterday-old",
+      "target": "yesterday-yester",
+      "type": "formation",
+      "challenge": {
+        "prompt": "Does geostran supply the part about the previous day?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Geostran is the first part, behind our yester-."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the word and meaning again. Yes. Geostran is the first part, behind our yester-."
+          }
+        ]
+      },
+      "evidence": {
+        "title": "Follow the evidence",
+        "text": "Yes. Geostran is the first part, behind our yester-.",
+        "sourceIds": [
+          "yester",
+          "history"
+        ]
+      },
+      "sourceSegmentId": "previous"
+    },
+    {
+      "id": "yesterday-day-link",
+      "source": "yesterday-old",
+      "target": "yesterday-day",
+      "type": "formation",
+      "challenge": {
+        "prompt": "Does dæg supply the day part of this old expression?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Dæg means day and developed into our modern word day."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the word and meaning again. Yes. Dæg means day and developed into our modern word day."
+          }
+        ]
+      },
+      "evidence": {
+        "title": "Follow the evidence",
+        "text": "Yes. Dæg means day and developed into our modern word day.",
+        "sourceIds": [
+          "day",
+          "history"
+        ]
+      },
+      "sourceSegmentId": "day"
+    },
+    {
+      "id": "yesterday-german-link",
+      "source": "yesterday-yester",
+      "target": "yesterday-german",
+      "type": "related",
+      "challenge": {
+        "prompt": "Could geostran and German gestern be word-family cousins?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. They share an older Germanic ancestor. Modern German is a cousin, not the source of the Old English word."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the word and meaning again. Yes. They share an older Germanic ancestor. Modern German is a cousin, not the source of the Old English word."
+          }
+        ]
+      },
+      "evidence": {
+        "title": "Follow the evidence",
+        "text": "Yes. They share an older Germanic ancestor. Modern German is a cousin, not the source of the Old English word.",
+        "sourceIds": [
+          "yester"
+        ]
+      }
+    },
+    {
+      "id": "yesterday-yeast-link",
+      "source": "yesterday-now",
+      "target": "yesterday-yeast",
+      "type": "comparison",
+      "challenge": {
+        "prompt": "Did yesterday get its first part from the bread-making word yeast?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Compare the word and meaning again. No. Yeast follows a word for yeast or froth. Yesterday follows geostran dæg."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Yeast follows a word for yeast or froth. Yesterday follows geostran dæg."
+          }
+        ]
+      },
+      "evidence": {
+        "title": "Follow the evidence",
+        "text": "No. Yeast follows a word for yeast or froth. Yesterday follows geostran dæg.",
+        "sourceIds": [
+          "yeast",
+          "history"
+        ]
+      }
+    },
+    {
+      "id": "yesterday-french-link",
+      "source": "yesterday-now",
+      "target": "yesterday-french",
+      "type": "comparison",
+      "challenge": {
+        "prompt": "Was English yesterday borrowed from French hier?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Compare the word and meaning again. No. English has its own older forms. French hier follows Latin heri; matching meanings do not prove a borrowing."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. English has its own older forms. French hier follows Latin heri; matching meanings do not prove a borrowing."
+          }
+        ]
+      },
+      "evidence": {
+        "title": "Follow the evidence",
+        "text": "No. English has its own older forms. French hier follows Latin heri; matching meanings do not prove a borrowing.",
+        "sourceIds": [
+          "french",
+          "history"
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "yesterday-now",
+      "label": "yesterday"
+    },
+    {
+      "nodeId": "yesterday-middle",
+      "label": "yesterdai"
+    },
+    {
+      "nodeId": "yesterday-old",
+      "label": "geostran dæg"
+    },
+    {
+      "nodeId": "yesterday-yester",
+      "label": "geostran"
+    },
+    {
+      "nodeId": "yesterday-day",
+      "label": "dæg"
+    }
+  ]
+}

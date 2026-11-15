@@ -288,3 +288,12 @@ Sandwich is a four-hop example: food → title → town → older spelling Sandw
 → settlement element wīc. Its goals include each required stop. The ending is
 segmented on Sandwic; a later witch false trail tests sound against meaning.
 All local forms stay anchored at the Kent town, separated with displayOffset.
+
+
+For branches across European languages, see biscuit, camera and companion.
+Camera requires two modern room-word descendants of Latin; neither modern
+country is presented as the source of the other. Companion’s Italian/Spanish
+bread branches stay optional after the three-hop core. Biscuit requires both
+number and baking components; an optional Italian relative cannot bypass them.
+Questions about false sources may involve genuine shared pieces (compass/com),
+so reject the exact borrowing claim without calling the words wholly unrelated.

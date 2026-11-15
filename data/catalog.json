@@ -503,7 +503,11 @@
     "cases/sandwich.json",
     "cases/mackintosh.json",
     "cases/pixie.json",
-    "cases/chortle.json"
+    "cases/chortle.json",
+    "cases/biscuit.json",
+    "cases/camera.json",
+    "cases/companion.json",
+    "cases/yesterday.json"
   ],
   "$schema": "catalog.schema.json",
   "rules": {
@@ -540,7 +544,7 @@
   },
   "modes": {
     "chaser": {
-      "label": "Word Chaser",
+      "label": "Junior Word Chaser",
       "description": "Explore with clues. Mistakes can be tried again.",
       "instructions": "Move or drag the glass over an object to reveal its word. Tap the object to test your theory. Ask for a little clue if you need one. Correct theories earn points; mistaken guesses reduce the reward. Keyboard: arrows move, Enter inspects, +/− zoom, P speaks, H gives a hint. Zoom with +/− or pinch. Use two fingers to pan, or Shift + arrow keys. Whole Europe shows the wider map.",
       "showMarkerDetails": true,
@@ -549,6 +553,18 @@
       "restartOnWrong": false,
       "showUnvisitedMarkers": true,
       "showPeekDetails": true,
+      "searchHintSeconds": 0
+    },
+    "word-chaser": {
+      "label": "Word Chaser",
+      "description": "Search for hidden words. Mistakes can be tried again.",
+      "instructions": "Start with the visible word. Move or drag the glass around the map to uncover other words, then tap to test your theory. Ask for a little clue if you need one. Correct theories earn points; mistaken guesses reduce the reward. Keyboard: arrows move, Enter inspects, +/− zoom, P speaks, H gives a hint. Zoom with +/− or pinch. Use two fingers to pan, or Shift + arrow keys. Whole Europe shows the wider map.",
+      "showMarkerDetails": false,
+      "showPeeks": true,
+      "allowHints": true,
+      "restartOnWrong": false,
+      "showUnvisitedMarkers": false,
+      "showPeekDetails": false,
       "searchHintSeconds": 0
     },
     "investigator": {
@@ -613,6 +629,7 @@
       "caseIds": [
         "day",
         "night",
+        "yesterday",
         "january"
       ]
     },
@@ -634,7 +651,8 @@
         "herring",
         "meat",
         "lunch",
-        "dinner"
+        "dinner",
+        "biscuit"
       ]
     },
     {
@@ -647,7 +665,8 @@
         "algebra",
         "geometry",
         "geography",
-        "robot"
+        "robot",
+        "camera"
       ]
     },
     {
@@ -661,7 +680,8 @@
         "piano",
         "art",
         "dinosaur",
-        "fart"
+        "fart",
+        "companion"
       ]
     }
   ]

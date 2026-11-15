@@ -1,0 +1,625 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "camera",
+  "title": "camera",
+  "icon": "📷",
+  "summary": "A picture-taking device that opens doors to rooms across Europe.",
+  "question": "Why does a picture-taking device share a name with rooms?",
+  "startNodeId": "camera-now",
+  "goalNodeIds": [
+    "camera-obscura",
+    "camera-latin",
+    "camera-french",
+    "camera-spanish"
+  ],
+  "completion": "You traced camera to camera obscura, then to the Latin room word camera. French chambre and Spanish cámara follow that older word too; Italian camera is another room-word relative. These are branches of a family, not a chain of borrowings between modern countries.",
+  "partner": "Follow the sounds, places and meanings. What surprising connection will you discover?",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · camera, camera obscura and room-word relatives",
+      "url": "https://www.etymonline.com/word/camera"
+    },
+    {
+      "id": "obscura",
+      "title": "Etymonline · camera obscura",
+      "url": "https://www.etymonline.com/word/camera%20obscura"
+    },
+    {
+      "id": "chamber",
+      "title": "Etymonline · chamber and French chambre",
+      "url": "https://www.etymonline.com/word/chamber"
+    },
+    {
+      "id": "spanish",
+      "title": "RAE · cámara",
+      "url": "https://dle.rae.es/c%C3%A1mara"
+    },
+    {
+      "id": "camel",
+      "title": "Etymonline · camel",
+      "url": "https://www.etymonline.com/word/camel"
+    },
+    {
+      "id": "german",
+      "title": "PONS · Fotoapparat, a camera",
+      "url": "https://de.pons.com/%C3%BCbersetzung/deutsche-rechtschreibung/Fotoapparat"
+    },
+    {
+      "id": "french",
+      "title": "Académie française · chambre, from Latin camera",
+      "url": "https://www.dictionnaire-academie.fr/article/A9C1538"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "camera-now",
+      "form": "camera",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A device that takes pictures.",
+      "pronunciation": {
+        "text": "camera",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A word to investigate",
+        "text": "The photographic name grew from camera obscura, a dark chamber or box used to project an image. The older room word also has relatives in other European languages.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Imagine making a picture inside a dark box."
+          },
+          {
+            "title": "Check the history",
+            "text": "The photographic name grew from camera obscura, a dark chamber or box used to project an image. The older room word also has relatives in other European languages."
+          }
+        ]
+      }
+    },
+    {
+      "id": "camera-obscura",
+      "form": "camera obscura",
+      "languageId": "scientific-latin-new-latin",
+      "eraId": "earlymodern",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Phrase used in English · 1700s",
+      "meaning": "A dark room or box that projects an image.",
+      "pronunciation": {
+        "text": "camera obscura",
+        "languageId": "scientific-latin-new-latin"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word to investigate",
+        "text": "Camera was shortened from camera obscura. Light entering a small opening or lens forms an image inside. This English-use pin is not a claim that the device was invented in London.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "history",
+          "obscura"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Try splitting the phrase. Which part looks exactly like today’s word?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Camera was shortened from camera obscura. Light entering a small opening or lens forms an image inside. This English-use pin is not a claim that the device was invented in London."
+          }
+        ]
+      },
+      "displayOffset": [
+        -80,
+        -65
+      ],
+      "mapCaption": "English use · not invention site",
+      "segments": [
+        {
+          "text": "camera",
+          "id": "room"
+        },
+        {
+          "text": " obscura"
+        }
+      ]
+    },
+    {
+      "id": "camera-latin",
+      "form": "camera",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "latin-region",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Latin · older room word",
+      "meaning": "A vaulted room: a room with an arched roof.",
+      "pronunciation": {
+        "text": "camera",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word to investigate",
+        "text": "The camera part of camera obscura is the Latin room word. Photographic camera and several European room words share this history.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "A camera obscura was a dark chamber. Which part could mean the chamber?"
+          },
+          {
+            "title": "Check the history",
+            "text": "The camera part of camera obscura is the Latin room word. Photographic camera and several European room words share this history."
+          }
+        ]
+      },
+      "mapCaption": "Latin vocabulary · broad anchor"
+    },
+    {
+      "id": "camera-french",
+      "form": "chambre",
+      "languageId": "french",
+      "eraId": "today",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A room or bedroom, in French.",
+      "pronunciation": {
+        "text": "chambre",
+        "languageId": "french"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "French chambre developed from Latin camera. It is a room-word relative of photographic camera, not the modern French source of English camera.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "history",
+          "chamber",
+          "french"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare the consonants and the room meaning. A word can change its spelling."
+          },
+          {
+            "title": "Check the history",
+            "text": "French chambre developed from Latin camera. It is a room-word relative of photographic camera, not the modern French source of English camera."
+          }
+        ]
+      }
+    },
+    {
+      "id": "camera-spanish",
+      "form": "cámara",
+      "languageId": "spanish",
+      "eraId": "today",
+      "placeId": "spain",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A chamber; also a picture-taking device.",
+      "pronunciation": {
+        "text": "cámara",
+        "languageId": "spanish"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Spanish cámara follows Latin camera. The Spanish word can name both a chamber and a photographic camera. These meanings help reveal the shared history.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "spanish",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "This word has kept both a room meaning and a picture-taking meaning."
+          },
+          {
+            "title": "Check the history",
+            "text": "Spanish cámara follows Latin camera. The Spanish word can name both a chamber and a photographic camera. These meanings help reveal the shared history."
+          }
+        ]
+      }
+    },
+    {
+      "id": "camera-italian",
+      "form": "camera",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A room, in Italian.",
+      "pronunciation": {
+        "text": "camera",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Italian camera is another descendant of the Latin room word. Identical spelling does not mean the everyday Italian room word was borrowed from English photography.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Same letters, but what does this Italian word name?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Italian camera is another descendant of the Latin room word. Identical spelling does not mean the everyday Italian room word was borrowed from English photography."
+          }
+        ]
+      },
+      "displayOffset": [
+        60,
+        -50
+      ]
+    },
+    {
+      "id": "camera-camel",
+      "form": "camel",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "An animal with one or two humps.",
+      "pronunciation": {
+        "text": "camel",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Camel has a different history, through the animal word camelus. A shared beginning does not make it the source of camera.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "camel",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Does an animal name explain the older dark-room device?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Camel has a different history, through the animal word camelus. A shared beginning does not make it the source of camera."
+          }
+        ]
+      },
+      "displayOffset": [
+        75,
+        65
+      ]
+    },
+    {
+      "id": "camera-german",
+      "form": "Fotoapparat",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A camera, in German.",
+      "pronunciation": {
+        "text": "Fotoapparat",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Fotoapparat can name the same kind of device. English camera follows the older camera obscura and room-word trail, not this German compound.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "german",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Matching objects can have different names and histories."
+          },
+          {
+            "title": "Check the history",
+            "text": "Fotoapparat can name the same kind of device. English camera follows the older camera obscura and room-word trail, not this German compound."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "camera-obscura-link",
+      "source": "camera-now",
+      "target": "camera-obscura",
+      "type": "shortening",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. The picture-taking device’s name grew from the older dark-chamber phrase.",
+        "sourceIds": [
+          "history",
+          "obscura"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could camera be a shorter name from camera obscura?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The picture-taking device’s name grew from the older dark-chamber phrase."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the clues once more. Yes. The picture-taking device’s name grew from the older dark-chamber phrase."
+          }
+        ]
+      },
+      "timeLabel": "Today → dark-chamber name, 1700s"
+    },
+    {
+      "id": "camera-latin-link",
+      "source": "camera-obscura",
+      "target": "camera-latin",
+      "type": "formation",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. The room word is the clue to investigate across Europe.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does camera in this phrase use the older Latin word for a room?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The room word is the clue to investigate across Europe."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the clues once more. Yes. The room word is the clue to investigate across Europe."
+          }
+        ]
+      },
+      "sourceSegmentId": "room"
+    },
+    {
+      "id": "camera-french-link",
+      "source": "camera-latin",
+      "target": "camera-french",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Chambre is a room-word relative. We are following another branch, not a camera borrowed from modern French.",
+        "sourceIds": [
+          "history",
+          "chamber",
+          "french"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did French chambre develop from this Latin room word?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Chambre is a room-word relative. We are following another branch, not a camera borrowed from modern French."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the clues once more. Yes. Chambre is a room-word relative. We are following another branch, not a camera borrowed from modern French."
+          }
+        ]
+      }
+    },
+    {
+      "id": "camera-spanish-link",
+      "source": "camera-latin",
+      "target": "camera-spanish",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Spanish cámara keeps chamber and picture-taking meanings.",
+        "sourceIds": [
+          "history",
+          "spanish"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does Spanish cámara belong to this same room-word family?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Spanish cámara keeps chamber and picture-taking meanings."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the clues once more. Yes. Spanish cámara keeps chamber and picture-taking meanings."
+          }
+        ]
+      }
+    },
+    {
+      "id": "camera-italian-link",
+      "source": "camera-latin",
+      "target": "camera-italian",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Here camera means a room. The shared older word explains the familiar spelling.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Is Italian camera another descendant of the Latin room word?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Here camera means a room. The shared older word explains the familiar spelling."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the clues once more. Yes. Here camera means a room. The shared older word explains the familiar spelling."
+          }
+        ]
+      }
+    },
+    {
+      "id": "camera-camel-link",
+      "source": "camera-now",
+      "target": "camera-camel",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Similar beginnings do not supply a historical connection.",
+        "sourceIds": [
+          "history",
+          "camel"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did the picture-taking word camera come from the animal name camel?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Similar beginnings do not supply a historical connection."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Similar beginnings do not supply a historical connection."
+          }
+        ]
+      }
+    },
+    {
+      "id": "camera-german-link",
+      "source": "camera-now",
+      "target": "camera-german",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. The same device can have another name. Camera follows the dark-room phrase.",
+        "sourceIds": [
+          "history",
+          "german"
+        ]
+      },
+      "challenge": {
+        "prompt": "Was English camera borrowed from the German word Fotoapparat?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. The same device can have another name. Camera follows the dark-room phrase."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. The same device can have another name. Camera follows the dark-room phrase."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "camera-now",
+      "label": "camera"
+    },
+    {
+      "nodeId": "camera-obscura",
+      "label": "camera obscura"
+    },
+    {
+      "nodeId": "camera-latin",
+      "label": "camera"
+    },
+    {
+      "nodeId": "camera-french",
+      "label": "chambre"
+    },
+    {
+      "nodeId": "camera-spanish",
+      "label": "cámara"
+    }
+  ]
+}

@@ -23,7 +23,7 @@ let saved = {}, engine, selectedEra, evidenceId = null, cueTimer = null, evidenc
 try { localStorage.removeItem('word-chaser-graph-v2'); const stored = JSON.parse(localStorage.getItem(storageKey)); saved = stored && typeof stored === 'object' && !Array.isArray(stored) ? stored : {}; } catch { /* Storage is optional. */ }
 const modeParam = new URLSearchParams(window.location?.search || '').get('mode');
 const normalizeMode = value => value?.trim().toLowerCase().replace(/[\s_-]/g, '');
-const requestedMode = Object.keys(catalog.modes).find(id => modeParam && [id, catalog.modes[id].label].some(name => normalizeMode(name) === normalizeMode(modeParam)));
+const requestedMode = normalizeMode(modeParam) === 'wordchaser' ? 'chaser' : Object.keys(catalog.modes).find(id => modeParam && [id, catalog.modes[id].label].some(name => normalizeMode(name) === normalizeMode(modeParam)));
 let modeId = requestedMode || (Object.hasOwn(catalog.modes, saved.modeId) ? saved.modeId : 'chaser');
 const currentMode = () => catalog.modes[modeId];
 const map = new MapView($('map'), window.EUROPE_MAP, {onInspect: inspect, onHelp: showHint, onSpeak: speakNode, onHover: showPeek, onDismiss: closeEvidence});

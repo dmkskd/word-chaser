@@ -1,0 +1,618 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "biscuit",
+  "title": "biscuit",
+  "icon": "🍪",
+  "summary": "A crunchy treat with an old baking instruction hidden inside.",
+  "question": "What cooking instruction is hidden in biscuit?",
+  "startNodeId": "biscuit-now",
+  "goalNodeIds": [
+    "biscuit-french",
+    "biscuit-latin",
+    "biscuit-twice",
+    "biscuit-baked"
+  ],
+  "completion": "You followed biscuit through French bescuit to medieval Latin biscoctum, then found bis (twice) and coctus (cooked/baked). Italian biscotto is a relative. The old name describes twice-baked bread; today’s biscuits need not all be baked twice.",
+  "partner": "Follow the sounds, places and meanings. What surprising connection will you discover?",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · biscuit and its French/Latin history",
+      "url": "https://www.etymonline.com/word/biscuit"
+    },
+    {
+      "id": "italian",
+      "title": "Treccani · biscotto, twice-baked bread",
+      "url": "https://www.treccani.it/vocabolario/biscotto/"
+    },
+    {
+      "id": "cookie",
+      "title": "Etymonline · cookie and Dutch koekje",
+      "url": "https://www.etymonline.com/word/cookie"
+    },
+    {
+      "id": "basket",
+      "title": "Etymonline · basket",
+      "url": "https://www.etymonline.com/word/basket"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "biscuit-now",
+      "form": "biscuit",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today · British English",
+      "meaning": "A small baked treat, often crunchy.",
+      "pronunciation": {
+        "text": "biscuit",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A word to investigate",
+        "text": "Biscuit carries an old description of how bread was baked. Modern biscuits need not all be baked twice.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Listen to the first syllable, then compare the older food words."
+          },
+          {
+            "title": "Check the history",
+            "text": "Biscuit carries an old description of how bread was baked. Modern biscuits need not all be baked twice."
+          }
+        ]
+      }
+    },
+    {
+      "id": "biscuit-french",
+      "form": "bescuit",
+      "languageId": "old-french",
+      "eraId": "medieval",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Old French · 1100s",
+      "meaning": "An older word for a hard baked food.",
+      "pronunciation": {
+        "text": "bescuit",
+        "languageId": "old-french"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word to investigate",
+        "text": "English biscuit ultimately follows Old French bescuit. English spellings changed, and the modern spelling was influenced by its Italian relative.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare bescuit and biscuit. Could the spelling change while the food word travelled?"
+          },
+          {
+            "title": "Check the history",
+            "text": "English biscuit ultimately follows Old French bescuit. English spellings changed, and the modern spelling was influenced by its Italian relative."
+          }
+        ]
+      }
+    },
+    {
+      "id": "biscuit-latin",
+      "form": "biscoctum",
+      "languageId": "medieval-latin",
+      "eraId": "medieval",
+      "placeId": "latin-region",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Medieval Latin",
+      "meaning": "An old baked-bread name.",
+      "pronunciation": {
+        "text": "biscoctum",
+        "languageId": "medieval-latin"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word to investigate",
+        "text": "Old French bescuit and Italian biscotto follow medieval Latin biscoctum, meaning twice baked. The two parts tell us how the bread was prepared.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "This word hides a number and a cooking action. Can you find both?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Old French bescuit and Italian biscotto follow medieval Latin biscoctum, meaning twice baked. The two parts tell us how the bread was prepared."
+          }
+        ]
+      },
+      "mapCaption": "Latin vocabulary · broad anchor",
+      "segments": [
+        {
+          "text": "bis",
+          "id": "number"
+        },
+        {
+          "text": "coctum",
+          "id": "baked"
+        }
+      ]
+    },
+    {
+      "id": "biscuit-twice",
+      "form": "bis",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "latin-region",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Latin · number word",
+      "meaning": "Twice: two times.",
+      "pronunciation": {
+        "text": "bis",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word to investigate",
+        "text": "Latin bis means twice. It supplies the number part of the old baked-bread name.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Would baking something, then baking it again, fit this number?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Latin bis means twice. It supplies the number part of the old baked-bread name."
+          }
+        ]
+      },
+      "displayOffset": [
+        -95,
+        -60
+      ],
+      "mapCaption": "Latin word part"
+    },
+    {
+      "id": "biscuit-baked",
+      "form": "coctus",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "latin-region",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Latin · cooking word",
+      "meaning": "Cooked or baked.",
+      "pronunciation": {
+        "text": "coctus",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word to investigate",
+        "text": "Coctus means cooked or baked; coctum is a form used in biscoctum. Together with bis, it gives the description twice baked.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare the cooking part coctum with coctus. Latin endings can change."
+          },
+          {
+            "title": "Check the history",
+            "text": "Coctus means cooked or baked; coctum is a form used in biscoctum. Together with bis, it gives the description twice baked."
+          }
+        ]
+      },
+      "displayOffset": [
+        90,
+        60
+      ],
+      "mapCaption": "Latin word part"
+    },
+    {
+      "id": "biscuit-italian",
+      "form": "biscotto",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A biscuit, in Italian.",
+      "pronunciation": {
+        "text": "biscotto",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Biscotto and biscuit share the older twice-baked name. Biscuit was not borrowed directly from today’s Italian biscotto; Italian did influence its spelling.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare both halves of biscotto with the old Latin food name."
+          },
+          {
+            "title": "Check the history",
+            "text": "Biscotto and biscuit share the older twice-baked name. Biscuit was not borrowed directly from today’s Italian biscotto; Italian did influence its spelling."
+          }
+        ]
+      },
+      "displayOffset": [
+        0,
+        -60
+      ]
+    },
+    {
+      "id": "biscuit-dutch",
+      "form": "koekje",
+      "languageId": "dutch",
+      "eraId": "today",
+      "placeId": "netherlands",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A little cake or cookie.",
+      "pronunciation": {
+        "text": "koekje",
+        "languageId": "dutch"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Dutch koekje gave English cookie its name. Biscuit follows a different, French and Latin trail. Similar food can have different word histories.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "cookie",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Think about the sounds of cookie and biscuit. Which fits koekje more closely?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Dutch koekje gave English cookie its name. Biscuit follows a different, French and Latin trail. Similar food can have different word histories."
+          }
+        ]
+      }
+    },
+    {
+      "id": "biscuit-basket",
+      "form": "basket",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A woven container for carrying things.",
+      "pronunciation": {
+        "text": "basket",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Basket follows an older container word, Anglo-French bascat. It did not supply biscuit, even if a basket can hold biscuits. Its deeper history is uncertain.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "basket",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "One word names the food; the other names something that can carry it."
+          },
+          {
+            "title": "Check the history",
+            "text": "Basket follows an older container word, Anglo-French bascat. It did not supply biscuit, even if a basket can hold biscuits. Its deeper history is uncertain."
+          }
+        ]
+      },
+      "displayOffset": [
+        -75,
+        60
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "biscuit-french-link",
+      "source": "biscuit-now",
+      "target": "biscuit-french",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Biscuit ultimately follows Old French bescuit.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could this older French food word explain English biscuit?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Biscuit ultimately follows Old French bescuit."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the clues once more. Yes. Biscuit ultimately follows Old French bescuit."
+          }
+        ]
+      },
+      "timeLabel": "Today → Old French, 1100s"
+    },
+    {
+      "id": "biscuit-latin-link",
+      "source": "biscuit-french",
+      "target": "biscuit-latin",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. The Latin name gives us two smaller clues to investigate.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did this older Latin food name lie behind French bescuit?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The Latin name gives us two smaller clues to investigate."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the clues once more. Yes. The Latin name gives us two smaller clues to investigate."
+          }
+        ]
+      },
+      "timeLabel": "Old French → medieval Latin"
+    },
+    {
+      "id": "biscuit-twice-link",
+      "source": "biscuit-latin",
+      "target": "biscuit-twice",
+      "type": "formation",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes! Bis gives the number: two times.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does the first part of biscoctum mean twice?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes! Bis gives the number: two times."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the clues once more. Yes! Bis gives the number: two times."
+          }
+        ]
+      },
+      "sourceSegmentId": "number"
+    },
+    {
+      "id": "biscuit-baked-link",
+      "source": "biscuit-latin",
+      "target": "biscuit-baked",
+      "type": "formation",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes! Bis plus the cooked/baked part describes twice-baked bread.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does the other part come from this word for cooked or baked?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes! Bis plus the cooked/baked part describes twice-baked bread."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the clues once more. Yes! Bis plus the cooked/baked part describes twice-baked bread."
+          }
+        ]
+      },
+      "sourceSegmentId": "baked"
+    },
+    {
+      "id": "biscuit-italian-link",
+      "source": "biscuit-french",
+      "target": "biscuit-italian",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. They are relatives, and Italian also influenced the English spelling. That is different from a direct borrowing from modern Italian.",
+        "sourceIds": [
+          "history",
+          "italian"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could biscuit and biscotto share an older food name?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. They are relatives, and Italian also influenced the English spelling. That is different from a direct borrowing from modern Italian."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the clues once more. Yes. They are relatives, and Italian also influenced the English spelling. That is different from a direct borrowing from modern Italian."
+          }
+        ]
+      }
+    },
+    {
+      "id": "biscuit-dutch-link",
+      "source": "biscuit-now",
+      "target": "biscuit-dutch",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Koekje explains cookie; biscuit follows the French and Latin trail.",
+        "sourceIds": [
+          "cookie",
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did English biscuit get its name from Dutch koekje?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Koekje explains cookie; biscuit follows the French and Latin trail."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Koekje explains cookie; biscuit follows the French and Latin trail."
+          }
+        ]
+      }
+    },
+    {
+      "id": "biscuit-basket-link",
+      "source": "biscuit-now",
+      "target": "biscuit-basket",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. A similar sound and a possible container are not evidence of that origin.",
+        "sourceIds": [
+          "basket",
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Was biscuit named after a basket used to carry it?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. A similar sound and a possible container are not evidence of that origin."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. A similar sound and a possible container are not evidence of that origin."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "biscuit-now",
+      "label": "biscuit"
+    },
+    {
+      "nodeId": "biscuit-french",
+      "label": "bescuit"
+    },
+    {
+      "nodeId": "biscuit-latin",
+      "label": "biscoctum"
+    },
+    {
+      "nodeId": "biscuit-twice",
+      "label": "bis"
+    },
+    {
+      "nodeId": "biscuit-baked",
+      "label": "coctus"
+    }
+  ]
+}

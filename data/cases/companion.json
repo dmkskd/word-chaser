@@ -1,0 +1,597 @@
+{
+  "$schema": "../case.schema.json",
+  "schemaVersion": 1,
+  "id": "companion",
+  "title": "companion",
+  "icon": "🤝",
+  "summary": "A friend or fellow traveller with a surprising food clue.",
+  "question": "What food is hidden in the history of companion?",
+  "startNodeId": "companion-now",
+  "goalNodeIds": [
+    "companion-french",
+    "companion-latin",
+    "companion-bread"
+  ],
+  "completion": "You followed companion through French compagnon to Late Latin companionem, then uncovered panis, bread. The older image is someone you share bread with. Italian pane and Spanish pan continue that bread word; German Freund follows the family of English friend.",
+  "partner": "Follow the sounds, places and meanings. What surprising connection will you discover?",
+  "sources": [
+    {
+      "id": "history",
+      "title": "Etymonline · companion and the bread-fellow meaning",
+      "url": "https://www.etymonline.com/word/companion"
+    },
+    {
+      "id": "pane",
+      "title": "Treccani · pane",
+      "url": "https://www.treccani.it/vocabolario/pane1/"
+    },
+    {
+      "id": "pan",
+      "title": "RAE · pan, from Latin panis",
+      "url": "https://dle.rae.es/pan"
+    },
+    {
+      "id": "compass",
+      "title": "Etymonline · compass and its different formation",
+      "url": "https://www.etymonline.com/word/compass"
+    },
+    {
+      "id": "friend",
+      "title": "Etymonline · friend and German Freund",
+      "url": "https://www.etymonline.com/word/friend"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "companion-now",
+      "form": "companion",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Someone who spends time or travels with you.",
+      "pronunciation": {
+        "text": "companion",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "label",
+        "title": "A word to investigate",
+        "text": "Companion travelled through French from a Latin word whose ingredients include together and bread. Its old image is someone you share bread with.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "A friend may share a journey, a game or a meal with you."
+          },
+          {
+            "title": "Check the history",
+            "text": "Companion travelled through French from a Latin word whose ingredients include together and bread. Its old image is someone you share bread with."
+          }
+        ]
+      }
+    },
+    {
+      "id": "companion-french",
+      "form": "compagnon",
+      "languageId": "old-french",
+      "eraId": "medieval",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Old French · 1100s",
+      "meaning": "A fellow, friend or partner.",
+      "pronunciation": {
+        "text": "compagnon",
+        "languageId": "old-french"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word to investigate",
+        "text": "English companion was borrowed from Old French compagnon, meaning a fellow, friend or partner.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Say compagnon and companion aloud. Which sounds and meanings fit?"
+          },
+          {
+            "title": "Check the history",
+            "text": "English companion was borrowed from Old French compagnon, meaning a fellow, friend or partner."
+          }
+        ]
+      }
+    },
+    {
+      "id": "companion-latin",
+      "form": "companionem",
+      "languageId": "latin",
+      "eraId": "medieval",
+      "placeId": "france",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Late Latin · recorded in the 500s",
+      "meaning": "An older word for a fellow or companion.",
+      "pronunciation": {
+        "text": "companionem",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word to investigate",
+        "text": "Companionem is a form of Late Latin companio. It combines the idea of together with panis, bread: a bread fellow. The word is recorded in Frankish law; this is not a claim it was invented in modern France.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "One part means together. What everyday food might be hidden in the other part?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Companionem is a form of Late Latin companio. It combines the idea of together with panis, bread: a bread fellow. The word is recorded in Frankish law; this is not a claim it was invented in modern France."
+          }
+        ]
+      },
+      "displayOffset": [
+        85,
+        65
+      ],
+      "mapCaption": "Latin evidence · Frankish law"
+    },
+    {
+      "id": "companion-bread",
+      "form": "panis",
+      "languageId": "latin",
+      "eraId": "roman",
+      "placeId": "latin-region",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Latin · older food word",
+      "meaning": "Bread, in Latin.",
+      "pronunciation": {
+        "text": "panis",
+        "languageId": "latin"
+      },
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A word to investigate",
+        "text": "Panis is the bread ingredient in the older companion word. Bread sharing supplied an image for fellowship; today a companion need not share food with you.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Imagine breaking a loaf and sharing it with someone."
+          },
+          {
+            "title": "Check the history",
+            "text": "Panis is the bread ingredient in the older companion word. Bread sharing supplied an image for fellowship; today a companion need not share food with you."
+          }
+        ]
+      },
+      "mapCaption": "Latin vocabulary · broad anchor"
+    },
+    {
+      "id": "companion-italian",
+      "form": "pane",
+      "languageId": "italian",
+      "eraId": "today",
+      "placeId": "florence",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Bread, in Italian.",
+      "pronunciation": {
+        "text": "pane",
+        "languageId": "italian"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Italian pane continues Latin panis. The bread word is related to the bread ingredient hidden in companion.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "history",
+          "pane"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare pane with panis. What changed at the end?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Italian pane continues Latin panis. The bread word is related to the bread ingredient hidden in companion."
+          }
+        ]
+      },
+      "displayOffset": [
+        50,
+        -50
+      ]
+    },
+    {
+      "id": "companion-spanish",
+      "form": "pan",
+      "languageId": "spanish",
+      "eraId": "today",
+      "placeId": "spain",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "Bread, in Spanish.",
+      "pronunciation": {
+        "text": "pan",
+        "languageId": "spanish"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Spanish pan comes from Latin panis. It is another bread-word branch, not a word borrowed from English companion.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "history",
+          "pan"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "This bread word is shorter. Can you still hear the old beginning?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Spanish pan comes from Latin panis. It is another bread-word branch, not a word borrowed from English companion."
+          }
+        ]
+      }
+    },
+    {
+      "id": "companion-compass",
+      "form": "compass",
+      "languageId": "english",
+      "eraId": "today",
+      "placeId": "london",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A tool that helps you find a direction.",
+      "pronunciation": {
+        "text": "compass",
+        "languageId": "english"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "Compass follows an older measuring word. Its com part can also mean together, but its other part concerns steps, not bread. A shared piece does not make the whole word the source of companion.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "compass",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Both words can travel with you. Does that prove one came from the other?"
+          },
+          {
+            "title": "Check the history",
+            "text": "Compass follows an older measuring word. Its com part can also mean together, but its other part concerns steps, not bread. A shared piece does not make the whole word the source of companion."
+          }
+        ]
+      },
+      "displayOffset": [
+        -75,
+        65
+      ]
+    },
+    {
+      "id": "companion-german",
+      "form": "Freund",
+      "languageId": "german",
+      "eraId": "today",
+      "placeId": "germany",
+      "offset": [
+        0,
+        0
+      ],
+      "period": "Today",
+      "meaning": "A friend, in German.",
+      "pronunciation": {
+        "text": "Freund",
+        "languageId": "german"
+      },
+      "evidence": {
+        "kind": "card",
+        "title": "A word to investigate",
+        "text": "German Freund belongs to the family of English friend. English companion follows a different French and Latin route. The same kind of person can be described with different word families.",
+        "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
+        "sourceIds": [
+          "friend",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "Look a little closer",
+            "text": "Compare friend and Freund, then compare companion and compagnon."
+          },
+          {
+            "title": "Check the history",
+            "text": "German Freund belongs to the family of English friend. English companion follows a different French and Latin route. The same kind of person can be described with different word families."
+          }
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "companion-french-link",
+      "source": "companion-now",
+      "target": "companion-french",
+      "type": "borrowing",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. English borrowed the word through French.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could the older French compagnon explain English companion?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. English borrowed the word through French."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the clues once more. Yes. English borrowed the word through French."
+          }
+        ]
+      },
+      "timeLabel": "English around 1300 → older French"
+    },
+    {
+      "id": "companion-latin-link",
+      "source": "companion-french",
+      "target": "companion-latin",
+      "type": "inheritance",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. That Latin word contains an unexpected food clue.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did French compagnon grow from this older Latin companion word?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. That Latin word contains an unexpected food clue."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the clues once more. Yes. That Latin word contains an unexpected food clue."
+          }
+        ]
+      },
+      "timeLabel": "Old French → Late Latin, 500s"
+    },
+    {
+      "id": "companion-bread-link",
+      "source": "companion-latin",
+      "target": "companion-bread",
+      "type": "formation",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes! The old image is a bread fellow: someone who shares bread with you.",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      "challenge": {
+        "prompt": "Does this Latin bread word supply the food part inside the older companion word?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes! The old image is a bread fellow: someone who shares bread with you."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the clues once more. Yes! The old image is a bread fellow: someone who shares bread with you."
+          }
+        ]
+      }
+    },
+    {
+      "id": "companion-italian-link",
+      "source": "companion-bread",
+      "target": "companion-italian",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Pane is a bread-word relative of the ingredient hidden in companion.",
+        "sourceIds": [
+          "history",
+          "pane"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did Italian pane develop from the Latin bread word panis?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Pane is a bread-word relative of the ingredient hidden in companion."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the clues once more. Yes. Pane is a bread-word relative of the ingredient hidden in companion."
+          }
+        ]
+      }
+    },
+    {
+      "id": "companion-spanish-link",
+      "source": "companion-bread",
+      "target": "companion-spanish",
+      "type": "related",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "Yes. Pan and pane are bread relatives. Companion carries that food history inside its name.",
+        "sourceIds": [
+          "history",
+          "pan"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did Spanish pan develop from the same Latin bread word?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. Pan and pane are bread relatives. Companion carries that food history inside its name."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare the clues once more. Yes. Pan and pane are bread relatives. Companion carries that food history inside its name."
+          }
+        ]
+      }
+    },
+    {
+      "id": "companion-compass-link",
+      "source": "companion-now",
+      "target": "companion-compass",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Sharing a beginning or a journey does not make compass its source. Their other word parts have different histories.",
+        "sourceIds": [
+          "history",
+          "compass"
+        ]
+      },
+      "challenge": {
+        "prompt": "Did companion get its whole name from the travelling tool compass?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Sharing a beginning or a journey does not make compass its source. Their other word parts have different histories."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Sharing a beginning or a journey does not make compass its source. Their other word parts have different histories."
+          }
+        ]
+      }
+    },
+    {
+      "id": "companion-german-link",
+      "source": "companion-now",
+      "target": "companion-german",
+      "type": "comparison",
+      "evidence": {
+        "title": "Test this connection",
+        "text": "No. Freund belongs with friend; companion follows French and Latin. Matching meanings do not prove a borrowing.",
+        "sourceIds": [
+          "history",
+          "friend"
+        ]
+      },
+      "challenge": {
+        "prompt": "Was English companion borrowed from German Freund?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": false,
+            "feedback": "Look again. No. Freund belongs with friend; companion follows French and Latin. Matching meanings do not prove a borrowing."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": true,
+            "feedback": "No. Freund belongs with friend; companion follows French and Latin. Matching meanings do not prove a borrowing."
+          }
+        ]
+      }
+    }
+  ],
+  "puzzles": [],
+  "milestones": [
+    {
+      "nodeId": "companion-now",
+      "label": "companion"
+    },
+    {
+      "nodeId": "companion-french",
+      "label": "compagnon"
+    },
+    {
+      "nodeId": "companion-latin",
+      "label": "companionem"
+    },
+    {
+      "nodeId": "companion-bread",
+      "label": "panis"
+    }
+  ]
+}

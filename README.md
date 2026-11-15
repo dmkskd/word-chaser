@@ -18,7 +18,7 @@ For an HTTP preview, run `npm start` and open http://localhost:8000. `npm test` 
 
 ## Content is data
 
-All 36 current cases are JSON. The interpreter contains no word-name conditions, word-specific click handlers, or hand-written exceptions for branches.
+All 40 current cases are JSON. The interpreter contains no word-name conditions, word-specific click handlers, or hand-written exceptions for branches.
 
 | File | Purpose |
 | --- | --- |
@@ -49,9 +49,9 @@ A case can have multiple branches, converging paths, and comparison leaves. Ever
 
 ## Play
 
-Type two letters in **Find a word…** to see matching words immediately, then tap a result. **Browse all** shows the complete collection grouped into weekdays, town/city names, familiar words with local roots, time/calendar, colours, food/meals, learning/inventions and everyday discoveries. Opening or searching the browser keeps your current progress; choosing a word starts its case fresh.
+Type two letters in **Find a word…** to see matching words immediately, then tap a result. **Browse all** shows the complete collection grouped into weekdays, town/city names, familiar words with local roots, time/calendar, colours, food/meals, learning/inventions, everyday discoveries and words from books. Opening or searching the browser keeps your current progress; choosing a word starts its case fresh.
 
-Choose **Word Chaser** for guided play or **Investigator** to search for hidden words with the glass, with a location riddle after 30 seconds and a full case restart after any wrong answer. Changing modes starts a fresh attempt. Investigator keeps the starting word visible, reveals other words as you hover or drag the glass over them, and unlocks notebook stories after completion.
+Choose **Junior Word Chaser** for guided play or **Investigator** to search for hidden words with the glass, with a location riddle after 30 seconds and a full case restart after any wrong answer. Changing modes starts a fresh attempt. Investigator keeps the starting word visible, reveals other words as you hover or drag the glass over them, and unlocks notebook stories after completion.
 
 Share a level directly with `?mode=chaser` (or `?mode=word-chaser`) or `?mode=investigator`. A valid URL mode overrides the saved mode; switching modes resets the attempt.
 
@@ -103,3 +103,10 @@ share decisions and points; discovered books can be read again without scoring.
 New cases must require three connected hops. `npm run validate` also lists the
 24 older short cases awaiting expansion; those remain playable during migration.
 See [authoring rules](data/AUTHORING.md) for the exact length and evidence checks.
+
+
+New European word-family investigations: **biscuit** (four required connections,
+French and Latin baking words, with Italian biscotto); **camera** (four required
+connections, the dark-room phrase and French/Spanish room-word branches, with
+Italian camera); **companion** (three required connections to the Latin bread
+word, with Italian pane and Spanish pan). Each includes two sourced false trails.

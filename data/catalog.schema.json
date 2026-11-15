@@ -162,6 +162,11 @@
                 "maximum": 85
               }
             ]
+          },
+          "locationLabel": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
           }
         },
         "anyOf": [

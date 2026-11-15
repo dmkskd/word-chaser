@@ -83,6 +83,33 @@ Available types are defined by `catalog.relations`. Their category controls gene
 
 An edge is **evidence**, not a guess inferred from spelling. Similarity alone is insufficient. Say when a connection is a comparison, a shared ancestor, or an actual borrowing. Explain selected or omitted intermediate forms.
 
+### Explain how a form changed
+
+Optional `edge.development` powers the notebook's **How it changed** disclosure.
+The night and camera cases are the first examples. It contains `fromNodeId`,
+`toNodeId`, `summary`, `note` and an ordered `changes` array. These endpoints must
+be the edge's two nodes, in historical direction, which may be the reverse of
+investigation direction. This metadata never reverses a traversal edge.
+
+Each change requires an `aspect` (sound, spelling, meaning, shortening, formation
+or borrowing), short `text`, `basis` (documented, reconstructed or uncertain) and
+nonempty `sourceIds`. Cite the particular claim, not just the word generally.
+Use dictionaries for recorded forms and meanings, and linguistic scholarship
+for sound changes. Basis describes the claim: historical pronunciation remains
+reconstructed even when the research describing it is published. No browser
+voice establishes an old pronunciation. Put dialect limits, omitted stages,
+approximate dates or uncertainty in the required `note`; do not invent an exact
+date or a causal mechanism the source does not establish.
+
+The renderer uses only reviewed edges targeting the notebook entry. It displays
+the older-to-newer forms and ordered changes, with expandable per-change source
+links. There is no new decision, score or save action. Investigator omits these
+explanations from the DOM until case completion. Related cousins, comparisons
+and attestations cannot carry a direct-development explanation; their existing
+relationship evidence remains the explanation of that connection. Only add
+intermediate investigation nodes for meaningful sourced evidence, not to turn
+every pronunciation step into another scored stop.
+
 Outgoing edges become leads when the child reaches their source. A comparison can be a leaf. Previously visited nodes remain available, so a child can return from a comparison and inspect another lead. Multiple outgoing paths can converge on one root node. Cycles are allowed for genuine investigative relationships; do not add fake ancestry to create a game route.
 
 ## 3. Define the case
@@ -139,7 +166,7 @@ must ask about that direction. A map stop represents the particular evidence,
 not every speaker of its language: Arabic does not mean a single country.
 
 Optional display data: `node.mapCaption` adds a short caption to a discovered
-pin; `node.mapTitle` labels a candidate artifact without exposing its word;
+pin; `node.mapTitle` is retained in data but unsolved map text labels are hidden;
 `node.mapLabelSide` can be `left` or `right` to keep neighbouring labels apart.
 An optional `edge.timeLabel`, such as `1100s → around 820`, adds a clock label to
 a confirmed trail. Author the dates from the evidence; do not substitute a
@@ -297,3 +324,40 @@ bread branches stay optional after the three-hop core. Biscuit requires both
 number and baking components; an optional Italian relative cannot bypass them.
 Questions about false sources may involve genuine shared pieces (compass/com),
 so reject the exact borrowing claim without calling the words wholly unrelated.
+
+
+## Reveal timing
+
+Do not name the answer in a case summary, opening question or starting-word
+story shown before play. Full notebook stories are completion-only in every
+mode, because a node story can disclose the next unsolved relationship.
+Confirmed edge developments remain available per the mode rules.
+
+Junior mode shows untested markers without text labels; the lens reveals the
+word. Languages and dates are earned metadata, including accessibility labels,
+peeks, evidence-card date headers, time controls and timeline entries. Geography
+remains visible on guided evidence cards as a pin and larger place name; optional
+`place.locationLabel` supplies a plain place/country label without language or
+answer commentary. It describes the map anchor, not a proven birthplace. Optional
+authored clues remain available when explicitly requested. Rejected words keep
+readable labels with cross badges, without strike-through.
+
+
+## Optional genealogy projection
+
+`case.familyTree` contains a `note` and `nodes`. Every tree node has its own
+`id`, optional `parentId`, and `sourceIds`. A word node references an existing
+investigation `nodeId`; a reconstructed ancestor instead has a `label` and
+`detail` describing the reconstruction. Do not invent surviving texts or audio
+for those ancestors. Ancestors require nonempty `revealEdgeIds`; non-start word
+nodes must include an earned incoming edge. All required reveals must have
+been reviewed before the renderer inserts that tree node. Comparison/rejected
+edges cannot establish ancestry. Author genealogy explicitly; do not infer
+parent-child links from investigative traversal direction or word similarity.
+
+The map remains the play surface and keeps the solved celebration. The tree is
+an optional post-completion view opened by an invitation button. Reload returns
+to the solved map, and tree navigation never awards points. See night for the
+pilot: English spelling evidence remains required, while nox extends the family
+optionally. The prototype's technical layout still needs age-appropriate design
+review; do not automatically switch a child from the celebration into it.

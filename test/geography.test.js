@@ -17,3 +17,15 @@ test('geographic places use the original map projection and preserve real town p
   assert(Math.abs(atTownScale[0] - manchester[0] + 7.5) < 1e-9);
   assert.deepEqual(evidencePoint({...old,displayOffset:[0,0]},catalog,.1),manchester);
 });
+
+test('camera English comparison markers keep their map positions across viewport scales', () => {
+  const wordCase = cases.find(c => c.id === 'camera');
+  for (const id of ['camera-now', 'camera-obscura', 'camera-camel']) {
+    const node = wordCase.nodes.find(n => n.id === id);
+    assert.equal(node.placeId, 'england', 'Broad English vocabulary examples must not claim a London origin.');
+    const point = evidencePoint(node, catalog);
+    for (const scale of [.2, .7, 1, 2.5]) {
+      assert.deepEqual(evidencePoint(node, catalog, scale), point, 'Viewport size and zoom must not move these markers across the Channel.');
+    }
+  }
+});

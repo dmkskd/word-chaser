@@ -4,15 +4,15 @@
   "id": "night",
   "title": "night",
   "icon": "🌙",
-  "summary": "A dark-time word, an armoured sound-alike and a distant Roman cousin.",
+  "summary": "Investigate the history of the word for the dark part of the day.",
   "question": "Which clues belong to night’s family?",
   "startNodeId": "night-now",
   "goalNodeIds": [
     "night-old",
-    "night-german",
-    "night-latin"
+    "night-middle",
+    "night-german"
   ],
-  "completion": "Night follows Old English niht. German Nacht is a cousin; Latin nox is a more distant relative. Knight is a different word despite the matching sound.",
+  "completion": "You found older English niht and Middle English niȝt. The spelling and pronunciation changed into night. German Nacht belongs on a cousin branch. You can still investigate the optional Latin clue to extend the family tree.",
   "partner": "A familiar word can carry a surprising history. Follow the evidence!",
   "sources": [
     {
@@ -29,6 +29,26 @@
       "id": "nine",
       "title": "Etymonline · nine",
       "url": "https://www.etymonline.com/word/nine"
+    },
+    {
+      "id": "sound-change",
+      "title": "Grzegorz Kleban (2019) · Compensatory Lengthening in OT and DOT, §1 (niht → night)",
+      "url": "https://anglica-journal.com/api/files/view/1697719.pdf"
+    },
+    {
+      "id": "spellings",
+      "title": "Cambridge University Press · Might and night spellings in the Oxford English Dictionary, p. 1",
+      "url": "https://www.cambridge.org/core/services/aop-file-manager/file/5bd85ddda207ec54085fe861/40-Might-and-night.pdf"
+    },
+    {
+      "id": "chaucer-sounds",
+      "title": "Harvard · How to Read Chaucer, Lesson 2 (long vowels and the Great Vowel Shift)",
+      "url": "https://chaucer.fas.harvard.edu/lesson-2"
+    },
+    {
+      "id": "family",
+      "title": "University of Texas · Indo-European Lexicon: the night family",
+      "url": "https://lrc.la.utexas.edu/lex/master/1373"
     }
   ],
   "nodes": [
@@ -76,8 +96,8 @@
       "eraId": "medieval",
       "placeId": "england",
       "offset": [
-        0,
-        0
+        -20,
+        -80
       ],
       "period": "Old English · before 1100",
       "meaning": "Darkness and the night-time.",
@@ -104,11 +124,45 @@
             "text": "Night developed from Old English niht. Its relatives include German Nacht and Latin nox."
           }
         ]
+      }
+    },
+    {
+      "id": "night-middle",
+      "form": "niȝt",
+      "languageId": "middle-english",
+      "eraId": "medieval",
+      "placeId": "england",
+      "offset": [
+        -24,
+        -38
+      ],
+      "period": "Middle English · a recorded spelling",
+      "meaning": "The dark part of the day.",
+      "pronunciation": {
+        "text": "night",
+        "languageId": "middle-english"
       },
-      "displayOffset": [
-        -60,
-        -65
-      ]
+      "evidence": {
+        "kind": "manuscript",
+        "title": "A spelling to investigate",
+        "text": "Niȝt is a recorded Middle English spelling of night. The letter ȝ is called yogh. It and gh were used for a consonant later lost in standard English.",
+        "notice": "A different letter can represent a familiar older sound.",
+        "sourceIds": [
+          "spellings",
+          "history"
+        ],
+        "illustrative": true,
+        "pages": [
+          {
+            "title": "A different letter",
+            "text": "The middle letter is ȝ, called yogh. Compare its position with h in niht and gh in night."
+          },
+          {
+            "title": "Check the spelling record",
+            "text": "Historical spelling records include niht, niȝt and night. These are selected forms; spelling was not uniform."
+          }
+        ]
+      }
     },
     {
       "id": "night-german",
@@ -191,8 +245,8 @@
       "eraId": "today",
       "placeId": "england",
       "offset": [
-        0,
-        0
+        -45,
+        -5
       ],
       "period": "Today",
       "meaning": "A person with a knight’s title, often pictured in armour.",
@@ -220,11 +274,7 @@
             "text": "Knight follows Old English cniht. Night follows niht. They sound alike today, but their older forms and meanings differ."
           }
         ]
-      },
-      "displayOffset": [
-        -65,
-        45
-      ]
+      }
     },
     {
       "id": "night-nine",
@@ -296,6 +346,78 @@
             "label": "No, I don’t think so",
             "correct": false,
             "feedback": "Look again. Yes. Night continues Old English niht."
+          }
+        ]
+      },
+      "development": {
+        "fromNodeId": "night-old",
+        "toNodeId": "night-now",
+        "summary": "A consonant disappeared and the vowel changed; gh stayed in the spelling.",
+        "note": "A simplified account of the path to standard English. Dialects changed differently and at different times. Sound descriptions are reconstructions, not recordings; “neet” is a sound guide, not a required spelling stage.",
+        "changes": [
+          {
+            "aspect": "spelling",
+            "text": "Old English niht used h for a consonant people pronounced. Middle English spellings included niȝt and night: ȝ (yogh) and gh were ways of writing that consonant.",
+            "basis": "documented",
+            "sourceIds": [
+              "spellings",
+              "sound-change"
+            ]
+          },
+          {
+            "aspect": "sound",
+            "text": "The middle consonant was a friction sound, approximately like German ch in ich. In the path to standard English it disappeared, and the vowel lengthened to something like “neet”.",
+            "basis": "reconstructed",
+            "sourceIds": [
+              "sound-change"
+            ]
+          },
+          {
+            "aspect": "sound",
+            "text": "The long vowel later shifted to the “eye” sound in today’s night. This was part of the Great Vowel Shift. The written gh remained silent.",
+            "basis": "reconstructed",
+            "sourceIds": [
+              "chaucer-sounds",
+              "sound-change"
+            ]
+          },
+          {
+            "aspect": "meaning",
+            "text": "The central meaning stayed the dark part of the day. This connection mainly explains changes in sound and spelling.",
+            "basis": "documented",
+            "sourceIds": [
+              "history"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "night-middle-link",
+      "source": "night-now",
+      "target": "night-middle",
+      "type": "spelling",
+      "evidence": {
+        "title": "An English spelling connection",
+        "text": "Yes. Niȝt is a recorded Middle English spelling of night.",
+        "sourceIds": [
+          "spellings"
+        ]
+      },
+      "challenge": {
+        "prompt": "Could niȝt be an older English spelling of night?",
+        "choices": [
+          {
+            "id": "yes",
+            "label": "Yes, I think so",
+            "correct": true,
+            "feedback": "Yes. The letter ȝ (yogh) appears in recorded Middle English spellings of night."
+          },
+          {
+            "id": "no",
+            "label": "No, I don’t think so",
+            "correct": false,
+            "feedback": "Compare where ȝ appears. Historical records include this spelling of night."
           }
         ]
       }
@@ -430,16 +552,101 @@
       "label": "night"
     },
     {
+      "nodeId": "night-middle",
+      "label": "niȝt"
+    },
+    {
       "nodeId": "night-old",
       "label": "niht"
     },
     {
       "nodeId": "night-german",
       "label": "Nacht"
-    },
-    {
-      "nodeId": "night-latin",
-      "label": "nox"
     }
-  ]
+  ],
+  "familyTree": {
+    "note": "Read downwards: older ancestors above their descendants. Selected stages are shown, with intermediate forms omitted. Reconstructed ancestors come from language comparison, not surviving recordings.",
+    "nodes": [
+      {
+        "id": "family-root",
+        "label": "Older shared ancestor",
+        "detail": "Proto-Indo-European · reconstructed",
+        "sourceIds": [
+          "family",
+          "history"
+        ],
+        "revealEdgeIds": [
+          "night-german-link",
+          "night-latin-link"
+        ]
+      },
+      {
+        "id": "family-germanic",
+        "parentId": "family-root",
+        "label": "Germanic ancestor",
+        "detail": "Reconstructed shared word",
+        "sourceIds": [
+          "history"
+        ],
+        "revealEdgeIds": [
+          "night-german-link"
+        ]
+      },
+      {
+        "id": "family-old",
+        "parentId": "family-germanic",
+        "nodeId": "night-old",
+        "revealEdgeIds": [
+          "night-old-link"
+        ],
+        "sourceIds": [
+          "history"
+        ]
+      },
+      {
+        "id": "family-middle",
+        "parentId": "family-old",
+        "nodeId": "night-middle",
+        "revealEdgeIds": [
+          "night-middle-link"
+        ],
+        "sourceIds": [
+          "spellings"
+        ]
+      },
+      {
+        "id": "family-now",
+        "parentId": "family-middle",
+        "nodeId": "night-now",
+        "sourceIds": [
+          "history"
+        ]
+      },
+      {
+        "id": "family-german",
+        "parentId": "family-germanic",
+        "nodeId": "night-german",
+        "revealEdgeIds": [
+          "night-german-link"
+        ],
+        "sourceIds": [
+          "history",
+          "family"
+        ]
+      },
+      {
+        "id": "family-latin",
+        "parentId": "family-root",
+        "nodeId": "night-latin",
+        "revealEdgeIds": [
+          "night-german-link",
+          "night-latin-link"
+        ],
+        "sourceIds": [
+          "history",
+          "family"
+        ]
+      }
+    ]
+  }
 }

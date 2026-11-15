@@ -11,6 +11,8 @@ import {renderWordParts} from './word-parts.js';
 import {createCasePicker} from './case-picker.js';
 import {renderTextEvidence} from './text-evidence.js';
 import {renderEvidenceTimeline} from './evidence-timeline.js';
+import {renderWordDevelopments} from './word-development.js';
+import {renderFamilyTree} from './family-tree.js';
 
 const {catalog, cases} = content;
 const $ = id => document.getElementById(id);
@@ -19,7 +21,7 @@ const speech = createSpeech({onSpeakingChange: speaking => music.setDucked(speak
 const fireworks = createFireworks(), fireworkSound = createFireworkSound();
 const storageKey = 'word-chaser-current-v1';
 let searchTimer = null, searchSeconds = 0;
-let saved = {}, engine, selectedEra, evidenceId = null, cueTimer = null, evidenceFeedback = null, fireworksTimer = null;
+let saved = {}, engine, selectedEra, evidenceId = null, cueTimer = null, evidenceFeedback = null, fireworksTimer = null, historyView = 'map';
 try { localStorage.removeItem('word-chaser-graph-v2'); const stored = JSON.parse(localStorage.getItem(storageKey)); saved = stored && typeof stored === 'object' && !Array.isArray(stored) ? stored : {}; } catch { /* Storage is optional. */ }
 const modeParam = new URLSearchParams(window.location?.search || '').get('mode');
 const normalizeMode = value => value?.trim().toLowerCase().replace(/[\s_-]/g, '');
@@ -32,9 +34,9 @@ function showPeek(id) {
   if (!engine || !currentMode().showPeeks || !id || evidenceId || !engine.availableIds().includes(id)) { peek.hidden = true; return; }
   const node = engine.node(id), language = catalog.languages[node.languageId];
   $('peek-meaning').hidden = !currentMode().showPeekDetails;
-  $('peek-language').hidden = !currentMode().showPeekDetails;
+  $('peek-language').hidden = !currentMode().showPeekDetails || !engine.visited.has(id);
   $('peek-word').textContent = node.form; $('peek-meaning').textContent = node.meaning;
-  $('peek-language').textContent = engine.nodeStatus(id) === 'excluded' ? '✕ Not our trail · '+language.name : engine.visited.has(id) ? language.name : language.name;
+  $('peek-language').textContent = engine.visited.has(id) ? (engine.nodeStatus(id) === 'excluded' ? '✕ Not our trail · ' : '') + language.name : '';
   const [vx, vy, w, h] = map.view;
   const left = (map.lens[0] - vx) / w * 100;
   peek.style.left = Math.max(3, Math.min(67, left + (left > 60 ? -25 : 8))) + '%';
@@ -98,6 +100,7 @@ function selectCase(id, restore = false) {
   const snapshot = restore && saved.caseId === id ? saved.snapshot : undefined;
   engine?.destroy();
   engine = new Investigation(catalog, wordCase, snapshot); selectedEra = engine.node().eraId;
+  historyView = 'map';
   casePicker.setCurrent(id);
   map.startCase(wordCase); map.setLens(...point(engine.node())); render(); map.frameDiscovered(engine, catalog); persist(); startSearchTimer();
 }
@@ -123,6 +126,24 @@ function render() {
   renderNotebook(); renderEras(); renderPuzzles(); renderProgress();
   $('complete').hidden = !engine.complete; $('complete-text').textContent = c.completion;
   $('map-solved-stamp').hidden = !engine.complete;
+  renderHistoryView();
+}
+function renderHistoryView() {
+  const hasTree = !!engine.case.familyTree && engine.complete, showTree = hasTree && historyView === 'family';
+  $('history-views').hidden = !hasTree;
+  $('show-map').hidden = !showTree;
+  $('show-family').disabled = !hasTree;
+  $('show-family').textContent = showTree ? 'Word family' : `Want to know how ${engine.case.title} changed?`;
+  $('show-map').setAttribute('aria-pressed', String(!showTree));
+  $('show-family').setAttribute('aria-pressed', String(showTree));
+  document.querySelector('.map-holder').hidden = showTree;
+  document.querySelector('.legend').hidden = showTree;
+  document.querySelector('.time-machine').hidden = showTree || !currentMode().allowHints;
+  if (showTree) $('evidence-timeline').hidden = true;
+  $('family-tree').hidden = !showTree;
+  renderFamilyTree($('family-tree'), engine, currentMode(), id => {
+    historyView = 'map'; render(); inspect(id);
+  });
 }
 function renderProgress() {
   $('detective-points').textContent = `⭐ ${engine.points} ${engine.points === 1 ? 'point' : 'points'}`;
@@ -138,29 +159,33 @@ function renderNotebook() {
     const open = button(node.form, () => inspect(id), 'word-link');
     if (id === engine.currentId) open.setAttribute('aria-current', 'location');
     const meta = textElement('small', `${status === 'excluded' ? '✕ Not our trail · ' : ''}${catalog.languages[node.languageId].name} · ${node.period}`);
-    const story = document.createElement('details'); story.className = 'notebook-story'; story.append(textElement('summary', 'Read the story'), textElement('p', node.evidence.text), textElement('p', node.evidence.notice));
-    if (node.evidence.textSource) {
+    const story = document.createElement('details'); story.className = 'notebook-story';
+    // Node stories can name future answers, even on the starting word.
+    if (engine.complete) story.append(textElement('summary', 'Read the story'), textElement('p', node.evidence.text), textElement('p', node.evidence.notice));
+    if (engine.complete && node.evidence.textSource) {
       const passage = document.createElement('div'); passage.className = 'book-evidence';
       renderTextEvidence(passage, node); story.append(passage);
     }
-    story.hidden = !currentMode().allowHints && !engine.complete;
+    story.hidden = !engine.complete;
     const hear = document.createElement('button'); speech.bind(hear, audioData(node));
     hear.classList.add('notebook-audio'); hear.textContent = catalog.languages[node.pronunciation.languageId].approximate ? '🔊 ≈' : '🔊';
     const badge = textElement('span', status === 'excluded' ? '✕' : '✓', 'notebook-result');
     badge.setAttribute('aria-label', status === 'excluded' ? 'Not our trail' : 'Connected');
     const heading = document.createElement('div'); heading.className = 'notebook-entry-heading'; heading.append(badge, open, hear);
-    card.append(heading, meta, story); return card;
+    const developments = document.createElement('div'); developments.className = 'word-developments';
+    if (!engine.case.familyTree) renderWordDevelopments(developments, engine, id, currentMode());
+    card.append(heading, meta, developments, story); return card;
   }));
   const leads = engine.leads();
-  $('lead-list').replaceChildren(...leads.map(edge => {
+  $('lead-list').replaceChildren(...leads.map((edge, index) => {
     const node = engine.node(edge.target), relation = catalog.relations[edge.type];
-    const el = button(`${catalog.artifacts[node.evidence.kind].icon} ${engine.visited.has(node.id) ? node.form : catalog.languages[node.languageId].name}`, () => inspect(node.id), 'lead-link');
+    const el = button(`? Clue ${index + 1}`, () => inspect(node.id), 'lead-link');
     el.append(textElement('small', catalog.places[node.placeId].name)); return el;
   }));
   if (!leads.length) $('lead-list').append(textElement('p', 'This lead ends here. Return to a previous clue to compare another trail.'));
 }
 function renderEras() {
-  const eraIds = [...new Set(engine.case.nodes.map(node => node.eraId))].sort((a, b) => catalog.eras[b].startYear - catalog.eras[a].startYear);
+  const eraIds = [...new Set([...engine.visited].map(id => engine.node(id).eraId))].sort((a, b) => catalog.eras[b].startYear - catalog.eras[a].startYear);
   $('era-buttons').replaceChildren(...eraIds.map(id => {
     const era = catalog.eras[id];
     const el = button('', () => { selectedEra = id; closeEvidence(); hideCue(); render(); }, 'era-button');
@@ -179,19 +204,22 @@ function renderPuzzles() {
   }));
 }
 function inspect(id) {
+  historyView = 'map';
   if (engine.visited.has(id)) {
     engine.returnTo(id); persist();
     if (engine.node(id).kind !== 'attestation') { closeEvidence(); hideCue(); selectedEra = engine.node().eraId; render(); map.setLens(...point(engine.node())); return; }
   }
   stopSearchTimer();
   const {node} = engine.inspect(id);
-  hideCue(); evidenceId = id; evidenceFeedback = null; selectedEra = node.eraId; render();
-  const place = catalog.places[node.placeId], era = catalog.eras[node.eraId], language = catalog.languages[node.languageId];
-  $('evidence-meta').textContent = `${era.icon} ${era.name} · ${place.name}`;
+  hideCue(); evidenceId = id; evidenceFeedback = null; if (engine.visited.has(id)) selectedEra = node.eraId; render();
+  const place = catalog.places[node.placeId], era = catalog.eras[node.eraId];
+  const location = place.locationLabel || place.name.split(' · ')[0];
+  $('evidence-meta').textContent = currentMode().allowHints ? `📍 ${location}${engine.visited.has(id) ? ` · ${era.icon} ${era.name}` : ''}` : '';
   $('evidence-meta').hidden = !currentMode().allowHints;
-  $('evidence-icon').hidden = !currentMode().allowHints;
+  $('evidence-icon').hidden = true;
   $('evidence-icon').textContent = catalog.artifacts[node.evidence.kind].icon;
-  $('evidence-title').textContent = currentMode().allowHints ? node.evidence.title : 'Test this word';
+  $('evidence-title').textContent = '';
+  $('evidence-title').hidden = true;
   $('evidence-form').textContent = node.form;
   $('evidence-meaning').textContent = node.meaning;
   $('evidence-meaning').hidden = !currentMode().allowHints;
@@ -199,6 +227,7 @@ function inspect(id) {
   $('evidence-notice').textContent = node.evidence.notice;
   $('full-evidence').open = false;
   speech.bind($('hear-evidence'), audioData(node));
+  $('hear-evidence').textContent = catalog.languages[node.pronunciation.languageId].approximate ? '🔊 ≈' : '🔊';
   const edge = engine.linkTo(id);
   $('evidence-relation').textContent = edge ? edge.evidence.text : '';
   $('evidence-sources').replaceChildren(...node.evidence.sourceIds.map(sourceId => {
@@ -227,11 +256,11 @@ function renderEvidence() {
   $('part-context').hidden = !edge?.sourceSegmentId;
   if (edge?.sourceSegmentId) renderWordParts($('part-context-word'), engine.node(edge.source), edge.sourceSegmentId);
   const assisted = count > 0 || (edge && (engine.attempts.get(edge.id) || 0) > 0);
-  $('clue-value').textContent = `YOUR THEORY · ⭐ ${assisted ? catalog.rules.assistedPoints : catalog.rules.correctPoints} ${assisted ? 'with help' : 'on your own'}`;
+  $('clue-value').textContent = `⭐ ${assisted ? catalog.rules.assistedPoints : catalog.rules.correctPoints} ${assisted ? 'point with help' : 'points'}`;
   $('challenge-answers').replaceChildren(...(!solved ? edge.challenge.choices.map(choice => button(choice.label, () => answerTheory(choice.id), 'theory-answer')) : []));
   $('reveal-clue').hidden = !currentMode().allowHints || solved || count >= node.evidence.pages.length;
   $('reveal-clue').disabled = !currentMode().allowHints;
-  $('reveal-clue').textContent = count ? '⌕ One more little clue' : '⌕ Give me a little clue';
+  $('reveal-clue').textContent = count ? 'Another clue' : 'Need a clue?';
   $('full-evidence').hidden = currentMode().allowHints ? !solved && count < node.evidence.pages.length : !engine.complete;
   const feedback = $('answer-feedback');feedback.hidden = !evidenceFeedback;
   feedback.className = 'answer-feedback ' + (evidenceFeedback?.correct ? 'reward' : 'try-again');
@@ -319,6 +348,8 @@ $('mode-options').replaceChildren(...Object.entries(catalog.modes).map(([id, mod
   choice.append(textElement('span', mode.label), tip);
   return choice;
 }));
+$('show-map').addEventListener('click', () => { historyView = 'map'; closeEvidence(); render(); });
+$('show-family').addEventListener('click', () => { if (!engine.complete || !engine.case.familyTree) return; historyView = 'family'; closeEvidence(); render(); });
 $('reveal-clue').addEventListener('click', () => { if (!evidenceId || !currentMode().allowHints) return; engine.reveal(evidenceId); persist(); renderEvidence(); });
 $('close-evidence').addEventListener('click', closeEvidence);
 $('map').addEventListener('keydown', event => { if (event.key === 'Escape') closeEvidence(); });

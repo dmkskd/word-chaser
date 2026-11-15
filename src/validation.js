@@ -79,6 +79,17 @@ export function createValidator(catalogSchema, caseSchema) {
         if (!Object.hasOwn(catalog.relations, edge.type)) errors.push(`${prefix}${edge.id}: unknown relation ${edge.type}`);
         if (catalog.relations[edge.type]?.category === 'evidence' && wordCase.nodes.find(node => node.id === edge.target)?.kind !== 'attestation') errors.push(`${prefix}${edge.id}: text relationship must target an attestation`);
         refs(edge.evidence.sourceIds, edge.id);
+        if (edge.development) {
+          const development = edge.development;
+          if (!((development.fromNodeId === edge.source && development.toNodeId === edge.target) ||
+            (development.fromNodeId === edge.target && development.toNodeId === edge.source))) {
+            errors.push(`${prefix}${edge.id}: development must connect the two edge endpoints in historical direction`);
+          }
+          if (['related', 'comparison', 'attested-in'].includes(edge.type) || catalog.relations[edge.type]?.outcome === 'excluded') {
+            errors.push(`${prefix}${edge.id}: development needs a direct historical relationship, not a cousin, comparison or attestation`);
+          }
+          for (const change of development.changes) refs(change.sourceIds, `${edge.id} development`);
+        }
         if (edge.sourceSegmentId && !wordCase.nodes.find(node => node.id === edge.source)?.segments?.some(part => part.id === edge.sourceSegmentId)) errors.push(`${prefix}${edge.id}: unknown source segment`);
         if (edge.challenge.choices.filter(choice => choice.correct).length !== 1) errors.push(`${prefix}${edge.id}: challenge must have one correct answer`);
         if (new Set(edge.challenge.choices.map(choice => choice.id)).size !== edge.challenge.choices.length) errors.push(`${prefix}${edge.id}: duplicate choice IDs`);
@@ -86,6 +97,32 @@ export function createValidator(catalogSchema, caseSchema) {
       for (const puzzle of wordCase.puzzles) {
         refs(puzzle.sourceIds, puzzle.title);
         if (!Object.hasOwn(catalog.languages, puzzle.pronunciation.languageId)) errors.push(`${prefix}${puzzle.title}: unknown pronunciation language`);
+      }
+      if (wordCase.familyTree) {
+        const tree = wordCase.familyTree.nodes, ids = new Set(tree.map(node => node.id)), wordIds = new Set();
+        if (ids.size !== tree.length) errors.push(`${prefix}duplicate family-tree node`);
+        if (tree.filter(node => !node.parentId).length !== 1) errors.push(`${prefix}family tree needs one root`);
+        for (const node of tree) {
+          refs(node.sourceIds, `${node.id} family tree`);
+          if (node.parentId && !ids.has(node.parentId)) errors.push(`${prefix}${node.id}: unknown family parent`);
+          if (node.nodeId) {
+            if (!hasNode(node.nodeId)) errors.push(`${prefix}${node.id}: unknown family word`);
+            if (wordIds.has(node.nodeId)) errors.push(`${prefix}${node.id}: repeated family word`);
+            wordIds.add(node.nodeId);
+            if (node.nodeId !== wordCase.startNodeId && !node.revealEdgeIds?.some(id => wordCase.edges.some(edge => edge.id === id && edge.target === node.nodeId))) errors.push(`${prefix}${node.id}: family word needs its earned incoming connection`);
+          }
+          for (const id of node.revealEdgeIds || []) {
+            const edge = wordCase.edges.find(edge => edge.id === id);
+            if (!edge) errors.push(`${prefix}${node.id}: unknown family reveal edge`);
+            else if (catalog.relations[edge.type]?.outcome !== 'connected') errors.push(`${prefix}${node.id}: rejected lead cannot enter the family tree`);
+          }
+          const ancestors = new Set([node.id]); let parentId = node.parentId;
+          while (parentId && ids.has(parentId)) {
+            if (ancestors.has(parentId)) { errors.push(`${prefix}${node.id}: family tree cycle`); break; }
+            ancestors.add(parentId); parentId = tree.find(value => value.id === parentId).parentId;
+          }
+        }
+        if (!wordIds.has(wordCase.startNodeId)) errors.push(`${prefix}family tree needs the starting word`);
       }
       for (const milestone of wordCase.milestones) if (!hasNode(milestone.nodeId)) errors.push(`${prefix}unknown milestone ${milestone.nodeId}`);
       if (!hasNode(wordCase.startNodeId)) { errors.push(`${prefix}missing start node`); graph.destroy(); continue; }

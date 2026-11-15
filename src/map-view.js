@@ -183,7 +183,7 @@ export class MapView {
       this.hitNodes.push({id, point});
       if (mode.showUnvisitedMarkers === false && !visited) continue;
       const era = catalog.eras[node.eraId], status = engine.nodeStatus(id);
-      const accessibleLabel = mode.showMarkerDetails ? `${visited ? node.form : catalog.languages[node.languageId].name}. ${catalog.places[node.placeId].name}, ${era.name}. ${status === 'excluded' ? 'Not our trail.' : visited ? 'Connected.' : 'An unsolved clue.'} Inspect evidence.` : `${visited ? node.form + (status === 'excluded' ? '. Not our trail.' : '. Connected.') : 'Unexplored word.'} ${catalog.places[node.placeId].name}. Inspect word.`;
+      const accessibleLabel = mode.showMarkerDetails ? `${visited ? node.form + '. ' + catalog.languages[node.languageId].name + ', ' + era.name : 'Untested word'}. ${catalog.places[node.placeId].name}. ${status === 'excluded' ? 'Not our trail.' : visited ? 'Connected.' : 'An unsolved clue.'} Inspect evidence.` : `${visited ? node.form + (status === 'excluded' ? '. Not our trail.' : '. Connected.') : 'Unexplored word.'} ${catalog.places[node.placeId].name}. Inspect word.`;
       if (node.displayOffset && (mode.showMarkerDetails || visited)) {
         const anchor = placePoint(catalog.places[node.placeId]);
         nodes.append(svgNode('path', {d: `M${anchor}L${point}`, class: 'location-leader', 'pointer-events': 'none'}));
@@ -191,11 +191,11 @@ export class MapView {
       const group = svgNode('g', {transform: `translate(${point[0]} ${point[1]}) scale(${scale})`, class: `evidence-node ${current ? 'current' : ''} ${visited ? 'visited' : 'candidate'} ${status} ${inEra ? '' : 'other-era'} ${mode.showMarkerDetails ? '' : 'unlabelled'}`, role: 'button', tabindex: 0, 'data-node-id': id, 'aria-label': accessibleLabel});
       group.append(svgNode('circle', {r: 19, class: 'artifact-disc'}));
       if (mode.showMarkerDetails || visited) this.appendArtifact(group, node, status, visited);
-      if (mode.showMarkerDetails) {
+      if (mode.showMarkerDetails && visited) {
         const labelLeft = node.mapLabelSide === 'left' || (!node.mapLabelSide && point[0] > 740);
         const labelPosition = labelLeft ? {x: -26, 'text-anchor': 'end'} : {x: 26};
-        group.append(svgNode('text', {...labelPosition, y: -4, class: 'artifact-title'}, visited ? node.form : node.mapTitle || catalog.languages[node.languageId].name));
-        group.append(svgNode('text', {...labelPosition, y: 11, class: 'artifact-era'}, status === 'excluded' ? '✕ Not our trail' : `${era.icon} ${visited && node.mapCaption ? node.mapCaption : era.name}`));
+        group.append(svgNode('text', {...labelPosition, y: -4, class: 'artifact-title'}, node.form));
+        if (visited) group.append(svgNode('text', {...labelPosition, y: 11, class: 'artifact-era'}, status === 'excluded' ? '✕ Not our trail' : `${era.icon} ${node.mapCaption || era.name}`));
       }
       if (!mode.showMarkerDetails && visited) {
         group.append(svgNode('text', {x: 26, y: 4, class: 'artifact-title'}, node.form));

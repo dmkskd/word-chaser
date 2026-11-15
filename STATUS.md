@@ -1,6 +1,129 @@
 # Junior Word Chaser — handover
 
-Updated 11 November 2026, after yesterday and tablet gesture recovery.
+Updated 15 November 2026, after the word-development pilot.
+
+## Optional night genealogy
+
+Night now has an authored family-tree projection, using the same investigation
+nodes, reviewed edges, scoring and saved actions. `src/family-tree.js` renders
+older-to-newer parent links from optional `case.familyTree`. Referenced word
+nodes reuse their forms; shared ancestor junctions have source citations and
+explicit reconstruction labels. Nodes appear only after their revealEdgeIds
+have been reviewed. Rejected comparisons appear outside the genealogy. The
+validator checks source/node/edge references, roots, duplicate words, parent
+cycles and comparison misuse; historical correctness still requires research.
+
+Night adds the documented Middle English spelling niȝt (ȝ is yogh). The core
+requires niht, niȝt and Nacht (three earned connections). Latin nox is optional;
+confirming it after the Germanic comparison adds the older shared ancestor and
+the Latin branch. Sources include the University of Texas Indo-European
+Lexicon and the existing spelling and phonology research. Old solved saves
+without the Middle English evidence reopen as incomplete; existing decisions
+and points are restored through the normal action replay.
+
+The first tree prototype automatically replaced the map at completion, hiding
+the celebration. The user explicitly rejected that behaviour. Completion and
+reload now keep the map visible, including its solved stamp and fireworks.
+Only after completion is an optional “Want to know how night changed?” button
+shown. The tree opens only on a click, with a button back to the map. Reviewing
+any map/sidebar/tree clue returns to the map before opening evidence. Viewing
+history never changes progress or awards points.
+
+The user also rejected the stock gold callout and left accent bar on the change
+explanation. Both were removed; the inline change text is unboxed. The rest of
+the first genealogy layout remains a prototype and has been criticised as too
+technical and boring for an eight-year-old. Do not describe it as a finished
+child-facing teaching design. Camera retains its earlier notebook explanation;
+it does not yet have an authored genealogy.
+
+Automated checks cover earned reveals, required spelling evidence, optional
+Latin, tree structure and citations, restoration, restart, unchanged scores,
+keeping the map/fireworks visible at completion, and explicit history opening.
+The core genealogy was visually checked in desktop Safari. Review of the
+optional Latin branch was interrupted by user browser activity; its structure
+has automated DOM coverage. The subsequent optional-opening and unboxed-text
+correction has automated coverage; phone/iPad visuals remain unverified.
+
+## Reveal gating and readable rejected words
+
+The user identified pre-game spoilers in camera's starting notebook story,
+room-word summary/question, and the unsolved Scientific Latin marker. Full
+notebook stories now unlock only at case completion in every mode, with no story
+text inserted before that. Earned edge-development explanations retain their
+existing per-connection availability (completion-only in Investigator).
+
+Unsolved Junior markers keep their object icon and question badge but have no
+permanent text label. The lens reveals the actual candidate word; languages
+and dates are earned details. Replacing languages with “Manuscript” and
+“Vocabulary card” labels confused the user, so those map labels were removed.
+The optional lead buttons use numbered clues with their existing location.
+Evidence cards omit redundant headings and unearned date metadata; peeks
+omit unearned languages. Time controls show only earned eras; unexamined dated
+timeline buttons retain inspection access without revealing titles or dates.
+Camera's opening summary/question and night's summary are now neutral JSON copy.
+
+Evidence-card geography remains visible in guided modes as a larger pin + place name,
+separate from unearned language/date metadata. The user needs Italy/France
+context when comparing words. Optional catalog place.locationLabel supplies a
+plain geographic label where the existing name contains historical commentary
+(e.g. latin-region displays Italy). This is a map evidence anchor, not an
+assertion of a word's exact birthplace. Investigator retains hidden metadata.
+
+
+Rejected words retain their cross badge and Not our trail status. Their word
+labels no longer have strike-throughs on the map, notebook or timeline; their
+label colour is darker for legibility.
+
+Regression coverage checks initial stories, map/lead labels, hover and inspection
+metadata, date controls, earned explanations, completion unlock, reload and
+restart. The suite now has 80 passing tests. The simplified Fotoapparat card
+and the corrected English marker positions were visually checked in desktop
+Safari. Phone/iPad layout and audio were not reviewed for this correction.
+
+The shared evidence card now uses place → word and compact speaker → a short
+sans-serif meaning → theory → optional help → answers. Decorative object icons,
+“Test this word”, “Map location” and “Your theory” labels were removed. Points
+remain as a small line; clue controls read Need a clue? / Another clue. Mobile
+retains the separate non-scrolling answer footer and bounded scrolling content.
+
+Camera's three English vocabulary nodes now use the broad England anchor,
+with fixed map offsets that keep their centres within England. They no longer
+claim London or shift across the Channel with viewport-dependent display offsets.
+The optional Italian marker's eastward offset was also corrected. These positions
+are vocabulary teaching anchors, not evidence of invention in specific cities.
+The geometry regression checks position invariance across viewport/zoom scales.
+
+## Word-development pilot: night and camera
+
+Earned night → niht and camera → camera obscura connections now expose a
+collapsed **How it changed** explanation in the target's notebook entry.
+The explanation itself reads forwards in historical time: niht → night and
+camera obscura → camera. Graph traversal, node IDs, goals, score and saved
+actions are unchanged. There is no separate family-tree view in this pilot.
+
+Optional `edge.development` holds historical endpoint direction, summary,
+ordered changes and a limitation note. Each step identifies its aspect, evidence
+basis and source IDs. JSON schema and reference validation check these, and
+reject unrelated endpoints or direct-development claims on cousin/comparison/
+attestation edges. The shared renderer contains no word-specific conditions.
+
+Night cites Kleban's published research on fricative loss and vowel lengthening,
+Cambridge-hosted OED spelling evidence and Harvard's Chaucer vowel guide, in
+addition to the existing dictionary history. The narrative is explicitly
+simplified to the path to standard English; dialect outcomes differ, historical
+sounds are reconstructed, and “neet” is a sound guide rather than an invented
+mandatory spelling stage. Camera cites the existing Etymonline entries for
+shortening and the photographic meaning around 1840. These are authored sourced
+summaries, not automated historical deductions from the graph.
+
+Explanations appear only on reviewed connections. Investigator places neither
+their text nor source links in the DOM until completion. Source links expand
+per step; reading awards no points. Restoring/restarting/switching cases follows
+the existing graph state. The 78-test suite passes, including reveal gating,
+historical direction, source validation, restoration and score invariance.
+Both disclosures and the night source links were checked in native desktop
+Safari using the local built file. Phone/iPad layout and audio were not reviewed
+for this pilot. Assets rebuilt; no publishing action performed.
 
 ## Start here next time
 
@@ -110,7 +233,7 @@ travel between languages—not simply follow the only available correct pin.
 
 - Use short, soft translucent cards rather than dense opaque boxes.
 - Map pins retain their artifact picture, with a small overlaid `?`, `✓` or `✕`.
-  Correctly rejected words are crossed out. Child-facing copy says “Not our
+  Correctly rejected words retain readable labels and a cross status badge. Child-facing copy says “Not our
   trail”, not “Ruled out” or “Decision needed”.
 - The current stop has a green highlight. Red looked like a wrong answer.
 - Completion places a persistent, tilted “CASE SOLVED” stamp directly on the

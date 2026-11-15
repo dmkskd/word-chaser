@@ -42,6 +42,166 @@ function chooseWord(document, id) {
   assert(word, `Missing word ${id}`); word.click();
 }
 
+test('new investigations withhold stories, candidate languages and dates until earned', async () => {
+  const storage = new Map(); let ui = await page(storage);
+  for (const id of ['camera', 'night']) {
+    chooseWord(ui.document, id);
+    const startStory = ui.document.querySelector('.notebook-story');
+    assert(startStory.hidden);
+    assert.equal(startStory.textContent, '', 'Starting evidence must not put the solution in an expandable story.');
+    const notebook = ui.document.getElementById('visited-list');
+    assert(!notebook.textContent.includes(id === 'camera' ? 'camera obscura' : 'niht'));
+    const candidates = [...ui.document.querySelectorAll('#pins .candidate')];
+    assert(candidates.length);
+    for (const candidate of candidates) {
+      assert.equal(candidate.querySelector('.artifact-era'), null);
+      assert(!/Scientific Latin|New Latin|Old English|Medieval|1700s/.test(candidate.getAttribute('aria-label')));
+      assert.equal(candidate.querySelector('.artifact-title'), null, 'Unsolved map clues have no prop or language labels.');
+    }
+    assert(!/Scientific Latin|New Latin|Old English/.test(ui.document.getElementById('lead-list').textContent));
+    assert(!/Medieval|Roman|1700s/.test(ui.document.getElementById('era-buttons').textContent));
+  }
+  chooseWord(ui.document, 'camera');
+  const svg = ui.document.getElementById('map');
+  svg.getBoundingClientRect = () => ({left: 0, top: 0, width: 900, height: 650});
+  const move = ui.event('pointermove'); Object.assign(move, {pointerType: 'mouse', clientX: 313, clientY: 236}); svg.dispatchEvent(move);
+  assert(!ui.document.getElementById('word-peek').hidden);
+  assert.equal(ui.document.getElementById('peek-word').textContent, 'camera obscura');
+  assert(ui.document.getElementById('peek-language').hidden);
+  assert.equal(ui.document.getElementById('peek-language').textContent, '');
+  ui.click('[data-node-id="camera-obscura"]');
+  assert(!ui.document.getElementById('evidence-meta').hidden);
+  assert.equal(ui.document.getElementById('evidence-meta').textContent, '📍 England');
+  assert(!/Latin|1700s/.test(ui.document.getElementById('evidence-meta').textContent));
+  assert.equal(ui.document.getElementById('evidence-title').textContent, '');
+  assert(ui.document.getElementById('evidence-title').hidden);
+  assert(!ui.document.getElementById('map-era').textContent.includes('1700s'));
+  ui.click('#challenge-answers button');
+  assert(ui.document.querySelector('[data-node-id="camera-obscura"] .artifact-era'));
+  assert(ui.document.getElementById('era-buttons').textContent.includes('1700s'));
+  assert(ui.document.getElementById('visited-list').textContent.includes('Scientific Latin'));
+  assert(ui.document.querySelector('.word-development'));
+  assert([...ui.document.querySelectorAll('.notebook-story')].every(story => story.hidden && !story.textContent));
+  for (const id of ['camera-latin', 'camera-french', 'camera-spanish']) {
+    ui.click(`[data-node-id="${id}"]`);
+    const locations = {'camera-latin': 'Italy', 'camera-french': 'France', 'camera-spanish': 'Spain'};
+    assert.equal(ui.document.getElementById('evidence-meta').textContent, `📍 ${locations[id]}`);
+    ui.click('#challenge-answers button');
+  }
+  assert(!ui.document.getElementById('complete').hidden);
+  assert([...ui.document.querySelectorAll('.notebook-story')].every(story => !story.hidden && story.textContent));
+  ui = await page(storage);
+  assert([...ui.document.querySelectorAll('.notebook-story')].every(story => !story.hidden));
+  ui.click('#restart');
+  assert(ui.document.querySelector('.notebook-story').hidden);
+  assert.equal(ui.document.querySelector('.notebook-story').textContent, '');
+  chooseWord(ui.document, 'chortle');
+  const timeline = ui.document.getElementById('evidence-timeline');
+  assert(!timeline.textContent.includes('1871'), 'Unsolved timeline clues must not bypass date gating.');
+});
+
+test('night and camera show sourced historical development only on earned connections', async () => {
+  const storage = new Map();
+  let ui = await page(storage);
+  chooseWord(ui.document, 'night');
+  assert.equal(ui.document.querySelectorAll('.word-development').length, 0);
+  ui.click('[data-node-id="night-old"]');
+  assert.equal(ui.document.querySelectorAll('.word-development').length, 0, 'Inspecting does not reveal the explanation.');
+  ui.click('#challenge-answers button');
+  let details = ui.document.querySelector('[data-development-edge="night-old-link"]');
+  assert(details);
+  assert.equal(details.querySelector('.development-forms').textContent, 'niht → night', 'History reads forwards while investigation goes backwards.');
+  assert(details.textContent.includes('Reconstructed sound history'));
+  assert(details.textContent.includes('Dialects changed differently'));
+  assert(details.querySelector('a[href="https://anglica-journal.com/api/files/view/1697719.pdf"]'));
+  for (const id of ['night-middle', 'night-german']) {
+    ui.click(`[data-node-id="${id}"]`); ui.click('#challenge-answers button');
+  }
+  const points = ui.document.getElementById('detective-points').textContent;
+  ui.click('#show-family');
+  assert.equal(ui.document.querySelector('details.word-development'), null, 'The change is expanded in the family view, not hidden under a word.');
+  ui.click('.development-sources>summary');
+  assert.equal(ui.document.getElementById('detective-points').textContent, points);
+  ui = await page(storage);
+  assert(ui.document.querySelector('[data-development-edge="night-old-link"]'), 'Reload restores earned explanations.');
+  ui.click('#restart');
+  assert.equal(ui.document.querySelectorAll('.word-development').length, 0);
+  chooseWord(ui.document, 'camera');
+  ui.click('[data-node-id="camera-obscura"]'); ui.click('#challenge-answers button');
+  details = ui.document.querySelector('[data-development-edge="camera-obscura-link"]');
+  assert.equal(details.querySelector('.development-forms').textContent, 'camera obscura → camera');
+  assert(details.textContent.includes('Around 1840'));
+  assert(details.querySelector('a[href="https://www.etymonline.com/word/camera"]'));
+  assert(ui.document.getElementById('complete').hidden, 'Reading a development does not bypass remaining goals.');
+  chooseWord(ui.document, 'treasure');
+  assert.equal(ui.document.querySelectorAll('.word-development').length, 0, 'Switching does not retain another case’s explanation.');
+});
+
+test('Investigator keeps development text and sources out of the DOM until completion', async () => {
+  const ui = await page();
+  const {document, click} = ui;
+  chooseWord(document, 'night'); click('[data-mode-id="investigator"]');
+  inspectHidden(ui, 314, 236); click('#challenge-answers button');
+  assert.equal(document.querySelectorAll('.word-development').length, 0);
+  assert(!document.getElementById('visited-list').textContent.includes('A consonant disappeared'));
+  inspectHidden(ui, 450, 325); click('#challenge-answers button');
+  inspectHidden(ui, 310, 278); click('#challenge-answers button');
+  assert(!document.getElementById('complete').hidden);
+  assert(document.querySelector('[data-development-edge="night-old-link"]'));
+});
+
+test('night genealogy grows from earned evidence, separates cousins and makes Latin optional', async () => {
+  const storage = new Map(); let ui = await page(storage, false, false);
+  chooseWord(ui.document, 'night');
+  ui.click('#show-family');
+  const tree = ui.document.getElementById('family-tree');
+  assert(tree.hidden, 'History cannot interrupt play.');
+  assert(ui.document.getElementById('history-views').hidden);
+  assert.equal(tree.querySelectorAll('[data-family-node]').length, 1);
+  for (const hidden of ['niht', 'niȝt', 'Nacht', 'nox', 'Germanic ancestor', 'Proto-Indo-European']) assert(!tree.textContent.includes(hidden), hidden);
+  ui.click('#show-map');
+  for (const id of ['night-old', 'night-middle', 'night-german']) {
+    ui.click(`[data-node-id="${id}"]`); ui.click('#challenge-answers button');
+  }
+  assert(!ui.document.getElementById('complete').hidden, 'The core completes without the Latin discovery.');
+  assert(tree.hidden, 'Completion keeps the map visible for the celebration.');
+  assert(!ui.document.querySelector('.map-holder').hidden);
+  assert(!ui.document.getElementById('map-solved-stamp').hidden);
+  assert(!ui.document.getElementById('map-fireworks').hidden);
+  assert.equal(ui.document.getElementById('show-family').textContent, 'Want to know how night changed?');
+  ui.click('#show-family');
+  assert(!tree.hidden, 'The tree opens only after choosing the invitation.');
+  const old = tree.querySelector('[data-family-id="family-old"]');
+  assert(old.querySelector('[data-family-id="family-middle"] [data-family-id="family-now"]'), 'English forms belong on one chronological line.');
+  const germanic = tree.querySelector('[data-family-id="family-germanic"]');
+  assert.equal(germanic.querySelector(':scope > ul > li[data-family-id="family-german"] [data-family-node]').textContent, 'Nacht');
+  assert(!tree.textContent.includes('nox'), 'An optional undiscovered relative stays hidden after completion.');
+  assert(!tree.querySelector('details.word-development'));
+  assert(tree.textContent.includes('The long vowel later shifted'));
+  const points = ui.document.getElementById('detective-points').textContent;
+  ui.click('[data-family-node="night-old"]');
+  assert(tree.hidden, 'Earned word review returns to the same map investigation.');
+  assert.equal(ui.document.getElementById('detective-points').textContent, points);
+  ui.click('#show-map');
+  ui.click('[data-node-id="night-latin"]'); ui.click('#challenge-answers button');
+  ui.click('[data-node-id="night-knight"]'); ui.click('#challenge-answers button:nth-child(2)');
+  ui.click('#show-family');
+  const root = tree.querySelector('[data-family-id="family-root"]');
+  assert(root);
+  assert(root.querySelector(':scope > ul > li[data-family-id="family-latin"]'));
+  assert(root.querySelector(':scope > ul > li[data-family-id="family-germanic"]'));
+  assert(tree.querySelector('.family-rejected').textContent.includes('knight'));
+  assert(!tree.querySelector('.family-branches').textContent.includes('knight'));
+  ui = await page(storage);
+  assert(ui.document.getElementById('family-tree').hidden, 'Reload keeps the optional history closed.');
+  assert(!ui.document.querySelector('.map-holder').hidden);
+  assert(ui.document.querySelector('[data-family-id="family-root"]'));
+  ui.click('#restart');
+  assert(!ui.document.getElementById('family-tree').textContent.includes('nox'));
+  chooseWord(ui.document, 'camera');
+  assert(ui.document.getElementById('history-views').hidden, 'Cases without authored genealogy retain their map.');
+});
+
 test('built page runs the treasure investigation via evidence objects and graph leads', async () => {
   const {document, click} = await page();
   assert.equal(document.querySelectorAll('[data-case-id]').length, 40);
@@ -209,8 +369,8 @@ test('the Arabic source at the map edge is reachable with the magnifying glass',
   const move = event('pointermove'); move.clientX = 849; move.clientY = 610; move.pointerType = 'mouse'; svg.dispatchEvent(move);
   assert.equal(document.getElementById('peek-word').textContent, 'al-jabr · الجبر');
   assert(!document.getElementById('word-peek').hidden);
-  assert.equal(document.querySelector('[data-node-id="algebra-arabic"] .artifact-title').getAttribute('text-anchor'), 'end');
   click('[data-node-id="algebra-arabic"]'); click('#challenge-answers button');
+  assert.equal(document.querySelector('[data-node-id="algebra-arabic"] .artifact-title').getAttribute('text-anchor'), 'end');
   assert(!document.getElementById('complete').hidden);
 });
 

@@ -14,8 +14,8 @@ export function renderEvidenceTimeline(container, engine, mode, onInspect) {
     const item = doc.createElement('li'), button = doc.createElement('button'); button.type = 'button';
     button.className = `timeline-stop ${status}`; button.dataset.timelineId = node.id;
     button.setAttribute('aria-current', String(node.id === engine.currentId));
-    const date = doc.createElement('strong'); date.textContent = node.date.label;
-    const title = doc.createElement('span'); title.textContent = `${visited ? status === 'excluded' ? '✕ ' : '✓ ' : ''}${visited ? node.form : node.evidence.title}`;
+    const date = doc.createElement('strong'); date.textContent = visited ? node.date.label : 'Unexamined clue';
+    const title = doc.createElement('span'); title.textContent = `${visited ? status === 'excluded' ? '✕ ' : '✓ ' : ''}${visited ? node.form : 'Open to inspect'}`;
     button.append(date, title); button.addEventListener('click', () => onInspect(node.id));
     item.append(button); list.append(item);
   }

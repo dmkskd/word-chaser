@@ -4,8 +4,8 @@
   "id": "camera",
   "title": "camera",
   "icon": "📷",
-  "summary": "A picture-taking device that opens doors to rooms across Europe.",
-  "question": "Why does a picture-taking device share a name with rooms?",
+  "summary": "Investigate the history of a familiar picture-taking word.",
+  "question": "Which clues explain where camera came from?",
   "startNodeId": "camera-now",
   "goalNodeIds": [
     "camera-obscura",
@@ -58,7 +58,7 @@
       "form": "camera",
       "languageId": "english",
       "eraId": "today",
-      "placeId": "london",
+      "placeId": "england",
       "offset": [
         0,
         0
@@ -95,10 +95,10 @@
       "form": "camera obscura",
       "languageId": "scientific-latin-new-latin",
       "eraId": "earlymodern",
-      "placeId": "london",
+      "placeId": "england",
       "offset": [
-        0,
-        0
+        -21,
+        -80
       ],
       "period": "Phrase used in English · 1700s",
       "meaning": "A dark room or box that projects an image.",
@@ -109,7 +109,7 @@
       "evidence": {
         "kind": "manuscript",
         "title": "A word to investigate",
-        "text": "Camera was shortened from camera obscura. Light entering a small opening or lens forms an image inside. This English-use pin is not a claim that the device was invented in London.",
+        "text": "Camera was shortened from camera obscura. Light entering a small opening or lens forms an image inside. This English-use pin is not a claim that the device was invented in England.",
         "notice": "Compare the sounds, meaning and history. Similar words can follow different trails.",
         "sourceIds": [
           "history",
@@ -123,14 +123,10 @@
           },
           {
             "title": "Check the history",
-            "text": "Camera was shortened from camera obscura. Light entering a small opening or lens forms an image inside. This English-use pin is not a claim that the device was invented in London."
+            "text": "Camera was shortened from camera obscura. Light entering a small opening or lens forms an image inside. This English-use pin is not a claim that the device was invented in England."
           }
         ]
       },
-      "displayOffset": [
-        -80,
-        -65
-      ],
       "mapCaption": "English use · not invention site",
       "segments": [
         {
@@ -264,8 +260,8 @@
       "eraId": "today",
       "placeId": "florence",
       "offset": [
-        0,
-        0
+        -5,
+        -8
       ],
       "period": "Today",
       "meaning": "A room, in Italian.",
@@ -292,21 +288,17 @@
             "text": "Italian camera is another descendant of the Latin room word. Identical spelling does not mean the everyday Italian room word was borrowed from English photography."
           }
         ]
-      },
-      "displayOffset": [
-        60,
-        -50
-      ]
+      }
     },
     {
       "id": "camera-camel",
       "form": "camel",
       "languageId": "english",
       "eraId": "today",
-      "placeId": "london",
+      "placeId": "england",
       "offset": [
-        0,
-        0
+        -25,
+        -38
       ],
       "period": "Today",
       "meaning": "An animal with one or two humps.",
@@ -334,11 +326,7 @@
             "text": "Camel has a different history, through the animal word camelus. A shared beginning does not make it the source of camera."
           }
         ]
-      },
-      "displayOffset": [
-        75,
-        65
-      ]
+      }
     },
     {
       "id": "camera-german",
@@ -410,7 +398,40 @@
           }
         ]
       },
-      "timeLabel": "Today → dark-chamber name, 1700s"
+      "timeLabel": "Today → dark-chamber name, 1700s",
+      "development": {
+        "fromNodeId": "camera-obscura",
+        "toNodeId": "camera-now",
+        "summary": "A dark-chamber name was shortened, then extended to a photographic device.",
+        "note": "This connection explains the English device name. French chambre and Spanish cámara are separate branches of the older room-word family. The dates describe word uses, not the invention of photography.",
+        "changes": [
+          {
+            "aspect": "meaning",
+            "text": "Camera obscura means “dark chamber”. The name was used for a dark room or box in which light projects an image.",
+            "basis": "documented",
+            "sourceIds": [
+              "history",
+              "obscura"
+            ]
+          },
+          {
+            "aspect": "shortening",
+            "text": "In English, camera was used as a shorter form of camera obscura from the early 1700s. The word obscura was left out.",
+            "basis": "documented",
+            "sourceIds": [
+              "history"
+            ]
+          },
+          {
+            "aspect": "meaning",
+            "text": "Around 1840, camera also came to name a photographic device that could record pictures. The existing name gained this newer use as photography developed.",
+            "basis": "documented",
+            "sourceIds": [
+              "history"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "camera-latin-link",

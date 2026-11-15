@@ -455,6 +455,9 @@
           },
           "sourceSegmentId": {
             "$ref": "#/definitions/id"
+          },
+          "development": {
+            "$ref": "#/definitions/development"
           }
         }
       }
@@ -536,6 +539,87 @@
           "maximum": 900
         }
       }
+    },
+    "familyTree": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "note",
+        "nodes"
+      ],
+      "properties": {
+        "note": {
+          "$ref": "#/definitions/text"
+        },
+        "nodes": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "sourceIds"
+            ],
+            "properties": {
+              "id": {
+                "$ref": "#/definitions/id"
+              },
+              "parentId": {
+                "$ref": "#/definitions/id"
+              },
+              "nodeId": {
+                "$ref": "#/definitions/id"
+              },
+              "label": {
+                "$ref": "#/definitions/text"
+              },
+              "detail": {
+                "$ref": "#/definitions/text"
+              },
+              "sourceIds": {
+                "$ref": "#/definitions/references"
+              },
+              "revealEdgeIds": {
+                "$ref": "#/definitions/references"
+              }
+            },
+            "oneOf": [
+              {
+                "required": [
+                  "nodeId"
+                ],
+                "properties": {
+                  "nodeId": {
+                    "$ref": "#/definitions/id"
+                  },
+                  "label": false,
+                  "detail": false
+                }
+              },
+              {
+                "required": [
+                  "label",
+                  "detail",
+                  "revealEdgeIds"
+                ],
+                "properties": {
+                  "nodeId": false,
+                  "label": {
+                    "$ref": "#/definitions/text"
+                  },
+                  "detail": {
+                    "$ref": "#/definitions/text"
+                  },
+                  "revealEdgeIds": {
+                    "$ref": "#/definitions/references"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -568,6 +652,77 @@
         },
         "languageId": {
           "$ref": "#/definitions/id"
+        }
+      }
+    },
+    "development": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "fromNodeId",
+        "toNodeId",
+        "summary",
+        "note",
+        "changes"
+      ],
+      "properties": {
+        "fromNodeId": {
+          "$ref": "#/definitions/id"
+        },
+        "toNodeId": {
+          "$ref": "#/definitions/id"
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 180
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 320
+        },
+        "changes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "aspect",
+              "text",
+              "basis",
+              "sourceIds"
+            ],
+            "properties": {
+              "aspect": {
+                "enum": [
+                  "sound",
+                  "spelling",
+                  "meaning",
+                  "shortening",
+                  "formation",
+                  "borrowing"
+                ]
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 320
+              },
+              "basis": {
+                "enum": [
+                  "documented",
+                  "reconstructed",
+                  "uncertain"
+                ]
+              },
+              "sourceIds": {
+                "$ref": "#/definitions/references"
+              }
+            }
+          }
         }
       }
     }

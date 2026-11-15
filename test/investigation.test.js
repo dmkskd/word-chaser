@@ -90,6 +90,50 @@ test('a newly authored case needs no word-name conditions or engine changes', ()
 const [catalogSchema, caseSchema] = await Promise.all(['catalog', 'case'].map(async name => JSON.parse(await readFile(new URL(`../data/${name}.schema.json`, import.meta.url), 'utf8'))));
 const validate = createValidator(catalogSchema, caseSchema);
 
+test('family projections reject cycles, missing sources and rejected ancestry', () => {
+  const night = cases.find(c => c.id === 'night');
+  const cycle = structuredClone(night); cycle.familyTree.nodes[0].parentId = 'family-now';
+  assert(validate(catalog, [cycle]).some(error => error.includes('family tree cycle')));
+  const missing = structuredClone(night); missing.familyTree.nodes[0].sourceIds = ['unknown-ancestor'];
+  assert(validate(catalog, [missing]).some(error => error.includes('unknown source')));
+  const rejected = structuredClone(night); rejected.familyTree.nodes[0].revealEdgeIds = ['night-knight-link'];
+  assert(validate(catalog, [rejected]).some(error => error.includes('rejected lead cannot enter')));
+  const dangling = structuredClone(night); dangling.familyTree.nodes[1].parentId = 'absent-ancestor';
+  assert(validate(catalog, [dangling]).some(error => error.includes('unknown family parent')));
+});
+
+test('night requires English spelling evidence and a close cousin while nox remains optional', () => {
+  const night = cases.find(c => c.id === 'night');
+  const engine = new Investigation(catalog, night);
+  go(engine, 'night-old'); go(engine, 'night-german'); go(engine, 'night-latin');
+  assert(!engine.complete, 'The older solved route cannot bypass the Middle English evidence.');
+  const restored = new Investigation(catalog, night, engine.snapshot());
+  assert(!restored.complete);
+  go(restored, 'night-middle'); assert(restored.complete);
+  const core = new Investigation(catalog, night);
+  go(core, 'night-old'); go(core, 'night-middle'); go(core, 'night-german');
+  assert(core.complete);
+  assert(!core.visited.has('night-latin'));
+  assert.equal(minimumRequiredHops(catalog, night), 3);
+  engine.destroy(); restored.destroy(); core.destroy();
+});
+
+test('development explanations require endpoint direction, direct relationships and claim sources', () => {
+  const night = cases.find(wordCase => wordCase.id === 'night');
+  const badDirection = structuredClone(night);
+  badDirection.edges[0].development.fromNodeId = 'night-german';
+  assert(validate(catalog, [badDirection]).some(error => error.includes('two edge endpoints')));
+  const badSource = structuredClone(night);
+  badSource.edges[0].development.changes[0].sourceIds = ['unverified'];
+  assert(validate(catalog, [badSource]).some(error => error.includes('development: unknown source')));
+  const cousin = structuredClone(night);
+  cousin.edges[0].type = 'related';
+  assert(validate(catalog, [cousin]).some(error => error.includes('direct historical relationship')));
+  const unsourced = structuredClone(night);
+  delete unsourced.edges[0].development.changes[0].sourceIds;
+  assert(validate(catalog, [unsourced]).some(error => error.includes('sourceIds')));
+});
+
 test('content validation rejects missing evidence sources, dangling links and unreachable goals', () => {
   const missingSource = structuredClone(treasure); missingSource.nodes[0].evidence.sourceIds = ['missing-source'];
   assert(validate(catalog, [missingSource]).some(e => e.includes('unknown source')));
